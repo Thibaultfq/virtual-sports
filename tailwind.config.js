@@ -27,6 +27,7 @@ module.exports = {
 				'1/5': 'calc(100vh / 5)',
 				96: '24rem',
 				128: '32rem',
+				'1/1-navbar': `calc(100vh - ${theme('spacing.20')})`,
 			}),
 		},
 	},

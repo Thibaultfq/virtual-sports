@@ -57,9 +57,10 @@ module.exports = {
 	/**
 	 *  NOTE: You MUST keep all Custom variable keys, even if their values are empty and you don't intend to use them.
 	 *  If you delete any variable keys, 11ty won't work.
+	 *  navCustom is here when the navbar is not scrolled: overlaying with hero.
 	 */
 	navCustom: {
-		barBg: '',
+		barBg: 'bg-transparent',
 		text: 'text-gray-700',
 		textActive: 'text-gray-800',
 		textHover: 'text-gray-800',

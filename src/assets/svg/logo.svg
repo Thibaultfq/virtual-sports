@@ -1,4 +1,4 @@
-<svg viewBox="0 0 1000 102" version="1.1" xmlns="http://www.w3.org/2000/svg">
+<svg   preserveAspectRatio="xMinYMid meet" viewBox="0 0 1000 102" version="1.1" xmlns="http://www.w3.org/2000/svg">
     <g id="curves" transform="matrix(1.33631,0,0,1.33631,-301.749,-65.4924)">
         <g transform="matrix(78.1985,0,0,78.1985,221.836,109.131)">
             <path d="M0.375,-0.727L0.375,-0L0.222,-0L0.222,-0.581L0.217,-0.581L0.051,-0.477L0.051,-0.613L0.231,-0.727L0.375,-0.727Z" style="fill-rule:nonzero;"/>
