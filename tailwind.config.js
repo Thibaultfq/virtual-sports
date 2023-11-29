@@ -29,6 +29,11 @@ module.exports = {
 				128: '32rem',
 				'1/1-navbar': `calc(100vh - ${theme('spacing.20')})`,
 			}),
+			colors: (theme) => ({
+				'dark-blue': '#071303',
+				'gold-yellow': '#f7cb2d',
+				'light-blue': '#c7ddef',
+			}),
 		},
 	},
 	variants: {},

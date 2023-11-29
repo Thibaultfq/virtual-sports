@@ -1,25 +1,28 @@
 {% set navPages = collections.pages | eleventyNavigation %}
-<nav x-data="{ open: false, scrolledNav: false }" 
-      @scroll.window.throttle="scrolledNav = (window.pageYOffset > 20) ? true : false"
+<nav x-data="{ open: false, scrolledNav: window.pageYOffset > 20 }" 
+      @scroll.window.throttle.100ms="scrolledNav = (window.pageYOffset > 20) ? true : false"
       class="fixed top-0 w-full left-0 z-50 shadow"
       :class="scrolledNav ? '{{ colors.navDefault.barBg }}' : '{{ colors.navCustom.barBg }}' ">
-  <div class="px-8 md:px-16 lg:px-32">
-    <div class="flex justify-between h-20 transition-all" :class="scrolledNav ? 'sm:h-14 text-sm' : 'sm:h-24 text-lg' ">
+  <div class="px-8 md:px-16 lg:px-32 xl:px-48">
+    <div class="flex justify-between h-20 transition-all" :class="scrolledNav ? 'sm:h-16 text-sm' : 'sm:h-32 text-lg' ">
         <div class="flex grow items-center">
           {# small logo hidden on md and above #}
           <a aria-label="Mobile Logo" href="/" class="block md:hidden {{ colors.logoCustom.mobile or colors.logoDefault.mobile }} hover:{{ colors.logoCustom.hover or colors.logoDefault.hover }}" alt="Mobile Logo">
             {% svg "logo-mobile", "fill-current h-10 hover:{{ colors.logoCustom.hover or colors.logoDefault.hover }}", "The Mobile Logo" %}
           </a>
           {# large logo hidden on small, block on md #}
-          <a aria-label="Desktop Logo" href="/" :class="scrolledNav ? 'h-7' : 'h-14' " class=" hidden md:flex grow {{ colors.logoCustom.desktop or colors.logoDefault.desktop }} hover:{{ colors.logoCustom.hover or colors.logoDefault.hover }}" alt="Desktop Logo">
-            {% svg "logo", "flex justify-start fill-current h-full w-full hover:{{ colors.logoCustom.hover or colors.logoDefault.hover }}", "The Logo" %}
+          <a x-show="!scrolledNav"aria-label="Desktop Logo" href="/" :class="scrolledNav ? 'h-7' : 'h-20' " class=" hidden md:flex grow {{ colors.logoCustom.desktop or colors.logoDefault.desktop }} hover:{{ colors.logoCustom.hover or colors.logoDefault.hover }}" alt="Desktop Logo">
+            {% svg "virtual-sports-square-logo", "flex justify-start fill-current h-full w-full drop-shadow-md hover:{{ colors.logoCustom.hover or colors.logoDefault.hover }}", "The Logo" %}
+          </a>
+          <a x-show="scrolledNav"aria-label="Desktop Logo" href="/" :class="scrolledNav ? 'h-8' : 'h-20' " class=" hidden md:flex grow {{ colors.logoCustom.desktop or colors.logoDefault.desktop }} hover:{{ colors.logoCustom.hover or colors.logoDefault.hover }}" alt="Desktop Logo">
+            {% svg "virtual-sports-banner-logo", "flex justify-start fill-current h-full w-full hover:{{ colors.logoCustom.hover or colors.logoDefault.hover }}", "The Logo" %}
           </a>
         </div>
         <div class="hidden sm:ml-6 sm:flex sm:items-center">
           {# 11ty Nav Plugin loop  #}
           {% for entry in navPages %}
             <a {% if page.url != entry.url %}href="{{ entry.url | url }}"{% endif %} alt="Link to {{ entry.title }}" 
-            :class="scrolledNav? ' {% if page.url == entry.url %} {{ colors.navCustom.textActiveBg or colors.navDefault.textActiveBg }} {{ colors.navCustom.textActive or colors.navDefault.textActive }} {% else %} {{ colors.navCustom.text or colors.navDefault.text }} hover:{{ colors.navCustom.textHover or colors.navDefault.textHover }} {% endif %}' : 'bg-green-500'"
+            :class="scrolledNav? ' {% if page.url == entry.url %} {{ colors.navDefault.textActiveBg }} {{ colors.navDefault.textActive }} {% else %} {{colors.navDefault.text }} hover:{{ colors.navDefault.textHover }} {% endif %}' : ' {% if page.url == entry.url %} {{ colors.navCustom.textActiveBg }} {{ colors.navCustom.textActive }} {% else %} {{ colors.navCustom.text }} hover:{{ colors.navCustom.textHover }} {% endif %}'"
             class=" px-3 py-2 font-medium rounded-md items-center focus:outline-none focus:{{ colors.navCustom.textFocus or colors.navDefault.textFocus }} transition duration-150 ease-in-out">
               {{ entry.title }}
             </a>

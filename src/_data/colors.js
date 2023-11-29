@@ -61,10 +61,10 @@ module.exports = {
 	 */
 	navCustom: {
 		barBg: 'bg-transparent',
-		text: 'text-gray-700',
-		textActive: 'text-gray-800',
+		text: 'text-white',
+		textActive: 'text-gold-yellow',
 		textHover: 'text-gray-800',
-		textActiveBg: 'bg-gray-100',
+		textActiveBg: 'bg-transparent',
 		textFocus: 'text-gray-500',
 		mobileBg: '',
 		mobileBgActive: 'bg-gray-700',
@@ -83,14 +83,14 @@ module.exports = {
 	 * ===== Logo / SVG =====
 	 */
 	logoDefault: {
-		desktop: 'text-teal-500',
+		desktop: 'text-gold-yellow',
 		mobile: 'text-teal-500',
 		hover: 'text-teal-600',
 	},
 	logoCustom: {
-		desktop: 'text-gray-700',
-		mobile: 'text-gray-700',
-		hover: 'text-gray-800',
+		desktop: '',
+		mobile: '',
+		hover: '',
 	},
 
 	/**
