@@ -3,7 +3,7 @@
     @scroll.window="scrolledNav = (window.pageYOffset > 20) ? true : false" 
     class="absolute sm:fixed sm:top-0 sm:left-0 z-50 w-full shadow" 
     :class="(scrolledNav || open )? '{{ colors.navDefault.barBg }}' : '{{ colors.navCustom.barBg }}' ">
-    <div class="px-8 md:px-16 lg:px-32 xl:px-48">
+    <div class="sm:px-8 md:px-16 lg:px-32 xl:px-48">
         <div class="flex justify-between h-32 transition-all" 
         :class="scrolledNav ? 'sm:h-16 sm:text-sm' : 'sm:h-32 sm:text-lg' ">
             <div class="flex grow items-center">
@@ -14,7 +14,7 @@
                     class="block md:hidden {{ colors.logoCustom.mobile or colors.logoDefault.mobile }} hover:{{ colors.logoCustom.hover or
                         colors.logoDefault.hover }}"
                     alt="Mobile Logo">
-                    {% svg "virtual-sports-square-logo-light", "fill-current h-10 hover:{{ colors.logoCustom.hover or colors.logoDefault.hover }}", "The Mobile Logo" %}
+                    {% svg "virtual-sports-square-logo", "fill-current h-28 hover:{{ colors.logoCustom.hover or colors.logoDefault.hover }}", "The Mobile Logo" %}
                 </a>
                 {# large logo hidden on small, block on md #}
                 <a
@@ -50,11 +50,11 @@
             {# Right side of Navbar  #}
             {# MOBILE MENU  #}
             <div
-                class="flex items-center -mr-4 sm:hidden">
+                class="flex items-center pr-4 sm:hidden">
                 {# Mobile menu button #}
                 <button
                     @click="open = !open"
-                    class="inline-flex items-center justify-center p-2 {{ colors.navCustom.mobileButton or colors.navDefault.mobileButton }}
+                    class="inline-flex items-center justify-center p-2 bg-white {{ colors.navCustom.mobileButton or colors.navDefault.mobileButton }}
                         transition duration-150 ease-in-out rounded-md hover:{{ colors.navCustom.mobileButton or colors.navDefault.mobileButton
                         }} hover:{{ colors.navCustom.mobileButtonBgover or colors.navDefault.mobileButtonBgHover }} focus:outline-none focus:{{
                         colors.navCustom.mobileButton or colors.navDefault.mobileButton }} focus:{{ colors.navCustom.mobileButton or
