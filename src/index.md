@@ -104,7 +104,8 @@ You can completely control:
 - Colors of the NavBar, Headings, Buttons, etc. in `/src/_data/colors.js`.
 - Site META and defaults in `/src/_data/meta.js`.
 - Social Links icons in the Footer in `/src/_data/social.json`.
-- Social Share icons in the `/src/_includes/components/socialshare.njk` file.
+- Social Share icons in the `/src/_includes/components/
+socialshare.njk` file.
 - And site-wide structures like max-width and display toggles of different content blocks in `/src/_data/structure.js`.
 
 ## Frontmatter Controls

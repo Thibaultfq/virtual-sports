@@ -1,3 +1,7 @@
+#Virtual Sports landing page
+
+Current Node version: lts/* = 16.* (last run 16.14.1)
+
 # 11TA - 11ty, TailwindCSS, & Alpine.js Template
 
 > **Update v2.1, 221018 - It's working again!**
