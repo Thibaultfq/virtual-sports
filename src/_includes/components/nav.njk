@@ -1,8 +1,15 @@
+{#     :class="[open? 'mobile-only:{{ colors.navDefault.barBg }}' : 'mobile-only:{{ colors.navCustom.barBg }}', scrolledNav? 'sm:{{ colors.navDefault.barBg }}' : 'sm:{{ colors.navCustom.barBg }}']">
+
+    :class="scrolledNav? 'sm:{{ colors.navDefault.barBg }}' : 'sm:{{ colors.navCustom.barBg }}'">
+
+ #}
 {% set navPages = collections.pages | eleventyNavigation %}
 <nav x-data="{ open: false, scrolledNav: window.pageYOffset > 20 }" 
     @scroll.window="scrolledNav = (window.pageYOffset > 20) ? true : false" 
     class="absolute sm:fixed sm:top-0 sm:left-0 z-50 w-full shadow" 
-    :class="(scrolledNav || open )? '{{ colors.navDefault.barBg }}' : '{{ colors.navCustom.barBg }}' ">
+
+     :class="[open? '{{ colors.navDefault.barBg }}' : '{{ colors.navCustom.barBg }}', scrolledNav? 'sm:{{ colors.navDefault.barBg }}' : 'sm:{{ colors.navCustom.barBg }}']">
+
     <div class="sm:px-8 md:px-16 lg:px-32 xl:px-48">
         <div class="flex justify-between h-32 transition-all" 
         :class="scrolledNav ? 'sm:h-16 sm:text-sm' : 'sm:h-32 sm:text-lg' ">
@@ -11,31 +18,20 @@
                 <a
                     aria-label="Mobile Logo"
                     href="/"
-                    class="block md:hidden {{ colors.logoCustom.mobile or colors.logoDefault.mobile }} hover:{{ colors.logoCustom.hover or
+                    class="block md:hidden hover:{{ colors.logoCustom.hover or
                         colors.logoDefault.hover }}"
+                    :class:"open? '{{ colors.logoCustom.mobile }}' : '{{ colors.logoDefault.mobile }}'"
                     alt="Mobile Logo">
                     {% svg "virtual-sports-square-logo", "fill-current h-28 hover:{{ colors.logoCustom.hover or colors.logoDefault.hover }}", "The Mobile Logo" %}
                 </a>
                 {# large logo hidden on small, block on md #}
                 <a
-                    x-show="!scrolledNav"
                     aria-label="Desktop Logo"
                     href="/"
-                    :class="scrolledNav ? 'h-7' : 'h-20' "
-                    class=" hidden md:flex grow {{ colors.logoCustom.desktop or colors.logoDefault.desktop }} hover:{{
-                        colors.logoCustom.hover or colors.logoDefault.hover }}"
+                    :class="[scrolledNav ? 'h-8' : 'h-20', scrolledNav? '{{ colors.logoCustom.desktop }}' : '{{ colors.logoDefault.desktop }}' ]"
+                    class=" hidden md:flex grow hover:{{colors.logoCustom.hover or colors.logoDefault.hover }}"
                     alt="Desktop Logo">
-                    {% svg "virtual-sports-square-logo", "flex justify-start fill-current h-full w-full drop-shadow-md hover:{{ colors.logoCustom.hover or colors.logoDefault.hover }}", "The Logo" %}
-                </a>
-                <a
-                    x-show="scrolledNav"
-                    aria-label="Desktop Logo"
-                    href="/"
-                    :class="scrolledNav ? 'h-8' : 'h-20' "
-                    class=" hidden md:flex grow {{ colors.logoCustom.desktop or colors.logoDefault.desktop }} hover:{{
-                        colors.logoCustom.hover or colors.logoDefault.hover }}"
-                    alt="Desktop Logo">
-                    {% svg "virtual-sports-banner-logo", "flex justify-start fill-current h-full w-full hover:{{ colors.logoCustom.hover or colors.logoDefault.hover }}", "The Logo" %}
+                    {% svg "virtual-sports-banner-logo", "flex justify-start fill-current h-full w-full drop-shadow-md hover:{{ colors.logoCustom.hover or colors.logoDefault.hover }}", "The Logo" %}
                 </a>
             </div>
             <div

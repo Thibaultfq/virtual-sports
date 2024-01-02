@@ -40,7 +40,7 @@ module.exports = {
     text: 'text-slate-500',
     textActive: 'text-slate-800',
     textHover: 'text-slate-800',
-    textActiveBg: 'bg-slate-700',
+    textActiveBg: 'bg-slate-300',
     textFocus: 'text-slate-500',
     mobileBg: '',
     mobileBgActive: 'bg-slate-100',
@@ -85,11 +85,11 @@ module.exports = {
   logoDefault: {
     desktop: 'text-gold-yellow',
     mobile: 'text-gold-yellow',
-    hover: 'text-light-blue',
+    hover: '',
   },
   logoCustom: {
-    desktop: '',
-    mobile: '',
+    desktop: 'text-dark-blue',
+    mobile: 'text-dark-blue',
     hover: '',
   },
 
