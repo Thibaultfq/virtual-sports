@@ -30,8 +30,8 @@ seo:
             <dt class="sr-only">Postal address</dt>
             <dd>
               <p>{{ meta.address.street }}</p>
-              <p>{{ meta.address.city }}, {{ meta.address.state }}
-                {{ meta.address.zip }}</p>
+              <p>{{ meta.address.zip }} {{ meta.address.city }}</p>
+              <p>{{ meta.address.country }}</p>
             </dd>
           </div>
           <div class="mt-6">
@@ -92,7 +92,7 @@ seo:
           <div data-netlify-recaptcha="true"></div>
           <div class="">
             <span class="inline-flex rounded-md shadow-sm">
-              <button type="submit" class="py-4 px-6 my-4 rounded-lg {{ colors.buttonDefault.text or colors.buttonCustom.text }} hover:{{ colors.buttonDefault.textHover or colors.buttonCustom.textHover }} {{ colors.buttonDefault.bg or colors.buttonCustom.bg }} hover:{{ colors.buttonDefault.bgHover or colors.buttonCustom.bgHover }} {{ colors.buttonDefault.border or colors.buttonCustom.border }}">
+              <button type="submit" class="py-4 px-6 my-4 rounded-lg {{ colors.buttonDefault.text or colors.buttonCustom.text }} {{ colors.buttonDefault.textHover or colors.buttonCustom.textHover }} {{ colors.buttonDefault.bg or colors.buttonCustom.bg }} {{ colors.buttonDefault.bgHover or colors.buttonCustom.bgHover }} {{ colors.buttonDefault.border or colors.buttonCustom.border }}">
                 Submit
               </button>
             </span>

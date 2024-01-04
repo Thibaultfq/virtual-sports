@@ -1,4 +1,3 @@
-const defaultTheme = require('tailwindcss/defaultTheme')
 const plugin = require('tailwindcss/plugin')
 
 module.exports = {
@@ -8,7 +7,15 @@ module.exports = {
     './src/**/*.md',
     './src/_data/colors.js',
     './src/_data/structure.js',
+    './utils/**/*.js',
   ],
+  /*   safelist: [
+    {
+      pattern:
+        /(bg|text)-(midnight-blue|bright-sun)-(50|100|200|300|400|500|600|700|800|900|950)/,
+      variants: ['sm', 'hover', 'focus', 'sm:hover', 'sm:focus'],
+    },
+  ], */
   theme: {
     extend: {
       opacity: (theme) => ({
@@ -33,7 +40,32 @@ module.exports = {
       colors: (theme) => ({
         'dark-blue': '#071303',
         'gold-yellow': '#f7cb2d',
-        'light-blue': '#c7ddef',
+        'bright-sun': {
+          50: '#fefce8',
+          100: '#fdf7c4',
+          200: '#fced8c',
+          300: '#fadb4a',
+          400: '#f7cb2d',
+          500: '#e6ad0c',
+          600: '#c78607',
+          700: '#9e5f0a',
+          800: '#834b10',
+          900: '#6f3d14',
+          950: '#411f07',
+        },
+        'midnight-blue': {
+          50: '#a3e7ff',
+          100: '#8edeff',
+          200: '#6ad8ff',
+          300: '#37ceff',
+          400: '#00b4fb',
+          500: '#0081cd',
+          600: '#0062b9',
+          700: '#0053b9',
+          800: '#003c85',
+          900: '#052e5c',
+          950: '#04142a',
+        },
       }),
     },
   },

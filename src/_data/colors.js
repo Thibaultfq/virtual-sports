@@ -36,23 +36,25 @@ module.exports = {
    *    and wil ensure no errors in "text", "bg", and "border" values.
    */
   navDefault: {
-    barBg: 'bg-white',
-    text: 'text-slate-500',
-    textActive: 'text-slate-800',
-    textHover: 'text-slate-800',
-    textActiveBg: 'bg-slate-300',
-    textFocus: 'text-slate-500',
-    mobileBg: '',
-    mobileBgActive: 'bg-slate-100',
-    mobileBgHover: 'bg-slate-100',
-    mobileBgFocus: 'bg-slate-300',
-    mobileText: 'text-slate-500',
-    mobileTextActive: 'text-dark-blue',
-    mobileTextHover: 'text-slate-800',
-    mobileTextFocus: 'text-slate-700',
-    mobileButton: 'text-dark-blue',
-    mobileButtonHover: 'text-slate-800',
-    mobileButtonBgHover: 'bg-slate-100',
+    barBg: 'sm:bg-white',
+    text: 'sm:text-midnight-blue-950',
+    textActive: 'sm:text-white',
+    textHover: 'sm:hover:text-midnight-blue-600',
+    textActiveBg:
+      'sm:bg-gradient-to-r from-midnight-blue-600 to-midnight-blue-800',
+    textFocus: 'sm:focus:text-midnight-blue-500',
+    mobileBarBg: 'bg-white',
+    mobileBg: 'bg-white',
+    mobileBgActive: 'bg-midnight-blue-700',
+    mobileBgHover: 'hover:bg-midnight-blue-100',
+    mobileBgFocus: 'focus:bg-midnight-blue-300',
+    mobileText: 'text-midnight-blue-500',
+    mobileTextActive: 'text-midnight-blue-300',
+    mobileTextHover: 'hover:text-midnight-blue-600',
+    mobileTextFocus: 'focus:midnight-blue-700',
+    mobileButton: 'midnight-blue-500',
+    mobileButtonHover: 'hover:midnight-blue-600',
+    mobileButtonBgHover: 'hover:bg-teal-100',
   },
   /**
    *  NOTE: You MUST keep all Custom variable keys, even if their values are empty and you don't intend to use them.
@@ -60,32 +62,33 @@ module.exports = {
    *  navCustom is here when the navbar is not scrolled: overlaying with hero.
    */
   navCustom: {
-    barBg: 'bg-transparent',
-    text: 'text-white',
-    textActive: 'text-gold-yellow',
-    textHover: 'text-gray-800',
-    textActiveBg: 'bg-transparent',
-    textFocus: 'text-gray-500',
-    mobileBg: '',
-    mobileBgActive: '',
-    mobileBgHover: '',
-    mobileBgFocus: '',
-    mobileText: '',
-    mobileTextActive: '',
-    mobileTextHover: '',
-    mobileTextFocus: '',
-    mobileButton: '',
-    mobileButtonHover: '',
-    mobileButtonBgHover: '',
+    barBg: 'sm:bg-transparent',
+    text: 'sm:text-gray-100',
+    textActive: 'sm:text-white',
+    textHover: 'sm:hover:text-gray-800',
+    textActiveBg: 'sm:bg-gradient-to-r from-bright-sun-400 to-bright-sun-600',
+    textFocus: 'sm:focus:text-gray-500',
+    mobileBarBg: 'bg-transparent',
+    mobileBg: 'bg-transparent',
+    mobileBgActive: 'bg-gray-700',
+    mobileBgHover: 'hover:bg-gray-100',
+    mobileBgFocus: 'focus:bg-gray-300',
+    mobileText: 'text-gray-500',
+    mobileTextActive: 'text-gray-300',
+    mobileTextHover: 'hover:text-gray-600',
+    mobileTextFocus: 'focus:text-gray-700',
+    mobileButton: 'text-gray-500',
+    mobileButtonHover: 'hover:text-gray-600',
+    mobileButtonBgHover: 'hover:bg-gray-100',
   },
 
   /**
    * ===== Logo / SVG =====
    */
   logoDefault: {
-    desktop: 'text-gold-yellow',
-    mobile: 'text-gold-yellow',
-    hover: '',
+    desktop: 'text-bright-sun-500',
+    mobile: 'text-bright-sun-500',
+    hover: 'hover:text-bright-sun-300',
   },
   logoCustom: {
     desktop: 'text-dark-blue',
@@ -118,7 +121,7 @@ module.exports = {
     name: 'text-gray-700',
     date: 'text-gray-700',
     socialIcons: 'text-gray-500',
-    socialIconsHover: 'text-gray-600',
+    socialIconsHover: 'hover:text-gray-600',
   },
   authorCustom: {
     name: '',
@@ -137,7 +140,7 @@ module.exports = {
    */
   socialShareDefault: {
     color: 'text-gray-700',
-    hover: 'text-gray-800',
+    hover: 'hover:text-gray-800',
   },
   socialShareCustom: {
     color: '',
@@ -148,10 +151,10 @@ module.exports = {
    * ===== Buttons =====
    */
   buttonDefault: {
-    text: 'text-white',
-    textHover: 'text-white',
-    bg: 'bg-teal-700',
-    bgHover: 'bg-teal-700',
+    text: 'text-white font-semibold text-xl',
+    textHover: 'hover:text-white',
+    bg: 'bg-gradient-to-r from-bright-sun-400 to-bright-sun-600',
+    bgHover: 'hover:bg-gradient-to-r from-bright-sun-300 to-bright-sun-500',
     border: 'border-teal-900',
   },
   buttonCustom: {
@@ -172,12 +175,12 @@ module.exports = {
     blockBorder: 'border-gray-200',
     linkText: 'text-gray-600',
     linkTextActive: 'text-gray-500',
-    linkTextHover: 'text-gray-700',
+    linkTextHover: 'hover:text-gray-700',
     linkBg: 'bg-white',
     linkBgActive: 'bg-gray-100',
-    linkBgHover: 'bg-gray-200',
+    linkBgHover: 'hover:bg-gray-200',
     linkBorder: 'border-gray-300',
-    linkFocusBorder: 'border-blue-300',
+    linkFocusBorder: 'focus:border-blue-300',
   },
   paginateCustom: {
     blockBg: '',
@@ -197,7 +200,7 @@ module.exports = {
    */
   prevNextDefault: {
     text: 'text-gray-700',
-    textHover: 'text-gray-800',
+    textHover: 'hover:text-gray-800',
     bg: '',
     bgHover: '',
   },
@@ -214,9 +217,9 @@ module.exports = {
    */
   tagPillDefault: {
     text: 'text-gray-700',
-    textHover: 'text-gray-800',
+    textHover: 'hover:text-gray-800',
     bg: 'bg-gray-200',
-    bgHover: 'bg-gray-300',
+    bgHover: 'hover:bg-gray-300',
   },
   tagPillCustom: {
     text: '',
@@ -244,10 +247,10 @@ module.exports = {
    * Manage the Author social icons above in the Author section
    */
   socialIconsDefault: 'text-teal-400',
-  socialIconsHoverDefault: 'text-teal-500',
+  socialIconsHoverDefault: 'hover:text-teal-500',
 
   socialIconsCustom: 'text-gray-100',
-  socialIconsHoverCustom: 'text-gray-200',
+  socialIconsHoverCustom: 'hover:text-gray-200',
 
   // Generally I use borders as replacements for <hr> tags.
   // You may need to update Layouts and Templates if you want to use these

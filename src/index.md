@@ -1,35 +1,35 @@
 ---
 # This is a full listing of available Frontmatter options, available for any content (.md) file.
-title: Let's talk about static sites!
+title: Virtual Sports - Exploring innovation in the sports sector
 layout: page
-excerpt: # used for page excerpts and META (will be overwritten if SEO used below)
-author: shane-robinson # only displayed on Post lists and detail views. Defaults to _data/meta.authorURL
+excerpt: Virtual sports are physical-digital technical innovation such as mixed reality sports games. We provide scientific knowledge on how such innovation will impact elite and leisure sport organisations, services and practices. # used for page excerpts and META (will be overwritten if SEO used below)
+author: Thibault Fouquaert # only displayed on Post lists and detail views. Defaults to _data/meta.authorURL
 eleventyNavigation: # Required if want to display in Main Nav Bar
   key: main # "main" is required
-  title: Welcome # as it will appear in the nav
+  title: Home # as it will appear in the nav
   order: 1 # order to display in the nav (index = 1)
 seo: # SEO values are used for OG and will overwrite 'title' and 'excerpt' above
   title:
   description:
   image: # used for OG:image and Twitter:image. Overrides default set in _data/meta.siteImage
-hero: graphic # options: carousel, graphic, video, split (text & image)
+hero: video # graphic # options: carousel, graphic, video, split (text & image)
 heroSettings:
   height:
     mobile: # options = h-1/1 (default = full screen), h-1/2, h-1/3, h-3/4, h-9/10, h-48 (12rem, 192px), h-56 (14rem, 224px), h-64 (16rem, 256px)
     desktop: # leave blank to inherit "mobile" height (default = full screen)
   bg:
     color: # default bg-black
-    image: home/plane.jpg # relative to /assets/images/
+    image: # home/plane.jpg # relative to /assets/images/
     imagePosition: # options = bg-center (default), bg-left, bg-right
-    video: pixabay-john-macdougall.mp4 # local relative /assets/video/, or full https://... if remote?
+    video: bg-video-virtual-sports.mp4 #pixabay-john-macdougall.mp4 # local relative /assets/video/, or full https://... if remote?
     opacityMobile: opacity-50 # options opacity-n, 5, 10, 15, 20, 25, 50, 75, 100 (default)
     opacityDesktop: opacity-75 # Leave blank to inherit opacityMobile, use same options as opacityMobile
-  headingText: Is your data lost in the forest,<br>or the trees?
+  headingText: What are Virtual Sports?
   headingTextColor: # default = text-white (can use any TailwindCSS text-[color]-[xxx])
   headingTextCase: # default = as typed - options: uppercase, lowercase, capitalize
-  subheadingText: This is some pithy text that explains why you should hire us without reading any further... Or is it farther?
+  subheadingText: How will virtual sports impact the future of elite and leisure sports?
   subheadingTextColor: # Leave empty to inherit headingTextColor or default (text-white) or use any text-[color]-[xxx]
-  buttonText: Contact Us... # no button generated if left blank
+  buttonText: 'Tell me more :eyes:' # no button generated if left blank
   buttonURL: /contact/ # full url required. Example: https://thisdomain.com/somepage/
   buttonTextColor: # leave blank to inherit from /src/_data/colors.buttonCustom or buttonDefault
   buttonBgColor: # leave blank to inherit from /src/_data/colors.buttonCustom.bg or buttonDefault.bg
@@ -41,6 +41,13 @@ heroSettings:
       - home/7.jpg
       - home/8.jpg
       - home/9.jpg
+# Homepage only front matter ------------------------------
+typedJsStrings:
+  - "Virtual Sports are gamified traditional sports."
+  - "Virtual Sports are new competition formats."
+  - "Virtual Sports are opportunities for participation."
+  - "Virtual Sports are physically challenging."
+  - "Virtual Sports are more than exergames."
 ---
 
 We set out to build a starter project template for [11ty](https://11ty.dev '11ty Static Site Generator') that has [TailwindCSS](https://tailwindcss.com 'TailwindCSS Utility-First CSS Framework') and [Alpine.js](https://github.com/alpinejs/alpine 'Alpine.js : Think of it like Tailwind for JavaScript') baked in.
@@ -135,3 +142,15 @@ There are several **Shortcodes** _(both single and paired)_ and **Filters** to a
 - "Themed" versions for Portfolios/Creatives, Agencies, Digital Gardens, etc.
 - Fully documented migration of Wordpress to 11ty
 - [Snipcart](https://snipcart.com/) integration
+
+<script>
+  var typed = new Typed('#typed', {
+    stringsElement: '#typed-strings',
+    typeSpeed: 40,
+    backSpeed: 20,
+    shuffle: true,
+    smartBackspace: true,
+    loop: true,
+    backDelay: 1400
+  });
+</script>
