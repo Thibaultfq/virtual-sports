@@ -1,19 +1,20 @@
+    {# :class="[open? '{{colors.navDefault.mobileBarBg }}' : '{{ colors.navCustom.mobileBarBg }}', scrolledNav? '{{ colors.navDefault.barBg }} shadow' : '{{ colors.navCustom.barBg }}']" #}
+{# {% if transparentNav %} 'sm:bg-transparent' {% else %} '{{colors.navCustom.barBg or colors.navDefault.barBg}} shadow' {% endif %} #}
 {% set navPages = collections.pages | eleventyNavigation %}
+ {# if transparentNav is true, add transparent background and change to white on scroll, remove from document flow on desktop with position fixsed or on mobile absolute. #}
 <nav x-data="{ open: false, scrolledNav: window.pageYOffset > 20 }" 
     @scroll.window="scrolledNav = (window.pageYOffset > 20) ? true : false" 
-    :class="[open? '{{colors.navDefault.mobileBarBg }}' : '{{ colors.navCustom.mobileBarBg }}', scrolledNav? '{{ colors.navDefault.barBg }} shadow' : '{{ colors.navCustom.barBg }}']"
-    class="absolute sm:fixed sm:top-0 sm:left-0 z-50 w-full " >
+    class="absolute sm:fixed sm:top-0 sm:left-0 z-50 w-full" 
+    :class="{% if transparentNav %} [ !open? 'bg-transparent' : '{{colors.navCustom.mobileBarBg or colors.navDefault.mobileBarBg}}', !scrolledNav? 'sm:bg-transparent' : '{{colors.navCustom.barBg or colors.navDefault.barBg}} shadow'] {% else %} '{{colors.navCustom.barBg or colors.navDefault.barBg}} {{colors.navCustom.mobileBarBg or colors.navDefault.mobileBarBg}} shadow' {% endif %}">
     <div class="sm:px-8 md:px-16 lg:px-32 xl:px-48">
-        <div class="flex justify-between h-32 transition-all" 
-        :class="scrolledNav ? 'sm:h-16 sm:text-sm' : 'sm:h-32 sm:text-lg' ">
+        <div class="flex justify-between transition-all" 
+        :class="scrolledNav ? '{{structure.nav_height_scrolled}} sm:text-sm' : '{{structure.nav_height_unscrolled}} sm:text-lg' ">
             <div class="flex grow items-center">
                 {# small logo hidden on md and above #}
                 <a
                     aria-label="Mobile Logo"
                     href="/"
-                    class="block md:hidden {{ colors.logoCustom.hover or
-                        colors.logoDefault.hover }}"
-                    :class="open? '{{ colors.logoCustom.mobile }}' : '{{ colors.logoDefault.mobile }}' "
+                    class="block md:hidden {{ colors.logoCustom.mobile or colors.logoDefault.mobile }} {{ colors.logoCustom.hover or colors.logoDefault.hover }}"
                     alt="Mobile Logo">
                     {% svg "virtual-sports-square-logo", "fill-current h-28 {{ colors.logoCustom.hover or colors.logoDefault.hover }}", "The Mobile Logo" %}
                 </a>
@@ -21,8 +22,8 @@
                 <a
                     aria-label="Desktop Logo"
                     href="/"
-                    :class="[scrolledNav ? 'h-8' : 'h-20', scrolledNav? '{{ colors.logoCustom.desktop }}' : '{{ colors.logoDefault.desktop }}' ]"
-                    class=" hidden md:flex grow {{colors.logoCustom.hover or colors.logoDefault.hover }}"
+                    :class="scrolledNav ? '{{structure.logo_height_scrolled}}' : '{{structure.logo_height_unscrolled}}'"
+                    class=" hidden md:flex grow  {{colors.logoCustom.desktop or colors.logoDefault.desktop }} {{colors.logoCustom.hover or colors.logoDefault.hover }}"
                     alt="Desktop Logo">
                     {# {% svg "virtual-sports-banner-logo", "flex justify-start fill-current h-full w-full drop-shadow-md {{ colors.logoCustom.hover or colors.logoDefault.hover }}", "The Logo" %} #}
                     {% svg "virtual-sports-banner-logo-gradient", "flex justify-start h-full w-full drop-shadow-md {{ colors.logoCustom.hover or colors.logoDefault.hover }}", "The Logo" %}
@@ -33,7 +34,8 @@
                 class="hidden sm:ml-6 sm:flex sm:items-center">
                 {# 11ty Nav Plugin loop  #}
                 {% for entry in navPages %}
-                    <a {% if page.url != entry.url %} href="{{ entry.url | url }}" {% endif %} alt="Link to {{ entry.title }}" :class="scrolledNav? ' {% if page.url == entry.url %} {{ colors.navDefault.textActiveBg }} {{ colors.navDefault.textActive }} {% else %} {{ colors.navDefault.text }} {{ colors.navDefault.textHover }} {% endif %}' : ' {% if page.url == entry.url %} {{ colors.navCustom.textActiveBg }} {{ colors.navCustom.textActive }} {% else %} {{ colors.navCustom.text }} {{ colors.navCustom.textHover }} {% endif %}'" class=" px-3 py-2 font-medium rounded-md items-center focus:outline-none {{ colors.navCustom.textFocus or colors.navDefault.textFocus }} transition duration-150 ease-in-out">
+                    <a {% if page.url != entry.url %} href="{{ entry.url | url }}" {% endif %} alt="Link to {{ entry.title }}" 
+                    class=" px-3 py-2 font-medium rounded-md items-center focus:outline-none {% if page.url == entry.url %} {{ colors.navCustom.textActiveBg or colors.navDefault.textActiveBg }} {{ colors.navCustom.textActive or colors.navDefault.textActive }} {% elif transparentNav %} {{ colors.transparentNav.text }} {{ colors.transparentNav.textHover }} {% else %} {{ colors.navCustom.text or colors.navDefault.text }} {{ colors.navCustom.textHover or colors.navDefault.textHover }} {% endif %} {{ colors.navCustom.textFocus or colors.navDefault.textFocus }} transition duration-150 ease-in-out">
                         {{ entry.title }}
                     </a>
                 {% endfor %}
@@ -45,11 +47,7 @@
                 {# Mobile menu button #}
                 <button
                     @click="open = !open"
-                    class="inline-flex items-center justify-center p-2 bg-white {{ colors.navCustom.mobileButton or colors.navDefault.mobileButton }}
-                        transition duration-150 ease-in-out rounded-md {{ colors.navCustom.mobileButton or colors.navDefault.mobileButton
-                        }} {{ colors.navCustom.mobileButtonBgover or colors.navDefault.mobileButtonBgHover }} focus:outline-none {{
-                        colors.navCustom.mobileButton or colors.navDefault.mobileButton }} {{ colors.navCustom.mobileButton or
-                        colors.navDefault.mobileButton }}"
+                    class="inline-flex items-center justify-center p-2 focus:outline-none transition duration-150 ease-in-out rounded-md  {{ colors.navCustom.mobileButton or colors.navDefault.mobileButton }} {{ colors.navCustom.mobileButtonHover or colors.navDefault.mobileButtonHover }} {{ colors.navCustom.mobileButtonBgHover or colors.navDefault.mobileButtonBgHover }} "
                     x-bind:aria-label="open ? 'Close main menu' : 'Main menu'"
                     aria-label="Main menu"
                     x-bind:aria-expanded="open">

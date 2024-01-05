@@ -11,6 +11,26 @@ module.exports = {
   g_pageWidth: 'max-w-screen-xl px-8 md:px-16 lg:px-32',
 
   /**
+   * height of the navbar and the logo within when page is on top
+   * IMPORTANT!!!
+   * Change the spacing.X in base.njk to the equal height because we cannot automate this, tailwind dynamic classes for JIT engine is not supported.
+   */
+  nav_height_unscrolled: 'sm:h-32', //dont forget base.njk
+  logo_height_unscrolled: 'sm:h-16',
+
+  /**
+   * height of the navbar and the logo within once scrolled
+   */
+  nav_height_scrolled: 'sm:h-20',
+  logo_height_scrolled: 'sm:h-12',
+
+  // /**
+  //  * top padding to move content down by equal amount as nav_height_unscrolled
+  //  * DO NOT FORGET TO MODIFY WITH nav_height_unscrolled !
+  //  */
+  // top_padding_for_nav_height_unscrolled: 'spacing.28',
+
+  /**
    * Globally disable display of Tag pills/links
    */
   g_showTagPills: true,

@@ -37,49 +37,54 @@ module.exports = {
    */
   navDefault: {
     barBg: 'sm:bg-white',
-    text: 'sm:text-midnight-blue-950',
+    text: 'sm:text-bright-sun-950',
     textActive: 'sm:text-white',
-    textHover: 'sm:hover:text-midnight-blue-600',
-    textActiveBg:
-      'sm:bg-gradient-to-r from-midnight-blue-600 to-midnight-blue-800',
-    textFocus: 'sm:focus:text-midnight-blue-500',
+    textHover: 'sm:hover:text-bright-sun-600',
+    textActiveBg: 'sm:bg-gradient-to-r from-bright-sun-400 to-bright-sun-600',
+    textFocus: 'sm:focus:text-bright-sun-500',
     mobileBarBg: 'bg-white',
     mobileBg: 'bg-white',
-    mobileBgActive: 'bg-midnight-blue-700',
-    mobileBgHover: 'hover:bg-midnight-blue-100',
-    mobileBgFocus: 'focus:bg-midnight-blue-300',
-    mobileText: 'text-midnight-blue-500',
-    mobileTextActive: 'text-midnight-blue-300',
-    mobileTextHover: 'hover:text-midnight-blue-600',
-    mobileTextFocus: 'focus:midnight-blue-700',
-    mobileButton: 'midnight-blue-500',
-    mobileButtonHover: 'hover:midnight-blue-600',
-    mobileButtonBgHover: 'hover:bg-teal-100',
+    mobileBgActive: 'bg-bright-sun-50',
+    mobileBgHover: 'hover:bg-bright-sun-100',
+    mobileBgFocus: 'focus:bg-bright-sun-100',
+    mobileText: 'text-bright-sun-950',
+    mobileTextActive: 'text-bright-sun-600',
+    mobileTextHover: 'hover:text-bright-sun-800',
+    mobileTextFocus: 'focus:bright-sun-800',
+    mobileButton: 'bg-white',
+    mobileButtonHover: 'hover:text-bright-sun-700',
+    mobileButtonBgHover: 'hover:bg-bright-sun-50',
   },
+
+  transparentNav: {
+    text: 'sm:text-bright-sun-50',
+    textHover: 'sm:hover:text-bright-sun-400',
+  },
+
   /**
    *  NOTE: You MUST keep all Custom variable keys, even if their values are empty and you don't intend to use them.
    *  If you delete any variable keys, 11ty won't work.
    *  navCustom is here when the navbar is not scrolled: overlaying with hero.
    */
   navCustom: {
-    barBg: 'sm:bg-transparent',
-    text: 'sm:text-gray-100',
-    textActive: 'sm:text-white',
-    textHover: 'sm:hover:text-gray-800',
-    textActiveBg: 'sm:bg-gradient-to-r from-bright-sun-400 to-bright-sun-600',
-    textFocus: 'sm:focus:text-gray-500',
-    mobileBarBg: 'bg-transparent',
-    mobileBg: 'bg-transparent',
-    mobileBgActive: 'bg-gray-700',
-    mobileBgHover: 'hover:bg-gray-100',
-    mobileBgFocus: 'focus:bg-gray-300',
-    mobileText: 'text-gray-500',
-    mobileTextActive: 'text-gray-300',
-    mobileTextHover: 'hover:text-gray-600',
-    mobileTextFocus: 'focus:text-gray-700',
-    mobileButton: 'text-gray-500',
-    mobileButtonHover: 'hover:text-gray-600',
-    mobileButtonBgHover: 'hover:bg-gray-100',
+    barBg: '',
+    text: '',
+    textActive: '',
+    textHover: '',
+    textActiveBg: '',
+    textFocus: '',
+    mobileBarBg: '',
+    mobileBg: '',
+    mobileBgActive: '',
+    mobileBgHover: '',
+    mobileBgFocus: '',
+    mobileText: '',
+    mobileTextActive: '',
+    mobileTextHover: '',
+    mobileTextFocus: '',
+    mobileButton: '',
+    mobileButtonHover: '',
+    mobileButtonBgHover: '',
   },
 
   /**
@@ -91,8 +96,8 @@ module.exports = {
     hover: 'hover:text-bright-sun-300',
   },
   logoCustom: {
-    desktop: 'text-dark-blue',
-    mobile: 'text-dark-blue',
+    desktop: '',
+    mobile: '',
     hover: '',
   },
 
@@ -151,7 +156,7 @@ module.exports = {
    * ===== Buttons =====
    */
   buttonDefault: {
-    text: 'text-white font-semibold text-xl',
+    text: 'text-white',
     textHover: 'hover:text-white',
     bg: 'bg-gradient-to-r from-bright-sun-400 to-bright-sun-600',
     bgHover: 'hover:bg-gradient-to-r from-bright-sun-300 to-bright-sun-500',

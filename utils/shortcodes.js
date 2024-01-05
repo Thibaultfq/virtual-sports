@@ -20,15 +20,9 @@ module.exports = {
    * </script> -->
    * 2. add typedJsStrings variable in page frontmatter
    */
-  typedjs: (typedJsStrings) => {
+  typedjs: (typedJsStrings, typedJsBase) => {
+    if (!typedJsStrings || typedJsStrings.length == 0 || !typedJsBase) return ''
     let typedStringsParagraphs = ''
-
-    // const random = Math.floor(Math.random() * typedJsStrings.length) //generate random between 0 and length-1
-    // let i = random //random concat the typedstring into paragraphs
-    // do {
-    //   typedStringsParagraphs += `<p>${typedJsStrings[i]}</p>`
-    //   i = (i + 1) % typedJsStrings.length
-    // } while (i !== random)
 
     for (let i = 0; i < typedJsStrings.length; i++) {
       typedStringsParagraphs += `<p>${typedJsStrings[i]}</p>`
@@ -37,7 +31,7 @@ module.exports = {
     return `<div id="typed-strings" class="hidden">
     ${typedStringsParagraphs}
     </div>
-    <div class="h-52 min-h-52" ><span id="typed"></span></div>
+    <div class="min-h-52" ><span>${typedJsBase}</span><span id="typed"></span></div>
     `
   },
 

@@ -12,6 +12,7 @@ seo: # SEO values are used for OG and will overwrite 'title' and 'excerpt' above
   title:
   description:
   image: # used for OG:image and Twitter:image. Overrides default set in _data/meta.siteImage
+transparentNav: true  # often to be used when the navbar should be transparent because of the hero options: carousel, graphic, video, split (text & image)
 hero: video # graphic # options: carousel, graphic, video, split (text & image)
 heroSettings:
   height:
@@ -43,11 +44,12 @@ heroSettings:
       - home/9.jpg
 # Homepage only front matter ------------------------------
 typedJsStrings:
-  - "Virtual Sports are gamified traditional sports."
-  - "Virtual Sports are new competition formats."
-  - "Virtual Sports are opportunities for participation."
-  - "Virtual Sports are physically challenging."
-  - "Virtual Sports are more than exergames."
+  - "gamified traditional sports."
+  - "new competition formats."
+  - "opportunities for participation."
+  - "physically challenging."
+  - "more than exergames."
+typedJsBase: "Virtual Sports are "
 ---
 
 We set out to build a starter project template for [11ty](https://11ty.dev '11ty Static Site Generator') that has [TailwindCSS](https://tailwindcss.com 'TailwindCSS Utility-First CSS Framework') and [Alpine.js](https://github.com/alpinejs/alpine 'Alpine.js : Think of it like Tailwind for JavaScript') baked in.

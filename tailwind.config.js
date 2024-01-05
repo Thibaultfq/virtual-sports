@@ -9,13 +9,6 @@ module.exports = {
     './src/_data/structure.js',
     './utils/**/*.js',
   ],
-  /*   safelist: [
-    {
-      pattern:
-        /(bg|text)-(midnight-blue|bright-sun)-(50|100|200|300|400|500|600|700|800|900|950)/,
-      variants: ['sm', 'hover', 'focus', 'sm:hover', 'sm:focus'],
-    },
-  ], */
   theme: {
     extend: {
       opacity: (theme) => ({
