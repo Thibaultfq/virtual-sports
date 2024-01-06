@@ -128,12 +128,9 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({
     'src/assets/js/custom.js': 'js/custom.js',
   })
-  eleventyConfig.addPassthroughCopy('src/*.png')
-  eleventyConfig.addPassthroughCopy('src/*.jpg')
   eleventyConfig.addPassthroughCopy('src/*.ico')
   eleventyConfig.addPassthroughCopy('src/robots.txt')
   eleventyConfig.addPassthroughCopy('src/assets/images/')
-  eleventyConfig.addPassthroughCopy('src/assets/svg/')
   eleventyConfig.addPassthroughCopy('src/assets/video/')
 
   /**
