@@ -11,8 +11,6 @@ const shortcodes = require('./utils/shortcodes.js')
 const pairedshortcodes = require('./utils/paired-shortcodes.js')
 // const transforms = require('./utils/transforms.js')
 
-const UpgradeHelper = require('@11ty/eleventy-upgrade-help')
-
 module.exports = function (eleventyConfig) {
   /**
    * Plugins
