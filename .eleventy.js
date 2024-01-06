@@ -32,12 +32,6 @@ module.exports = function (eleventyConfig) {
   })
 
   /**
-   * upgrade v1 to v2 helper
-   * @link https://github.com/11ty/eleventy-upgrade-help
-   */
-  eleventyConfig.addPlugin(UpgradeHelper)
-
-  /**
    * Filters
    * @link https://www.11ty.io/docs/filters/
    */
