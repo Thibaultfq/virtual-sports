@@ -11,6 +11,8 @@ const shortcodes = require('./utils/shortcodes.js')
 const pairedshortcodes = require('./utils/paired-shortcodes.js')
 // const transforms = require('./utils/transforms.js')
 
+const UpgradeHelper = require('@11ty/eleventy-upgrade-help')
+
 module.exports = function (eleventyConfig) {
   /**
    * Plugins
@@ -28,6 +30,12 @@ module.exports = function (eleventyConfig) {
     path: './src/assets/svg',
     globalClasses: 'fill-current',
   })
+
+  /**
+   * upgrade v1 to v2 helper
+   * @link https://github.com/11ty/eleventy-upgrade-help
+   */
+  eleventyConfig.addPlugin(UpgradeHelper)
 
   /**
    * Filters
@@ -158,43 +166,6 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addLayoutAlias('page', 'layouts/page.njk')
   eleventyConfig.addLayoutAlias('post', 'layouts/post.njk')
   eleventyConfig.addLayoutAlias('author', 'layouts/author.njk')
-
-  /**
-   * Opts in to a full deep merge when combining the Data Cascade.
-   * Per the link below, "This will likely become the default in an upcoming major version."
-   * So I'm going to implement it now.
-   * @link https://www.11ty.dev/docs/data-deep-merge/#data-deep-merge
-   */
-  eleventyConfig.setDataDeepMerge(true)
-
-  /**
-   * Override BrowserSync Server options
-   * This so we can have and test a 404 during local dev.
-   * @link https://www.11ty.dev/docs/config/#override-browsersync-server-options
-   */
-  // eleventyConfig.setBrowserSyncConfig({
-  // 	notify: true,
-  // 	snippetOptions: {
-  // 		rule: {
-  // 			match: /<\/head>/i,
-  // 			fn: function (snippet, match) {
-  // 				return snippet + match
-  // 			},
-  // 		},
-  // 	},
-  // Set local server 404 fallback
-  // callbacks: {
-  // 	ready: function (err, browserSync) {
-  // 		const content_404 = fs.readFileSync('dist/404.html')
-
-  // 		browserSync.addMiddleware('*', (req, res) => {
-  // 			// Provides the 404 content without redirect.
-  // 			res.write(content_404)
-  // 			res.end()
-  // 		})
-  // 	},
-  // },
-  // })
 
   return {
     dir: {
