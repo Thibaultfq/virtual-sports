@@ -12,7 +12,7 @@ images: # relative to /src/assets/images/
   feature: 2020/09/featured-image.jpg # https://source.unsplash.com/random/800x600
   thumb: 2020/09/featured-image.jpg
   align: object-left # object-center (default) - other options at https://tailwindcss.com/docs/object-position
-  height: h-64 md:h-1/3 # optional. Default = h-48 md:h-1/3
+  height: h-64 md:h-screen-1/3 # optional. Default = h-48 md:h-screen-1/3
 tags:
   - featured-image
   - hero
@@ -66,7 +66,7 @@ images: # relative to /src/assets/images/
   feature: 2020/09/featured-image.jpg # https://source.unsplash.com/random/800x600
   thumb: 2020/09/featured-image.jpg
   align: object-left # object-center (default) - other options at https://tailwindcss.com/docs/object-position
-  height: h-64 md:h-1/3 # optional. Default = h-48 md:h-1/3
+  height: h-64 md:h-screen-1/3 # optional. Default = h-48 md:h-screen-1/3
 tags:
   - featured-image
   - hero

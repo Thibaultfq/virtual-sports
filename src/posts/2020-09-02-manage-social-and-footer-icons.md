@@ -11,7 +11,6 @@ seo:
 images: # relative to /src/assets/images/
   feature:
   thumb: 2020/09/social.jpg
-  slide:
 tags:
   - social
   - svg

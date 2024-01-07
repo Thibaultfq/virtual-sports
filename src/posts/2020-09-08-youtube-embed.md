@@ -12,7 +12,7 @@ images: # relative to /src/assets/images/
   feature:
   thumb: 2020/09/youtube-embed.jpg
   align: object-left # object-center (default) - other options at https://tailwindcss.com/docs/object-position
-  height: h-64 md:h-1/3 # optional. Default = h-48 md:h-1/3
+  height: h-64 md:h-screen-1/3 # optional. Default = h-48 md:h-screen-1/3
 tags:
   - youtube
   - video

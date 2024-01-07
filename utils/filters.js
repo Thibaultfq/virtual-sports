@@ -47,8 +47,7 @@ module.exports = {
    * Get Authors from _data/authors.json to use in Post Lists and Detail
    */
   getAuthor: (authors, key) => {
-    let author = authors.filter((a) => a.slug === key)[0]
-    return author
+    return authors.filter((a) => a.slug === key)[0]
   },
 
   /**
@@ -56,6 +55,15 @@ module.exports = {
    */
   getPostsByAuthor: (posts, key) => {
     return posts.filter((a) => a.data.author === key)
+  },
+
+  /**
+   * returns the numbers in a string.
+   * @param {*} string any string, eg a class pt-32
+   * @returns the number of a string, eg 32
+   */
+  getNumberFromString: (string) => {
+    return string.replace(/^\D+/g, '')
   },
 
   /**

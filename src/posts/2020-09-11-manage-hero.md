@@ -12,11 +12,11 @@ images: # relative to /src/assets/images/
   feature:
   thumb: home/6.jpg
   align: # object-center (default) - other options at https://tailwindcss.com/docs/object-position
-  height: # optional. Default = h-48 md:h-1/3
+  height: # optional. Default = h-48 md:h-screen-1/3
 hero: graphic # options: carousel, graphic, video, split (text & image)
 heroSettings:
   height:
-    mobile: h-1/2 # options = h-1/1 (default = full screen), h-1/2, h-1/3, h-3/4, h-9/10, h-48 (12rem, 192px), h-56 (14rem, 224px), h-64 (16rem, 256px)
+    mobile: h-screen-1/2 # options = h-screen (default = full screen), h-screen-1/2, h-screen-1/3, h-screen-3/4, h-screen-9/10, h-48 (12rem, 192px), h-56 (14rem, 224px), h-64 (16rem, 256px)
     desktop: # leave blank to inherit "mobile" height (default = full screen)
   headingText: Is your data lost in the forest, or the trees?
   headingTextColor: # text-gray-800 # default = text-white (can use any TailwindCSS text-[color]-[xxx])
@@ -73,7 +73,7 @@ Also, if a `hero: carousel` is selected, the `/src/_includes/layouts/base.njk` f
 
 {% wrap "text-gray-700 text-sm bg-red-100 p-2 border border-red-300 rounded-lg my-4" %}
 
-:fire: **IMPORTANT:** Always test your Hero across desktop and mobile devices to make sure the hero height is sufficient to carry any text and button content. I'm using this page's setting as an example of a `{{ heroSettings.height.mobile }}` height `{{ hero }}` hero that looks great on desktop but has too much text/button for `{{ heroSettings.height.mobile }}` height on mobile. So in this case you may want to adjust the height to be **h-1/1** on mobile and `{{ heroSettings.height.mobile }}` on **sm:** or **md:** screens.
+:fire: **IMPORTANT:** Always test your Hero across desktop and mobile devices to make sure the hero height is sufficient to carry any text and button content. I'm using this page's setting as an example of a `{{ heroSettings.height.mobile }}` height `{{ hero }}` hero that looks great on desktop but has too much text/button for `{{ heroSettings.height.mobile }}` height on mobile. So in this case you may want to adjust the height to be **h-screen** on mobile and `{{ heroSettings.height.mobile }}` on **sm:** or **md:** screens.
 
 {% endwrap %}
 
@@ -87,7 +87,7 @@ I've commented the `heroSettings` keys in this and the `/src/index.md` files and
 hero: graphic # options: carousel, graphic, video, split (text & image)
 heroSettings:
   height:
-    mobile: h-1/2 # options = h-1/1 (default = full screen), h-1/2, h-1/3, h-3/4, h-9/10, h-48 (12rem, 192px), h-56 (14rem, 224px), h-64 (16rem, 256px)
+    mobile: h-screen-1/2 # options = h-screen (default = full screen), h-screen-1/2, h-screen-1/3, h-screen-3/4, h-screen-9/10, h-48 (12rem, 192px), h-56 (14rem, 224px), h-64 (16rem, 256px)
     desktop: # leave blank to inherit "mobile" height (default = full screen)
   headingText: Is your data lost in the forest, or the trees?
   headingTextColor: # text-gray-800 # default = text-white (can use any TailwindCSS text-[color]-[xxx])

@@ -8,10 +8,10 @@ seo:
   title:
   description:
   image: 2020/09/colors.jpg
+transparentNav: true
 images: # relative to /src/assets/images/
-  feature:
+  feature: 2020/09/colors.jpg
   thumb: 2020/09/colors.jpg
-  slide:
 tags:
   - colors
   - customization

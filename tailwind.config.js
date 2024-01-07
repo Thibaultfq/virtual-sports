@@ -1,4 +1,5 @@
 const plugin = require('tailwindcss/plugin')
+const structure = require('./src/_data/structure.js')
 
 module.exports = {
   content: [
@@ -9,8 +10,15 @@ module.exports = {
     './src/_data/structure.js',
     './utils/**/*.js',
   ],
+  safelist: [`pt-${structure.nav_height_unscrolled.replace(/^\D+/g, '')}`], //create a safelist entry for pt-x based on the h-x defined in structure. We may than call this dynamic generated class (based on string h-x) and it will be included in the css, see hero-text-overlay.
   theme: {
     extend: {
+      screens: {
+        // we work mobile-first and use no breakpoint variant for mobile classes. This works for most modern mobile devices. However, some older devices (eg iPhone 5/SE) have a much smaller viewport than modern devices, for which we want to target only these devices specifically to do minor tweaks. This is thus only used sparsely if the standard mobile-first design does not fit these smaller viewport devices.
+        //mso: mobile-xs-only
+        mxsonly: { max: '374px' },
+        // => @media (min-width: 640px and max-width: 767px) { ... }
+      },
       opacity: (theme) => ({
         5: '.05',
         10: '.1',
@@ -19,16 +27,16 @@ module.exports = {
       }),
       // created my own heights so can specify for Heros
       height: (theme) => ({
-        '1/2': '50vh',
-        '3/4': '75vh',
-        '9/10': '90vh',
-        '1/1': '100vh',
-        '1/3': 'calc(100vh / 3)',
-        '1/4': 'calc(100vh / 4)',
-        '1/5': 'calc(100vh / 5)',
-        96: '24rem',
+        'screen-1/2': '50vh',
+        'screen-3/4': '75vh',
+        'screen-9/10': '90vh',
+        'screen-1/3': 'calc(100vh / 3)',
+        'screen-1/4': 'calc(100vh / 4)',
+        'screen-1/5': 'calc(100vh / 5)',
         128: '32rem',
-        '1/1-navbar': `calc(100vh - ${theme('spacing.20')})`,
+        'screen-minus-navbar': `calc(100vh - ${theme(
+          `spacing.${structure.nav_height_unscrolled.replace(/^\D+/g, '')}`
+        )})`,
       }),
       colors: (theme) => ({
         'dark-blue': '#071303',

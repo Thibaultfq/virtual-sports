@@ -9,9 +9,8 @@ seo:
   description:
   image: 2020/09/blockquote.jpg
 images: # relative to /src/assets/images/
-  feature:
+  feature: 2020/09/blockquote.jpg
   thumb: 2020/09/blockquote.jpg
-  slide:
 tags:
   - blockquote
   - shortcodes

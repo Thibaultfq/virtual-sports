@@ -12,7 +12,7 @@ images: # relative to /src/assets/images/
   feature:
   thumb: 2020/09/twitter-card-image.png
   align: # object-center (default) - other options at https://tailwindcss.com/docs/object-position
-  height: # optional. Default = h-48 md:h-1/3
+  height: # optional. Default = h-48 md:h-screen-1/3
 tags:
   - meta
   - open-graph
@@ -76,7 +76,7 @@ images: # relative to /src/assets/images/
   feature:
   thumb: 2020/09/twitter-card-image.png
   align: # object-center (default) - other options at https://tailwindcss.com/docs/object-position
-  height: # optional. Default = h-48 md:h-1/3
+  height: # optional. Default = h-48 md:h-screen-1/3
 tags:
   - meta
   - open-graph

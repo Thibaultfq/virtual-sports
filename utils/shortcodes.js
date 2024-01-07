@@ -31,7 +31,7 @@ module.exports = {
     return `<div id="typed-strings" class="hidden">
     ${typedStringsParagraphs}
     </div>
-    <div class="min-h-52" ><span>${typedJsBase}</span><span id="typed"></span></div>
+    <span>${typedJsBase}</span><span id="typed"></span>
     `
   },
 

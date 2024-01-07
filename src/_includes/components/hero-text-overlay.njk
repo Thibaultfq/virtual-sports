@@ -1,20 +1,18 @@
-<div class="absolute flex flex-col items-start justify-center h-full {{ heroSettings.headingTextColor or 'text-white' }} {{ structure.g_pageWidth }}">
-  <div class="text-4xl font-semibold leading-tight {{ heroSettings.headingTextCase }} md:text-6xl">
+<div class="absolute flex flex-col items-start justify-start h-full {{ heroSettings.headingTextColor or 'text-white' }} {{ structure.g_pageWidth }} {{ 'pt-'+(structure.nav_height_unscrolled | getNumberFromString) if transparentNav }}">
+  <div class="flex-grow font-semibold leading-tight {{ heroSettings.headingTextCase }} mxsonly:text-2xl text-3xl sm:text-4xl md:text-6xl mt-12 sm:mt-6">
     {% if typedJsStrings and typedJsBase %}
-      {% typedjs typedJsStrings, typedJsBase %}
+      {% typedjs typedJsStrings,
+      typedJsBase %}
     {% else %}
       {{ heroSettings.headingText | safe  }}
     {% endif %}
 
-    
   </div>
-  <div class="pt-4 pr-12 text-xl font-light md:text-3xl lg:text-5xl {{ heroSettings.subheadingTextColor }}">
+  <div class="mxsonly:my-8 my-20 sm:my-10 pr-12 text-xl font-light md:text-3xl lg:text-5xl {{ heroSettings.subheadingTextColor }}">
     {{ heroSettings.subheadingText | safe }}
   </div>
   {% if heroSettings.buttonText %}
-    <div class="w-full mt-12 ">
-      <a href="{{ heroSettings.buttonURL }}" class="font-semibold text-xl lg:text-2xl p-4 rounded-lg {{ heroSettings.buttonTextColor or colors.buttonCustom.text or colors.buttonDefault.text }} {{ heroSettings.buttonBgColor or colors.buttonCustom.bg or colors.buttonDefault.bg }} {{ colors.buttonCustom.textHover or colors.buttonDefault.textHover }} {{ heroSettings.buttonBgHover or colors.buttonCustom.bgHover or colors.buttonDefault.bgHover }} {{ heroSettings.buttonBorder or colors.buttonCustom.border or colors.buttonDefault.border }}">{% renderInlineMarkdown heroSettings.buttonText %}</a>
-    </div>
+    <a href="{{ heroSettings.buttonURL }}" class="flex-none mb-16 sm:mb-16 font-semibold text-lg md:text-xl lg:text-2xl p-2 md:p-4 rounded-lg {{ heroSettings.buttonTextColor or colors.buttonCustom.text or colors.buttonDefault.text }} {{ heroSettings.buttonBgColor or colors.buttonCustom.bg or colors.buttonDefault.bg }} {{ colors.buttonCustom.textHover or colors.buttonDefault.textHover }} {{ heroSettings.buttonBgHover or colors.buttonCustom.bgHover or colors.buttonDefault.bgHover }} {{ heroSettings.buttonBorder or colors.buttonCustom.border or colors.buttonDefault.border }}">{% renderInlineMarkdown heroSettings.buttonText %}</a>
   {% endif %}
-  
+
 </div>

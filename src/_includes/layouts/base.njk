@@ -18,27 +18,29 @@
   </head>
   <body class="{{ colors.siteTextCustom or siteTextDefault }}">
     {% svgsprite %}
-    <div class="flex flex-col min-h-screen ">
-        {% if transparentNav != true %}
+    <div class="flex flex-col min-h-screen">
+      {% if transparentNav != true %}
         <div class="{{structure.nav_height_unscrolled}} invisible"></div>
-        {% endif %}
+      {% endif %}
       {% include "components/nav.njk" %}
 
-      {#  Allows a user to easily change the Hero type on the Home page...or any page.
-          See /src/home.md for how to use. 
-      #}
+      {#  Allows a user to easily change the Hero type on the Home page...or any page.See /src/home.md for how to use. #}
       {% if hero %}
-        {% set defaultCalculatedHeroHeight = 'h-1/1' if transparentNav else ('h-[calc(100vh-theme(spacing.32))]') %}
+        {% set defaultCalculatedHeroHeight = 'h-screen' if transparentNav else 'screen-minus-navbar' %}
 
         {% set heroComponent = ['components/hero-', hero, '.njk'] %}
 
         {% include heroComponent | join %}
       {% endif %}
 
-      {# If any frontmatter includes images.feature, insert it at the top of the page, 
-      below the nav and outside the default wrapper below. #}
+      {# If any frontmatter includes images.feature, insert it at the top of the page, below the nav and outside the default wrapper below. #}
       {% if images.feature %}
-        <figure class="w-screen {{ images.height or "h-48 md:h-1/3" }}">
+
+        {# {% if transparentNav == true and hero != true %}
+          <div class="{{structure.nav_height_unscrolled}} invisible"></div>
+        {% endif %} #}
+
+        <figure class="w-screen {{ images.height or "h-48 md:h-screen-1/3" }}">
           <img class="object-cover {{ images.align }} w-full h-full" src="{{ images.feature if 'http' in images.feature else "/assets/images/" + images.feature }}" alt="{{ title }}">
         </figure>
       {% endif %}
@@ -51,7 +53,6 @@
 
       {% include "partials/footer.njk" %}
     </div>
-
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
     {# Only include the Flickity js if this page uses a hero.carousel  #}
