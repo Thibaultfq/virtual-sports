@@ -1,5 +1,5 @@
 <div class="absolute flex flex-col items-start justify-start h-full {{ heroSettings.headingTextColor or 'text-white' }} {{ structure.g_pageWidth }} {{ 'pt-'+(structure.nav_height_unscrolled | getNumberFromString) if transparentNav }}">
-  <div class="flex-grow font-semibold leading-tight {{ heroSettings.headingTextCase }} mxsonly:text-2xl text-3xl sm:text-4xl md:text-6xl mt-12 sm:mt-6">
+  <div class="flex-grow font-semibold leading-tight {{ heroSettings.headingTextCase }} mxsonly:text-2xl text-3xl sm:text-4xl md:text-6xl sm:mt-6 mt-12 lg:mt-20 xl:mt-36 ">
     {% if typedJsStrings and typedJsBase %}
       {% typedjs typedJsStrings,
       typedJsBase %}
@@ -8,7 +8,7 @@
     {% endif %}
 
   </div>
-  <div class="mxsonly:my-8 my-20 sm:my-10 pr-12 text-xl font-light md:text-3xl lg:text-5xl {{ heroSettings.subheadingTextColor }}">
+  <div class="mxsonly:my-8 sm:my-10 my-20 lg:my-28 xl:my-32 pr-12 text-xl font-light md:text-3xl lg:text-5xl {{ heroSettings.subheadingTextColor }}">
     {{ heroSettings.subheadingText | safe }}
   </div>
   {% if heroSettings.buttonText %}

@@ -5,9 +5,9 @@ layout: page
 excerpt: Virtual sports are physical-digital technical innovation such as mixed reality sports games. We provide scientific knowledge on how such innovation will impact elite and leisure sport organisations, services and practices. # used for page excerpts and META (will be overwritten if SEO used below)
 author: Thibault Fouquaert # only displayed on Post lists and detail views. Defaults to _data/meta.authorURL
 eleventyNavigation: # Required if want to display in Main Nav Bar
-  key: main # "main" is required
-  title: Home # as it will appear in the nav
-  order: 1 # order to display in the nav (index = 1)
+  key:  # "main" is required
+  title:  # as it will appear in the nav
+  order:  # order to display in the nav (index = 1)
 seo: # SEO values are used for OG and will overwrite 'title' and 'excerpt' above
   title:
   description:
