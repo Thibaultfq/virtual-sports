@@ -37,28 +37,28 @@ module.exports = {
    */
   navDefault: {
     barBg: 'sm:bg-white',
-    text: 'sm:text-bright-sun-950',
+    text: 'sm:text-vs-yellow-950',
     textActive: 'sm:text-white',
-    textHover: 'sm:hover:text-bright-sun-600',
-    textActiveBg: 'sm:bg-gradient-to-r from-bright-sun-400 to-bright-sun-600',
-    textFocus: 'sm:focus:text-bright-sun-500',
+    textHover: 'sm:hover:text-vs-yellow-600',
+    textActiveBg: 'sm:bg-gradient-to-r from-vs-yellow-400 to-vs-yellow-600',
+    textFocus: 'sm:focus:text-vs-yellow-500',
     mobileBarBg: 'bg-white',
     mobileBg: 'bg-white',
-    mobileBgActive: 'bg-bright-sun-50',
-    mobileBgHover: 'hover:bg-bright-sun-100',
-    mobileBgFocus: 'focus:bg-bright-sun-100',
-    mobileText: 'text-bright-sun-950',
-    mobileTextActive: 'text-bright-sun-600',
-    mobileTextHover: 'hover:text-bright-sun-800',
-    mobileTextFocus: 'focus:bright-sun-800',
+    mobileBgActive: 'bg-vs-yellow-50',
+    mobileBgHover: 'hover:bg-vs-yellow-100',
+    mobileBgFocus: 'focus:bg-vs-yellow-100',
+    mobileText: 'text-vs-yellow-950',
+    mobileTextActive: 'text-vs-yellow-600',
+    mobileTextHover: 'hover:text-vs-yellow-800',
+    mobileTextFocus: 'focus:vs-yellow-800',
     mobileButton: 'bg-white',
-    mobileButtonHover: 'hover:text-bright-sun-700',
-    mobileButtonBgHover: 'hover:bg-bright-sun-50',
+    mobileButtonHover: 'hover:text-vs-yellow-700',
+    mobileButtonBgHover: 'hover:bg-vs-yellow-50',
   },
 
   transparentNav: {
-    text: 'sm:text-bright-sun-50',
-    textHover: 'sm:hover:text-bright-sun-400',
+    text: 'sm:text-vs-yellow-50',
+    textHover: 'sm:hover:text-vs-yellow-400',
   },
 
   /**
@@ -91,9 +91,9 @@ module.exports = {
    * ===== Logo / SVG =====
    */
   logoDefault: {
-    desktop: 'text-bright-sun-500',
-    mobile: 'text-bright-sun-500',
-    hover: 'hover:text-bright-sun-300',
+    desktop: 'text-vs-yellow-500',
+    mobile: 'text-vs-yellow-500',
+    hover: 'hover:text-vs-yellow-300',
   },
   logoCustom: {
     desktop: '',
@@ -158,8 +158,8 @@ module.exports = {
   buttonDefault: {
     text: 'text-white',
     textHover: 'hover:text-white',
-    bg: 'bg-gradient-to-r from-bright-sun-400 to-bright-sun-600',
-    bgHover: 'hover:bg-gradient-to-r from-bright-sun-300 to-bright-sun-500',
+    bg: 'bg-gradient-to-r from-vs-yellow-400 to-vs-yellow-600',
+    bgHover: 'hover:bg-gradient-to-r from-vs-yellow-300 to-vs-yellow-500',
     border: 'border-teal-900',
   },
   buttonCustom: {

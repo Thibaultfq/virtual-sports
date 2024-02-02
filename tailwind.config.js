@@ -1,5 +1,6 @@
 const plugin = require('tailwindcss/plugin')
 const structure = require('./src/_data/structure.js')
+const tailwind_custom_plugins = require('./utils/tailwind-plugins.js')
 
 module.exports = {
   content: [
@@ -41,7 +42,7 @@ module.exports = {
       colors: (theme) => ({
         'dark-blue': '#071303',
         'gold-yellow': '#f7cb2d',
-        'bright-sun': {
+        'vs-yellow': {
           50: '#fefce8',
           100: '#fdf7c4',
           200: '#fced8c',
@@ -54,7 +55,7 @@ module.exports = {
           900: '#6f3d14',
           950: '#411f07',
         },
-        'midnight-blue': {
+        'vs-blue': {
           50: '#a3e7ff',
           100: '#8edeff',
           200: '#6ad8ff',
@@ -79,5 +80,6 @@ module.exports = {
         "@media screen and (max-width: theme('screens.sm'))"
       ) // instead of hard-coded 640px use sm breakpoint value from config. Or anything
     }),
+    plugin(tailwind_custom_plugins.breakpointInspector), //adds current breakpoint to bottom of screen
   ],
 }
