@@ -44,6 +44,23 @@ module.exports = {
   },
 
   /**
+   *
+   * @param {*} authors data json authors
+   * @returns authors that are experts to be shown on the homepage.
+   */
+  getHomepageExperts: (authors) => {
+    return authors
+      .filter(
+        (author) =>
+          author.homepageExpert !== undefined &&
+          author.homepageExpert == true &&
+          author.homepageExpertOrder !== undefined &&
+          !isNaN(author.homepageExpertOrder)
+      )
+      .sort((a, b) => a.homepageExpertOrder - b.homepageExpertOrder)
+  },
+
+  /**
    * Get Authors from _data/authors.json to use in Post Lists and Detail
    */
   getAuthor: (authors, key) => {

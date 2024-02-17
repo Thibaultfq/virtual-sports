@@ -30,11 +30,9 @@ For example, the icons in the Footer are controlled in the `/src/_data/social.js
 
 ```js
 {
-	"dribbble":   "https://www.dribbble.com/",
 	"github":     "https://www.github.com/",
 	"instagram":  "https://www.instagram.com/",
 	"linkedin":   "http://www.linkedin.com/",
-	"piedpiper":  "http://www.piedpiper.com/",
 	"pinterest":  "https://www.pinterest.com/",
 	"rss":        "/feed.xml",
 	"twitter":    "https://www.twitter.com/",
@@ -46,11 +44,9 @@ To disable a specific platform, just set it's value to either "" or `false`. _(b
 
 ```js
 {
-	"dribbble":   "",
 	"github":     "https://www.github.com/",
 	"instagram":  "https://www.instagram.com/",
 	"linkedin":   "http://www.linkedin.com/",
-	"piedpiper":  "http://www.piedpiper.com/",
 	"pinterest":  "https://www.pinterest.com/",
 	"rss":        "/feed.xml/",
 	"twitter":    "https://www.twitter.com/",

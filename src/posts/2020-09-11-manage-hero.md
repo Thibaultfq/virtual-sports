@@ -2,15 +2,15 @@
 title: Manage Hero Graphics, Carousels, Splits, and Video
 date: 2020-09-11T17:44:03.000Z
 excerpt: Manage Hero content such as full screen graphics, carousels, splits, video, and buttons
-author: shane-robinson
+author: thibault-fouquaert
 draft: 
 seo:
   title:
   description:
-  image: home/6.jpg
+  image: 
 images: # relative to /src/assets/images/
   feature:
-  thumb: home/6.jpg
+  thumb: 
   align: # object-center (default) - other options at https://tailwindcss.com/docs/object-position
   height: # optional. Default = h-48 md:h-screen-1/3
 hero: graphic # options: carousel, graphic, video, split (text & image)

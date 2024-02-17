@@ -108,14 +108,14 @@ module.exports = {
    * For content headings added by Editors in .md files,
    * manage those in /src/assets/css/tailwind.css
    */
-  headingsDefault: 'text-teal-500',
-  headingsCustom: 'text-gray-700',
+  headingsDefault: 'text-vs-blue-900',
+  headingsCustom: '',
 
   /**
    * ===== Excerpts on Post Lists
    */
-  excerptDefault: 'text-gray-700',
-  excerptCustom: 'text-sm leading-relaxed italic text-gray-700',
+  excerptDefault: 'text-sm italic text-gray-700',
+  excerptCustom: '',
 
   /**
    * ===== Author / Date Block and their Social Icons =====
@@ -157,10 +157,10 @@ module.exports = {
    */
   buttonDefault: {
     text: 'text-white',
-    textHover: 'hover:text-white',
+    textHover: '',
     bg: 'bg-gradient-to-r from-vs-yellow-400 to-vs-yellow-600',
-    bgHover: 'hover:bg-gradient-to-r from-vs-yellow-300 to-vs-yellow-500',
-    border: 'border-teal-900',
+    bgHover: 'hover:from-vs-yellow-500 hover:to-vs-yellow-700',
+    border: 'border-vs-yellow-900',
   },
   buttonCustom: {
     text: '',
@@ -221,10 +221,10 @@ module.exports = {
    * You can disable these globally in /src/_data/structure.js
    */
   tagPillDefault: {
-    text: 'text-gray-700',
-    textHover: 'hover:text-gray-800',
-    bg: 'bg-gray-200',
-    bgHover: 'hover:bg-gray-300',
+    text: 'vs-blue-900',
+    textHover: 'hover:vs-blue-900',
+    bg: 'bg-vs-yellow-50',
+    bgHover: 'hover:bg-vs-yellow-200',
   },
   tagPillCustom: {
     text: '',
@@ -251,11 +251,11 @@ module.exports = {
    * === Footer social icons
    * Manage the Author social icons above in the Author section
    */
-  socialIconsDefault: 'text-teal-400',
-  socialIconsHoverDefault: 'hover:text-teal-500',
+  socialIconsDefault: 'text-vs-blue-900',
+  socialIconsHoverDefault: 'hover:text-vs-blue-500',
 
-  socialIconsCustom: 'text-gray-100',
-  socialIconsHoverCustom: 'hover:text-gray-200',
+  socialIconsCustom: '',
+  socialIconsHoverCustom: '',
 
   // Generally I use borders as replacements for <hr> tags.
   // You may need to update Layouts and Templates if you want to use these

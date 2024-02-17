@@ -1,54 +1,59 @@
-<section class="mt-12">
-  <div class="relative px-4 pb-20 sm:px-6 lg:pb-28 lg:px-8">
-    <div class="relative mx-auto max-w-7xl">
-      <div class="grid gap-8 mx-auto mt-12 md:grid-cols-2 xl:grid-cols-3 lg:max-w-none">
-        {% for post in postslist | reverse %}
+{# <section class="mt-12"> #}
+{# <div class="relative px-4 pb-20 sm:px-6 lg:pb-28 lg:px-8"> #}
+{# <div class="relative mx-auto max-w-7xl"> #}
+<div class="grid gap-6 mx-auto md:grid-cols-2 xl:grid-cols-3 lg:max-w-none">
+  {% for post in postslist %}
+    <div class="flex flex-col overflow-hidden rounded-lg shadow-lg">
+      <div class="flex-shrink-0">
+        <a href="{{ post.url | url }}" class="relative group">
+          <img class="object-cover {{ post.data.images.align }} w-full h-48" src={% if post.data.images.thumb %}"/assets/images/{{ post.data.images.thumb }}"{% else %}"/assets/images/default-image-virtual-sports.webp"{% endif %} alt="{{ title }} Thumbnail">
+          <button type="button" class="absolute hidden group-hover:block bottom-4 right-4 px-3 py-2 font-medium rounded-md {{ colors.buttonDefault.text or colors.buttonCustom.text }} {{ colors.buttonDefault.textHover or colors.buttonCustom.textHover }} {{ colors.buttonDefault.bg or colors.buttonCustom.bg }} {{ colors.buttonDefault.bgHover or colors.buttonCustom.bgHover }} {{ colors.buttonDefault.border or colors.buttonCustom.border }}">Read</button>
+        </a>
+      </div>
+      <div class="flex flex-col items-start justify-between flex-1 px-4 py-2 bg-white">
+        <div class="flex-1">
+          <a href="{{ post.url | url }}" class="">
+            <h3 class="text-xl font-semibold leading-7 {{ colors.headingsCustom or colors.headingsDefault }}">
+              {{ post.data.title }}
+            </h3>
 
-          <div class="flex flex-col overflow-hidden rounded-lg shadow-lg">
-            <div class="flex-shrink-0">
-              <a href="{{ post.url | url }}">
-                <img class="object-cover {{ post.data.images.align }} w-full h-48" src={% if post.data.images.thumb %}"/assets/images/{{ post.data.images.thumb }}"{% else %}"/assets/images/david-kovalenko-G85VuTpw6jg-unsplash.jpg"{% endif %} alt="{{ title }} Thumbnail">
-              </a>
-            </div>
-            <div class="flex flex-col justify-between flex-1 p-6 bg-white">
-              <div class="flex-1">
-                <a href="{{ post.url | url }}" class="block">
-                  <h3 class="mt-2 text-xl font-semibold leading-7 {{ colors.headingsCustom or colors.headingsDefault }}">
-                    {{ post.data.title }}
-                  </h3>
-
-                  {# Display Post Excerpt if set 'true' in /src/_data/structure.js:g_showExcerpt  #}
-                  {% if structure.g_showExcerpt %}
-                    <div class="{{ colors.excerptCustom or colors.excerptDefault }}">
-                      {{ post.data.excerpt }}
-                    </div>
-                  {% endif %}
-
-                </a>
+            {# Display Post Excerpt if set 'true' in /src/_data/structure.js:g_showExcerpt  #}
+            {% if structure.g_showExcerpt %}
+              <div class="{{ colors.excerptCustom or colors.excerptDefault }}">
+                {{ post.data.excerpt }}
               </div>
+            {% endif %}
 
-              {# Found the TagPills are too much for this layout. Uncomment them below if you want to display them. #}
-              {# <div class="flex-1 bg-gray-100">
-                {% if structure.g_showTagPills %}
-                  {% set tags = post.data.tags %}
-                  {% include "components/tagpills.njk" %}
-                {% endif %}
-              </div> #}
+          </a>
+        </div>
 
-              {# Used conditionals here to keep control at the template levels rather than at the component level.  #}
-              {# Display the Author block if structure.g_showAuthors is true (default) #}
-              {% if structure.g_showAuthors %}
-                {# Only display the Author Block if there is a value for "author" in Post Frontmatter #}
-                {% if post.data.author %}
-                  {% set postAuthor = authors | getAuthor(post.data.author) %}
-                  {% include "components/authordate.njk" %}
-                {% endif %}
-              {% endif %}
-            </div>
-          </div>
+        {# Found the TagPills are too much for this layout. Uncomment them below if you want to display them. #}
+        <div class="flex-1">
+          {% if structure.g_showTagPills %}
+            {% if taglimit %}
+              {% set tags = post.data.tags | limit(taglimit + 1) %}
+              {# add one because first tag is always 'page' (or related) #}
+            {% else %}
+              {% set tags = post.data.tags %}
+            {% endif %}
+            {% include "components/tagpills.njk" %}
+          {% endif %}
+        </div>
 
-        {% endfor %}
+        {# Used conditionals here to keep control at the template levels rather than at the component level.  #}
+        {# Display the Author block if structure.g_showAuthors is true (default) #}
+        {% if structure.g_showAuthors %}
+          {# Only display the Author Block if there is a value for "author" in Post Frontmatter #}
+          {% if post.data.author %}
+            {% set postAuthor = authors | getAuthor(post.data.author) %}
+            {% include "components/authordate.njk" %}
+          {% endif %}
+        {% endif %}
       </div>
     </div>
+
+  {% endfor %}
+</div>
+{# </div>
   </div>
-</section>
+</section> #}
