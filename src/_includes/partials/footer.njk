@@ -1,10 +1,38 @@
-<footer>
-  <div class="{{ colors.footerCustom.barBg or colors.footerDefault.barBg }}">
-    <div class="max-w-screen-xl px-4 py-12 mx-auto sm:px-6 md:flex md:items-center md:justify-between lg:px-8">
-      <div class="flex justify-center md:order-2 {{ colors.socialIconsCustom or colors.socialIconsDefault }}">
+<footer class="{{ colors.footerCustom.barBg or colors.footerDefault.barBg }}">
+  <div class="container mx-auto ">
+    <div class="flex flex-col items-center w-full my-20">
+      <div class="mb-8 py-2 md:py-0 h-12 w-full">
+        <a
+                    aria-label="Desktop Logo Virtual Sports"
+                    href="/"
+                    class="{{colors.logoCustom.desktop or colors.logoDefault.desktop }} {{colors.logoCustom.hover or colors.logoDefault.hover }}"
+                    alt=" Logo Virtual Sports">
+          {% svg "virtual-sports-banner-logo-gradient", "flex justify-start h-full w-full drop-shadow-md {{ colors.logoCustom.hover or colors.logoDefault.hover }}", "Virtual Sports Logo" %}
+
+        </a>
+      </div>
+      {% if structure.g_showFooterSocialIcons %}
+        <div class="mb-8 px-20 lg:px-0 w-full flex flex-wrap items-center justify-evenly gap-4 lg:gap-12 lg:flex-nowrap text-gray-300 text-lg md:text-sm">
+          {% set navPagesNav = collections.pages | eleventyNavigation('nav') %}
+          {% for entry in navPagesNav %}
+            <a href="{{ entry.url | url }}" alt="Link to {{ entry.title }}" class="hover:text-white">
+              {{ entry.title }}
+            </a>
+          {% endfor %}
+          {% set navPagesFooter = collections.pages | eleventyNavigation('footer') %}
+          {% for entry in navPagesFooter %}
+            <a href="{{ entry.url | url }}" alt="Link to {{ entry.title }}" class="hover:text-white">
+              {{ entry.title }}
+            </a>
+          {% endfor %}
+        </div>
+      {% endif %}
+
+      <div class="px-20 lg:px-0 text-center text-balance {{ colors.footerCustom.text or colors.footerDefault.text }}">&copy; {{ build.timestamp | dateToFormat('yyyy') }} | {{ meta.siteName }} | {{meta.siteDescription}}</div>
+      {#       <div class="flex justify-center md:order-2 {{ colors.socialIconsCustom or colors.socialIconsDefault }}">
         {% if structure.g_showFooterSocialIcons %}
 
-          {# Display Social icons from _data/social.json  #}
+          Display Social icons from _data/social.json  
           {% for site in social %}
             {% if site.url %}
               <a aria-label="Link to {{ site.platform }}" alt="Link to {{ site.platform }}" class="{{ colors.socialIconsCustom or colors.socialIconsDefault }} {{ colors.socialIconsHoverCustom or colors.socialIconsHoverDefault }}" href="{{ site.url | url }}">
@@ -19,7 +47,8 @@
         <p class="text-center text-base leading-6 {{ colors.footerCustom.text or colors.footerDefault.text }}">
           &copy; {{ build.timestamp | dateToFormat('yyyy') }}, {{ meta.siteName }}
         </p>
-      </div>
+      </div> 
+#}
     </div>
   </div>
 </footer>

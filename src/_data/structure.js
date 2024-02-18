@@ -74,7 +74,7 @@ module.exports = {
   g_showShareLinkedIn: true,
   g_showSharePinterest: false,
   g_showShareReddit: false,
-  g_showShareTwitter: true,
+  g_showShareX: true,
   g_showShareEmail: true,
 
   /**

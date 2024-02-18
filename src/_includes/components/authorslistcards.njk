@@ -7,12 +7,12 @@
             <img class="object-cover h-full {{ post.data.images.align }} rounded-full bg-gray-50 ring-2 ring-vs-yellow-400" src="{{ author.image }}" alt="{{ author.name }} profile picture">
           </a>
         </div>
-        <div class="flex flex-col place-content-evenly flex-1 px-2">
+        <div class="flex flex-col place-content-between flex-1 px-2">
           <a href="/authors/{{ author.slug}}/" class="">
             <h4 class="text-2xl font-semibold {{ colors.headingsCustom or colors.headingsDefault }}">
               {{ author.name }}
             </h4>
-            <h5 class="text-gray-700 font-normal text-lg italic">{{author.jobTitle}}</h5>
+            <h5 class="text-gray-700 font-normal text-lg italic text-balance">{{author.jobTitle}}</h5>
           </a>
           <h5 class="font-normal text-lg text-gray-700 ">
             {% if author.researchGroup %}
@@ -34,10 +34,16 @@
       </div>
       <div class="py-4 grow flex items-end">
         <div class="flex flex-row justify-center w-full">
-          <a aria-label="Link to {{ author.personalWebsites[0].label }}" alt="Link to {{ author.personalWebsites[0].label }}" class="text-vs-blue-900 hover:text-vs-yellow-500" href="{{ author.personalWebsites[0].url | url }}">
-            {% svg "dev", "mx-2 h-6 w-6 fill-current", author.personalWebsites[0].label %}</a>
-          <a aria-label="email {{ author.name }}" alt="email {{ author.name }}" class="text-vs-blue-900 hover:text-vs-yellow-500" href="mailto:{{ author.email}}">
-            {% svg "email", "mx-2 h-6 w-6 fill-current" %}</a>
+          {% if author.personalWebsites[0] and author
+            .personalWebsites[0]
+            .url %}
+            <a aria-label="Link to {{ author.personalWebsites[0].label }}" alt="Link to {{ author.personalWebsites[0].label }}" class="text-vs-blue-900 hover:text-vs-yellow-500" href="{{ author.personalWebsites[0].url | url }}">
+              {% svg "dev", "mx-2 h-6 w-6 fill-current", author.personalWebsites[0].label %}</a>
+          {% endif %}
+          {% if author.email %}
+            <a aria-label="email {{ author.name }}" alt="email {{ author.name }}" class="text-vs-blue-900 hover:text-vs-yellow-500" href="mailto:{{ author.email}}">
+              {% svg "email", "mx-2 h-6 w-6 fill-current" %}</a>
+          {% endif %}
           {% for social in author.socialWebsites %}
             {% if social.url %}
               <a aria-label="Link to {{ social.label }}" alt="Link to {{ social.label }}" class="text-vs-blue-900 hover:text-vs-yellow-500" href="{{ social.url | url }}">

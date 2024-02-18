@@ -239,20 +239,20 @@ module.exports = {
    * === Text and Background
    */
   footerDefault: {
-    barBg: 'bg-white',
-    text: 'text-teal-500',
+    barBg: 'bg-vs-blue-950',
+    text: 'text-gray-500',
   },
   footerCustom: {
-    barBg: 'bg-gray-900',
-    text: 'text-gray-100',
+    barBg: '',
+    text: '',
   },
 
   /**
    * === Footer social icons
    * Manage the Author social icons above in the Author section
    */
-  socialIconsDefault: 'text-vs-blue-900',
-  socialIconsHoverDefault: 'hover:text-vs-blue-500',
+  socialIconsDefault: 'text-white',
+  socialIconsHoverDefault: 'hover:text-vs-yellow-500',
 
   socialIconsCustom: '',
   socialIconsHoverCustom: '',

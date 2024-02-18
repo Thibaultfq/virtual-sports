@@ -3,7 +3,8 @@ title: Contact
 date: 2020-08-05
 layout: page
 eleventyNavigation:
-  key: main
+  key: contact
+  parent: nav
   title: Contact  # as it will appear in the nav
   order: 4        # order to display in the nav
 seo:
@@ -30,7 +31,8 @@ seo:
             <dt class="sr-only">Postal address</dt>
             <dd>
               <p>{{ meta.address.street }}</p>
-              <p>{{ meta.address.zip }} {{ meta.address.city }}</p>
+              <p>{{ meta.address.zip }}
+                {{ meta.address.city }}</p>
               <p>{{ meta.address.country }}</p>
             </dd>
           </div>
@@ -63,7 +65,7 @@ seo:
       <div class="max-w-lg mx-auto lg:max-w-none">
         <form name="contact" action="/thankyou" method="POST" data-netlify-recaptcha="true" data-netlify-honeypot="bot-field" data-netlify="true" class="grid grid-cols-1 row-gap-6">
           <p class="hidden">
-            <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
+            <label>Don’t fill this out if you're human: <input name="bot-field"/></label>
           </p>
           <div>
             <label for="full_name" class="sr-only">Full name</label>

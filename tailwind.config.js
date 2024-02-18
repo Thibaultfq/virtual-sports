@@ -40,8 +40,6 @@ module.exports = {
         )})`,
       }),
       colors: (theme) => ({
-        'dark-blue': '#071303',
-        'gold-yellow': '#f7cb2d',
         'vs-yellow': {
           50: '#fefce8',
           100: '#fdf7c4',

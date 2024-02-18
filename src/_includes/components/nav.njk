@@ -1,6 +1,6 @@
 {# :class="[open? '{{colors.navDefault.mobileBarBg }}' : '{{ colors.navCustom.mobileBarBg }}', scrolledNav? '{{ colors.navDefault.barBg }} shadow' : '{{ colors.navCustom.barBg }}']" #}
 {# {% if transparentNav %} 'sm:bg-transparent' {% else %} '{{colors.navCustom.barBg or colors.navDefault.barBg}} shadow' {% endif %} #}
-{% set navPages = collections.pages | eleventyNavigation %}
+{% set navPages = collections.pages | eleventyNavigation("nav") %}
 {# if transparentNav is true, add transparent background and change to white on scroll, remove from document flow on desktop with position fixsed or on mobile absolute. #}
 <nav x-data="{ open: false, scrolledNav: window.pageYOffset > 20 }" 
     @scroll.window="scrolledNav = (window.pageYOffset > 20) ? true : false" 

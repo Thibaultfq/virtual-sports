@@ -7,6 +7,7 @@ excerpt: Virtual sports are physical-digital technical innovation such as mixed 
 author: Thibault Fouquaert # only displayed on Post lists and detail views. Defaults to _data/meta.authorURL
 eleventyNavigation: # Required if want to display in Main Nav Bar
   key: main # "main" is required
+  parent: nav
   title: Home # as it will appear in the nav
   order: 1 # order to display in the nav (index = 1)
 seo: # SEO values are used for OG and will overwrite 'title' and 'excerpt' above
@@ -29,7 +30,7 @@ heroSettings:
   headingText: What are Virtual Sports?
   headingTextColor: # default = text-white (can use any TailwindCSS text-[color]-[xxx])
   headingTextCase: # default = as typed - options: uppercase, lowercase, capitalize
-  subheadingText: How will virtual sports impact the future of elite and leisure sports?
+  subheadingText: Science Communication and Expert Network on Virtual Sports.
   subheadingTextColor: # Leave empty to inherit headingTextColor or default (text-white) or use any text-[color]-[xxx]
   buttonText: 'Tell me more :eyes:' # no button generated if left blank
   buttonURL: /contact/ # full url required. Example: https://thisdomain.com/somepage/
@@ -161,8 +162,8 @@ typedJsBase: "Virtual Sports are "
       typeSpeed: 40,
       backSpeed: 20,
       shuffle: true,
-      smartBackspace: true,
+      smartBackspace: false,
       loop: true,
-      backDelay: 1400
+      backDelay: 1500
     });
   </script>
