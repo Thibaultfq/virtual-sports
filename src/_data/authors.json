@@ -63,7 +63,7 @@
   {
     "slug": "looking-for-experts",
     "name": "Looking For Experts",
-    "image": "/assets/images/default-image-virtual-sports.webp",
+    "image": "/assets/images/authors/looking-for-expert.webp",
     "homepageExpert": true,
     "homepageExpertOrder": 2,
     "university": "",
@@ -72,7 +72,7 @@
     "jobTitle": "",
     "bioShort": "Interested in joining the Virtual Sports Network? We're currently still looking for experts on the topics around virtual sports :eyes:!",
     "bioLong": "",
-    "email": "thibault.fouquaert@ugent.be",
+    "email": "",
     "groupWebsite": {
       "label": "Sportmanagement UGent",
       "url": "https://www.sportmanagementugent.com",
@@ -91,13 +91,13 @@
     "personalWebsites": [
       {
         "label": "Researcher Profile UGent",
-        "url": "https://research.ugent.be/web/person/thibault-fouquaert-0/en"
+        "url": ""
       }
     ],
     "socialWebsites": [
       {
         "label": "github",
-        "url": "https://github.com/Thibaultfq"
+        "url": ""
       },
       {
         "label": "instagram",
@@ -109,11 +109,11 @@
       },
       {
         "label": "linkedin",
-        "url": "https://linkedin.com/in/thibault-fouquaert"
+        "url": ""
       },
       {
         "label": "X",
-        "url": "https://twitter.com/TFouquaert"
+        "url": ""
       },
       {
         "label": "youtube",

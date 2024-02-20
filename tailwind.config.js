@@ -39,6 +39,9 @@ module.exports = {
           `spacing.${structure.nav_height_unscrolled.replace(/^\D+/g, '')}`
         )})`,
       }),
+      width: (theme) => ({
+        '2-full': '200%',
+      }),
       colors: (theme) => ({
         'vs-yellow': {
           50: '#fefce8',

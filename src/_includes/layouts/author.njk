@@ -1,5 +1,5 @@
----
-layout: base
+{# ---
+layout: page
 tags: authors
 ---
 
@@ -13,6 +13,7 @@ tags: authors
 {% endcols %}
 {% cols "flex-grow px-8" %}
 {{ content | safe }}
+<p>TEST</p>
 <div class="mt-4 text-gray-500">
   {% if company.website %}
     <a class="block hover:underline" target="_blank" href="{{ company.website | url }}" alt="Company website">Company Website ↗️</a>
@@ -21,4 +22,4 @@ tags: authors
 </div>
 {% include "components/authorsocial.njk" %}
 {% endcols %}
-{% endcolumns %}
+{% endcolumns %} #}

@@ -8,7 +8,7 @@ module.exports = {
    * across the entire site so there is consistency on margins, padding, max width
    * at all screen sizes.
    */
-  g_pageWidth: 'max-w-screen-xl px-8 md:px-16 lg:px-32',
+  g_pageWidth: 'max-w-screen-2xl px-8 md:px-16 lg:px-32',
 
   /**
    * height of the navbar and the logo within when page is on top

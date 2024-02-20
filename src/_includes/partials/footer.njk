@@ -12,7 +12,7 @@
         </a>
       </div>
       {% if structure.g_showFooterSocialIcons %}
-        <div class="mb-8 px-20 lg:px-0 w-full flex flex-wrap items-center justify-evenly gap-4 lg:gap-12 lg:flex-nowrap text-gray-300 text-lg md:text-sm">
+        <div class="mb-8 px-20 lg:px-0 w-full flex flex-wrap items-center justify-center gap-4 lg:gap-12 lg:flex-nowrap text-gray-300 text-lg md:text-sm">
           {% set navPagesNav = collections.pages | eleventyNavigation('nav') %}
           {% for entry in navPagesNav %}
             <a href="{{ entry.url | url }}" alt="Link to {{ entry.title }}" class="hover:text-white">
