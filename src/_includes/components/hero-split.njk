@@ -1,6 +1,6 @@
-<main class="lg:relative {{ heroSettings.bg.color or 'bg-black' }} {{ heroSettings.height.desktop or heroSettings.height.mobile or defaultCalculatedHeroHeight }}">
-  <div class="w-full pt-16 pb-20 mx-auto text-center max-w-7xl lg:py-48 lg:text-left">
-    <div class="px-4 lg:w-1/2 sm:px-8 xl:pr-16">
+<main class="absolute w-full h-full {{ heroSettings.bg.color or 'bg-white' }}">
+  <div class="w-full  pt-16 pb-20 mx-auto text-center max-w-7xl lg:py-48 lg:text-left">
+    <div class="px-4 lg:w-1/2 sm:px-8 xl:pr-16 ">
       <h2 class="text-4xl font-semibold leading-10 tracking-tight {{ heroSettings.headingTextColor or 'text-white' }} sm:text-5xl sm:leading-none md:text-6xl lg:text-5xl xl:text-6xl"
           >
         {{ heroSettings.headingText | safe }}
@@ -19,7 +19,7 @@
   <div class="relative w-full h-screen-1/2 lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2 lg:h-full">
     <img
           class="absolute inset-0 object-cover w-full h-full"
-          src="/assets/images/{{ heroSettings.bg.image }}"
+          src="{{ heroSettings.bg.image }}"
           alt="Hero Image"
 />
   </div>

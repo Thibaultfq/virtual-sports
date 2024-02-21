@@ -1,7 +1,8 @@
-<header class="relative {{ heroSettings.bg.color or 'bg-black' }} lg:overflow-hidden {{ heroSettings.height.desktop or heroSettings.height.mobile or defaultCalculatedHeroHeight }}">
-  <div class="absolute inset-0 z-negative  bg-fixed bg-no-repeat bg-cover {{ heroSettings.bg.imagePosition or 'bg-center' }} {{ heroSettings.bg.opacityMobile or 'opacity-100' }} md:{{ heroSettings.bg.opacityDesktop or heroSettings.bg.opacityMobile or 'opacity-100' }}" style="background-image: url(/assets/images/{{ heroSettings.bg.image }});"></div>
+<header class="absolute w-full h-full {{ heroSettings.bg.color or 'bg-black' }} lg:overflow-hidden">
+  <div class="absolute inset-0 z-negative  bg-no-repeat bg-cover {{ heroSettings.bg.attachment or 'bg-local' }} {{ heroSettings.bg.imagePosition or 'bg-center' }} {{ heroSettings.bg.opacityMobile or 'opacity-100' }} {{ heroSettings.bg.opacityDesktop or 'sm:opacity-100' }}" style="background-image: url({{ heroSettings.bg.image }});"></div>
 
   {# Shared across hero components  #}
+  <div class="absolute flex flex-col h-full">
   {% include "components/hero-text-overlay.njk" %}
-
+</div>
 </header>

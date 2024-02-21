@@ -28,9 +28,12 @@
 			{% if hero %}
 				{% set defaultCalculatedHeroHeight = 'h-screen' if transparentNav else 'screen-minus-navbar' %}
 
-				{% set heroComponent = ['components/hero-', hero, '.njk'] %}
+				<div class="relative w-full {{ heroSettings.height.desktop or heroSettings.height.mobile or defaultCalculatedHeroHeight }}">
+					{% set heroComponent = ['components/hero-', hero, '.njk'] %}
+					{% include heroComponent | join %}
+				</div>
 
-				{% include heroComponent | join %}
+			
 			{% endif %}
 
 			{# If any frontmatter includes images.feature, insert it at the top of the page, below the nav and outside the default wrapper below. #}
@@ -45,7 +48,7 @@
 				</figure>
 			{% endif %}
 
-			<div class="flex-grow max-w-full">
+			<div class="grow max-w-full min-h-screen-minus-navbar">
 				<main class="block" id="content">
 					{{ content | safe }}
 				</main>

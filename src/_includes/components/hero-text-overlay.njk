@@ -1,4 +1,8 @@
-<div class="absolute flex flex-col items-start justify-start h-full {{ heroSettings.headingTextColor or 'text-white' }} {{ structure.g_pageWidth }} {{ 'pt-'+(structure.nav_height_unscrolled | getNumberFromString) if transparentNav }}">
+{% if transparentNav == true %}
+<div class="{{structure.nav_height_unscrolled}} flex-none invisible"></div>
+{% endif %}
+
+<div class="grow flex flex-col items-start justify-start {{ heroSettings.headingTextColor or 'text-white' }} {{ structure.g_pageWidth }}">
   <div class="flex-grow font-semibold leading-tight {{ heroSettings.headingTextCase }} mxsonly:text-2xl text-3xl sm:text-4xl md:text-6xl sm:mt-6 mt-12 lg:mt-20 xl:mt-36 ">
     {% if typedJsStrings and typedJsBase %}
       {% typedjs typedJsStrings,

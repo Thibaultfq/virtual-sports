@@ -11,7 +11,7 @@ module.exports = {
     './src/_data/structure.js',
     './utils/**/*.js',
   ],
-  safelist: [`pt-${structure.nav_height_unscrolled.replace(/^\D+/g, '')}`], //create a safelist entry for pt-x based on the h-x defined in structure. We may than call this dynamic generated class (based on string h-x) and it will be included in the css, see hero-text-overlay.
+  // safelist: [], //create a safelist entry for pt-x based on the h-x defined in structure. We may than call this dynamic generated class (based on string h-x) and it will be included in the css, see hero-text-overlay.
   theme: {
     extend: {
       screens: {
@@ -34,9 +34,17 @@ module.exports = {
         'screen-1/3': 'calc(100vh / 3)',
         'screen-1/4': 'calc(100vh / 4)',
         'screen-1/5': 'calc(100vh / 5)',
-        128: '32rem',
         'screen-minus-navbar': `calc(100vh - ${theme(
-          `spacing.${structure.nav_height_unscrolled.replace(/^\D+/g, '')}`
+          `spacing.${Math.max(
+            ...structure.nav_height_unscrolled.match(/\d+/gi).map(Number)
+          )}`
+        )})`,
+      }),
+      minHeight: (theme) => ({
+        'screen-minus-navbar': `calc(100vh - ${theme(
+          `spacing.${Math.max(
+            ...structure.nav_height_unscrolled.match(/\d+/gi).map(Number)
+          )}`
         )})`,
       }),
       width: (theme) => ({

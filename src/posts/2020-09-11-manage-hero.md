@@ -13,10 +13,20 @@ images: # relative to /src/assets/images/
   thumb: 
   align: # object-center (default) - other options at https://tailwindcss.com/docs/object-position
   height: # optional. Default = h-48 md:h-screen-1/3
-hero: graphic # options: carousel, graphic, video, split (text & image)
+transparentNav: true
+hero: split # options: carousel, graphic, video, split (text & image)
 heroSettings:
+  bg:
+    image: /assets/images/default-image-virtual-sports.webp # image URL
+    imagePosition: bg-right # options = bg-left, bg-center, bg-right
+    opacityDesktop: sm:opacity-90 # options = opacity-25, opacity-50, opacity-75, opacity-100 (default)
+    opacityMobile: opacity-90
+    imageOpacityFilter: black # options = black or white (default) -> really depends on your background image
+    attachment:
+    video: bg-scroll
+    color: bg-vs-yellow-800
   height:
-    mobile: h-screen-1/2 # options = h-screen (default = full screen), h-screen-1/2, h-screen-1/3, h-screen-3/4, h-screen-9/10, h-48 (12rem, 192px), h-56 (14rem, 224px), h-64 (16rem, 256px)
+    mobile: # options = h-screen (default = full screen if nav is transparent or h-screen-minus-navbar is nav is not transparent), h-screen-1/2, h-screen-1/3, h-screen-3/4, h-screen-9/10, h-48 (12rem, 192px), h-56 (14rem, 224px), h-64 (16rem, 256px)
     desktop: # leave blank to inherit "mobile" height (default = full screen)
   headingText: Is your data lost in the forest, or the trees?
   headingTextColor: # text-gray-800 # default = text-white (can use any TailwindCSS text-[color]-[xxx])
@@ -26,16 +36,11 @@ heroSettings:
   buttonURL: /contact/ # full url required. Example: https://thisdomain.com/somepage/
   buttonTextColor: # leave blank to inherit from /src/_data/colors.buttonCustom or buttonDefault
   buttonBgColor: # leave blank to inherit from /src/_data/colors.buttonCustom.bg or buttonDefault.bg
-  image: /assets/images/home/plane.jpg # image URL
-  imagePosition: left # options = left, center, right
-  imageOpacity: opacity-50 # options = opacity-25, opacity-50, opacity-75, opacity-100 (default)
-  imageOpacityFilter: black # options = black or white (default) -> really depends on your background image
   carousel:
     images:
-      - /assets/images/home/6.jpg
-      - /assets/images/home/7.jpg
-      - /assets/images/home/8.jpg
-      - /assets/images/home/9.jpg
+      - /assets/images/default-image-virtual-sports.webp
+      - /assets/images/authors/thibault-fouquaert.webp
+      - /assets/images/authors/looking-for-expert.webp
   video:
     url: /assets/video/forestfire.mp4 # local relative to site root, or full https://... if remote?
     opacityMobile: opacity-50 # options 25, 50, 75, 100 (default)

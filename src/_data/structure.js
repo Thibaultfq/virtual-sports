@@ -13,14 +13,14 @@ module.exports = {
   /**
    * height of the navbar and the logo within when page is on top
    */
-  nav_height_unscrolled: 'sm:h-32',
-  logo_height_unscrolled: 'sm:h-16',
+  nav_height_unscrolled: 'h-28 sm:h-32',
+  logo_height_unscrolled: 'h-16 sm:h-16',
 
   /**
    * height of the navbar and the logo within once scrolled
    */
-  nav_height_scrolled: 'sm:h-20',
-  logo_height_scrolled: 'sm:h-12',
+  nav_height_scrolled: 'h-14 sm:h-20',
+  logo_height_scrolled: 'h-10 sm:h-12',
 
   /**
    * Globally disable display of Tag pills/links

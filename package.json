@@ -2,8 +2,12 @@
   "name": "virtual-sports-dot-eu",
   "version": "1.0.0",
   "description": "Virtual sports landing page based on an upgraded version of the 11ty-tailwind-alpinejs template: https://github.com/11ta/11ta-template v2.1npm ",
-  "author": "Shane Robinson",
+  "author": "Thibault Fouquaert",
   "license": "MIT",
+  "engines": {
+    "npm": ">=8.0.0 <9.0.0",
+    "node": ">=16.0.0 <17.0.0"
+  },
   "bugs": {
     "url": "https://github.com/Thibaultfq/leisure-sports-innovations/issues"
   },
