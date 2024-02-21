@@ -39,12 +39,16 @@ heroSettings:
   buttonBgColor: # leave blank to inherit from /src/_data/colors.buttonCustom.bg or buttonDefault.bg
   buttonBgHover: # leave blank to inherit from /src/_data/colors.buttonCustom.bgHover or buttonDefault.bgHover
   buttonBorder: # leave blank to inherit from /src/_data/colors.buttonCustom.border or buttonDefault.border
-  carousel:
-    images:
-      - home/6.jpg
-      - home/7.jpg
-      - home/8.jpg
-      - home/9.jpg
+  carousel: #use Arrays of unnamed Objects
+    - image: /assets/images/default-image-virtual-sports.webp
+      text: "Hello world"
+      textClass: "text-vs-yellow-300"
+    - image: /assets/images/authors/thibault-fouquaert.webp
+      text: "Hello world 2"
+      textClass: "text-vs-blue-300"
+    - image: /assets/images/authors/looking-for-expert.webp
+      text: "Hello world 3"
+      textClass: "text-red-300"
 taglimit: 3
 # Homepage only front matter ---
 postsListStyle: postslistthumbs # postslistcards

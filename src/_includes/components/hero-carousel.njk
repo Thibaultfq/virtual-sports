@@ -1,9 +1,13 @@
 
 <div class="absolute h-full w-full">
-  <div class="h-full max-w-full overflow-hidden" data-flickity='{"lazyLoad":"1", "wrapAround":true, "cellAlign":true ,"contain":true, "groupCells":"true" }'>
+  <div class="h-full max-w-full overflow-hidden main-carousel" data-flickity='{"imagesLoaded": true, "wrapAround": true , "bgLazyLoad": true, "bgLazyLoad": 1, "autoPlay": true}'>
 
-    {% for image in heroSettings.carousel.images %}
-      <div class="w-full h-full {{ heroSettings.bg.imagePosition or 'bg-center' }} bg-no-repeat bg-cover carousel-cell" style="background-image: url({{ image }});"></div>
+    {% for carouselCell in heroSettings.carousel %}
+      <div class="w-full h-full flex flex-col justify-center items-center {{ heroSettings.bg.imagePosition or 'bg-center' }} bg-no-repeat bg-cover carousel-cell" data-flickity-bg-lazyload="{{ carouselCell.image }}">
+            <div class="w-[calc(100%-5rem-20px)]">
+              <h3 class="p-4 md:p-12 xl:p-20 {{ carouselCell.textClass }}"> {% renderInlineMarkdown carouselCell.text %}</h3>      
+            </div>
+      </div>
     {% endfor %}
 
   </div>

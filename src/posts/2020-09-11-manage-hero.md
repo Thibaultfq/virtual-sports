@@ -36,11 +36,16 @@ heroSettings:
   buttonURL: /contact/ # full url required. Example: https://thisdomain.com/somepage/
   buttonTextColor: # leave blank to inherit from /src/_data/colors.buttonCustom or buttonDefault
   buttonBgColor: # leave blank to inherit from /src/_data/colors.buttonCustom.bg or buttonDefault.bg
-  carousel:
-    images:
-      - /assets/images/default-image-virtual-sports.webp
-      - /assets/images/authors/thibault-fouquaert.webp
-      - /assets/images/authors/looking-for-expert.webp
+  carousel: #use Arrays of unnamed Objects
+    - image: /assets/images/default-image-virtual-sports.webp
+      text: "Hello world"
+      textClass: "text-vs-yellow-300"
+    - image: /assets/images/authors/thibault-fouquaert.webp
+      text: "Hello world 2"
+      textClass: "text-vs-blue-300"
+    - image: /assets/images/authors/looking-for-expert.webp
+      text: "Hello world 3"
+      textClass: "text-red-300"
   video:
     url: /assets/video/forestfire.mp4 # local relative to site root, or full https://... if remote?
     opacityMobile: opacity-50 # options 25, 50, 75, 100 (default)

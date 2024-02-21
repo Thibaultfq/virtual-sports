@@ -1,3 +1,8 @@
+html {
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
 @tailwind base;
 
 h1,
@@ -55,3 +60,16 @@ pre code {
 @tailwind components;
 
 @tailwind utilities;
+
+/* Flickity custom */
+.flickity-button {
+  @apply bg-gradient-to-r from-vs-yellow-400 to-vs-yellow-600 text-white !important;
+}
+
+.flickity-button:hover {
+  @apply hover:from-vs-yellow-500 hover:to-vs-yellow-700 !important;
+}
+
+.flickity-prev-next-button {
+  @apply w-10 h-10 !important;
+}
