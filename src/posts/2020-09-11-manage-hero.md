@@ -14,7 +14,7 @@ images: # relative to /src/assets/images/
   align: # object-center (default) - other options at https://tailwindcss.com/docs/object-position
   height: # optional. Default = h-48 md:h-screen-1/3
 transparentNav: true
-hero: split # options: carousel, graphic, video, split (text & image)
+hero: carousel # options: carousel, graphic, video, split (text & image)
 heroSettings:
   bg:
     image: /assets/images/default-image-virtual-sports.webp # image URL

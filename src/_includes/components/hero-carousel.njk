@@ -1,5 +1,6 @@
-<div class="absolute h-full w-full mb-16">
-  <div class="h-full main-carousel" data-flickity='{"lazyLoad":"1", "wrapAround":true}'>
+
+<div class="absolute h-full w-full">
+  <div class="h-full max-w-full overflow-hidden" data-flickity='{"lazyLoad":"1", "wrapAround":true, "cellAlign":true ,"contain":true, "groupCells":"true" }'>
 
     {% for image in heroSettings.carousel.images %}
       <div class="w-full h-full {{ heroSettings.bg.imagePosition or 'bg-center' }} bg-no-repeat bg-cover carousel-cell" style="background-image: url({{ image }});"></div>
@@ -7,3 +8,7 @@
 
   </div>
 </div>
+
+{#   <div class="absolute flex flex-col h-full">
+  {% include "components/hero-text-overlay.njk" %}
+</div> #}
