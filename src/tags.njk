@@ -11,6 +11,8 @@ pagination:
 permalink: /tags/{{ tag }}/
 eleventyComputed:
   title: Entries Tagged "{{ tag }}”
+eleventyImport:
+  collections: ["tag"]
 ---
 
 <h3 class="mt-6">Setting Tags List Display</h3>

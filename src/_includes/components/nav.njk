@@ -13,7 +13,7 @@
         :class="scrolledNav ? '{{structure.nav_height_scrolled}} sm:text-sm' : '{{structure.nav_height_unscrolled}} sm:text-lg' ">
             <div class="flex justify-center grow min-w-0 items-center">
                 {# small logo hidden on sm and above #}
-{#                 <a
+                {#                 <a
                     aria-label="Mobile Logo Virtual Sports"
                     href="/"
                     class="block py-2 sm:hidden {{structure.logo_height_unscrolled}} {{ colors.logoCustom.mobile or colors.logoDefault.mobile }} {{ colors.logoCustom.hover or colors.logoDefault.hover }}"
@@ -35,10 +35,26 @@
             <div
                 class="hidden sm:ml-6 sm:flex sm:items-center">
                 {# 11ty Nav Plugin loop  #}
+
+                {# Pseudo code for nested if classes 
+            if transparentNav
+                if currentPage
+                    '{{ colors.navCustom.textActiveBg or colors.navDefault.textActiveBg }} {{ colors.navCustom.textActive or colors.navDefault.textActive }}'
+                else
+                    if scrolledNav
+                        '{{colors.navCustom.text or colors.navDefault.text}}'
+                    else
+                        '{{colors.transparentNav.text or colors.transparentNav.text}}'
+            else
+                if currentPage
+                    '{{ colors.navCustom.textActiveBg or colors.navDefault.textActiveBg }} {{ colors.navCustom.textActive or colors.navDefault.textActive }}'
+                else
+                    '{{colors.navCustom.text or colors.navDefault.text}}'
+        #}
                 {% for entry in navPages %}
                     <a href="{{ entry.url | url }}" alt="Link to {{ entry.title }}" 
-                    :class=" scrolledNav &&  {{ page.url != entry.url }} && '{{colors.navCustom.text or colors.navDefault.text}}'"
-                    class=" px-3 py-2 font-medium rounded-md items-center focus:outline-none {% if page.url == entry.url %} {{ colors.navCustom.textActiveBg or colors.navDefault.textActiveBg }} {{ colors.navCustom.textActive or colors.navDefault.textActive }} {% elif transparentNav %} {{ colors.transparentNav.text }} {{ colors.transparentNav.textHover }} {% else %} {{ colors.navCustom.text or colors.navDefault.text }} {{ colors.navCustom.textHover or colors.navDefault.textHover }} {% endif %} {{ colors.navCustom.textFocus or colors.navDefault.textFocus }} transition duration-150 ease-in-out">
+                    :class="{{ transparentNav == true }} ? ({{ page.url == entry.url }} ? '{{ colors.navCustom.textActiveBg or colors.navDefault.textActiveBg }} {{ colors.navCustom.textActive or colors.navDefault.textActive }}' : (scrolledNav ? '{{colors.navCustom.text or colors.navDefault.text}}' : '{{colors.transparentNav.text or colors.transparentNav.text}}')) : ({{ page.url == entry.url }} ? '{{ colors.navCustom.textActiveBg or colors.navDefault.textActiveBg }} {{ colors.navCustom.textActive or colors.navDefault.textActive }}' : '{{colors.navCustom.text or colors.navDefault.text}}')"
+                    class=" px-3 py-2 font-medium items-center focus:outline-none transition duration-150 ease-in-out">
                         {{ entry.title }}
                     </a>
                 {% endfor %}

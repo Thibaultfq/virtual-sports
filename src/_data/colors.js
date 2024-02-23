@@ -40,7 +40,8 @@ module.exports = {
     text: 'sm:text-vs-blue-900',
     textActive: 'sm:text-white',
     textHover: 'sm:hover:text-vs-blue-800',
-    textActiveBg: 'sm:bg-gradient-to-r from-vs-yellow-400 to-vs-yellow-600',
+    textActiveBg:
+      'sm:bg-gradient-to-r from-vs-yellow-400 to-vs-yellow-600 rounded-md',
     textFocus: 'sm:focus:text-vs-blue-700',
     mobileBarBg: 'bg-white',
     mobileBg: 'bg-white',

@@ -3,6 +3,8 @@ title: Blog
 date: 2020-08-05
 description: The Posts List display is controled in /src/_data/structure.js and ships with 4 options.
 layout: page
+eleventyImport:
+  collections: ["post"]
 eleventyNavigation:
   key: blog
   parent: nav
@@ -58,7 +60,7 @@ This template = <code>/src/blog.njk</code>.
 
 <hr class="mt-8">
 
-{% set postslist = posts | reverse %}
+{% set postslist = posts %}
 
 {# 
   Allows a user to easily change the Tag List Style.

@@ -1,3 +1,6 @@
+---
+transparentNav: false #set default false transparentNav attribute for all pages
+---
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -33,17 +36,14 @@
 					{% include heroComponent | join %}
 				</div>
 
-			
 			{% endif %}
 
-
-				 {% if transparentNav == true and not hero %}
-         			 <div class="{{structure.nav_height_unscrolled}} invisible"></div>
-       			 {% endif %} 
+			{% if transparentNav == true and not hero %}
+				<div class="{{structure.nav_height_unscrolled}} invisible"></div>
+			{% endif %}
 
 			{# If any frontmatter includes images.feature, insert it at the top of the page, below the nav and outside the default wrapper below. #}
 			{% if images.feature %}
-
 
 				<figure class="w-screen {{ images.height or 'h-48 md:h-screen-1/3' }}">
 					<img class="object-cover {{ images.align }} w-full h-full" src="{{ images.feature if 'http' in images.feature else images.feature }}" alt="{{ title }}">

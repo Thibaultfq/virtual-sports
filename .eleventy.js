@@ -82,7 +82,7 @@ module.exports = function (eleventyConfig) {
       )
   })
 
-  // TAGLIST used from the official eleventy-base-blog  https://github.com/11ty/eleventy-base-blog/blob/master/.eleventy.js
+  // TAGLIST used from the official eleventy-base-blog
   eleventyConfig.addCollection('tagList', function (collection) {
     let tagSet = new Set()
     collection.getAll().forEach(function (item) {

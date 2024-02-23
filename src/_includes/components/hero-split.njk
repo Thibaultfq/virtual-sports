@@ -1,7 +1,7 @@
-<main class="absolute w-full h-full {{ heroSettings.bg.color or 'bg-white' }}">
+<main class="absolute flex flex-col w-full h-full {{ heroSettings.bg.color or 'bg-white' }}">
   {% if transparentNav == true %}
-<div class="{{structure.nav_height_unscrolled}} flex-none invisible"></div>
-{% endif %}
+    <div class="{{structure.nav_height_unscrolled}} flex-none invisible"></div>
+  {% endif %}
 
   <div class="w-full  pt-16 pb-20 mx-auto text-center max-w-7xl lg:py-48 lg:text-left">
     <div class="px-4 lg:w-1/2 sm:px-8 xl:pr-16 ">

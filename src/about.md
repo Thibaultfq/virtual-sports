@@ -11,7 +11,6 @@ seo:
   title: About Us # overrides 'title' above on both Page and META
   description:
   image:
-transparentNav: true
 ---
 
 {% wrap "bg-red-100 mt-4 border border-red-300 rounded-lg underline" %}

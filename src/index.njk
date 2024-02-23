@@ -5,6 +5,8 @@ layout: base #set the home page with a different layout as it is not a 'normal' 
 tags: pages
 excerpt: Virtual sports are physical-digital technical innovation such as mixed reality sports games. We provide scientific knowledge on how such innovation will impact elite and leisure sport organisations, services and practices. # used for page excerpts and META (will be overwritten if SEO used below)
 author: Thibault Fouquaert # only displayed on Post lists and detail views. Defaults to _data/meta.authorURL
+eleventyImport:
+  collections: ["post"]
 eleventyNavigation: # Required if want to display in Main Nav Bar
   key: main # "main" is required
   parent: nav
@@ -60,27 +62,6 @@ typedJsStrings:
   - "more than exergames."
 typedJsBase: "Virtual Sports are "
 ---
-
-{# <div class="h-screen-minus-navbar bg-cover bg-center bg-[url('/assets/images/home/virtual-sports-explainer-extended.svg')]">
-  <!-- ... -->
-</div> #}
-
-{# <div class="relative bg-neutral-200">
-  <img class="md:hidden min-w-full min-h-full -z-10" src="/assets/images/home/virtual-sports-explainer.svg" loading="lazy" alt="background SVG to explain the concept of virtual sports"/>
-  <img class="hidden md:block xl:hidden min-w-full min-h-full -z-10" src="/assets/images/home/virtual-sports-explainer-md.svg" loading="lazy" alt="background SVG to explain the concept of virtual sports"/>
-  <img class="hidden xl:block min-w-full min-h-full -z-10" src="/assets/images/home/virtual-sports-explainer-xl.svg" loading="lazy" alt="background SVG to explain the concept of virtual sports"/>
-
-  <div class="absolute top-0 left-0 w-full h-full flex flex-col items-center font-bold {{ colors.headingsCustom or colors.headingsDefault }}">
-    <div class="w-1/2 text-lg md:text-3xl lg:text-4xl  pb-10 px-4 md:px-8 lg:px-16 text-balance text-center basis-3/5 flex-initial flex flex-col justify-end items-center leading-snug" >
-      <div class="drop-shadow-2xl ">Virtual sports are in between</div>
-      <div class="drop-shadow-2xl">eSports and Exergames</div>
-    </div>
-    <div class="md:text-2xl lg:text-3xl  md:pt-6 xl:pt-20 px-8 md:px-16 lg:px-32 text-pretty w-4/6 basis-2/5 flex-initial">
-      <div class="drop-shadow-2xl text-center">Virtual Sports are new sports formats that are derived from and closely related to their traditional sports counterpart</div>
-    </div>
-
-  </div>
-</div> #}
 
 <section class="relative">
   <img class="absolute top-0 left-0 w-full opacity-30 -z-10" src="/assets/images/home/virtual-sports-dots-bg.svg" loading="lazy" alt="background connected dots"/>
