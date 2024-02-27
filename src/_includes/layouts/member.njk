@@ -1,0 +1,109 @@
+---
+layout: base
+permalink: "/members/{{ slug }}/index.html"
+eleventyComputed:
+  title: "{{ name }} | member of the Virtual Sports Network"
+---
+<main class="{{ structure.g_pageWidth }} py-12">
+
+  {{ content | safe }}
+
+</main>
+
+{# 
+<h1 class=" mb-4 {{ colors.headingsCustom or colors.headingsDefault }}">{{ title }}</h1>
+
+{% columns %}
+{% cols "flex-none" %}
+<p>
+  <img class="h-64 rounded-lg" src="/assets/images/members/{{ image }}" alt="Photo of {{ title }}">
+</p>
+{% endcols %}
+{% cols "flex-grow px-8" %}
+{{ content | safe }}
+<p>TEST</p>
+<div class="mt-4 text-gray-500">
+  {% if company.website %}
+    <a class="block hover:underline" target="_blank" href="{{ company.website | url }}" alt="Company website">Company Website ↗️</a>
+    <a class="block hover:underline" target="_blank" href="{{ personal.website | url }}" alt="Personal website">Personal Website ↗️</a>
+  {% endif %}
+</div>
+{% endcols %}
+{% endcolumns %} #}
+
+{# ---
+layout: page
+pagination: 
+  data: members
+  size: 1
+  alias: member
+permalink: "/member/{{ member.slug }}/"
+eleventyComputed:
+  title: "{{ member.name }}"
+---
+
+{% columns %}
+{% cols "flex-none" %}
+<p>
+  <img class="h-64 rounded-lg" src="{{ member.image }}" alt="Photo of {{ title }}">
+</p>
+{% endcols %}
+{% cols "flex-grow px-8" %}
+<div class="mt-4 text-gray-500">
+  <div class="mb-4">
+    {{ member.bio }}
+  </div> #}
+
+{# Display array of Author's company websites  
+  <div>
+    {% for sites in member.companyWebsites %}
+      {% if sites.url %}
+        <a class="block hover:underline" target="_blank" href="{{ sites.url | url }}" alt="sites.label website">{{ sites.label }} ↗️</a>
+      {% endif %}
+    {% endfor %}
+  </div>
+
+  {# Display array of Author's personal websites  
+  <div>
+    {% for sites in member.personalWebsites %}
+      {% if sites.url %}
+        <a class="block hover:underline" target="_blank" href="{{ sites.url | url }}" alt="sites.label website">{{ sites.label }} ↗️</a>
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>
+
+{# Display Author's social platform links  
+<div class="flex items-center mt-4 md:justify-between">
+  <div class="flex justify-center md:order-2 {{ colors.authorCustom.socialIcons or colors.authorDefault.socialIcons }}">
+    {% for sites in member.socialWebsites %}
+      {% if sites.url %}
+        <a class="{{ colors.authorCustom.SocialIconsHover or colors.authorDefault.socialIconsHover }}" alt="{{ member.name }} on {{ sites.label }}" href="{{ sites.url | url }}">
+          {# {% svg sites.label,
+          "mx-2 h-10 w-10",
+          sites.label ~ " logo",
+          "author" %} 
+        </a>
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>
+
+{% endcols %}
+{% endcolumns %}
+
+<div class="px-8 pt-4 mt-8 text-gray-500 border-t border-gray-300">
+  <div class="text-lg font-semibold {{ colors.headingsCustom or colors.headingsDefault }}">10 most recent posts by {{ title }}:</div>
+
+  {% set posts = collections.post | getPostsByAuthor(member.slug) %}
+  <ul>
+    {% for post in posts | reverse %}
+      {% if loop.index0 < 10 %}
+        <li>
+          <a href="{{post.url}}">{{post.data.title}}</a>
+        </li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+
+</div> #}

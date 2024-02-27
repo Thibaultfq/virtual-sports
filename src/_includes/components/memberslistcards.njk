@@ -1,0 +1,61 @@
+<div class="grid gap-y-20 gap-x-20 mx-auto lg:grid-cols-2 xl:max-w-none px-4 lg:px-0">
+  {% for member in memberslist %}
+    <div class="flex flex-col rounded-lg shadow-lg lg:ml-20">
+      <div class="flex-none flex content-center">
+        <div class="lg:relative w-16 h-16 lg:w-20 lg:h-40 flex-none self-center ">
+          <a href="/members/{{ member.data.slug}}/" class="grow-1 lg:absolute lg:-ml-20 lg:p-4 lg:h-full lg:w-2-full">
+            <img class="object-cover rounded-full bg-gray-50 ring-2 ring-vs-yellow-400 h-full w-full" src="{{ member.data.image }}" alt="{{ member.data.name }} profile picture">
+          </a>
+        </div>
+        <div class="flex flex-col place-content-between flex-1 px-2">
+          <a href="/members/{{ member.data.slug}}/" class="">
+            <h4 class="text-2xl font-semibold {{ colors.headingsCustom or colors.headingsDefault }}">
+              {{ member.data.name }}
+            </h4>
+            <h5 class="text-gray-700 font-normal text-lg italic text-balance">{{member.data.jobTitle}}</h5>
+          </a>
+          <h5 class="font-normal text-lg text-gray-700 ">
+            {% if member.data.researchGroup %}
+              <a href="{{member.data.groupWebsite.url}}">{{member.data.researchGroup}}, </a>
+            {% endif %}
+            {% if member.data.department %}
+              <a href="{{member.data.departmentWebsite.url}}">{{member.data.department}}, </a>
+            {% endif %}
+            {% if member.data.university %}
+              <a href="{{member.data.universityWebsite.url}}">{{member.data.university}}</a>
+            {% endif %}
+          </h5>
+        </div>
+      </div>
+      <div class="p-4 flex-none">
+        <h5 class="font-normal text-base text-center text-gray-500 ">
+          {% renderInlineMarkdown member.data.bioShort %}
+        </h5>
+      </div>
+      <div class="py-4 grow flex items-end">
+        <div class="flex flex-row justify-center w-full">
+          {% if member
+            .data
+            .personalWebsites[0] and member
+            .personalWebsites[0]
+            .url %}
+            <a aria-label="Link to {{ member.data.personalWebsites[0].label }}" alt="Link to {{ member.data.personalWebsites[0].label }}" class="text-vs-blue-900 hover:text-vs-yellow-500" href="{{ member.data.personalWebsites[0].url | url }}">
+              {% svg "website", "mx-2 h-6 w-6 fill-current", member.data.personalWebsites[0].label %}</a>
+          {% endif %}
+          {% if member.data.email %}
+            <a aria-label="email {{ member.data.name }}" alt="email {{ member.data.name }}" class="text-vs-blue-900 hover:text-vs-yellow-500" href="mailto:{{ member.data.email}}">
+              {% svg "email", "mx-2 h-6 w-6 fill-current" %}</a>
+          {% endif %}
+          {% for social in member.data.socialWebsites %}
+            {% if social.url %}
+              <a aria-label="Link to {{ social.label }}" alt="Link to {{ social.label }}" class="text-vs-blue-900 hover:text-vs-yellow-500" href="{{ social.url | url }}">
+                {% svg social.label, "mx-2 h-6 w-6 fill-current", social.label %}
+              </a>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+
+  {% endfor %}
+</div>

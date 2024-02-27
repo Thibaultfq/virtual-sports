@@ -2,7 +2,7 @@
   {
     "slug": "thibault-fouquaert",
     "name": "Thibault Fouquaert",
-    "image": "/assets/images/authors/thibault-fouquaert.webp",
+    "image": "/assets/images/memners/thibault-fouquaert.webp",
     "email": "thibault.fouquaert@ugent.be",
     "homepageExpert": true,
     "homepageExpertOrder": 1,
@@ -63,7 +63,7 @@
   {
     "slug": "looking-for-experts",
     "name": "Looking For Experts",
-    "image": "/assets/images/authors/looking-for-expert.webp",
+    "image": "/assets/images/members/looking-for-expert.webp",
     "homepageExpert": true,
     "homepageExpertOrder": 2,
     "university": "",

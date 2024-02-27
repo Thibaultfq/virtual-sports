@@ -1,0 +1,17 @@
+---
+permalink: members/
+layout: page
+title: All Members
+eleventyNavigation:
+  key: membersList
+  parent: footer
+  title: All Members 
+  order: 1 
+eleventyImport:
+  collections: ["members"]
+---
+
+<div class="mt-6">
+  {% set memberslist = collections.member %}
+  {% include "components/memberslistcards.njk" %}
+</div>

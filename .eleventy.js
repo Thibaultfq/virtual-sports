@@ -1,15 +1,14 @@
-// const fs = require('fs')
 const pluginRss = require('@11ty/eleventy-plugin-rss')
 const pluginNavigation = require('@11ty/eleventy-navigation')
 const markdownIt = require('markdown-it')
 const markdownItEmoji = require('markdown-it-emoji')
+const markdownItAnchor = require('markdown-it-anchor')
 const pluginSvgSprite = require('eleventy-plugin-svg-sprite')
-
-// const collections = require('./utils/collections.js')
+const structure = require('./src/_data/structure.js')
 const filters = require('./utils/filters.js')
 const shortcodes = require('./utils/shortcodes.js')
 const pairedshortcodes = require('./utils/paired-shortcodes.js')
-// const transforms = require('./utils/transforms.js')
+const pluginDrafts = require('./eleventy.config.drafts.js')
 
 module.exports = function (eleventyConfig) {
   /**
@@ -19,6 +18,7 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addPlugin(pluginRss)
   eleventyConfig.addPlugin(pluginNavigation)
+  eleventyConfig.addPlugin(pluginDrafts)
 
   /*
    * use: {% svg "subdir1--subdir2--filename", "classes", "content for <desc/>" %}
@@ -58,10 +58,7 @@ module.exports = function (eleventyConfig) {
    * @link https://www.11ty.dev/docs/languages/nunjucks/#paired-shortcode
    */
   Object.keys(pairedshortcodes).forEach((shortcodeName) => {
-    eleventyConfig.addPairedShortcode(
-      shortcodeName,
-      pairedshortcodes[shortcodeName]
-    )
+    eleventyConfig.addPairedShortcode(shortcodeName, pairedshortcodes[shortcodeName])
   })
 
   /**
@@ -73,14 +70,10 @@ module.exports = function (eleventyConfig) {
    * If "false" or NULL it will be published in PRODUCTION.
    * Every Post will ALWAYS be published in DEVELOPMENT so you can preview locally.
    */
-  eleventyConfig.addCollection('post', (collection) => {
-    if (process.env.ELEVENTY_ENV !== 'production')
-      return [...collection.getFilteredByGlob('./src/posts/*.md')]
-    else
-      return [...collection.getFilteredByGlob('./src/posts/*.md')].filter(
-        (post) => !post.data.draft
-      )
-  })
+  // eleventyConfig.addCollection('post', (collection) => {
+  //   if (process.env.ELEVENTY_ENV !== 'production') return [...collection.getFilteredByGlob('./src/posts/*.md')]
+  //   else return [...collection.getFilteredByGlob('./src/posts/*.md')].filter((post) => !post.data.draft)
+  // })
 
   // TAGLIST used from the official eleventy-base-blog
   eleventyConfig.addCollection('tagList', function (collection) {
@@ -92,7 +85,7 @@ module.exports = function (eleventyConfig) {
         tags = tags.filter(function (item) {
           switch (item) {
             // this list should match the `filter` list in tags.njk
-            case 'authors':
+            case 'member':
             case 'pages':
             case 'post':
               return false
@@ -150,6 +143,20 @@ module.exports = function (eleventyConfig) {
   let markdownLib = markdownIt(options).use(markdownItEmoji)
   eleventyConfig.setLibrary('md', markdownLib)
 
+  // Customize Markdown library settings:
+  eleventyConfig.amendLibrary('md', (mdLib) => {
+    mdLib.use(markdownItAnchor, {
+      permalink: markdownItAnchor.permalink.ariaHidden({
+        placement: 'after',
+        class: structure.g_markdownItAnchor_classes,
+        symbol: '#',
+        ariaHidden: false,
+      }),
+      level: [1, 2, 3, 4],
+      slugify: eleventyConfig.getFilter('slugify'),
+    })
+  })
+
   /**
    * Add layout aliases
    * @link https://www.11ty.dev/docs/layouts/#layout-aliasing
@@ -157,7 +164,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addLayoutAlias('base', 'layouts/base.njk')
   eleventyConfig.addLayoutAlias('page', 'layouts/page.njk')
   eleventyConfig.addLayoutAlias('post', 'layouts/post.njk')
-  eleventyConfig.addLayoutAlias('author', 'layouts/author.njk')
+  eleventyConfig.addLayoutAlias('member', 'layouts/member.njk')
 
   return {
     dir: {

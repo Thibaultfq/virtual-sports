@@ -4,9 +4,9 @@ title: Virtual Sports - Exploring innovation in the sports sector
 layout: base #set the home page with a different layout as it is not a 'normal' page, we want some extra custimisation here
 tags: pages
 excerpt: Virtual sports are physical-digital technical innovation such as mixed reality sports games. We provide scientific knowledge on how such innovation will impact elite and leisure sport organisations, services and practices. # used for page excerpts and META (will be overwritten if SEO used below)
-author: Thibault Fouquaert # only displayed on Post lists and detail views. Defaults to _data/meta.authorURL
+author: thibault-fouquaert # this is a slug, same slug as the member. If the author is not a member, can be an author slug (that gets unslugified) or just full name. Only displayed on Post lists and detail views. Defaults to _data/meta.authorURL
 eleventyImport:
-  collections: ["post"]
+  collections: ["post","member"]
 eleventyNavigation: # Required if want to display in Main Nav Bar
   key: main # "main" is required
   parent: nav
@@ -45,10 +45,10 @@ heroSettings:
     - image: /assets/images/default-image-virtual-sports.webp
       text: "Hello world"
       textClass: "text-vs-yellow-300"
-    - image: /assets/images/authors/thibault-fouquaert.webp
+    - image: /assets/images/members/thibault-fouquaert.webp
       text: "Hello world 2"
       textClass: "text-vs-blue-300"
-    - image: /assets/images/authors/looking-for-expert.webp
+    - image: /assets/images/members/looking-for-expert.webp
       text: "Hello world 3"
       textClass: "text-red-300"
 taglimit: 3
@@ -137,8 +137,8 @@ typedJsBase: "Virtual Sports are "
       <div class="h-1 mx-auto bg-gradient-to-r from-vs-yellow-400 to-vs-yellow-600 w-48 md:w-96 my-0 py-0 rounded-t"></div>
     </div>
     <div class="mx-auto max-w-full pb-10 lg:pb-14">
-      {% set authorslist = authors | getHomepageExperts %}
-      {% include "components/authorslistcards.njk" %}
+      {% set memberslist = collections.member | getHomepageExperts %}
+      {% include "components/memberslistcards.njk" %}
     </div>
   </section>
 

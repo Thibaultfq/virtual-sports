@@ -53,7 +53,7 @@
         #}
                 {% for entry in navPages %}
                     <a href="{{ entry.url | url }}" alt="Link to {{ entry.title }}" 
-                    :class="{{ transparentNav == true }} ? ({{ page.url == entry.url }} ? '{{ colors.navCustom.textActiveBg or colors.navDefault.textActiveBg }} {{ colors.navCustom.textActive or colors.navDefault.textActive }}' : (scrolledNav ? '{{colors.navCustom.text or colors.navDefault.text}}' : '{{colors.transparentNav.text or colors.transparentNav.text}}')) : ({{ page.url == entry.url }} ? '{{ colors.navCustom.textActiveBg or colors.navDefault.textActiveBg }} {{ colors.navCustom.textActive or colors.navDefault.textActive }}' : '{{colors.navCustom.text or colors.navDefault.text}}')"
+                    :class="{{ transparentNav == true }} ? ({{ page.url === entry.url }} ? '{{ colors.navCustom.textActiveBg or colors.navDefault.textActiveBg }} {{ colors.navCustom.textActive or colors.navDefault.textActive }}' : (scrolledNav ? '{{colors.navCustom.text or colors.navDefault.text}}' : '{{colors.transparentNav.text or colors.transparentNav.text}}')) : ({{ page.url === entry.url or (entry.url in page.url and entry.url !== '/') }} ? '{{ colors.navCustom.textActiveBg or colors.navDefault.textActiveBg }} {{ colors.navCustom.textActive or colors.navDefault.textActive }}' : '{{colors.navCustom.text or colors.navDefault.text}}')"
                     class=" px-3 py-2 font-medium items-center focus:outline-none transition duration-150 ease-in-out">
                         {{ entry.title }}
                     </a>

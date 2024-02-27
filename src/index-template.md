@@ -40,10 +40,10 @@ heroSettings:
     - image: /assets/images/default-image-virtual-sports.webp
       text: "Hello world"
       textClass: "text-vs-yellow-300"
-    - image: /assets/images/authors/thibault-fouquaert.webp
+    - image: /assets/images/members/thibault-fouquaert.webp
       text: "Hello world 2"
       textClass: "text-vs-blue-300"
-    - image: /assets/images/authors/looking-for-expert.webp
+    - image: /assets/images/members/looking-for-expert.webp
       text: "Hello world 3"
       textClass: "text-red-300"
 # Homepage only front matter ------------------------------
@@ -112,7 +112,7 @@ In addition to the Structural, Color, and Frontmatter contols listed below, the 
 
 You can completely control:
 
-- Multiple Authors in `/src/_data/authors.json`.
+- Multiple members in `/src/members/member-slug.md`. One file per member
 - FOUR native [Posts List](/blog/) and [Tags List](/tags/frontmatter/) layout in the `src/_data/structures.js` file via, `postListStyle:` and `tagListStyle:` keys.
 - Colors of the NavBar, Headings, Buttons, etc. in `/src/_data/colors.js`.
 - Site META and defaults in `/src/_data/meta.js`.

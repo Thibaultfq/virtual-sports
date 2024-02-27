@@ -14,16 +14,18 @@
         <a href="{{ post.url | url }}">{{ post.data.title }}</a>
       </h3>
 
-      {# <time datetime="{{ post.date | dateToFormat("yyyy-MM-dd") }}">{{ post.date | dateToFormat("dd LLL yyyy") }}</time> #}
       {# Used conditionals here to keep control at the template levels rather than at the component level.  #}
-      {# Display the Author block if structure.g_showAuthors is true (default) #}
+      {# Display the member block if structure.g_showAuthors is true (default) #}
       {% if structure.g_showAuthors %}
-        {# Only display the Author Block if there is a value for "author" in Post Frontmatter #}
-        {% if post.data.author %}
-          {% set postAuthor = authors | getAuthor(post.data.author) %}
-          {% include "components/authordate.njk" %}
-
-          {# by <a href="/authors/{{ post.data.author }}/">{{ postAuthor.name }}</a> #}
+        {# Only display the member Block if there is a value for "member" in Post Frontmatter #}
+        {% if post.data.author and post.data.author | length %}
+          {% set authorIsMember = collections.member | isMember(post.data.author) %}
+          {# pass into include for dynamic layout for authors vs. members #}
+          {# if the author is a member, display it differtly than an author that is not a member. Only members have a personal page, authors do not. Most often, authors are members of course. #}
+          {% if authorIsMember %}
+            {% set memberPost = collections.member | getMember(post.data.author) %}
+          {% endif %}
+          {% include "components/memberPostDate.njk" %}
         {% endif %}
       {% endif %}
 

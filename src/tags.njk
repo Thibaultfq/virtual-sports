@@ -5,10 +5,10 @@ pagination:
   size: 1
   alias: tag
   filter:
-    - authors
+    - member
     - pages
     - post
-permalink: /tags/{{ tag }}/
+permalink: "tags/{{ tag }}/"
 eleventyComputed:
   title: Entries Tagged "{{ tag }}”
 eleventyImport:

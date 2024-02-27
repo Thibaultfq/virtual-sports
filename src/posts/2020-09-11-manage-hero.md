@@ -40,10 +40,10 @@ heroSettings:
     - image: /assets/images/default-image-virtual-sports.webp
       text: "Hello world"
       textClass: "text-vs-yellow-300"
-    - image: /assets/images/authors/thibault-fouquaert.webp
+    - image: /assets/images/members/thibault-fouquaert.webp
       text: "Hello world 2"
       textClass: "text-vs-blue-300"
-    - image: /assets/images/authors/looking-for-expert.webp
+    - image: /assets/images/members/looking-for-expert.webp
       text: "Hello world 3"
       textClass: "text-red-300"
   video:

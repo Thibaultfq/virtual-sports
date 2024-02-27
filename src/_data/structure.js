@@ -44,11 +44,11 @@ module.exports = {
   g_showExcerpt: true,
 
   /**
-   * ===== Display Author Blocks =====
-   * Set below to 'false' to globally disable Author Avatars
-   * and links to author's page on Post/Blog listings.
+   * ===== Display member Blocks =====
+   * Set below to 'false' to globally disable member Avatars
+   * and links to member's page on Post/Blog listings.
    *
-   * Add and Manage Author data in src/_data/authors.json
+   * Add and Manage member data in src/members/*.md, one file per member
    */
   g_showAuthors: true,
 
@@ -86,10 +86,10 @@ module.exports = {
    * You can currently set one of the following 4 options for how
    * the posts/blog listing page displays.
    * The templates are located in /src/_includes/components/[name].njk
-   *  1. postslist = Text link list, just Title, Date/Author, excerpt
-   *  2. postslistblocks = Simple listing w/ Title, Date, Tags, Author (if set)
+   *  1. postslist = Text link list, just Title, Date/Member, excerpt
+   *  2. postslistblocks = Simple listing w/ Title, Date, Tags, Member (if set)
    *  3. postslistthumbs = Same as above with thumbnails
-   *  4. postslistcards = Nice cards with Author/Date block
+   *  4. postslistcards = Nice cards with Member/Date block
    *
    * NOTE: If you want to make your own list layouts, you can duplicate
    *        any of the existing layouts and modify as you want.
@@ -113,4 +113,9 @@ module.exports = {
    *
    */
   tagListStyle: '',
+
+  /**
+   * Set the classes of the markdownItAnchor plugin, because this file is watched by tailwind and .eleventy.js not.
+   */
+  g_markdownItAnchor_classes: 'text-transparent hover:text-current focus:text-current',
 }

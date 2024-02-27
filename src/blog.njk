@@ -18,6 +18,7 @@ pagination:
   size: 12
   reverse: true
   alias: posts
+permalink: "blog/{% if pagination.pageNumber > 0 %}{{ pagination.pageNumber + 1 }}/{% endif %}index.html"
 ---
 
 <h2 class="mt-6">Setting Posts Lists Display</h2>
@@ -35,13 +36,13 @@ Currently setting = <code>postListStyle: <em>{{ structure.postListStyle }}</em>
 Defaults are:
 <ol>
     <li>
-      <strong>postslist</strong> = Just text links with Title, Date/Author, Excerpt</li>
+      <strong>postslist</strong> = Just text links with Title, Date/Member, Excerpt</li>
     <li>
-      <strong>postslistblocks</strong> = Block-style Grid with Title, Date/Author Image, Tag Pills, Excerpt</li>
+      <strong>postslistblocks</strong> = Block-style Grid with Title, Date/Member Image, Tag Pills, Excerpt</li>
     <li>
-      <strong>postslistthumbs</strong> = Block-style Grid with Post Thumbnail, Title, Date/Author, Tag Pills, Excerpt</li>
+      <strong>postslistthumbs</strong> = Block-style Grid with Post Thumbnail, Title, Date/Member, Tag Pills, Excerpt</li>
     <li>
-      <strong>postslistcards</strong> = Cards with Border, Dropshadow, Post Thumbnail, Title, Date/Author Image, Excerpt</li>
+      <strong>postslistcards</strong> = Cards with Border, Dropshadow, Post Thumbnail, Title, Date/Member Image, Excerpt</li>
   </ol>
 </p>
 
