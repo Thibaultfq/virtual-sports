@@ -1,6 +1,7 @@
 html {
   overflow-y: scroll;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 @tailwind base;
@@ -13,6 +14,24 @@ h5,
 h6 {
   @apply font-semibold text-gray-700;
 }
+
+/* For .md content in blogs use default margin for headers, not on other (often NJK) pages */
+.md h1 {
+  @apply mt-8;
+}
+.md h2 {
+  @apply mt-6;
+}
+.md h3 {
+  @apply mt-4;
+}
+.md h4 {
+  @apply mt-4;
+}
+.md h5 {
+  @apply mt-4;
+}
+
 h1 {
   @apply text-4xl;
 }
@@ -32,7 +51,7 @@ p a,
 li a,
 blockquote a,
 dd a {
-  @apply font-medium text-indigo-700;
+  @apply font-medium text-vs-blue-700;
 }
 p {
   @apply mt-4;
@@ -60,6 +79,12 @@ pre code {
 @tailwind components;
 
 @tailwind utilities;
+
+/* custom classes */
+.mask-linear-white {
+  -webkit-mask-image: linear-gradient(to right, transparent 0, white 4rem, white calc(100% - 4rem), transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0, white 4rem, white calc(100% - 4rem), transparent 100%);
+}
 
 /* Flickity custom */
 .flickity-button {

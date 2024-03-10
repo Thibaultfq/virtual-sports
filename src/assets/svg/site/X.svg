@@ -1,0 +1,6 @@
+<svg aria-hidden="true" focusable="false" data-icon="twitter" role="img"
+   xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+   <title>Click to view {{ meta.title }} on Twitter</title>
+   <path fill="currentColor"
+      d="m303.66 216.8 186.51-216.8h-44.196l-161.94 188.24-129.34-188.24h-149.18l195.59 284.66-195.59 227.34h44.198l171.02-198.79 136.6 198.79h149.18l-202.84-295.2zm-60.536 70.366-19.818-28.345-157.68-225.55h67.886l127.25 182.02 19.818 28.345 165.41 236.6h-67.886l-134.98-193.07z" />
+</svg>

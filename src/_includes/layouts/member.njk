@@ -2,108 +2,113 @@
 layout: base
 permalink: "/members/{{ slug }}/index.html"
 eleventyComputed:
-  title: "{{ name }} | member of the Virtual Sports Network"
+  title: "{{ name }} | Virtual Sports Network"
 ---
-<main class="{{ structure.g_pageWidth }} py-12">
+<main class="{{ structure.g_pageWidth }} py-4 md:py-12">
+  {% set tagsOfPosts = collections.post | getAllTagsOfPostsOfMember(slug) %}
+  <section class="pb-4 md:pb-10 ">
+    <div class=" flex flex-col break-words w-full">
+      <div class="flex flex-wrap justify-center gap-y-6 md:gap-y-0">
+        <div class="w-full md:w-4/12 md:order-2 flex justify-center">
+          <img class="h-full w-full max-w-56 max-h-56 object-cover rounded-full shadow-xl bg-gray-50 ring-2 ring-vs-yellow-400" src="{{ image }}" alt="{{name }} profile picture">
+        </div>
+        <div class="w-full md:w-4/12 md:order-3 lg:text-right lg:self-center">
+          <div class="flex flex-row justify-center w-full">
+            {% if personalWebsites[0] and personalWebsites[0].url %}
+              <a aria-label="Link to {{ personalWebsites[0].label }}" alt="Link to {{ personalWebsites[0].label }}" class="text-vs-blue-900 hover:text-vs-yellow-500" href="{{ personalWebsites[0].url | url }}">
+                {% svg "website", "mx-2 h-6 w-6 fill-current", personalWebsites[0].label %}</a>
+            {% endif %}
+            {% if email %}
+              <a aria-label="email {{ name }}" alt="email {{ name }}" class="text-vs-blue-900 hover:text-vs-yellow-500" href="mailto:{{ email}}">
+                {% svg "email", "mx-2 h-6 w-6 fill-current" %}</a>
+            {% endif %}
+            {% for social in socialWebsites %}
+              {% if social.url %}
+                <a aria-label="Link to {{ social.label }}" alt="Link to {{ social.label }}" class="text-vs-blue-900 hover:text-vs-yellow-500" href="{{ social.url | url }}">
+                  {% svg social.label, "mx-2 h-6 w-6 fill-current", social.label %}
+                </a>
+              {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+        <div class="w-full md:w-4/12 md:order-1 flex flex-col justify-center">
+          <div class="flex flex-none max-w-full w-full justify-center gap-8">
+            <div class="text-center">
+              <span class="text-xl font-bold block uppercase tracking-wide text-vs-blue-900">
+                {{ collections.post | getAmountOfPostByMember(slug) }}
+              </span>
+              <span class="text-sm text-vs-blue-900">Posts</span>
+            </div>
+            <div class="text-center">
+              <span class="text-xl font-bold block uppercase tracking-wide text-vs-blue-900">{{ tagsOfPosts | length }}</span>
+              <span class="text-sm text-vs-blue-900">Tags</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="text-center py-4">
+        <div class="flex flex-col place-content-between gap-y-2">
+          <h4 class="text-4xl font-semibold">
+            {{ name }}
+          </h4>
+          <h5 class="text-gray-700 font-normal text-2xl italic text-balance">{{jobTitle}}</h5>
+          <h5 class="font-normal text-lg text-gray-700 ">
+            {% if researchGroup %}
+              <a href="{{groupWebsite.url}}">{{researchGroup}}, </a>
+            {% endif %}
+            {% if department %}
+              <a href="{{departmentWebsite.url}}">{{department}}, </a>
+            {% endif %}
+            {% if university %}
+              <a href="{{universityWebsite.url}}">{{university}}</a>
+            {% endif %}
+          </h5>
+        </div>
 
-  {{ content | safe }}
+        {# <h3 class="text-4xl font-semibold leading-normal mb-2 text-vs-blue-900">
+            {{name}}
+          </h3>
+          <div class="text-sm leading-normal mt-0 mb-2 text-vs-blue-400 font-bold uppercase">
+            <i class="fas fa-map-marker-alt mr-2 text-lg text-vs-blue-400"></i>
+              Los Angeles, California
+            </div>
+          <div class="mb-2 text-vs-blue-600 mt-10">
+            <i class="fas fa-briefcase mr-2 text-lg text-vs-blue-400"></i>Solution Manager - Creative Tim Officer
+            </div>
+          <div class="mb-2 text-vs-blue-600">
+            <i class="fas fa-university mr-2 text-lg text-vs-blue-400"></i>University of Computer Science
+            </div> #}
+      </div>
+    </div>
+  </section>
+
+  <section class="md pb-4 md:pb-10 border-t border-vs-blue-900">{{ content | safe }}</section>
+
+  {% set posts = collections.post | getPostsByAuthor(slug) %}
+
+  {% if tagsOfPosts | length and posts | length %}
+    <section class="pb-4 md:pb-10  border-t border-vs-blue-900">
+      {% if tagsOfPosts | length %}
+        <h3 class="pb-4 text-lg font-semibold {{ colors.headingsCustom or colors.headingsDefault }}">Tags used in the content of {{ name }}</h3>
+        {% for tag in tagsOfPosts %}
+          <div class="inline-block">
+            <a alt="tagged {{ tag }}" aria-label="tagged {{ tag }}" href="/tags/{{ tag | slug }}/" class="px-2 py-1 text-xs {{ colors.tagPillCustom.text or colors.tagPillDefault.text }} {{ colors.tagPillCustom.bg or colors.tagPillDefault.bg }} rounded-full {{ colors.tagPillCustom.textHover or colors.tagPillDefault.textHover }}  {{ colors.tagPillCustom.bgHover or colors.tagPillDefault.bgHover }}">{{ tag }}</a>
+          </div>
+        {% endfor %}
+      {% endif %}
+      {% if posts | length %}
+        <h3 class="text-lg font-semibold {{ colors.headingsCustom or colors.headingsDefault }}">10 most recent posts by {{ name }}</h3>
+        <ul>
+          {% for post in posts | reverse %}
+            {% if loop.index0 < 10 %}
+              <li>
+                <a href="{{post.url}}">{{post.data.title}}</a>
+              </li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+      {% endif %}
+    </section>
+  {% endif %}
 
 </main>
-
-{# 
-<h1 class=" mb-4 {{ colors.headingsCustom or colors.headingsDefault }}">{{ title }}</h1>
-
-{% columns %}
-{% cols "flex-none" %}
-<p>
-  <img class="h-64 rounded-lg" src="/assets/images/members/{{ image }}" alt="Photo of {{ title }}">
-</p>
-{% endcols %}
-{% cols "flex-grow px-8" %}
-{{ content | safe }}
-<p>TEST</p>
-<div class="mt-4 text-gray-500">
-  {% if company.website %}
-    <a class="block hover:underline" target="_blank" href="{{ company.website | url }}" alt="Company website">Company Website ↗️</a>
-    <a class="block hover:underline" target="_blank" href="{{ personal.website | url }}" alt="Personal website">Personal Website ↗️</a>
-  {% endif %}
-</div>
-{% endcols %}
-{% endcolumns %} #}
-
-{# ---
-layout: page
-pagination: 
-  data: members
-  size: 1
-  alias: member
-permalink: "/member/{{ member.slug }}/"
-eleventyComputed:
-  title: "{{ member.name }}"
----
-
-{% columns %}
-{% cols "flex-none" %}
-<p>
-  <img class="h-64 rounded-lg" src="{{ member.image }}" alt="Photo of {{ title }}">
-</p>
-{% endcols %}
-{% cols "flex-grow px-8" %}
-<div class="mt-4 text-gray-500">
-  <div class="mb-4">
-    {{ member.bio }}
-  </div> #}
-
-{# Display array of Author's company websites  
-  <div>
-    {% for sites in member.companyWebsites %}
-      {% if sites.url %}
-        <a class="block hover:underline" target="_blank" href="{{ sites.url | url }}" alt="sites.label website">{{ sites.label }} ↗️</a>
-      {% endif %}
-    {% endfor %}
-  </div>
-
-  {# Display array of Author's personal websites  
-  <div>
-    {% for sites in member.personalWebsites %}
-      {% if sites.url %}
-        <a class="block hover:underline" target="_blank" href="{{ sites.url | url }}" alt="sites.label website">{{ sites.label }} ↗️</a>
-      {% endif %}
-    {% endfor %}
-  </div>
-</div>
-
-{# Display Author's social platform links  
-<div class="flex items-center mt-4 md:justify-between">
-  <div class="flex justify-center md:order-2 {{ colors.authorCustom.socialIcons or colors.authorDefault.socialIcons }}">
-    {% for sites in member.socialWebsites %}
-      {% if sites.url %}
-        <a class="{{ colors.authorCustom.SocialIconsHover or colors.authorDefault.socialIconsHover }}" alt="{{ member.name }} on {{ sites.label }}" href="{{ sites.url | url }}">
-          {# {% svg sites.label,
-          "mx-2 h-10 w-10",
-          sites.label ~ " logo",
-          "author" %} 
-        </a>
-      {% endif %}
-    {% endfor %}
-  </div>
-</div>
-
-{% endcols %}
-{% endcolumns %}
-
-<div class="px-8 pt-4 mt-8 text-gray-500 border-t border-gray-300">
-  <div class="text-lg font-semibold {{ colors.headingsCustom or colors.headingsDefault }}">10 most recent posts by {{ title }}:</div>
-
-  {% set posts = collections.post | getPostsByAuthor(member.slug) %}
-  <ul>
-    {% for post in posts | reverse %}
-      {% if loop.index0 < 10 %}
-        <li>
-          <a href="{{post.url}}">{{post.data.title}}</a>
-        </li>
-      {% endif %}
-    {% endfor %}
-  </ul>
-
-</div> #}

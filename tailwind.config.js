@@ -35,16 +35,12 @@ module.exports = {
         'screen-1/4': 'calc(100vh / 4)',
         'screen-1/5': 'calc(100vh / 5)',
         'screen-minus-navbar': `calc(100vh - ${theme(
-          `spacing.${Math.max(
-            ...structure.nav_height_unscrolled.match(/\d+/gi).map(Number)
-          )}`
+          `spacing.${Math.max(...structure.nav_height_unscrolled.match(/\d+/gi).map(Number))}`
         )})`,
       }),
       minHeight: (theme) => ({
         'screen-minus-navbar': `calc(100vh - ${theme(
-          `spacing.${Math.max(
-            ...structure.nav_height_unscrolled.match(/\d+/gi).map(Number)
-          )}`
+          `spacing.${Math.max(...structure.nav_height_unscrolled.match(/\d+/gi).map(Number))}`
         )})`,
       }),
       width: (theme) => ({
@@ -78,16 +74,22 @@ module.exports = {
           950: '#04142a',
         },
       }),
+      animation: {
+        'infinite-scroll': 'infinite-scroll 20s linear infinite',
+      },
+      keyframes: {
+        'infinite-scroll': {
+          from: { transform: 'translateX(0)' },
+          to: { transform: 'translateX(-100%)' },
+        },
+      },
     },
   },
   variants: {},
   plugins: [
     require('@tailwindcss/forms'),
     plugin(function ({ addVariant }) {
-      addVariant(
-        'mobile-only',
-        "@media screen and (max-width: theme('screens.sm'))"
-      ) // instead of hard-coded 640px use sm breakpoint value from config. Or anything
+      addVariant('mobile-only', "@media screen and (max-width: theme('screens.sm'))") // instead of hard-coded 640px use sm breakpoint value from config. Or anything
     }),
     plugin(tailwind_custom_plugins.breakpointInspector), //adds current breakpoint to bottom of screen
   ],

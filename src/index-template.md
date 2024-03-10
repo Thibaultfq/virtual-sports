@@ -154,8 +154,8 @@ There are several **Shortcodes** _(both single and paired)_ and **Filters** to a
     stringsElement: '#typed-strings',
     typeSpeed: 40,
     backSpeed: 20,
-    shuffle: true,
-    smartBackspace: true,
+    shuffle: false,
+    smartBackspace: false,
     loop: true,
     backDelay: 1400
   });

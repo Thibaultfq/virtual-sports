@@ -8,11 +8,9 @@ pagination:
     - member
     - pages
     - post
-permalink: "tags/{{ tag }}/"
+permalink: "tags/{{ tag | slugify  }}/"
 eleventyComputed:
-  title: Entries Tagged "{{ tag }}”
-eleventyImport:
-  collections: ["tag"]
+  title: Tagged "{{ tag }}”
 ---
 
 <h3 class="mt-6">Setting Tags List Display</h3>

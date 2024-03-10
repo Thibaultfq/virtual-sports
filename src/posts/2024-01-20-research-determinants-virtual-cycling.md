@@ -1,45 +1,19 @@
 ---
-title: Full Frontmatter Example
-date: 2020-09-07T17:44:03.000Z
-excerpt: There is a LOT of control options in the frontmatter.
-author: shane-robinson
-draft: 
-seo:
-  title:
-  description:
-  image: 2020/09/index-frontmatter.jpg
-images: # relative to /src/assets/images/
-  feature:
-  thumb: 2020/09/index-frontmatter.jpg
-tags:
-  - frontmatter
-  - structure
-  - hero
-  - featured-image
----
-
-Currently, the frontmatter in the `index.md` file houses all the values and controls currently available...even if they aren't used on the home page.
-
-Any of the frontmatter elements used on the home page can be used on ANY Page or Post in this system.
-
-As of this posting, the `index.md` frontmatter looks like this:
-
-```yaml
-# This is a full listing of available Frontmatter options, available for any content (.md) file.
----
-title: Let's talk about static sites!
-layout: page
-excerpt: # used for page excerpts and META (will be overwritten if SEO used below)
-author: shane-robinson # only displayed on Post lists and detail views. Defaults to _data/meta.authorURL
-eleventyNavigation: # Required if want to display in Main Nav Bar
-  key: main # "main" is required
-  title: Welcome # as it will appear in the nav
-  order: 1 # order to display in the nav (index = 1)
+title: Determinants of virtual cycling adoption in leisure clubs
+date: 2024-01-20T00:00:00.000Z
+excerpt: What determines adoption of virtual cycling for leisure?
+author: thibault-fouquaert
+draft: false
 seo: # SEO values are used for OG and will overwrite 'title' and 'excerpt' above
   title:
   description:
   image: # used for OG:image and Twitter:image. Overrides default set in _data/meta.siteImage
-hero: graphic # options: carousel, graphic, video, split (text & image)
+images: # relative to /src/assets/images/
+  feature: default-image-virtual-sports.webp
+  thumb: default-image-virtual-sports.webp
+  align: # object-center (default) - other options at https://tailwindcss.com/docs/object-position
+  height: # optional. Default = h-48 md:h-screen-1/3
+hero: # options: carousel, graphic, video, split (text & image)
 heroSettings:
   height:
     mobile: # options = 1/1 (default = full screen), 1/2, 1/3, 3/4, 9/10, h-48 (12rem, 192px), h-56 (14rem, 224px), h-64 (16rem, 256px)
@@ -71,9 +45,8 @@ heroSettings:
     opacityMobile: 50 # options 25, 50, 75, 100 (default)
     opacityDesktop: # options 25, 50, 75, 100 (default)
 tags:
-  - frontmatter
-  - structure
-  - hero
-  - featured-image
+  - determinants
+  - antecedants
+  - adoption
+  - virtual cycling
 ---
-```

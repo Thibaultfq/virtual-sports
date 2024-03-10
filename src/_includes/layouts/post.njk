@@ -4,7 +4,7 @@ permalink: "/{{ page.date | dateToFormat('yyyy/MM/dd') }}/{{ title | slugify }}/
 author: "{{ meta.authorURL }}" # post authors are different than members of the network. Only pages for members are generated, not for authors. Mostly, an author is also a member. default is meta data
 ---
 
-<article class="{{ structure.g_pageWidth }}">
+<article class="md {{ structure.g_pageWidth }}">
 
   <h1 class="{{ colors.headingsCustom or colors.headingsDefault }}">{{ seo.title or title }}</h1>
   <div class="text-sm">
@@ -16,7 +16,7 @@ author: "{{ meta.authorURL }}" # post authors are different than members of the 
       <div class="{{ colors.authorCustom.name or colors.authorDefault.name }}">
         {# Only display the member Block if there is a value for "member" in Post Frontmatter #}
         {% if post.data.author and post.data.author | length %}
-          {% set authorIsMember = collections.member | isMember(post.data.author) %}
+          {% set authorIsMember = collections.member | authorIsMember(post.data.author) %}
           {# pass into include for dynamic layout for authors vs. members #}
           {# if the author is a member, display it differtly than an author that is not a member. Only members have a personal page, authors do not. Most often, authors are members of course. #}
           {% if authorIsMember %}

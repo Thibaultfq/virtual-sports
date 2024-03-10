@@ -5,12 +5,14 @@ const markdownItEmoji = require('markdown-it-emoji')
 const markdownItAnchor = require('markdown-it-anchor')
 const pluginSvgSprite = require('eleventy-plugin-svg-sprite')
 const structure = require('./src/_data/structure.js')
-const filters = require('./utils/filters.js')
+const filterFactory = require('./utils/filters.js')
 const shortcodes = require('./utils/shortcodes.js')
 const pairedshortcodes = require('./utils/paired-shortcodes.js')
 const pluginDrafts = require('./eleventy.config.drafts.js')
+const { minify } = require('terser')
 
 module.exports = function (eleventyConfig) {
+  const filters = filterFactory.init(eleventyConfig) //use a factory so we can pass the eleventyConfig, which could be used in filters to access other filters. see https://www.11ty.dev/docs/filters/
   /**
    * Plugins
    * @link https://www.11ty.dev/docs/plugins/
@@ -24,10 +26,22 @@ module.exports = function (eleventyConfig) {
    * use: {% svg "subdir1--subdir2--filename", "classes", "content for <desc/>" %}
    * @link https://github.com/patrickxchong/eleventy-plugin-svg-sprite#eleventy-plugin-svg-sprite
    */
-  eleventyConfig.addPlugin(pluginSvgSprite, {
-    path: './src/assets/svg',
-    globalClasses: 'fill-current',
-  })
+  eleventyConfig.addPlugin(pluginSvgSprite, [
+    {
+      path: './src/assets/svg/site', // relative path to SVG directory
+      svgSpriteShortcode: 'svgsprite',
+      globalClasses: 'fill-current',
+    },
+    {
+      path: './src/assets/svg/memberLogos', // relative path to SVG directory
+      svgSpriteShortcode: 'svgspriteMemberLogos',
+      globalClasses: 'fill-current',
+    },
+  ])
+  // {
+  //   path: './src/assets/svg',
+  //   globalClasses: 'fill-current',
+  // })
 
   /**
    * Filters
@@ -118,13 +132,25 @@ module.exports = function (eleventyConfig) {
    * Passthrough File Copy
    * @link https://www.11ty.dev/docs/copy/
    */
-  eleventyConfig.addPassthroughCopy({
-    'src/assets/js/custom.js': 'js/custom.js',
-  })
   eleventyConfig.addPassthroughCopy('src/*.ico')
   eleventyConfig.addPassthroughCopy('src/robots.txt')
   eleventyConfig.addPassthroughCopy('src/assets/images/')
   eleventyConfig.addPassthroughCopy('src/assets/video/')
+
+  /**
+   * Add JS minified. Call this filter in a (e.g. base) NJK file to include minified JS file
+   */
+  eleventyConfig.addNunjucksAsyncFilter('jsmin', async function (code, callback) {
+    try {
+      const minified = await minify(code, {})
+      callback(null, minified.code)
+    } catch (err) {
+      console.error('JS minify failed to minify')
+      console.error('Terser error: ', err)
+      // Fail gracefully.
+      callback(null, code)
+    }
+  })
 
   /**
    * Set custom markdown library instance...

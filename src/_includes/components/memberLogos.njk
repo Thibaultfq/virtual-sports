@@ -1,0 +1,17 @@
+<div x-data="{}"
+    x-init="$nextTick(() => {
+        let ul = $refs.logos;
+        ul.insertAdjacentHTML('afterend', ul.outerHTML);
+        ul.nextSibling.setAttribute('aria-hidden', 'true');
+    })"
+    class="w-full inline-flex flex-nowrap overflow-hidden mask-linear-white">
+    <ul x-ref="logos" class="shrink-0 list-none m-0 p-0 gap-x-8 w-full flex items-center justify-center animate-infinite-scroll">
+        {% for logo in memberLogos %}
+            <li class="">
+                {% svg logo,
+                "text-vs-blue-900 max-w-48 min-w-36",
+                logo %}
+            </li>
+        {% endfor %}
+    </ul>
+</div>

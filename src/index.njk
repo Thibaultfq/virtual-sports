@@ -36,7 +36,7 @@ heroSettings:
   subheadingText: Science Communication and Expert Network on Virtual Sports.
   subheadingTextColor: # Leave empty to inherit headingTextColor or default (text-white) or use any text-[color]-[xxx]
   buttonText: 'Tell me more :eyes:' # no button generated if left blank
-  buttonURL: /contact/ # full url required. Example: https://thisdomain.com/somepage/
+  buttonURL: '#what-are-virtual-sports' # full url required. Example: https://thisdomain.com/somepage/
   buttonTextColor: # leave blank to inherit from /src/_data/colors.buttonCustom or buttonDefault
   buttonBgColor: # leave blank to inherit from /src/_data/colors.buttonCustom.bg or buttonDefault.bg
   buttonBgHover: # leave blank to inherit from /src/_data/colors.buttonCustom.bgHover or buttonDefault.bgHover
@@ -61,12 +61,17 @@ typedJsStrings:
   - "physically challenging."
   - "more than exergames."
 typedJsBase: "Virtual Sports are "
+memberLogos: #add the filenames of the logo's of members to be included below
+  - logo_UGent_EN
+  - Nord_universitet_logo
 ---
+{# include svgsprite with memberLogos only on homepage #}
+{% svgspriteMemberLogos %}
 
 <section class="relative">
   <img class="absolute top-0 left-0 w-full opacity-30 -z-10" src="/assets/images/home/virtual-sports-dots-bg.svg" loading="lazy" alt="background connected dots"/>
-  <div class="container max-w-5xl mx-auto pt-12 md:pt-32 lg:pt-48">
-    <h2 class="w-full mb-6 text-5xl font-bold text-center text-balance {{ colors.headingsCustom or colors.headingsDefault }}">
+  <div class="container max-w-5xl mx-auto pt-12 md:pt-32 lg:pt-48 mb-8 md:mb-24">
+    <h2 id="what-are-virtual-sports"class="w-full mb-6 text-5xl font-bold text-center text-balance {{ colors.headingsCustom or colors.headingsDefault }}">
           What Are Virtual Sports?
         </h2>
     <div class="w-full mb-8 md:mb-32">
@@ -103,10 +108,18 @@ typedJsBase: "Virtual Sports are "
       </div>
     </div>
   </div>
+  <div class="flex justify-center">
+    <a href="/about">
+      <button type="button" class="text-2xl md:text-3xl bottom-4 right-4 px-3 py-2 font-medium rounded-md {{ colors.buttonDefault.text or colors.buttonCustom.text }} {{ colors.buttonDefault.textHover or colors.buttonCustom.textHover }} {{ colors.buttonDefault.bg or colors.buttonCustom.bg }} {{ colors.buttonDefault.bgHover or colors.buttonCustom.bgHover }} {{ colors.buttonDefault.border or colors.buttonCustom.border }}">
+        More About Virtual Sports
+        </button>
+    </a>
+
+  </div>
 </section>
 
 <section class="">
-  <div class="container max-w-7xl mx-auto m-8 mt-20 lg:mt-48">
+  <div class="container max-w-7xl mx-auto m-8 mt-20 lg:mt-40">
     <h2 class="w-full mb-6 text-5xl font-bold text-center text-balance {{ colors.headingsCustom or colors.headingsDefault }}">
       Most Recent Blog Posts
         </h2>
@@ -120,7 +133,9 @@ typedJsBase: "Virtual Sports are "
     </div>
     <div class="flex justify-center">
       <a href="/blog">
-        <button type="button" class="text-2xl md:text-3xl bottom-4 right-4 px-3 py-2 font-medium rounded-md {{ colors.buttonDefault.text or colors.buttonCustom.text }} {{ colors.buttonDefault.textHover or colors.buttonCustom.textHover }} {{ colors.buttonDefault.bg or colors.buttonCustom.bg }} {{ colors.buttonDefault.bgHover or colors.buttonCustom.bgHover }} {{ colors.buttonDefault.border or colors.buttonCustom.border }}">Read All Blog Posts</button>
+        <button type="button" class="text-2xl md:text-3xl bottom-4 right-4 px-3 py-2 font-medium rounded-md {{ colors.buttonDefault.text or colors.buttonCustom.text }} {{ colors.buttonDefault.textHover or colors.buttonCustom.textHover }} {{ colors.buttonDefault.bg or colors.buttonCustom.bg }} {{ colors.buttonDefault.bgHover or colors.buttonCustom.bgHover }} {{ colors.buttonDefault.border or colors.buttonCustom.border }}">
+          Read All Blog Posts
+          </button>
       </a>
 
     </div>
@@ -128,9 +143,9 @@ typedJsBase: "Virtual Sports are "
 </section>
 
 <section class="">
-  <div class="container max-w-7xl mx-auto m-8 mt-20 lg:mt-48">
+  <div class="container max-w-7xl mx-auto m-8 mt-20 lg:mt-40">
     <h2 class="mb-2 w-full text-5xl font-bold text-center text-balance {{ colors.headingsCustom or colors.headingsDefault }}">
-      Virtual Sports Network
+      Virtual Sports Network Members
       </h2>
     <h3 class="{{ colors.headingsCustom or colors.headingsDefault }} mb-6 text-center italic font-normal">Connecting expertise from leading academics</h3>
     <div class="w-full mb-8 md:mb-24">
@@ -140,16 +155,37 @@ typedJsBase: "Virtual Sports are "
       {% set memberslist = collections.member | getHomepageExperts %}
       {% include "components/memberslistcards.njk" %}
     </div>
+    <div class="flex justify-center gap-x-8">
+      <a href="mailto:thibault.fouquaert@ugent.be?subject=Member application for the Virtual Sports Network">
+        <button type="button" class="text-2xl md:text-3xl bottom-4 right-4 px-3 py-2 font-medium rounded-md {{ colors.buttonDefault.text or colors.buttonCustom.text }} {{ colors.buttonDefault.textHover or colors.buttonCustom.textHover }} {{ colors.buttonDefault.bg or colors.buttonCustom.bg }} {{ colors.buttonDefault.bgHover or colors.buttonCustom.bgHover }} {{ colors.buttonDefault.border or colors.buttonCustom.border }}">
+          Become A Member
+          </button>
+      </a>
+    </div>
   </section>
 
-  <script>
-    var typed = new Typed('#typed', {
-      stringsElement: '#typed-strings',
-      typeSpeed: 40,
-      backSpeed: 20,
-      shuffle: true,
-      smartBackspace: false,
-      loop: true,
-      backDelay: 1500
-    });
-  </script>
+  <section class="">
+    <div class="container max-w-7xl mx-auto m-8 mt-20 lg:mt-40">
+      <h2 class="mb-2 w-full text-5xl font-bold text-center text-balance {{ colors.headingsCustom or colors.headingsDefault }}">
+      Universities Involved
+      </h2>
+      <h3 class="{{ colors.headingsCustom or colors.headingsDefault }} mb-6 text-center italic font-normal">We connect the following partners</h3>
+      <div class="w-full mb-8 md:mb-24">
+        <div class="h-1 mx-auto bg-gradient-to-r from-vs-yellow-400 to-vs-yellow-600 w-48 md:w-96 my-0 py-0 rounded-t"></div>
+      </div>
+      <div class="pb-10 lg:pb-14">
+        {% include "components/memberLogos.njk" %}
+      </div>
+    </section>
+
+    <script>
+      var typed = new Typed('#typed', {
+        stringsElement: '#typed-strings',
+        typeSpeed: 40,
+        backSpeed: 20,
+        shuffle: true,
+        smartBackspace: false,
+        loop: true,
+        backDelay: 1500
+      });
+    </script>

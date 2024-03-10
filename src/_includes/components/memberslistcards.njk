@@ -9,7 +9,7 @@
         </div>
         <div class="flex flex-col place-content-between flex-1 px-2">
           <a href="/members/{{ member.data.slug}}/" class="">
-            <h4 class="text-2xl font-semibold {{ colors.headingsCustom or colors.headingsDefault }}">
+            <h4 class="text-2xl font-semibold">
               {{ member.data.name }}
             </h4>
             <h5 class="text-gray-700 font-normal text-lg italic text-balance">{{member.data.jobTitle}}</h5>
@@ -37,6 +37,7 @@
           {% if member
             .data
             .personalWebsites[0] and member
+            .data
             .personalWebsites[0]
             .url %}
             <a aria-label="Link to {{ member.data.personalWebsites[0].label }}" alt="Link to {{ member.data.personalWebsites[0].label }}" class="text-vs-blue-900 hover:text-vs-yellow-500" href="{{ member.data.personalWebsites[0].url | url }}">
