@@ -12,6 +12,6 @@ eleventyImport:
 ---
 
 <div class="mt-6">
-  {% set tags = collections.tagList %}
+  {% set tags = collections.all | getAllTags | getOnlyCustomTags %}
   {% include "components/tagpills.njk" %}
 </div>

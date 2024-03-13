@@ -39,10 +39,10 @@
       {# If you don't want to display the Tag Pills, set "false" in /src/_data/structure.js #}
       {% if structure.g_showTagPills %}
         {% if taglimit %}
-          {% set tags = post.data.tags | limit(taglimit + 1) %}
+          {% set tags = post.data.tags | getOnlyCustomTags | limit(taglimit) %}
           {# add one because first tag is always 'page' (or related) #}
         {% else %}
-          {% set tags = post.data.tags %}
+          {% set tags = post.data.tags | getOnlyCustomTags %}
         {% endif %}
         {% include "components/tagpills.njk" %}
       {% endif %}

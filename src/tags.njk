@@ -47,7 +47,7 @@ Currently setting = <code>tagListStyle: <em>{{ structure.tagListStyle or structu
 
 <div class="border-t border-gray-300">
 <h4 class="{{ colors.tagPillCustom.text or colors.tagPillDefault.text }}">All Tags:</h4>
-{% set tags = collections.tagList %}
+{% set tags =  collections.all | getAllTags | getOnlyCustomTags | sort %}
 {% include "components/tagpills.njk" %}
 </div>
 

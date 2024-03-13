@@ -21,7 +21,7 @@
               </div>
               <div class="flex-1">
                 {% if structure.g_showTagPills %}
-                  {% set tags = post.data.tags %}
+                  {% set tags = post.data.tags | getOnlyCustomTags %}
                   {% include "components/tagpills.njk" %}
                 {% endif %}
               </div>

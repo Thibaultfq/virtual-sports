@@ -145,25 +145,21 @@ module.exports = {
         //filter from tags that are used to define main collections
       },
 
-      // // Return all the tags used in a collection
-      // getAllTags: (collection) => {
-      //   let tagSet = new Set()
-      //   for (let item of collection) {
-      //     ;(item.data.tags || []).forEach((tag) => tagSet.add(tag))
-      //   }
-      //   return Array.from(tagSet)
-      // },
+      // Return all the tags used in a collection
+      getAllTags: (collection) => {
+        let tagSet = new Set()
+        for (let item of collection) {
+          ;(item.data.tags || []).forEach((tag) => tagSet.add(tag))
+        }
+        //checks if contains case sensitive doubles because of slugify filter so that's handeled automatically.
+        return Array.from(tagSet)
+      },
 
-      // filterTagList: (tags) => {
-      //   return (tags || []).filter((tag) => ['all', 'nav', 'post', 'posts'].indexOf(tag) === -1)
-      // },
+      // filter an array of tags to get only the "custom" tags in a post and not the default tags that define a collection such as 'all' or 'post'
+      getOnlyCustomTags: (tags) => {
+        return (tags || []).filter((tag) => ['all', 'nav', 'post'].indexOf(tag) === -1)
+      },
 
-      /**
-	 * Minify and inline CSS per a tip on 11ty: https://www.11ty.dev/docs/quicktips/inline-css/
-   cssmin: (code) => {
-     return new cleanCSS({}).minify(code).styles
-    },
-  */
       debugger: (...args) => {
         console.log(...args)
         debugger
