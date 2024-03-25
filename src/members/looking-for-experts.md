@@ -3,14 +3,15 @@ slug: looking-for-experts
 name: Looking For Experts
 image: "/assets/images/members/looking-for-expert.webp"
 homepageExpert: true
-homepageExpertOrder: 2
+homepageExpertOrder: 3
 university: ''
 department: ''
 researchGroup: ''
 jobTitle: ''
 bioShort: Interested in joining the Virtual Sports Network? We're currently still
   looking for experts on the topics around virtual sports :eyes:!
-bioLong: ''
+bioLong: Interested in joining the Virtual Sports Network? We're currently still
+  looking for experts on the topics around virtual sports :eyes:!
 email: ''
 groupWebsite:
   label: Sportmanagement UGent
