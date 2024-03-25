@@ -78,13 +78,15 @@ memberLogos: #add the filenames of the logo's of members to be included below
       <div class="h-1 mx-auto bg-gradient-to-r from-vs-yellow-400 to-vs-yellow-600 w-48 md:w-96 my-0 py-0 rounded-t"></div>
     </div>
     <div class="flex flex-wrap">
-      <div class="w-5/6 sm:w-1/2 p-6">
-        <h3 class="text-3xl {{ colors.headingsCustom or colors.headingsDefault }} font-bold mb-3 text-balance">
-              Resembling traditional sports, but gamified through interactive technology.
+      <div class="w-5/6 sm:w-1/2 p-6 mb-8 text-gray-700 text-balance">
+        <h3 class="text-3xl {{ colors.headingsCustom or colors.headingsDefault }} font-bold mb-3 capitalize">
+              Setting a name for physical active eSports
             </h3>
-        <p class="text-gray-700 mb-8 text-balance">
-          Virtual Sports are in between eSports and Exergames. They are new sports formats that are derived from and closely related to their traditional sports counterpart.
+        <p>
+          eSports are often contested upon in the sports sector due to its lack of sports-alike physicality. 
+          New eSports formats are emering, however, resembling traditional sports more closley then ever. 
         </p>
+        <p>Across various organisations and , it remains challenging on how to adres and </p>
       </div>
       <div class="w-full sm:w-1/2 p-6">
         {# <svg class="w-full sm:h-64 mx-auto" viewBox="0 0 1177 598.5" xmlns="http://www.w3.org/2000/svg"> #}
@@ -110,9 +112,7 @@ memberLogos: #add the filenames of the logo's of members to be included below
   </div>
   <div class="flex justify-center">
     <a href="/about">
-      <button type="button" class="text-2xl md:text-3xl bottom-4 right-4 px-3 py-2 font-medium rounded-md {{ colors.buttonDefault.text or colors.buttonCustom.text }} {{ colors.buttonDefault.textHover or colors.buttonCustom.textHover }} {{ colors.buttonDefault.bg or colors.buttonCustom.bg }} {{ colors.buttonDefault.bgHover or colors.buttonCustom.bgHover }} {{ colors.buttonDefault.border or colors.buttonCustom.border }}">
-        More About Virtual Sports
-        </button>
+      {% ctaButton "More About Virtual Sports :bulb:" | renderInlineMarkdown %}
     </a>
 
   </div>
@@ -133,9 +133,7 @@ memberLogos: #add the filenames of the logo's of members to be included below
     </div>
     <div class="flex justify-center">
       <a href="/blog">
-        <button type="button" class="text-2xl md:text-3xl bottom-4 right-4 px-3 py-2 font-medium rounded-md {{ colors.buttonDefault.text or colors.buttonCustom.text }} {{ colors.buttonDefault.textHover or colors.buttonCustom.textHover }} {{ colors.buttonDefault.bg or colors.buttonCustom.bg }} {{ colors.buttonDefault.bgHover or colors.buttonCustom.bgHover }} {{ colors.buttonDefault.border or colors.buttonCustom.border }}">
-          Read All Blog Posts
-          </button>
+        {% ctaButton "Read All Blog Posts :newspaper:" | renderInlineMarkdown %}
       </a>
 
     </div>
@@ -155,12 +153,14 @@ memberLogos: #add the filenames of the logo's of members to be included below
       {% set memberslist = collections.member | getHomepageExperts %}
       {% include "components/memberslistcards.njk" %}
     </div>
-    <div class="flex justify-center gap-x-8">
+    <div class="flex flex-col items-center gap-y-8">
       <a href="mailto:thibault.fouquaert@ugent.be?subject=Member application for the Virtual Sports Network">
-        <button type="button" class="text-2xl md:text-3xl bottom-4 right-4 px-3 py-2 font-medium rounded-md {{ colors.buttonDefault.text or colors.buttonCustom.text }} {{ colors.buttonDefault.textHover or colors.buttonCustom.textHover }} {{ colors.buttonDefault.bg or colors.buttonCustom.bg }} {{ colors.buttonDefault.bgHover or colors.buttonCustom.bgHover }} {{ colors.buttonDefault.border or colors.buttonCustom.border }}">
-          Become A Member
-          </button>
+        {% ctaButton "Interested in the Network? Get in Touch! :envelope:" | renderInlineMarkdown %}
       </a>
+      <a href="/members">
+        {% ctaButton "See All Netwok Members :eyes:" | renderInlineMarkdown %}
+      </a>
+
     </div>
   </section>
 

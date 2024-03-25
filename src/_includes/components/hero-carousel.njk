@@ -8,7 +8,7 @@
           {% endif %}
           <div class="flex flex-col justify-center grow ">
             <h3 class="p-4 md:p-12 xl:p-20 {{ carouselCell.textClass }}">
-              {% renderInlineMarkdown carouselCell.text %}</h3>
+              {{ carouselCell.text | renderInlineMarkdown }}</h3>
           </div>
         </div>
       </div>

@@ -12,6 +12,6 @@ eleventyImport:
 ---
 
 <div class="mt-6">
-  {% set memberslist = collections.member %}
+  {% set memberslist = collections.member | sort(false, false, "data.name") %}
   {% include "components/memberslistcards.njk" %}
 </div>

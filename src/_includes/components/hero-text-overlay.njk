@@ -1,5 +1,5 @@
 {% if transparentNav == true %}
-<div class="{{structure.nav_height_unscrolled}} flex-none invisible"></div>
+  <div class="{{structure.nav_height_unscrolled}} flex-none invisible"></div>
 {% endif %}
 
 <div class="grow flex flex-col items-start justify-start {{ heroSettings.headingTextColor or 'text-white' }} {{ structure.g_pageWidth }}">
@@ -16,7 +16,10 @@
     {{ heroSettings.subheadingText | safe }}
   </div>
   {% if heroSettings.buttonText %}
-    <a href="{{ heroSettings.buttonURL }}" class="flex-none mb-16 sm:mb-16 font-semibold text-lg md:text-xl lg:text-2xl p-2 md:p-4 rounded-lg {{ heroSettings.buttonTextColor or colors.buttonCustom.text or colors.buttonDefault.text }} {{ heroSettings.buttonBgColor or colors.buttonCustom.bg or colors.buttonDefault.bg }} {{ colors.buttonCustom.textHover or colors.buttonDefault.textHover }} {{ heroSettings.buttonBgHover or colors.buttonCustom.bgHover or colors.buttonDefault.bgHover }} {{ heroSettings.buttonBorder or colors.buttonCustom.border or colors.buttonDefault.border }}">{% renderInlineMarkdown heroSettings.buttonText %}</a>
+    <a href="{{ heroSettings.buttonURL }}" class="flex-none mb-16 sm:mb-16 font-semibold text-lg md:text-xl lg:text-2xl">
+      {% ctaButton heroSettings.buttonText | renderInlineMarkdown %}
+    </a>
+
   {% endif %}
 
 </div>

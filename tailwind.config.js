@@ -9,6 +9,8 @@ module.exports = {
     './src/**/*.md',
     './src/_data/colors.js',
     './src/_data/structure.js',
+    './utils/shortcodes.js',
+    './utils/paired-shortcodes.js',
     './utils/**/*.js',
   ],
   // safelist: [], //create a safelist entry for pt-x based on the h-x defined in structure. We may than call this dynamic generated class (based on string h-x) and it will be included in the css, see hero-text-overlay.

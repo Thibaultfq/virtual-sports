@@ -35,24 +35,17 @@ module.exports = {
     `
   },
 
-  /**
-   * use markdown in a .njk file and in the front matter (e.g. with emoji)
-   */
-  renderMarkdown: (rawString) => {
-    if (!rawString) {
-      return ''
-    }
-    return markdownLib.render(rawString)
-  },
-
-  /**
-   * use markdown in a .njk file and in the front matter (e.g. with emoji)
-   */
-  renderInlineMarkdown: (rawString) => {
-    if (!rawString) {
-      return ''
-    }
-    return markdownLib.renderInline(rawString)
+  ctaButton: function (content, classes) {
+    //to access variables in nunjuncks, use this.ctx in filters and shortcodes
+    return `<button type="button" class="text-2xl md:text-3xl bottom-4 right-4 px-3 py-2 font-medium rounded-md ${
+      this.ctx.colors.buttonDefault.text || this.ctx.colors.buttonCustom.text
+    } ${this.ctx.colors.buttonDefault.textHover || this.ctx.colors.buttonCustom.textHover} ${
+      this.ctx.colors.buttonDefault.bg || this.ctx.colors.buttonCustom.bg
+    } ${this.ctx.colors.buttonDefault.bgHover || this.ctx.colors.buttonCustom.bgHover} ${
+      this.ctx.colors.buttonDefault.border || this.ctx.colors.buttonCustom.border
+    } ${classes}">
+    ${content}
+    </button>`
   },
 
   /**
@@ -73,14 +66,8 @@ module.exports = {
     const slug = vid ? vid : 'oHg5SJYRHA0'
     const title = vtitle ? vtitle : 'YouTube Video'
     const ratio = vratio ? vratio : '16:9'
-    const start = vstart
-      ? vstart
-          .split(':')
-          .reduce((minute, seconds) => Number(minute) * 60 + Number(seconds))
-      : ''
-    const padding = ratio
-      .split(':')
-      .reduce((first, second) => (second / first) * 100)
+    const start = vstart ? vstart.split(':').reduce((minute, seconds) => Number(minute) * 60 + Number(seconds)) : ''
+    const padding = ratio.split(':').reduce((first, second) => (second / first) * 100)
 
     return `<div id="${slug}" style="position:relative; width:100%; padding-bottom:${padding}%"><iframe style="position:absolute; top:0; right:0; bottom:0; left:0; width:100%; height:100%" width="100%" height="100%" title="${title}" src="https://www.youtube.com/embed/${slug}${
       start ? `?start=${start}` : ''

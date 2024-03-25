@@ -14,7 +14,10 @@
       </p>
       {% if heroSettings.buttonText %}
         <div class="w-full mt-12 ">
-          <a href="{{ heroSettings.buttonURL }}" class="p-4 rounded-lg {{ heroSettings.buttonTextColor or colors.buttonCustom.text or colors.buttonDefault.text }} {{ heroSettings.buttonBgColor or colors.buttonCustom.bg or colors.buttonDefault.bg }} {{ colors.buttonCustom.textHover or colors.buttonDefault.textHover }} {{ heroSettings.buttonBgHover or colors.buttonCustom.bgHover or colors.buttonDefault.bgHover }} {{ heroSettings.buttonBorder or colors.buttonCustom.border or colors.buttonDefault.border }}">{{ heroSettings.buttonText }}</a>
+          <a href="{{ heroSettings.buttonURL }}">
+            {% ctaButton heroSettings.buttonText | renderInlineMarkdown %}
+
+          </a>
         </div>
       {% endif %}
 

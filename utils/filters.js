@@ -1,6 +1,14 @@
 const { DateTime } = require('luxon')
 const slugify = require('slugify')
-// const cleanCSS = require('clean-css')
+const markdownIt = require('markdown-it')
+const markdownItEmoji = require('markdown-it-emoji')
+let options = {
+  html: true,
+  breaks: true,
+  linkify: true,
+  typographer: true,
+}
+let markdownLib = markdownIt(options).use(markdownItEmoji)
 
 module.exports = {
   init: (eleventyConfig) => {
@@ -158,6 +166,26 @@ module.exports = {
       // filter an array of tags to get only the "custom" tags in a post and not the default tags that define a collection such as 'all' or 'post'
       getOnlyCustomTags: (tags) => {
         return (tags || []).filter((tag) => ['all', 'nav', 'post'].indexOf(tag) === -1)
+      },
+
+      /**
+       * use markdown in a .njk file and in the front matter (e.g. with emoji)
+       */
+      renderMarkdown: (rawString) => {
+        if (!rawString) {
+          return ''
+        }
+        return markdownLib.render(rawString)
+      },
+
+      /**
+       * use markdown in a .njk file and in the front matter (e.g. with emoji)
+       */
+      renderInlineMarkdown: (rawString) => {
+        if (!rawString) {
+          return ''
+        }
+        return markdownLib.renderInline(rawString)
       },
 
       debugger: (...args) => {
