@@ -4,34 +4,42 @@ permalink: "/{{ page.date | dateToFormat('yyyy/MM/dd') }}/{{ title | slugify }}/
 author: "{{ meta.authorURL }}" # post authors are different than members of the network. Only pages for members are generated, not for authors. Mostly, an author is also a member. default is meta data
 ---
 
-<article class="md {{ structure.g_pageWidth }}">
+<article class="md {{ structure.g_blogWidth }} ">
+  <h1 class="{{ colors.headingsCustom or colors.headingsDefault }}">{{ title }}</h1>
 
-  <h1 class="{{ colors.headingsCustom or colors.headingsDefault }}">{{ seo.title or title }}</h1>
-  <div class="text-sm">
-    <time class="{{ colors.authorCustom.date or colors.authorDefault.date }}" datetime="{{ date | dateToFormat("yyyy-MM-dd") }}">
-      {{ date | dateToFormat("dd LLL yyyy") }}
-    </time>
-    {# Global disable member display in /src/_data/structure.js #}
-    {% if structure.g_showAuthors %}
-      <div class="{{ colors.authorCustom.name or colors.authorDefault.name }}">
-        {# Only display the member Block if there is a value for "member" in Post Frontmatter #}
-        {% if post.data.author and post.data.author | length %}
-          {% set authorIsMember = collections.member | authorIsMember(post.data.author) %}
-          {# pass into include for dynamic layout for authors vs. members #}
-          {# if the author is a member, display it differtly than an author that is not a member. Only members have a personal page, authors do not. Most often, authors are members of course. #}
-          {% if authorIsMember %}
-            {% set memberPost = collections.member | getMember(post.data.author) %}
-              by <a class="hover:underline" href="/members/{{ memberPost.slug }}/">{{ memberPost.name }}</a>
-          {% else %}
-            <span>{{ post.data.author | unslugify }}</span>
-          {% endif %}
+  {% if author and author | length %}
+    {% set authorIsMember = collections.member | authorIsMember(author) %}
+    {% if authorIsMember %}
+      {% set member = collections.member | getMember(author) %}
+    {% endif %}
+    <div class="flex items-center mt-4 text-md">
+      {% if authorIsMember %}
+        <div class="flex-shrink-0 mr-3">
+          <a href="/members/{{ member.data.slug }}/">
+            {# this equals author datafield #}
+            <img class="w-16 h-16 rounded-full border" src="{{ member.data.image }}" alt=" Photo of {{ member.data.name }}"/>
+          </a>
         </div>
       {% endif %}
-    {% endif %}
+      <div>
+        <div class="font-medium">
+          By&nbsp;
+          {% if authorIsMember %}
+            <a href="/members/{{ member.data.slug }}/" class="hover:underline {{ colors.authorCustom.name or colors.authorDefault.name }}">{{ member.data.name }}</a>
+          {% else %}
+            <span class="{{ colors.authorCustom.name or colors.authorDefault.name }}">{{ author | unslugify }}</span>
+          {% endif %}
+        </div>
+        <div class="{{ colors.authorCustom.date or colors.authorDefault.date }}">
+          <time datetime="{{ post.date | dateToFormat("yyyy-MM-dd") }}">{{ date | dateToFormat("dd LLLL yyyy") }}</time>
+        </div>
+      </div>
+    </div>
+  {% endif %}
 
+  <div class="font-serif text-xl leading-10">
+    {{ layoutContent | safe }}
   </div>
-
-  {{ layoutContent | safe }}
 
   {% if structure.g_showTagPills or structure.g_showSocialShareIcons %}
     <div class="pt-4 mt-12 border-t md:justify-between md:items-start md:flex md:flex-row">
@@ -39,6 +47,7 @@ author: "{{ meta.authorURL }}" # post authors are different than members of the 
       {# If you don't want to display the Tag Pills, set "false" in /src/_data/structure.js #}
       <div class="md:w-1/2">
         {% if structure.g_showTagPills %}
+          {% set tags = tags | getOnlyCustomTags %}
           {% include "components/tagpills.njk" %}
         {% endif %}
       </div>
