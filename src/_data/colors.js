@@ -112,9 +112,17 @@ module.exports = {
   headingsCustom: '',
 
   /**
+   * prose classes colors
+   */
+  headingsProseDefault: 'prose-headings:text-vs-blue-900',
+  headingsProseCustom: '',
+  linksProseDefault: 'prose-a:text-vs-blue-700 hover:prose-a:text-vs-blue-600',
+  linksProseCustom: '',
+
+  /**
    * ===== Excerpts on Post Lists
    */
-  excerptDefault: 'text-sm italic text-gray-700',
+  excerptDefault: 'text-base italic text-gray-700',
   excerptCustom: '',
 
   /**
@@ -204,14 +212,14 @@ module.exports = {
    * === Previous / Next Post Detail Links
    */
   prevNextDefault: {
-    text: 'text-gray-700',
-    textHover: 'hover:text-gray-800',
+    text: 'text-vs-blue-700',
+    textHover: 'hover:text-vs-blue-500 hover:font-semibold',
     bg: '',
     bgHover: '',
   },
   prevNextCustom: {
-    text: '',
-    textHover: '',
+    text: 'text-vs-blue-700',
+    textHover: 'hover:text-vs-blue-500 hover:font-semibold',
     bg: '',
     bgHover: '',
   },

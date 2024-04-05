@@ -5,14 +5,18 @@ author: "{{ meta.authorURL }}" # post authors are different than members of the 
 ---
 
 <article class="md {{ structure.g_blogWidth }} ">
-  <h1 class="{{ colors.headingsCustom or colors.headingsDefault }}">{{ title }}</h1>
+  <div class="{{structure.g_prose}} {{colors.headingsProseCustom or colors.headingsProseDefault}} {{colors.linksProseCustom or colors.linksProseDefault}}">
+    <h1 id="{{title | slugify }}" tabindex="-1">{{ title }}
+      <a class="{{ structure.g_markdownItAnchor_classes}}" href="#{{ title | slugify }}">#</a>
+    </h1>
+  </div>
 
   {% if author and author | length %}
     {% set authorIsMember = collections.member | authorIsMember(author) %}
     {% if authorIsMember %}
       {% set member = collections.member | getMember(author) %}
     {% endif %}
-    <div class="flex items-center mt-4 text-md">
+    <div class="flex items-center my-4 text-md">
       {% if authorIsMember %}
         <div class="flex-shrink-0 mr-3">
           <a href="/members/{{ member.data.slug }}/">
@@ -37,7 +41,9 @@ author: "{{ meta.authorURL }}" # post authors are different than members of the 
     </div>
   {% endif %}
 
-  <div class="font-serif text-xl leading-10">
+  {# <div class="font-serif text-xl leading-10 text-justify"> #}
+  <div class="{{structure.g_prose}} {{colors.headingsProseCustom or colors.headingsProseDefault}} {{colors.linksProseCustom or colors.linksProseDefault}} ">
+
     {{ layoutContent | safe }}
   </div>
 
@@ -45,7 +51,7 @@ author: "{{ meta.authorURL }}" # post authors are different than members of the 
     <div class="pt-4 mt-12 border-t md:justify-between md:items-start md:flex md:flex-row">
 
       {# If you don't want to display the Tag Pills, set "false" in /src/_data/structure.js #}
-      <div class="md:w-1/2">
+      <div class="">
         {% if structure.g_showTagPills %}
           {% set tags = tags | getOnlyCustomTags %}
           {% include "components/tagpills.njk" %}
@@ -53,7 +59,7 @@ author: "{{ meta.authorURL }}" # post authors are different than members of the 
       </div>
 
       {# If you don't want to display Social Share icons, disable them in /src/_data/structure.js  #}
-      <div class="px-2 pt-6 md:pt-2 md:w-1/2 md:flex md:justify-end">
+      <div class="px-2 pt-6 md:flex md:justify-end">
         {% if structure.g_showSocialShareIcons %}
           {% include "components/socialshare.njk" %}
         {% endif %}
@@ -67,15 +73,17 @@ author: "{{ meta.authorURL }}" # post authors are different than members of the 
     {% set previousPost = collections.post | getPreviousCollectionItem(page) %}
     {% set nextPost = collections.post | getNextCollectionItem(page) %}
 
-    <div class="py-2 text-center sm:py-0">
+    <div class="py-2 ">
       {% if previousPost %}
-        <a class="{{ colors.prevNextCustom.text or colors.prevNextDefault.text }} {{ colors.prevNextCustom.text or colors.prevNextDefault.textHover }}" href="{{ previousPost.url }}">← {{ previousPost.data.title }}</a>
+        <h1 class="pb-2 text-xl font-semibold">{{":arrow_left:" | renderInlineMarkdown }} Previous blog post</h1>
+        <a class="text-lg text-balance block {{ colors.prevNextCustom.text or colors.prevNextDefault.text }} {{ colors.prevNextCustom.textHover or colors.prevNextDefault.textHover }}" href="{{ previousPost.url }}">{{ previousPost.data.title }}</a>
       {% endif %}
     </div>
 
-    <div class="py-2 text-center sm:py-0">
+    <div class="py-2 text-right">
       {% if nextPost %}
-        <a class="{{ colors.prevNextCustom.text or colors.prevNextDefault.text }} {{ colors.prevNextCustom.text or colors.prevNextDefault.textHover }}" href="{{ nextPost.url }}">{{ nextPost.data.title }} →</a>
+        <h1 class="pb-2 text-xl font-semibold">Next blog post {{":arrow_right:" | renderInlineMarkdown }}</h1>
+        <a class="text-lg text-balance block {{ colors.prevNextCustom.text or colors.prevNextDefault.text }} {{ colors.prevNextCustom.textHover or colors.prevNextDefault.textHover }}" href="{{ nextPost.url }}">{{ nextPost.data.title }}</a>
       {% endif %}
     </div>
 

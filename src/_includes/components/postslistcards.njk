@@ -6,7 +6,7 @@
     <div class="flex flex-col overflow-hidden rounded-lg shadow-lg">
       <div class="flex-shrink-0">
         <a href="{{ post.url | url }}" class="relative group">
-          <img class="object-cover {{ post.data.images.align }} w-full h-48" src={% if post.data.images.thumb %}"/assets/images/{{ post.data.images.thumb }}"{% else %}"/assets/images/default-image-virtual-sports.webp"{% endif %} alt="{{ title }} Thumbnail">
+          <img class="{{ images.fit or 'object-cover' }} {{ post.data.images.align }} w-full h-48" src={% if post.data.images.thumb %}"/assets/images/{{ post.data.images.thumb }}"{% else %}"/assets/images/default-image-virtual-sports.webp"{% endif %} alt="{{ title }} Thumbnail">
           <button type="button" class="absolute hidden group-hover:block bottom-4 right-4 px-3 py-2 font-medium rounded-md {{ colors.buttonDefault.text or colors.buttonCustom.text }} {{ colors.buttonDefault.textHover or colors.buttonCustom.textHover }} {{ colors.buttonDefault.bg or colors.buttonCustom.bg }} {{ colors.buttonDefault.bgHover or colors.buttonCustom.bgHover }} {{ colors.buttonDefault.border or colors.buttonCustom.border }}">Read</button>
         </a>
       </div>

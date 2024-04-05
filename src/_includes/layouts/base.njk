@@ -46,7 +46,7 @@ transparentNav: false #set default false transparentNav attribute for all pages
       {% if images.feature %}
 
         <figure class="w-screen {{ images.height or 'h-48 md:h-screen-1/3' }}">
-          <img class="object-cover {{ images.align }} w-full h-full" src="{{ images.feature if 'http' in images.feature else "/assets/images/" + images.feature }}" alt="{{ title }}">
+          <img class="{{ images.fit or 'object-cover' }} {{ images.align }} w-full h-full" src="{{ images.feature if 'http' in images.feature else "/assets/images/" + images.feature }}" alt="{{ title }}">
         </figure>
       {% endif %}
 

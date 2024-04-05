@@ -6,26 +6,17 @@ html {
 
 @tailwind base;
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  @apply font-semibold text-gray-700;
-}
-
 /* For .md content in blogs use default margin for headers, not on other (often NJK) pages */
-.md h1,
+/* .md h1,
 .md h2,
 .md h3,
 .md h4,
 .md h5,
 .md h6 {
   @apply font-sans;
-}
+} */
 
-.md h1 {
+/* .md h1 {
   @apply mt-8;
 }
 .md h2 {
@@ -40,12 +31,12 @@ h6 {
 .md h5 {
   @apply mt-4;
 }
-
-h1 {
+ */
+/* h1 {
   @apply text-4xl;
 }
 h2 {
-  @apply pt-12 text-3xl;
+  @apply text-3xl;
 }
 h3 {
   @apply text-2xl;
@@ -55,16 +46,16 @@ h4 {
 }
 h5 {
   @apply text-lg;
-}
+} */
 p a,
 li a,
 blockquote a,
 dd a {
   @apply font-medium text-vs-blue-700;
 }
-p {
+/* p {
   @apply mt-4;
-}
+} */
 .wrapper > p:first-of-type {
   @apply p-0 m-0;
 }

@@ -11,6 +11,8 @@ module.exports = {
   g_pageWidth: 'max-w-screen-2xl px-4 md:px-10 lg:px-20 2xl:px-30',
   g_blogWidth: 'max-w-screen-lg px-4 md:px-10 lg:px-20 mb-4 md:mb-10 mx-auto',
 
+  g_prose: 'font-serif prose lg:prose-lg prose-headings:font-sans max-w-none',
+
   /**
    * height of the navbar and the logo within when page is on top
    */
@@ -92,6 +94,8 @@ module.exports = {
    *  3. postslistthumbs = Same as above with thumbnails
    *  4. postslistcards = Nice cards with Member/Date block
    *
+   *  ONLY postlistthumbs are updated to subgrid atm, others TODO. Deprecated for now!
+   *
    * NOTE: If you want to make your own list layouts, you can duplicate
    *        any of the existing layouts and modify as you want.
    *        Then just add them to the list above
@@ -118,5 +122,5 @@ module.exports = {
   /**
    * Set the classes of the markdownItAnchor plugin, because this file is watched by tailwind and .eleventy.js not.
    */
-  g_markdownItAnchor_classes: 'text-transparent hover:text-current focus:text-current',
+  g_markdownItAnchor_classes: 'text-transparent not-prose hover:text-vs-blue-600 focus:text-vs-blue-600',
 }

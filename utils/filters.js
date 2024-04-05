@@ -134,11 +134,14 @@ module.exports = {
         return posts.filter((a) => a.data.author === key)
       },
 
-      getAmountOfPostByMember: (posts, memberSlug) => {
-        if (!eleventyConfig.getFilter('memberIsAuthor')(posts, memberSlug)) {
-          return 'None yet' //If a member isn't an author (i.e. has no posts), return 0
-        }
-        return eleventyConfig.getFilter('getPostsByAuthor')(posts, memberSlug).length
+      /**
+       *
+       * @param {*} number
+       * @returns the number in words up to 'ten'. Usefull when using numbers in text (see apa guidelines).
+       */
+      numberToWords: (number) => {
+        if (number > 10) return number
+        return ['none', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten'][number]
       },
 
       getAllTagsOfPostsOfMember: (posts, memberSlug) => {

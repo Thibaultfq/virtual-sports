@@ -85,11 +85,55 @@ module.exports = {
           to: { transform: 'translateX(-100%)' },
         },
       },
+      typography: {
+        DEFAULT: {
+          // this is for prose class
+          css: {
+            fontSize: '1.125rem',
+            p: {
+              'text-align': 'justify',
+            },
+          },
+        },
+        sm: {
+          css: {
+            fontSize: '1rem',
+            p: {
+              'text-align': 'justify',
+            },
+          },
+        },
+        lg: {
+          css: {
+            fontSize: '1.25rem',
+            p: {
+              'text-align': 'justify',
+            },
+          },
+        },
+        xl: {
+          css: {
+            fontSize: '1.5rem',
+            p: {
+              'text-align': 'justify',
+            },
+          },
+        },
+        '2xl': {
+          css: {
+            fontSize: '1.625rem',
+            p: {
+              'text-align': 'justify',
+            },
+          },
+        },
+      },
     },
   },
   variants: {},
   plugins: [
     require('@tailwindcss/forms'),
+    require('@tailwindcss/typography'),
     plugin(function ({ addVariant }) {
       addVariant('mobile-only', "@media screen and (max-width: theme('screens.sm'))") // instead of hard-coded 640px use sm breakpoint value from config. Or anything
     }),

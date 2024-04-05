@@ -139,9 +139,6 @@ module.exports = function (eleventyConfig) {
       slugify: eleventyConfig.getFilter('slugify'),
     })
   })
-
-  eleventyConfig.on('eleventy.before', async ({ dir, runMode, outputMode }) => {})
-
   /**
    * Add layout aliases
    * @link https://www.11ty.dev/docs/layouts/#layout-aliasing

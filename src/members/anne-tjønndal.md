@@ -16,11 +16,11 @@ groupWebsite:
   url: https://site.nord.no/response/en/
   email: anne.b.tjonndal@nord.no
 departmentWebsite:
-  label: BSW UGent
-  url: https://www.ugent.be/ge/bsw/en/
+  label: Faculty of Social Sciences
+  url: https://www.nord.no/en/about/faculties-and-centres/faculty-of-social-sciences
   email: anne.b.tjonndal@nord.no
 universityWebsite:
-  label: UGent
+  label: Nord University
   url: https://www.nord.no/
   email: anne.b.tjonndal@nord.no
 personalWebsites:
