@@ -1,17 +1,17 @@
 const { DateTime } = require('luxon')
 const slugify = require('slugify')
-const markdownIt = require('markdown-it')
-const markdownItEmoji = require('markdown-it-emoji')
-let options = {
-  html: true,
-  breaks: true,
-  linkify: true,
-  typographer: true,
-}
-let markdownLib = markdownIt(options).use(markdownItEmoji)
+// const markdownIt = require('markdown-it')
+// const markdownItEmoji = require('markdown-it-emoji')
+// let options = {
+//   html: true,
+//   breaks: true,
+//   linkify: true,
+//   typographer: true,
+// }
+// let markdownLib = markdownIt(options).use(markdownItEmoji)
 
 module.exports = {
-  init: (eleventyConfig) => {
+  init: (eleventyConfig, markdownLib) => {
     return {
       /**
        * Filters

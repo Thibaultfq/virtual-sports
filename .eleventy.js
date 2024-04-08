@@ -1,18 +1,19 @@
 const pluginRss = require('@11ty/eleventy-plugin-rss')
 const pluginNavigation = require('@11ty/eleventy-navigation')
+const readingTime = require('reading-time')
 const markdownIt = require('markdown-it')
 const markdownItEmoji = require('markdown-it-emoji')
+const markdownItFigureCaption = require('markdown-it-image-figures')
 const markdownItAnchor = require('markdown-it-anchor')
 const pluginSvgSprite = require('eleventy-plugin-svg-sprite')
 const structure = require('./src/_data/structure.js')
 const filterFactory = require('./utils/filters.js')
 const shortcodes = require('./utils/shortcodes.js')
-const pairedshortcodes = require('./utils/paired-shortcodes.js')
+const pairedshortcodesFactory = require('./utils/paired-shortcodes.js')
 const pluginDrafts = require('./eleventy.config.drafts.js')
 const { minify } = require('terser')
 
 module.exports = function (eleventyConfig) {
-  const filters = filterFactory.init(eleventyConfig) //use a factory so we can pass the eleventyConfig, which could be used in filters to access other filters. see https://www.11ty.dev/docs/filters/
   /**
    * Plugins
    * @link https://www.11ty.dev/docs/plugins/
@@ -38,43 +39,6 @@ module.exports = function (eleventyConfig) {
       globalClasses: 'fill-current',
     },
   ])
-  // {
-  //   path: './src/assets/svg',
-  //   globalClasses: 'fill-current',
-  // })
-
-  /**
-   * Filters
-   * @link https://www.11ty.io/docs/filters/
-   */
-  Object.keys(filters).forEach((filterName) => {
-    eleventyConfig.addFilter(filterName, filters[filterName])
-  })
-
-  /**
-	 * Transforms
-	 * @link https://www.11ty.io/docs/config/#transforms
-   Object.keys(transforms).forEach((transformName) => {
-     eleventyConfig.addTransform(transformName, transforms[transformName])
-    })
-    */
-
-  /**
-   * Shortcodes
-   * @link https://www.11ty.io/docs/shortcodes/
-   */
-  Object.keys(shortcodes).forEach((shortcodeName) => {
-    eleventyConfig.addShortcode(shortcodeName, shortcodes[shortcodeName])
-  })
-
-  /**
-   * Paired Shortcodes
-   * @link https://www.11ty.dev/docs/languages/nunjucks/#paired-shortcode
-   */
-  Object.keys(pairedshortcodes).forEach((shortcodeName) => {
-    eleventyConfig.addPairedShortcode(shortcodeName, pairedshortcodes[shortcodeName])
-  })
-
   /**
    * Custom Watch Targets
    * for when the Tailwind config or .css files change...
@@ -109,6 +73,11 @@ module.exports = function (eleventyConfig) {
     }
   })
 
+  eleventyConfig.addNunjucksFilter('readingTime', function (postOrContent) {
+    const content = typeof postOrContent === 'string' ? postOrContent : postOrContent.templateContent
+    return readingTime(content).text
+  })
+
   /**
    * Set custom markdown library instance...
    * and support for Emojis in markdown...
@@ -123,12 +92,10 @@ module.exports = function (eleventyConfig) {
     linkify: true,
     typographer: true,
   }
-  let markdownLib = markdownIt(options).use(markdownItEmoji)
-  eleventyConfig.setLibrary('md', markdownLib)
-
-  // Customize Markdown library settings:
-  eleventyConfig.amendLibrary('md', (mdLib) => {
-    mdLib.use(markdownItAnchor, {
+  let markdownLib = markdownIt(options)
+    .use(markdownItEmoji)
+    .use(markdownItFigureCaption, { figcaption: 'alt' })
+    .use(markdownItAnchor, {
       permalink: markdownItAnchor.permalink.ariaHidden({
         placement: 'after',
         class: structure.g_markdownItAnchor_classes,
@@ -138,7 +105,44 @@ module.exports = function (eleventyConfig) {
       level: [1, 2, 3, 4],
       slugify: eleventyConfig.getFilter('slugify'),
     })
+  eleventyConfig.setLibrary('md', markdownLib)
+
+  const filters = filterFactory.init(eleventyConfig, markdownLib) //use a factory so we can pass the eleventyConfig, which could be used in filters to access other filters. see https://www.11ty.dev/docs/filters/
+
+  /**
+   * Filters
+   * @link https://www.11ty.io/docs/filters/
+   */
+  Object.keys(filters).forEach((filterName) => {
+    eleventyConfig.addFilter(filterName, filters[filterName])
   })
+
+  /**
+	 * Transforms
+	 * @link https://www.11ty.io/docs/config/#transforms
+   Object.keys(transforms).forEach((transformName) => {
+     eleventyConfig.addTransform(transformName, transforms[transformName])
+    })
+    */
+
+  /**
+   * Shortcodes
+   * @link https://www.11ty.io/docs/shortcodes/
+   */
+  Object.keys(shortcodes).forEach((shortcodeName) => {
+    eleventyConfig.addShortcode(shortcodeName, shortcodes[shortcodeName])
+  })
+
+  const pairedshortcodes = pairedshortcodesFactory.init(eleventyConfig, markdownLib)
+
+  /**
+   * Paired Shortcodes
+   * @link https://www.11ty.dev/docs/languages/nunjucks/#paired-shortcode
+   */
+  Object.keys(pairedshortcodes).forEach((shortcodeName) => {
+    eleventyConfig.addPairedShortcode(shortcodeName, pairedshortcodes[shortcodeName])
+  })
+
   /**
    * Add layout aliases
    * @link https://www.11ty.dev/docs/layouts/#layout-aliasing
