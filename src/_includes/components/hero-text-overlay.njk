@@ -3,7 +3,7 @@
 {% endif %}
 
 <div class="grow flex flex-col items-start justify-start {{ heroSettings.headingTextColor or 'text-white' }} {{ structure.g_pageWidth }}">
-  <div class="flex-grow font-semibold leading-tight {{ heroSettings.headingTextCase }} mxsonly:text-2xl text-3xl sm:text-4xl md:text-6xl sm:mt-6 mt-12 lg:mt-20 xl:mt-36 ">
+  <div class="flex-grow font-semibold leading-tight {{ heroSettings.headingTextCase }} mxsonly:text-2xl text-3xl sm:text-4xl md:text-6xl mt-4 sm:mt-6 md:mt-12 lg:mt-20 xl:mt-28 ">
     {% if typedJsStrings and typedJsBase %}
       {% typedjs typedJsStrings,
       typedJsBase %}
@@ -12,7 +12,7 @@
     {% endif %}
 
   </div>
-  <div class="mxsonly:my-8 sm:my-10 my-20 lg:my-28 xl:my-32 pr-12 text-xl font-light md:text-3xl lg:text-5xl {{ heroSettings.subheadingTextColor }}">
+  <div class="mxsonly:my-4 my-8 sm:my-10 md:my-16 lg:my-24 xl:my-28 pr-12 text-2xl md:text-3xl lg:text-5xl mxsonly:font-light {{ heroSettings.subheadingTextColor }}">
     {{ heroSettings.subheadingText | safe }}
   </div>
   {% if heroSettings.buttonText %}

@@ -1,8 +1,7 @@
 ---
 layout: base
 permalink: "/{{ page.date | dateToFormat('yyyy/MM/dd') }}/{{ title | slugify }}/index.html"
-eleventyComputed:
-  author: "{{ meta.authorURL }}" # post authors are different than members of the network. Only pages for members are generated, not for authors. Mostly, an author is also a member. default is meta data
+author: "{{ meta.authorURL }}" # post authors are different than members of the network. Only pages for members are generated, not for authors. Mostly, an author is also a member. default is meta data
 ---
 
 <article class="md {{ structure.g_blogWidth }} ">

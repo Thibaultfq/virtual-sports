@@ -71,17 +71,10 @@ memberLogos: #add the filenames of the logo's of members to be included below
 <section class="relative">
   <img class="absolute top-0 left-0 w-full opacity-30 -z-10" src="/assets/images/home/virtual-sports-dots-bg.svg" loading="lazy" alt="background connected dots"/>
   <div class="container max-w-5xl mx-auto pt-12 md:pt-32 lg:pt-48 mb-8 md:mb-24">
-    <h2 id="what-are-virtual-sports"class="w-full mb-6 text-5xl font-bold text-center text-balance {{ colors.headingsCustom or colors.headingsDefault }}">
-          What Are Virtual Sports?
-        </h2>
-    <div class="w-full mb-8 md:mb-32">
-      <div class="h-1 mx-auto bg-gradient-to-r from-vs-yellow-400 to-vs-yellow-600 w-48 md:w-96 my-0 py-0 rounded-t"></div>
-    </div>
+    {% heading "What Are Virtual Sports?"%}
     <div class="flex flex-wrap">
-      <div class="w-5/6 sm:w-1/2 p-6 mb-8 text-gray-700 text-balance">
-        <h3 class="text-3xl {{ colors.headingsCustom or colors.headingsDefault }} font-bold mb-3">
-              Setting a Name for Physical Active eSports
-            </h3>
+      <div class="sm:w-7/12 lg:w-1/2 p-6 sm:mb-8 text-gray-700 text-balance [&>p]:mb-4 [&>p]:text-lg md:[&>p]:text-xl">
+        <h3 class="text-3xl {{ colors.headingsCustom or colors.headingsDefault }} font-bold mb-2">Setting a Name for Physical Active eSports</h3>
         <p>
           eSports are often contested upon in the sports sector due to its lack of sports-alike physicality. 
           A new type of eSports are emerging, however, that are increasingly physical and sports alike in nature. Imagine how Zwift compares to road cycling, or Virtual rowing to outdoor rowing. 
@@ -90,16 +83,16 @@ memberLogos: #add the filenames of the logo's of members to be included below
         <p>This page aims to set a name for Virtual Sports as a new type of physical and sports-alike eSports.
           We believe that separating Virtual Sports and eSports will allow Virtual Sports to develop, get discussed and put to use across sports organisations that today still have difficulties in addressing eSports.</p>
       </div>
-      <div class="flex items-center w-full sm:w-1/2 p-6">
+      <div class="flex items-center w-full sm:w-5/12 lg:w-1/2 p-6">
         {% svg "virtual-sports-landing1", "w-full sm:max-h-64 mx-auto", "Virtual Sports explainer" %}
       </div>
     </div>
     <div class="flex flex-wrap flex-col-reverse sm:flex-row">
-      <div class="w-full sm:w-1/2 p-6 mt-6">
-        {% svg "virtual-sports-landing2", "w-5/6 sm:h-64 mx-auto", "Virtual Sports explainer" %}
+      <div class="w-full sm:w-1/2 p-6 sm:mt-6">
+        {% svg "virtual-sports-landing2", "sm:h-64 mx-auto", "Virtual Sports explainer" %}
       </div>
-      <div class="w-full sm:w-1/2 p-6 mt-6">
-        <div class="align-middle">
+      <div class="w-full sm:w-1/2 p-6 sm:mt-6">
+        <div class="align-middle [&>p]:mb-4 [&>p]:text-lg md:[&>p]:text-xl">
           <h3 class="text-3xl {{ colors.headingsCustom or colors.headingsDefault }} font-bold leading-none mb-3">
                 Lorem ipsum dolor sit amet
               </h3>
@@ -110,7 +103,7 @@ memberLogos: #add the filenames of the logo's of members to be included below
       </div>
     </div>
   </div>
-  <div class="flex justify-center">
+  <div class="flex justify-center mx-6 md:mx-0">
     <a href="/about">
       {% ctaButton "More About Virtual Sports :bulb:" | renderInlineMarkdown %}
     </a>
@@ -120,18 +113,14 @@ memberLogos: #add the filenames of the logo's of members to be included below
 
 <section class="">
   <div class="container max-w-7xl mx-auto m-8 mt-20 lg:mt-40">
-    <h2 class="w-full mb-6 text-5xl font-bold text-center text-balance {{ colors.headingsCustom or colors.headingsDefault }}">
-      Most Recent Blog Posts
-        </h2>
-    <div class="w-full mb-8 md:mb-24">
-      <div class="h-1 mx-auto bg-gradient-to-r from-vs-yellow-400 to-vs-yellow-600 w-48 md:w-96 my-0 py-0 rounded-t"></div>
-    </div>
+    {% heading "Most Recent Blog Posts"%}
+
     <div class="mx-auto max-w-full pb-10 lg:pb-14">
       {% set postslist = collections.post | reverse | limit(3) %}
       {% set postlistComponent = ['components/', postsListStyle, '.njk'] %}
       {% include postlistComponent | join %}
     </div>
-    <div class="flex justify-center">
+    <div class="flex justify-center mx-6 md:mx-0">
       <a href="/blog">
         {% ctaButton "Read All Blog Posts :newspaper:" | renderInlineMarkdown %}
       </a>
@@ -142,18 +131,13 @@ memberLogos: #add the filenames of the logo's of members to be included below
 
 <section class="">
   <div class="container max-w-7xl mx-auto m-8 mt-20 lg:mt-40">
-    <h2 class="mb-2 w-full text-5xl font-bold text-center text-balance {{ colors.headingsCustom or colors.headingsDefault }}">
-      Virtual Sports Network Members
-      </h2>
-    <h3 class="{{ colors.headingsCustom or colors.headingsDefault }} mb-6 text-center italic font-normal">Connecting expertise from leading academics</h3>
-    <div class="w-full mb-8 md:mb-24">
-      <div class="h-1 mx-auto bg-gradient-to-r from-vs-yellow-400 to-vs-yellow-600 w-48 md:w-96 my-0 py-0 rounded-t"></div>
-    </div>
+    {% heading "Virtual Sports Network Members", "Connecting expertise from leading academics"%}
+
     <div class="mx-auto max-w-full pb-10 lg:pb-14">
       {% set memberslist = collections.member | getHomepageExperts %}
       {% include "components/memberslistcards.njk" %}
     </div>
-    <div class="flex flex-col items-center gap-y-8">
+    <div class="flex flex-col items-center gap-y-8 mx-6 md:mx-0">
       <a href="mailto:thibault.fouquaert@ugent.be?subject=Member application for the Virtual Sports Network">
         {% ctaButton "Interested in the Network? Get in Touch! :envelope:" | renderInlineMarkdown %}
       </a>
@@ -166,13 +150,8 @@ memberLogos: #add the filenames of the logo's of members to be included below
 
   <section class="">
     <div class="container max-w-7xl mx-auto m-8 mt-20 lg:mt-40">
-      <h2 class="mb-2 w-full text-5xl font-bold text-center text-balance {{ colors.headingsCustom or colors.headingsDefault }}">
-      Universities Involved
-      </h2>
-      <h3 class="{{ colors.headingsCustom or colors.headingsDefault }} mb-6 text-center italic font-normal">We connect the following partners</h3>
-      <div class="w-full mb-8 md:mb-24">
-        <div class="h-1 mx-auto bg-gradient-to-r from-vs-yellow-400 to-vs-yellow-600 w-48 md:w-96 my-0 py-0 rounded-t"></div>
-      </div>
+      {% heading "Universities Involved" %}
+
       <div class="pb-10 lg:pb-14">
         {% include "components/memberLogos.njk" %}
       </div>

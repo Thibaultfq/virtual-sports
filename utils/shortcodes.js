@@ -1,13 +1,3 @@
-const markdownIt = require('markdown-it')
-const markdownItEmoji = require('markdown-it-emoji')
-let options = {
-  html: true,
-  breaks: true,
-  linkify: true,
-  typographer: true,
-}
-let markdownLib = markdownIt(options).use(markdownItEmoji)
-
 module.exports = {
   /**
    * use typedjs for typewriter effect in the hero-text-overlay.njk
@@ -37,15 +27,33 @@ module.exports = {
 
   ctaButton: function (content, classes) {
     //to access variables in nunjuncks, use this.ctx in filters and shortcodes
-    return `<button type="button" class="text-2xl md:text-3xl bottom-4 right-4 px-3 py-2 font-medium rounded-md ${
+    return `<button type="button" class="text-2xl md:text-3xl px-3 py-2 text-balance font-medium rounded-md ${
       this.ctx.colors.buttonDefault.text || this.ctx.colors.buttonCustom.text
     } ${this.ctx.colors.buttonDefault.textHover || this.ctx.colors.buttonCustom.textHover} ${
       this.ctx.colors.buttonDefault.bg || this.ctx.colors.buttonCustom.bg
     } ${this.ctx.colors.buttonDefault.bgHover || this.ctx.colors.buttonCustom.bgHover} ${
       this.ctx.colors.buttonDefault.border || this.ctx.colors.buttonCustom.border
-    } ${classes}">
+    } ${classes ? classes : ''}">
     ${content}
     </button>`
+  },
+
+  headingUnderline: function () {
+    return ``
+  },
+
+  heading: function (content, subheading, classes = '') {
+    const h3 = subheading
+      ? `<h3 class="${
+          this.ctx.colors.headingsCustom || this.ctx.colors.headingsDefault
+        } mb-6 text-center italic font-normal text-2xl ">${subheading}</h3>`
+      : ''
+
+    return `<h2 class="w-full mb-6 text-5xl font-bold text-center text-balance ${
+      this.ctx.colors.headingsCustom || this.ctx.colors.headingsDefault
+    } ${classes}">${content}</h2>
+    ${h3}
+    <div class="w-full mb-8 md:mb-28"><div class="h-1 mx-auto bg-gradient-to-r from-vs-yellow-400 to-vs-yellow-600 w-48 sm:w-64 md:w-96 my-0 py-0 rounded-t"></div></div>`
   },
 
   /**

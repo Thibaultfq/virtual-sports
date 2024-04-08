@@ -1,6 +1,6 @@
-<div class="grid grid-cols-3 gap-x-4">
+<div class="grid grid-cols-1 px-4 md:px-0 md:grid-cols-3 md:gap-x-4">
   {% for post in postslist %}
-    <div class="grid grid-rows-subgrid gap-y-2 [grid-row:auto/span_5] mb-16">
+    <div class="grid md:grid-rows-subgrid gap-y-2 row-span-5 mb-8 md:mb-16">
       {# gap-y- on parent container causes bug in nested #}
       <div class="overflow-hidden border border-gray-200 rounded-lg shadow-md hover:shadow-lg">
         <a class="relative group" href="{{ post.url | url }}">

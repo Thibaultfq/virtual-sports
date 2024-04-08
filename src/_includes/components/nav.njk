@@ -1,12 +1,8 @@
-{#     class="absolute sm:fixed sm:top-0 sm:left-0 z-50 w-full" 
- #}
-{# :class="[open? '{{colors.navDefault.mobileBarBg }}' : '{{ colors.navCustom.mobileBarBg }}', scrolledNav? '{{ colors.navDefault.barBg }} shadow' : '{{ colors.navCustom.barBg }}']" #}
-{# {% if transparentNav %} 'sm:bg-transparent' {% else %} '{{colors.navCustom.barBg or colors.navDefault.barBg}} shadow' {% endif %} #}
 {% set navPages = collections.pages | eleventyNavigation("nav") %}
 {# if transparentNav is true, add transparent background and change to white on scroll, remove from document flow on desktop with position fixsed or on mobile absolute. #}
 <nav x-data="{ open: false, scrolledNav: window.pageYOffset > 20 }" 
     @scroll.window="scrolledNav = (window.pageYOffset > 20) ? true : false" 
-    class="fixed top-0 left-0 z-50 w-full" 
+    class="fixed top-0 left-0 z-50 w-screen" 
     :class="{% if transparentNav %} [ !open? 'bg-transparent' : '{{colors.navCustom.mobileBarBg or colors.navDefault.mobileBarBg}}', !scrolledNav? 'bg-transparent' : '{{colors.navCustom.barBg or colors.navDefault.barBg}} shadow'] {% else %} '{{colors.navCustom.barBg or colors.navDefault.barBg}} {{colors.navCustom.mobileBarBg or colors.navDefault.mobileBarBg}} shadow' {% endif %}">
     <div class="sm:px-5 md:px-10 lg:px-24 xl:px-40">
         <div class="flex justify-between transition-all" 
