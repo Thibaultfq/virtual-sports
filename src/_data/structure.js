@@ -11,7 +11,8 @@ module.exports = {
   g_pageWidth: 'max-w-screen-2xl px-4 md:px-10 lg:px-20 2xl:px-30',
   g_blogWidth: 'max-w-screen-lg px-4 md:px-10 lg:px-20 mb-4 md:mb-10 mx-auto',
 
-  g_prose: 'font-serif prose lg:prose-lg prose-headings:font-sans max-w-none',
+  g_prose:
+    'font-serif max-w-none prose lg:prose-lg prose-headings:font-sans prose-img:w-full md:prose-figure:w-11/12 prose-figure:mx-auto',
 
   /**
    * height of the navbar and the logo within when page is on top

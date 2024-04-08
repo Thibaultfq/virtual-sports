@@ -131,7 +131,7 @@ module.exports = {
    * Manage the global Footer Icons below in the Footer section
    */
   authorDefault: {
-    name: 'text-gray-700',
+    name: 'text-vs-blue-900',
     date: 'text-gray-700',
     socialIcons: 'text-gray-500',
     socialIconsHover: 'hover:text-gray-600',

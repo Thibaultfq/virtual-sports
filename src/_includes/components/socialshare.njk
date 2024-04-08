@@ -8,11 +8,6 @@
 {%- endset -%}
 
 <div class="flex pl-2">
-
-  <div class="{{ colors.socialShareCustom.color or colors.socialShareDefault.color }}">
-    Share: 
-  </div>
-
   {% if structure.g_showShareLinkedIn %}
     <div>
       <a rel="noreferrer" aria-label="Share on LinkedIn" id="sharevialinkedin" class="{{ colors.socialShareCustom.color or colors.socialShareDefault.color }} {{ colors.socialShareCustom.hover or colors.socialShareDefault.hover }}" alt="Share on LinkedIn" href="https://linkedin.com/shareArticle?mini=true&title={{ title | urlencode }}&url={{ absolutePageUrl }}" target="_blank">

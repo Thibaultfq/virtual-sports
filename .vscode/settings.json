@@ -1,5 +1,11 @@
 {
     "editor.codeActionsOnSave": {
         "source.fixAll.sortJSON": "never"
-    }
+    },
+    "cSpell.words": [
+        "Exergames",
+        "immersiveness",
+        "Phygital",
+        "Zwift"
+    ]
 }

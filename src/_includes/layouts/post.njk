@@ -1,12 +1,13 @@
 ---
 layout: base
 permalink: "/{{ page.date | dateToFormat('yyyy/MM/dd') }}/{{ title | slugify }}/index.html"
-author: "{{ meta.authorURL }}" # post authors are different than members of the network. Only pages for members are generated, not for authors. Mostly, an author is also a member. default is meta data
+eleventyComputed:
+  author: "{{ meta.authorURL }}" # post authors are different than members of the network. Only pages for members are generated, not for authors. Mostly, an author is also a member. default is meta data
 ---
 
 <article class="md {{ structure.g_blogWidth }} ">
-  <div class="{{structure.g_prose}} {{colors.headingsProseCustom or colors.headingsProseDefault}} {{colors.linksProseCustom or colors.linksProseDefault}}">
-    <h1 id="{{title | slugify }}" tabindex="-1">{{ title }}
+  <div class="{{structure.g_prose}} {{colors.headingsProseCustom or colors.headingsProseDefault}} {{colors.linksProseCustom or colors.linksProseDefault}} my-8">
+    <h1 class="" id="{{title | slugify }}" tabindex="-1">{{ title }}
       <a class="{{ structure.g_markdownItAnchor_classes}}" href="#{{ title | slugify }}">#</a>
     </h1>
   </div>
@@ -16,27 +17,34 @@ author: "{{ meta.authorURL }}" # post authors are different than members of the 
     {% if authorIsMember %}
       {% set member = collections.member | getMember(author) %}
     {% endif %}
-    <div class="flex items-center my-4 text-md">
-      {% if authorIsMember %}
-        <div class="flex-shrink-0 mr-3">
-          <a href="/members/{{ member.data.slug }}/">
-            {# this equals author datafield #}
-            <img class="w-16 h-16 rounded-full border" src="{{ member.data.image }}" alt=" Photo of {{ member.data.name }}"/>
-          </a>
+    <div class="flex justify-between my-4 text-md">
+      <div class="flex items-center">
+        {% if authorIsMember %}
+          <div class="flex-shrink-0 mr-3">
+            <a href="/members/{{ member.data.slug }}/">
+              {# this equals author datafield #}
+              <img class="w-16 h-16 rounded-full border" src="{{ member.data.image }}" alt=" Photo of {{ member.data.name }}"/>
+            </a>
+          </div>
+        {% endif %}
+        <div>
+          <div class="font-medium">
+            By&nbsp;
+            {% if authorIsMember %}
+              <a href="/members/{{ member.data.slug }}/" class="hover:underline {{ colors.authorCustom.name or colors.authorDefault.name }}">{{ member.data.name }}</a>
+            {% else %}
+              <span class="{{ colors.authorCustom.name or colors.authorDefault.name }}">{{ author | unslugify }}</span>
+            {% endif %}
+          </div>
+          <div class="{{ colors.authorCustom.date or colors.authorDefault.date }}">
+            <time datetime="{{ post.date | dateToFormat("yyyy-MM-dd") }}">{{ date | dateToFormat("dd LLLL yyyy") }}</time>
+          </div>
         </div>
-      {% endif %}
-      <div>
-        <div class="font-medium">
-          By&nbsp;
-          {% if authorIsMember %}
-            <a href="/members/{{ member.data.slug }}/" class="hover:underline {{ colors.authorCustom.name or colors.authorDefault.name }}">{{ member.data.name }}</a>
-          {% else %}
-            <span class="{{ colors.authorCustom.name or colors.authorDefault.name }}">{{ author | unslugify }}</span>
-          {% endif %}
-        </div>
-        <div class="{{ colors.authorCustom.date or colors.authorDefault.date }}">
-          <time datetime="{{ post.date | dateToFormat("yyyy-MM-dd") }}">{{ date | dateToFormat("dd LLLL yyyy") }}</time>
-        </div>
+      </div>
+      <div class="flex items-center">
+        <span class="text-lg font-semibold text-gray-700">
+          {{content | readingTime}}
+        </span>
       </div>
     </div>
   {% endif %}
@@ -54,13 +62,15 @@ author: "{{ meta.authorURL }}" # post authors are different than members of the 
       <div class="">
         {% if structure.g_showTagPills %}
           {% set tags = tags | getOnlyCustomTags %}
+          <h3 class="text-lg font-semibold mb-2">Tags</h3>
           {% include "components/tagpills.njk" %}
         {% endif %}
       </div>
 
       {# If you don't want to display Social Share icons, disable them in /src/_data/structure.js  #}
-      <div class="px-2 pt-6 md:flex md:justify-end">
+      <div class="px-2 md:flex md:flex-col md:justify-end	items-end	">
         {% if structure.g_showSocialShareIcons %}
+          <h3 class="text-lg font-semibold mb-2">Share</h3>
           {% include "components/socialshare.njk" %}
         {% endif %}
       </div>
