@@ -1,5 +1,24 @@
 module.exports = {
   init: (eleventyConfig, markdownLib) => {
+    const explainerVideo = (align, content, heading, videoFileName, videoAlt, videoSource) => {
+      return `
+      <section class="flex flex-col ${align} [&_p]:text-xl [&_p]:mb-4 sm:gap-x-8 mb-4 sm:mb-8 lg:mb-16 xl:mb-24">
+        <div class="grow sm:basis-7/12 ">
+          <h3 class="text-3xl mt-6 sm:mt-0 mb-3 font-semibold text-vs-blue-900">${heading}</h3>
+          ${content}
+        </div>
+        <div class="grow sm:basis-5/12 relative">
+          <video muted loop lazy
+          x-data="{}" x-intersect:enter.margin.-33%.0="$el.play()" x-intersect:leave.margin.-33%.0="$el.pause()" onclick="this.paused?this.play():this.pause()" ontouchend="this.paused?this.play():this.pause()" 
+          class="object-cover w-full rounded-2xl [clip-path:inset(1px_1px)]" 
+          src="/assets/video/${videoFileName}" 
+          alt="${videoAlt}" ></video>
+          <span class="absolute backdrop-blur-sm bg-white bg-opacity-50 text-xs bottom-0 right-0 p-1 rounded text-gray-700">${videoSource}</span>
+        </div>
+      </section>`
+      //  onmouseover="this.play()" onmouseout="this.pause()"
+    }
+
     return {
       /**
        * ===== Wrapper =====
@@ -83,6 +102,14 @@ module.exports = {
        */
       dd: function (content, classes = '') {
         return `<dd class="pb-4 md:col-span-7 md:mt-0  ${classes}">${markdownLib.render(content.trim())}</dd></div>`
+      },
+
+      explainerVideoRight: function (content, heading, videoFileName, videoAlt, videoSource) {
+        return explainerVideo('sm:flex-row', content, heading, videoFileName, videoAlt, videoSource)
+      },
+
+      explainerVideoLeft: function (content, heading, videoFileName, videoAlt, videoSource) {
+        return explainerVideo('sm:flex-row-reverse', content, heading, videoFileName, videoAlt, videoSource)
       },
     }
   },

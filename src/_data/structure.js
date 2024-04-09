@@ -8,7 +8,7 @@ module.exports = {
    * across the entire site so there is consistency on margins, padding, max width
    * at all screen sizes.
    */
-  g_pageWidth: 'max-w-screen-2xl px-4 md:px-10 lg:px-20 2xl:px-30',
+  g_pageWidth: 'max-w-screen-2xl px-4 md:px-10 lg:px-20 2xl:px-30 mx-auto',
   g_blogWidth: 'max-w-screen-lg px-4 md:px-10 lg:px-20 mb-4 md:mb-10 mx-auto',
 
   g_prose:
