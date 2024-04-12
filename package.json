@@ -40,7 +40,6 @@
     "@11ty/eleventy-plugin-rss": "^1.2.0",
     "@tailwindcss/forms": "^0.5.7",
     "@tailwindcss/typography": "^0.5.12",
-    "alpinejs": "^3.13.3",
     "dotenv": "^16.3.1",
     "eleventy-plugin-svg-sprite": "^2.4.2",
     "luxon": "^3.4.4",
