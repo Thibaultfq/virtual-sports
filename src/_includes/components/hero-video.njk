@@ -1,9 +1,12 @@
-<header class="absolute w-full h-full lg:overflow-hidden {{ heroSettings.bg.color or 'bg-black' }} ">
-  <div class="absolute inset-0 {{ heroSettings.bg.opacityMobile or 'opacity-100' }} {{ heroSettings.bg.opacityDesktop or 'opacity-100' }}">
-    <video src="{{ heroSettings.bg.video }}" autoplay muted loop class="object-cover w-full h-full"></video>
+<header class="absolute w-full h-full overflow-hidden {{ heroSettings.bg.color or 'bg-black' }} ">
+  <div class="absolute {{ heroSettings.bg.opacityMobile or 'opacity-100' }} {{ heroSettings.bg.opacityDesktop or 'opacity-100' }}">
+    <video autoplay muted loop class="object-cover w-full h-full">
+      <source src="{{ heroSettings.bg.video.webm }}" type='video/webm; codecs="vp9"'>
+      <source src="{{ heroSettings.bg.video.mp4 }}" type='video/mp4; codecs="avc1.42401E"'>
+    </video>
   </div>
-      {# Shared across hero components  #}
-<div class="absolute flex flex-col h-full">
-  {% include "components/hero-text-overlay.njk" %}
-</div>
+  {# Shared across hero components  #}
+  <div class="absolute flex flex-col h-full w-full">
+    {% include "components/hero-text-overlay.njk" %}
+  </div>
 </header>
