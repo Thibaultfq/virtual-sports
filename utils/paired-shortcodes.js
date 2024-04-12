@@ -1,6 +1,13 @@
 module.exports = {
   init: (eleventyConfig, markdownLib) => {
-    const explainerVideo = (align, content, heading, videoFileName, videoAlt, videoSource) => {
+    const explainerVideo = (
+      align = 'sm:flex-row',
+      content,
+      heading,
+      videoFileNamewithoutExtension,
+      videoAlt,
+      videoSource
+    ) => {
       return `
       <section class="flex flex-col ${align} [&_p]:text-xl [&_p]:mb-4 sm:gap-x-8 mb-4 sm:mb-8 lg:mb-16 xl:mb-24">
         <div class="grow sm:basis-7/12 ">
@@ -9,10 +16,12 @@ module.exports = {
         </div>
         <div class="grow sm:basis-5/12 relative">
           <video muted loop lazy
-          x-data="{}" x-intersect:enter.margin.-33%.0="$el.play()" x-intersect:leave.margin.-33%.0="$el.pause()" onclick="this.paused?this.play():this.pause()" ontouchend="this.paused?this.play():this.pause()" 
+          x-data="{}" x-intersect:enter.margin.-35%.0="$el.play()" x-intersect:leave.margin.-35%.0="$el.pause()" onclick="this.paused?this.play():this.pause()" ontouchend="this.paused?this.play():this.pause()" 
           class="object-cover w-full rounded-2xl [clip-path:inset(1px_1px)]" 
-          src="/assets/video/${videoFileName}" 
-          alt="${videoAlt}" ></video>
+          alt="${videoAlt}" >
+          <source src="/assets/video/explainers/${videoFileNamewithoutExtension}.webm" type='video/webm; codecs="vp9"'>
+          <source src="/assets/video/explainers/${videoFileNamewithoutExtension}.mp4" type='video/mp4; codecs="avc1.42401E"'>
+          </video>
           <span class="absolute backdrop-blur-sm bg-white bg-opacity-50 text-xs bottom-0 right-0 p-1 rounded text-gray-700">${videoSource}</span>
         </div>
       </section>`
