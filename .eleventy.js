@@ -5,9 +5,9 @@ const markdownIt = require('markdown-it')
 const markdownItEmoji = require('markdown-it-emoji')
 const markdownItFigureCaption = require('markdown-it-image-figures')
 const markdownItAnchor = require('markdown-it-anchor')
-const pluginSvgSprite = require('eleventy-plugin-svg-sprite')
 const structure = require('./src/_data/structure.js')
 const filterFactory = require('./utils/filters.js')
+const sprite = require('./utils/sprite.js')
 const shortcodes = require('./utils/shortcodes.js')
 const pairedshortcodesFactory = require('./utils/paired-shortcodes.js')
 const pluginDrafts = require('./eleventy.config.drafts.js')
@@ -22,23 +22,8 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(pluginRss)
   eleventyConfig.addPlugin(pluginNavigation)
   eleventyConfig.addPlugin(pluginDrafts)
+  sprite.initSpritePlugin(eleventyConfig)
 
-  /*
-   * use: {% svg "subdir1--subdir2--filename", "classes", "content for <desc/>" %}
-   * @link https://github.com/patrickxchong/eleventy-plugin-svg-sprite#eleventy-plugin-svg-sprite
-   */
-  eleventyConfig.addPlugin(pluginSvgSprite, [
-    {
-      path: './src/assets/svg/site', // relative path to SVG directory
-      svgSpriteShortcode: 'svgsprite',
-      globalClasses: 'fill-current',
-    },
-    {
-      path: './src/assets/svg/memberLogos', // relative path to SVG directory
-      svgSpriteShortcode: 'svgspriteMemberLogos',
-      globalClasses: 'fill-current',
-    },
-  ])
   /**
    * Custom Watch Targets
    * for when the Tailwind config or .css files change...
