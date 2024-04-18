@@ -135,7 +135,7 @@ memberLogos: #add the filenames of the logo's of members to be included below
   </div>
 </section>
 
-<section class="">
+<section >
   <div class="container max-w-7xl mx-auto m-8 mt-20 lg:mt-40">
     {% heading "Virtual Sports Network Members", "Connecting expertise from leading academics"%}
 
@@ -150,27 +150,23 @@ memberLogos: #add the filenames of the logo's of members to be included below
       <a href="/members">
         {% ctaButton "See All Netwok Members :eyes:" | renderInlineMarkdown %}
       </a>
-
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="">
-    <div class="container max-w-7xl mx-auto m-8 mt-20 lg:mt-40">
-      {% heading "Universities Involved" %}
+<section class="">
+  <div class="container max-w-7xl mx-auto m-8 mt-20 lg:mt-40">
+    {% heading "Universities Involved" %}
 
-      <div class="pb-10 lg:pb-14">
-        {% include "components/memberLogos.njk" %}
-      </div>
-    </section>
+    <div class="pb-10 lg:pb-14">
+      {% include "components/memberLogos.njk" %}
+    </div>
+  </div>
+</section>
 
-    <script>
-      var typed = new Typed('#typed', {
-        stringsElement: '#typed-strings',
-        typeSpeed: 40,
-        backSpeed: 20,
-        shuffle: true,
-        smartBackspace: false,
-        loop: true,
-        backDelay: 1500
-      });
-    </script>
+{% set jsTyped %}
+{% include "src/assets/js/jsTyped.js" %}
+{% endset %}
+<script>
+  {{ jsTyped | jsmin | safe }}
+</script>
