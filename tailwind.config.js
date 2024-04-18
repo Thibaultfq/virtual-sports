@@ -33,9 +33,10 @@ module.exports = {
         'screen-1/2': '50vh',
         'screen-3/4': '75vh',
         'screen-9/10': '90vh',
-        'screen-1/3': 'calc(100vh / 3)',
-        'screen-1/4': 'calc(100vh / 4)',
-        'screen-1/5': 'calc(100vh / 5)',
+        'screen-1/3': '33vh',
+        'screen-2/3': '66vh',
+        'screen-1/4': '25vh',
+        'screen-1/5': '20vh',
         'screen-minus-navbar': `calc(100vh - ${theme(
           `spacing.${Math.max(...structure.nav_height_unscrolled.match(/\d+/gi).map(Number))}`
         )})`,

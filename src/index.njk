@@ -19,9 +19,7 @@ seo: # SEO values are used for OG and will overwrite 'title' and 'excerpt' above
 transparentNav: true  # often to be used when the navbar should be transparent because of the hero options: carousel, graphic, video, split (text & image)
 hero: video # graphic # options: carousel, graphic, video, split (text & image)
 heroSettings:
-  height:
-    mobile: # options = h-screen (default = full screen minus navbar), h-screen-1/2, h-screen-1/3, h-screen-3/4, h-screen-9/10, h-48 (12rem, 192px), h-56 (14rem, 224px), h-64 (16rem, 256px)
-    desktop: # leave blank to inherit "mobile" height (default = full screen minus navbar)
+  height: # options are Tailwind classes (and custom tailwind classes) = h-screen (default = full screen minus navbar), h-screen-1/2, h-screen-1/3, h-screen-3/4, h-screen-9/10, h-48 (12rem, 192px), h-56 (14rem, 224px), h-64 (16rem, 256px)
   bg:
     color: # default bg-black
     image: # home/plane.jpg # 
@@ -53,7 +51,7 @@ heroSettings:
     - image: /assets/images/members/looking-for-expert.webp
       text: "Hello world 3"
       textClass: "text-red-300"
-taglimit: 3
+taglimit: 10
 # Homepage only front matter ---
 postsListStyle: postslistthumbs # postslistcards
 typedJsStrings:
