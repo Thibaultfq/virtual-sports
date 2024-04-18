@@ -19,10 +19,7 @@
   "keywords": [
     "11ty",
     "TailwindCSS",
-    "TailwindUI",
-    "Alpine.js",
-    "PostCSS",
-    "CSSnano"
+    "Alpine.js"
   ],
   "scripts": {
     "clean": "rimraf dist",
