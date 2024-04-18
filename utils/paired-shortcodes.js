@@ -15,7 +15,7 @@ module.exports = {
           ${content}
         </div>
         <div class="grow sm:basis-5/12 relative self-center">
-          <video muted loop lazy
+          <video muted loop
           x-data="{}" x-intersect:enter.margin.-35%.0="$el.play()" x-intersect:leave.margin.-35%.0="$el.pause()" onclick="this.paused?this.play():this.pause()" ontouchend="this.paused?this.play():this.pause()" 
           class="object-cover w-full rounded-2xl [clip-path:inset(1px_1px)]" 
           alt="${videoAlt}" >
