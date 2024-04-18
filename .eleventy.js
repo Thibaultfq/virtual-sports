@@ -12,6 +12,7 @@ const shortcodesFactory = require('./utils/shortcodes.js')
 const pairedshortcodesFactory = require('./utils/paired-shortcodes.js')
 const pluginDrafts = require('./eleventy.config.drafts.js')
 const { minify } = require('terser')
+const htmlmin = require('html-minifier')
 
 module.exports = function (eleventyConfig) {
   /**
@@ -47,15 +48,37 @@ module.exports = function (eleventyConfig) {
    * Add JS minified. Call this filter in a (e.g. base) NJK file to include minified JS file
    */
   eleventyConfig.addNunjucksAsyncFilter('jsmin', async function (code, callback) {
-    try {
-      const minified = await minify(code, {})
-      callback(null, minified.code)
-    } catch (err) {
-      console.error('JS minify failed to minify')
-      console.error('Terser error: ', err)
-      // Fail gracefully.
+    if (process.env.NODE_ENV === 'production') {
+      try {
+        const minified = await minify(code, {})
+        callback(null, minified.code)
+      } catch (err) {
+        console.error('JS minify failed to minify')
+        console.error('Terser error: ', err)
+        // Fail gracefully.
+        callback(null, code)
+      }
+    } else {
       callback(null, code)
     }
+  })
+
+  eleventyConfig.addTransform('htmlmin', function (content) {
+    if (process.env.NODE_ENV === 'production') {
+      if ((this.page.outputPath || '').endsWith('.html')) {
+        let minified = htmlmin.minify(content, {
+          useShortDoctype: true,
+          removeComments: true,
+          collapseWhitespace: true,
+        })
+
+        return minified
+      }
+      // If not an HTML output, return content as-is
+      return content
+    }
+    //if not production, return content.
+    return content
   })
 
   eleventyConfig.addNunjucksFilter('readingTime', function (postOrContent) {
