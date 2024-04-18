@@ -1,7 +1,7 @@
 <div>
   {% for tag in tags %}
-    <div class="inline-block py-1">
-      <a alt="tagged {{ tag }}" aria-label="tagged {{ tag }}" href="/tags/{{ tag | slugify }}/" class="px-2 py-1 text-sm {{ colors.tagPillCustom.text or colors.tagPillDefault.text }} {{ colors.tagPillCustom.bg or colors.tagPillDefault.bg }} rounded-full {{ colors.tagPillCustom.textHover or colors.tagPillDefault.textHover }}  {{ colors.tagPillCustom.bgHover or colors.tagPillDefault.bgHover }}">{{ tag }}</a>
+    <div class="inline-block {{ tagListSpacing or 'py-1' }}">
+      <a alt="tagged {{ tag }}" aria-label="tagged {{ tag }}" href="/tags/{{ tag | slugify }}/" class="{{ tagSpacing or 'px-2 py-1'}} {{ tagTextSize or 'text-sm' }} {{ colors.tagPillCustom.text or colors.tagPillDefault.text }} {{ colors.tagPillCustom.bg or colors.tagPillDefault.bg }} rounded-full {{ colors.tagPillCustom.textHover or colors.tagPillDefault.textHover }}  {{ colors.tagPillCustom.bgHover or colors.tagPillDefault.bgHover }}">{{ tag }}</a>
     </div>
   {% endfor %}
 </div>
