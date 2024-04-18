@@ -1,9 +1,9 @@
 {
-  "name": "virtual-sports-dot-eu",
+  "name": "virtual-sports-dot-be",
   "version": "1.0.0",
-  "description": "Virtual sports landing page based on an upgraded version of the 11ty-tailwind-alpinejs template: https://github.com/11ta/11ta-template v2.1npm ",
+  "description": "Virtual sports landing page based on an upgraded version of the 11ty-tailwind-alpinejs template: https://github.com/11ta/11ta-template v2.1",
   "author": "Thibault Fouquaert",
-  "license": "MIT",
+  "license": "GNU GPL V3",
   "engines": {
     "npm": ">=8.0.0 <9.0.0",
     "node": ">=16.0.0 <17.0.0"
