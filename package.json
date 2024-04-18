@@ -9,12 +9,12 @@
     "node": ">=16.0.0 <17.0.0"
   },
   "bugs": {
-    "url": "https://github.com/Thibaultfq/leisure-sports-innovations/issues"
+    "url": "https://github.com/Thibaultfq/virtual-sports/issues"
   },
-  "homepage": "https://github.com/Thibaultfq/leisure-sports-innovations#readme",
+  "homepage": "https://github.com/Thibaultfq/virtual-sports#readme",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Thibaultfq/leisure-sports-innovations.git"
+    "url": "https://github.com/Thibaultfq/virtual-sports.git"
   },
   "keywords": [
     "11ty",
