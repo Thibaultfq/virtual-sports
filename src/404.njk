@@ -1,18 +1,27 @@
 ---
 title: 404
-layout: page
-permalink: 404.html
+layout: base
+permalink: 404/
 eleventyExcludeFromCollections: true
+transparentNav: true  # often to be used when the navbar should be transparent because of the hero options: carousel, graphic, video, split (text & image)
+hero: graphic # options: carousel, graphic, video, split (text & image)
+heroSettings:
+  height: h-screen-3/4 sm:h-screen-2/3 lg:h-screen-9/10 # leave blank to inherit "mobile" height (default = full screen minus navbar)
+  bg:
+    image: /assets/images/site/404-virtual-sports.webp 
+  headingText: Page Not Found (404).
+  subheadingText: We could not find the page you are looking for unfortunately :eyes:.
+  buttonText: Back to Home Page # no button generated if left blank
+  buttonURL: '/' # full url required. Example: https://thisdomain.com/somepage/
 seo:
-  title: 'Oooooops...'
+  title: 'Page Not Found (404)'
 ---
 
-The page you're looking for doesn't currently exist on this website. Perhaps you followed an old or bad link?
+<div class="py-4 sm:py-8 md:py-12 {{ structure.g_pageWidth }}">
+  {% heading "Most recent blog posts",
+  "We did not found what you were looking for, but maybe read one of our blog posts instead? :bulb:" %}
 
-Here are 10 recent posts. Perhaps one of these will help you along your way?
-
-<ol class="pt-4">
-{%- for post in collections.post | limit(10) -%}
-  <li><a class="underline" href="{{ post.url }}">{{ post.data.title }}</a></li>
-{%- endfor -%}
-</ol>
+  {% set postslist = collections.post | limit(9) %}
+  {% set postlist = ['components/', structure.postListStyle, '.njk'] %}
+  {% include postlist | join %}
+</div>
