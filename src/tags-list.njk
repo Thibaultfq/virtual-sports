@@ -2,6 +2,7 @@
 permalink: tags/
 layout: page
 title: All Tags
+subtitle: Click on a tag to see blog posts about it.
 eleventyNavigation:
   key: tagsList
   parent: footer
@@ -11,7 +12,10 @@ eleventyImport:
   collections: ["tag"]
 ---
 
-<div class="mt-6">
-  {% set tags = collections.all | getAllTags | getOnlyCustomTags %}
+<div class="max-w-screen-md mx-auto">
+  {% set tags = collections.all | getAllTags | getOnlyCustomTags | sort %}
+  {% set tagTextSize = 'text-xl'%}
+  {% set tagPadding = "px-4 py-2"%}
+  {% set tagListSpacing = "m-2"%}
   {% include "components/tagpills.njk" %}
 </div>
