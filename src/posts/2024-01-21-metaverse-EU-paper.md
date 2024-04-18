@@ -1,16 +1,16 @@
 ---
 title: Metaverse's challenges and opportunities according to EU
-date: 2023-09-20T00:00:00.000Z
+date: 2024-01-21T00:00:00.000Z
 excerpt: Insigths into virtual worlds and its real challenges.
 author: thibault-fouquaert
 draft: false
 seo:
   title:
   description:
-  image: 2023/09/metaverse-eu-paper.jpg
+  image: 2024/01/metaverse-eu-paper.webp
 images: # relative to /src/assets/images/
   feature:
-  thumb: 2023/09/metaverse-eu-paper.jpg
+  thumb: 2024/01/metaverse-eu-paper.webp
   align: # object-center (default) - other options at https://tailwindcss.com/docs/object-position
   height: # optional. Default = h-48 md:h-screen-1/3
 tags:
@@ -26,7 +26,7 @@ Back in 2022, the Council of Europe's ART (Analysis and Research Team) published
 
 ART describes the metaverse as an *"immersive and constant virtual 3D world where people interact through an avatar to enjoy entertainment, make purchases and carry out transactions with crypto-assets, or work without leaving their seat."*. The metaverse is furthermore described as being accessible through virtual reality (VR) headset, glasses or any other dedicated devices. This definition is at first sight not related to sports. **More interesting for sports however, is the argument that the Metaverse will be an online *"phygital world"*, where physical and virtual realities merge. Experiences such as sport could, in the future, therefore span both the real and virtual world synchronously**. How such "phygital experiences" will take place, using which technology and to which extent, still remain open questions that deserve academic attention.
 
-![Phygital Metaverse example, source mirror.co](/assets/images/2023/09/metaverse-phygital.webp)
+![Phygital Metaverse example, source mirror.co](/assets/images/2024/01/metaverse-phygital.webp)
 
 ## What can the Metaverse mean for Sports and Virtual Sports?
 I agree with ART's claim that the development of the Metaverse is highly dependant upon the **technological developments** within the sector. For sports, this is also the case as I am convinced that the feasibility and attractiveness of practising sports highly relies on the extent that the technology allows for it. For example, is it lightweight and portable, is it sweat-resistant, can it accurately measure and translate physical movements,...? 
