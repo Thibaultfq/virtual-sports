@@ -5,7 +5,8 @@ tags: pages
 
 <article class="{{ structure.g_pageWidth }} py-12">
 
-  {% heading seo.title or title %}
+  {% heading seo.title or title,
+  subtitle %}
 
   {{ content | safe }}
 
