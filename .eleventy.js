@@ -8,7 +8,7 @@ const markdownItAnchor = require('markdown-it-anchor')
 const structure = require('./src/_data/structure.js')
 const filterFactory = require('./utils/filters.js')
 const sprite = require('./utils/sprite.js')
-const shortcodes = require('./utils/shortcodes.js')
+const shortcodesFactory = require('./utils/shortcodes.js')
 const pairedshortcodesFactory = require('./utils/paired-shortcodes.js')
 const pluginDrafts = require('./eleventy.config.drafts.js')
 const { minify } = require('terser')
@@ -102,14 +102,7 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addFilter(filterName, filters[filterName])
   })
 
-  /**
-	 * Transforms
-	 * @link https://www.11ty.io/docs/config/#transforms
-   Object.keys(transforms).forEach((transformName) => {
-     eleventyConfig.addTransform(transformName, transforms[transformName])
-    })
-    */
-
+  const shortcodes = shortcodesFactory.init(eleventyConfig, markdownLib)
   /**
    * Shortcodes
    * @link https://www.11ty.io/docs/shortcodes/
