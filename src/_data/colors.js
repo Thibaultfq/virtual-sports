@@ -193,7 +193,7 @@ module.exports = {
     linkBgActive: 'active:bg-gray-100',
     linkBgHover: 'hover:bg-gray-200',
     linkBorder: 'border-gray-300',
-    linkFocusBorder: 'focus:border-blue-300',
+    linkFocusBorder: 'focus:border-vs-blue-700',
   },
   paginateCustom: {
     blockBg: '',
@@ -248,7 +248,7 @@ module.exports = {
    */
   footerDefault: {
     barBg: 'bg-vs-blue-950',
-    text: 'text-gray-500',
+    text: 'text-gray-300',
   },
   footerCustom: {
     barBg: '',
