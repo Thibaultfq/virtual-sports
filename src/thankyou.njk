@@ -1,0 +1,22 @@
+---
+title: Thank you for getting in touch
+subtitle: We appreciate you contacting us! We will reply as soon as possible.
+date: 2020-08-05
+layout: page
+---
+<meta http-equiv="refresh" content="30;url=/"/>
+
+<div class="{{ structure.g_pageWidth }}">
+
+  <h3 class="text-3xl text-center mb-4 sm:mb-8 lg:mb-16 font-semibold text-vs-blue-900">
+    As waiting therapy on our answer, we can recommend you to read some blogposts</br>
+  <span class="text-xl">You will be redirected to our homepage in 
+    <span x-data="{ count : 30 }"  x-init="setInterval(() => {count--}, 1000)"  x-text="count"></span>
+     seconds</span>
+
+</h3>
+
+{% set postslist = collections.post | limit(9) %}
+{% set postlist = ['components/', structure.postListStyle, '.njk'] %}
+{% include postlist | join %}
+</div>
