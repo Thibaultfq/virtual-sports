@@ -1,3 +1,5 @@
+const structure = require('./../src/_data/structure')
+
 module.exports = {
   init: (eleventyConfig, markdownLib) => {
     return {
@@ -40,16 +42,27 @@ module.exports = {
         </button>`
       },
 
-      heading: function (content, subheading, classes = '') {
+      heading: function (content, subheading, classes = '', anchorLink = true) {
         const h3 = subheading
           ? `<h3 class="${
               this.ctx.colors.headingsCustom || this.ctx.colors.headingsDefault
             } mb-6 text-center italic font-normal text-2xl ">${markdownLib.renderInline(subheading.trim())}</h3>`
           : ''
 
+        const a = anchorLink
+          ? `<a class="${structure.g_markdownItAnchor_classes}" href="#${eleventyConfig.getFilter('slugify')(
+              content
+            )}">#</a>`
+          : ''
+
         return `<h2 class="w-full mb-6 text-5xl font-bold text-center text-balance ${
           this.ctx.colors.headingsCustom || this.ctx.colors.headingsDefault
-        } ${classes}">${markdownLib.renderInline(content.trim())}</h2>
+        } ${classes}"
+        ${anchorLink ? `tabindex="-1"` : ''} 
+        ${anchorLink ? `id="${eleventyConfig.getFilter('slugify')(content)}"` : ''}>
+        ${markdownLib.renderInline(content.trim())}
+        ${a}
+        </h2>
         ${h3}
         <div class="w-full mb-8 md:mb-28"><div class="h-1 mx-auto bg-gradient-to-r from-vs-yellow-400 to-vs-yellow-600 w-48 sm:w-64 md:w-96 my-0 py-0 rounded-t"></div></div>`
       },
