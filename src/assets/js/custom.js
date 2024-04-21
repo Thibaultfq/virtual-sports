@@ -1,7 +1,7 @@
 ;(function (document, history, location) {
-  var HISTORY_SUPPORT = !!(history && history.pushState)
+  const HISTORY_SUPPORT = !!(history && history.pushState)
 
-  var anchorScrolls = {
+  const anchorScrolls = {
     ANCHOR_REGEX: /^#[^ ]+$/,
     PADDING_TO_OFFSET_HEIGHT_PX: 10,
 
@@ -9,9 +9,13 @@
      * Establish events, and fix initial scroll position if a hash is provided.
      */
     init: function () {
-      this.scrollToCurrent()
+      if (window.location.hash) {
+        this.scrollToCurrent()
+      }
       window.addEventListener('hashchange', this.scrollToCurrent.bind(this))
-      document.body.addEventListener('click', this.delegateAnchors.bind(this))
+      document
+        .querySelectorAll('a[href^="#"]')
+        .forEach((anchor) => anchor.addEventListener('click', this.delegateAnchors.bind(this)))
     },
 
     /**
@@ -29,7 +33,7 @@
      * @return {Boolean} - Was the href an anchor.
      */
     scrollIfAnchor: function (href, pushToHistory) {
-      var match, rect, anchorOffset
+      let match, rect, anchorOffset
 
       if (!this.ANCHOR_REGEX.test(href)) {
         return false
@@ -39,8 +43,8 @@
 
       if (match) {
         rect = match.getBoundingClientRect()
-        anchorOffset = window.pageYOffset + rect.top - this.getFixedOffset()
-        window.scrollTo(window.pageXOffset, anchorOffset)
+        anchorOffset = window.scrollY + rect.top - this.getFixedOffset()
+        window.scrollTo(window.scrollX, anchorOffset)
 
         // Add the state to history as-per normal anchor links
         if (HISTORY_SUPPORT && pushToHistory) {
@@ -62,9 +66,7 @@
      * If the click event's target was an anchor, fix the scroll position.
      */
     delegateAnchors: function (e) {
-      var elem = e.target
-
-      if (elem.nodeName === 'A' && this.scrollIfAnchor(elem.getAttribute('href'), true)) {
+      if (this.scrollIfAnchor(e.currentTarget.getAttribute('href'), true)) {
         e.preventDefault()
       }
     },
