@@ -1,6 +1,6 @@
 <div class="absolute w-full h-full overflow-hidden {{ heroSettings.bg.color or 'bg-black' }} ">
   <div class="absolute w-full h-full {{ heroSettings.bg.opacityMobile or 'opacity-100' }} {{ heroSettings.bg.opacityDesktop or 'opacity-100' }}">
-    <video autoplay muted loop class="object-cover w-full h-full">
+    <video autoplay muted loop class="object-cover w-full h-full" {{'poster='+ heroSettings.bg.video.poster if heroSettings.bg.video.poster}}>
       <source src="{{ heroSettings.bg.video.webm }}" type='video/webm; codecs="vp9"'>
       <source src="{{ heroSettings.bg.video.mp4 }}" type='video/mp4; codecs="avc1.42401E"'>
     </video>
