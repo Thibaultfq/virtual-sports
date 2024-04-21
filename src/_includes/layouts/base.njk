@@ -16,6 +16,9 @@ transparentNav: false #set default false transparentNav attribute for all pages
     {% if typedJsStrings and typedJsBase %}
       <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     {% endif %}
+    {% if NODE_ENV == 'production' %}
+      <script defer src="https://eu.umami.is/script.js" data-website-id="4da7483f-2424-4f89-83a9-5861d0e9202d"></script>
+    {% endif %}
     {%- include "partials/head.njk" %}
   </head>
   <body class="{{ colors.siteTextCustom or siteTextDefault }}">
