@@ -1,12 +1,13 @@
 const pluginRss = require('@11ty/eleventy-plugin-rss')
 const pluginNavigation = require('@11ty/eleventy-navigation')
-const readingTime = require('reading-time')
 const markdownIt = require('markdown-it')
 const markdownItEmoji = require('markdown-it-emoji')
 const markdownItFigureCaption = require('markdown-it-image-figures')
 const markdownItAnchor = require('markdown-it-anchor')
 const structure = require('./src/_data/structure.js')
 const filterFactory = require('./utils/filters.js')
+const njkFilterFactory = require('./utils/njkFilters.js')
+const njkGlobalsFactory = require('./utils/njkGlobals.js')
 const sprite = require('./utils/sprite.js')
 const shortcodesFactory = require('./utils/shortcodes.js')
 const pairedshortcodesFactory = require('./utils/paired-shortcodes.js')
@@ -52,7 +53,7 @@ module.exports = function (eleventyConfig) {
    * Add JS minified. Call this filter in a (e.g. base) NJK file to include minified JS file
    */
   eleventyConfig.addNunjucksAsyncFilter('jsmin', async function (code, callback) {
-    if (process.env.NODE_ENV === 'production') {
+    if (process.env.NODE_ENV?.trim() === 'production') {
       try {
         const minified = await minify(code, {})
         callback(null, minified.code)
@@ -68,7 +69,7 @@ module.exports = function (eleventyConfig) {
   })
 
   eleventyConfig.addTransform('htmlmin', function (content) {
-    if (process.env.NODE_ENV === 'production') {
+    if (process.env.NODE_ENV?.trim() === 'production') {
       if ((this.page.outputPath || '').endsWith('.html')) {
         let minified = htmlmin.minify(content, {
           useShortDoctype: true,
@@ -83,11 +84,6 @@ module.exports = function (eleventyConfig) {
     }
     //if not production, return content.
     return content
-  })
-
-  eleventyConfig.addNunjucksFilter('readingTime', function (postOrContent) {
-    const content = typeof postOrContent === 'string' ? postOrContent : postOrContent.templateContent
-    return readingTime(content).text
   })
 
   /**
@@ -119,8 +115,17 @@ module.exports = function (eleventyConfig) {
     })
   eleventyConfig.setLibrary('md', markdownLib)
 
-  const filters = filterFactory.init(eleventyConfig, markdownLib) //use a factory so we can pass the eleventyConfig, which could be used in filters to access other filters. see https://www.11ty.dev/docs/filters/
+  const njkGlobals = njkGlobalsFactory.init(eleventyConfig)
+  Object.keys(njkGlobals).forEach((filterName) => {
+    eleventyConfig.addNunjucksGlobal(filterName, njkGlobals[filterName])
+  })
 
+  const njkFilters = njkFilterFactory.init(eleventyConfig, markdownLib)
+  Object.keys(njkFilters).forEach((filterName) => {
+    eleventyConfig.addNunjucksFilter(filterName, njkFilters[filterName])
+  })
+
+  const filters = filterFactory.init(eleventyConfig, markdownLib) //use a factory so we can pass the eleventyConfig, which could be used in filters to access other filters. see https://www.11ty.dev/docs/filters/
   /**
    * Filters
    * @link https://www.11ty.io/docs/filters/

@@ -1,6 +1,6 @@
 module.exports = {
   breakpointInspector: function ({ addBase, theme }) {
-    if (process.env.NODE_ENV === 'production') return
+    if (process.env.NODE_ENV?.trim() === 'production') return
 
     const screens = theme('screens', {})
     const breakpoints = Object.keys(screens)
@@ -12,8 +12,7 @@ module.exports = {
         right: '.5rem', // could replace with theme('spacing.2', '.5rem'), same for most of the other values
         bottom: '.5rem',
         padding: '.5rem .5rem .5rem 2rem',
-        background:
-          'no-repeat .5rem center / 1.25rem url(https://tailwindcss.com/favicons/favicon.ico?v=3), #edf2f7',
+        background: 'no-repeat .5rem center / 1.25rem url(https://tailwindcss.com/favicons/favicon.ico?v=3), #edf2f7',
         border: '1px solid #cbd5e0',
         color: '#d53f8c',
         fontSize: '.875rem',
