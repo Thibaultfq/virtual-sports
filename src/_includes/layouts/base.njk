@@ -20,16 +20,15 @@ transparentNav: false #set default false transparentNav attribute for all pages
   </head>
   <body class="{{ colors.siteTextCustom or siteTextDefault }}">
     {% svgsprite %}
-    <div class="flex flex-col min-h-screen">
+    <div class="flex flex-col min-h-svh">
       {% if transparentNav != true %}
-
         <div class="{{structure.nav_height_unscrolled}} invisible"></div>
       {% endif %}
       {% include "components/nav.njk" %}
 
       {#  Allows a user to easily change the Hero type on the Home page...or any page.See /src/home.md for how to use. #}
       {% if hero %}
-        {% set defaultCalculatedHeroHeight = 'h-screen' if transparentNav else 'h-screen-minus-navbar' %}
+        {% set defaultCalculatedHeroHeight = 'h-svh' if transparentNav else 'h-screen-minus-navbar' %}
 
         <div class="relative w-full {{defaultCalculatedHeroHeight}} {{ heroSettings.height }}">
           {% set heroComponent = ['components/hero-', hero, '.njk'] %}

@@ -37,12 +37,12 @@ module.exports = {
         'screen-2/3': '66vh',
         'screen-1/4': '25vh',
         'screen-1/5': '20vh',
-        'screen-minus-navbar': `calc(100vh - ${theme(
+        'screen-minus-navbar': `calc(100svh - ${theme(
           `spacing.${Math.max(...structure.nav_height_unscrolled.match(/\d+/gi).map(Number))}`
         )})`,
       }),
       minHeight: (theme) => ({
-        'screen-minus-navbar': `calc(100vh - ${theme(
+        'screen-minus-navbar': `calc(100svh - ${theme(
           `spacing.${Math.max(...structure.nav_height_unscrolled.match(/\d+/gi).map(Number))}`
         )})`,
       }),

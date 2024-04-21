@@ -15,6 +15,10 @@ const { minify } = require('terser')
 const htmlmin = require('html-minifier')
 
 module.exports = function (eleventyConfig) {
+  eleventyConfig.setServerOptions({
+    showAllHosts: true, // Show local network IP addresses for device testing (e.g. use devServer on mobile devices)
+  })
+
   /**
    * Plugins
    * @link https://www.11ty.dev/docs/plugins/
