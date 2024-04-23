@@ -11,7 +11,7 @@
 
         </a>
       </div>
-      {% if structure.g_showFooterSocialIcons %}
+      {% if structure.g_showFooterNav %}
         <div class="mb-8 px-20 lg:px-0 w-full flex flex-wrap items-center justify-center gap-4 lg:gap-12 lg:flex-nowrap text-gray-300 text-lg md:text-sm">
           {% set navPagesNav = collections.pages | eleventyNavigation('nav') %}
           {% for entry in navPagesNav %}
@@ -29,26 +29,7 @@
       {% endif %}
 
       <div class="px-20 lg:px-0 text-center text-balance {{ colors.footerCustom.text or colors.footerDefault.text }}">&copy; {{ build.timestamp | dateToFormat('yyyy') }} | {{ meta.siteName }} | {{meta.siteDescription}}</div>
-      {#       <div class="flex justify-center md:order-2 {{ colors.socialIconsCustom or colors.socialIconsDefault }}">
-        {% if structure.g_showFooterSocialIcons %}
 
-          Display Social icons from _data/social.json  
-          {% for site in social %}
-            {% if site.url %}
-              <a aria-label="Link to {{ site.platform }}" alt="Link to {{ site.platform }}" class="{{ colors.socialIconsCustom or colors.socialIconsDefault }} {{ colors.socialIconsHoverCustom or colors.socialIconsHoverDefault }}" href="{{ site.url | url }}">
-                {% svg site.platform, "mx-2 h-6 w-6 fill-current", site.platform, "footer" %}
-              </a>
-            {% endif %}
-          {% endfor %}
-
-        {% endif %}
-      </div>
-      <div class="mt-8 md:mt-0 md:order-1">
-        <p class="text-center text-base leading-6 {{ colors.footerCustom.text or colors.footerDefault.text }}">
-          &copy; {{ build.timestamp | dateToFormat('yyyy') }}, {{ meta.siteName }}
-        </p>
-      </div> 
-#}
     </div>
   </div>
 </footer>

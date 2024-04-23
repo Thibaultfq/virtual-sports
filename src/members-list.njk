@@ -1,17 +1,21 @@
 ---
 permalink: members/
 layout: page
-title: All Members
+title: Virtual Sports Research Network
+subtitle: Connecting expertise from leading academics
 eleventyNavigation:
   key: membersList
-  parent: footer
-  title: All Members 
-  order: 1 
+  parent: nav
+  title: Network
+  order: 4
 eleventyImport:
   collections: ["member"]
 ---
-
-<div class="mt-6">
+<p class="mb-8 md:mb-16 text-center text-balance text-lg md:text-xl">
+  We aim to connect academics with expertise in virtual sports to foster future collaboration and provide an accessible overview of experts in the domain of virtual sports. 
+  Below, you find an overview of all members associated with the Virtual Sports Research Network and their direct contact information. Are you interested in joining the network? <a href="/contact">Get in touch!</a>
+</p>
+<div>
   {% set memberslist = collections.member | sort(false, false, "data.name") %}
   {% include "components/memberslistcards.njk" %}
 </div>

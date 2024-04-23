@@ -65,7 +65,7 @@ module.exports = {
    * *** before this file existed. :-)
    * I might move stuff around on the next version...
    */
-  g_showFooterSocialIcons: true,
+  g_showFooterNav: true,
   /**
    * Set to 'false' to disable the "Share:" icons on the Post Detail views.
    * You can also set individual platforms to 'false' to disable just those platforms.
