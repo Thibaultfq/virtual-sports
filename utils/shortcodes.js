@@ -52,14 +52,16 @@ module.exports = {
         const a = anchorLink
           ? `<a class="${structure.g_markdownItAnchor_classes}" href="#${eleventyConfig.getFilter('slugify')(
               content
-            )}">#</a>`
+            )} title="link to the subtitle: ${content.trim()}">#</a>`
           : ''
 
+        //add invisible # as to center the anchorlinks. Hacky but easiest
         return `<h2 class="w-full mb-6 text-5xl font-bold text-center text-balance ${
           this.ctx.colors.headingsCustom || this.ctx.colors.headingsDefault
         } ${classes}"
         ${anchorLink ? `tabindex="-1"` : ''} 
         ${anchorLink ? `id="${eleventyConfig.getFilter('slugify')(content)}"` : ''}>
+        ${anchorLink ? `<span aria-hidden="true" role="none" class="invisible">#</span>` : ''}
         ${markdownLib.renderInline(content.trim())}
         ${a}
         </h2>
