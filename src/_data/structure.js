@@ -10,6 +10,7 @@ module.exports = {
    */
   g_pageWidth: 'max-w-screen-2xl px-4 md:px-10 lg:px-20 2xl:px-30 mx-auto',
   g_blogWidth: 'max-w-screen-lg px-4 md:px-10 lg:px-20 mb-4 md:mb-10 mx-auto',
+  g_fullpageSectionWidth: 'max-w-screen-2xl mx-4 lg:mx-8 2xl:mx-auto m-8 mt-20 lg:mt-40',
 
   g_prose:
     'font-serif max-w-none prose lg:prose-lg prose-headings:font-sans prose-img:w-full md:prose-figure:w-11/12 prose-figure:mx-auto',
