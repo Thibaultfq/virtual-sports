@@ -10,12 +10,12 @@ pagination:
     - post
 permalink: "tags/{{ tag | slugify  }}/"
 eleventyComputed:
-  title: Blog Posts Tagged "{{ tag }}”
+  title: Blog Posts Tagged '{{ tag }}'
 ---
 {# 
   We set this to 'postslist' so we can use the same postslist components as the /blog 
 #}
-  {% set postslist = collections[tag] %}
+{% set postslist = collections[tag] %}
 
 {# 
   Either inherit the 'postListStyle' or use another layout
@@ -31,9 +31,7 @@ eleventyComputed:
 {% include postlist | join %}
 
 <div class="border-t border-gray-300">
-<h4 class="{{ colors.tagPillCustom.text or colors.tagPillDefault.text }}">All Tags:</h4>
-{% set tags =  collections.all | getAllTags | getOnlyCustomTags | sort %}
-{% include "components/tagpills.njk" %}
+  <h4 class="{{ colors.tagPillCustom.text or colors.tagPillDefault.text }}">All Tags:</h4>
+  {% set tags = collections.all | getAllTags | getOnlyCustomTags | sort %}
+  {% include "components/tagpills.njk" %}
 </div>
-
-
