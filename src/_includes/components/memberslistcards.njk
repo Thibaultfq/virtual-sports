@@ -1,15 +1,15 @@
-<div class="grid gap-y-20 gap-x-20 mx-auto lg:grid-cols-2 xl:max-w-none px-4 lg:px-0">
+<div class="grid gap-10 xl:gap-14 2xl:gap-20 mx-auto lg:grid-cols-2 xl:max-w-none px-4 lg:px-0">
   {% for member in memberslist %}
-    <div class="flex flex-col rounded-lg shadow-lg lg:ml-20">
-      <div class="flex-none flex content-center">
-        <div class="lg:relative w-16 h-16 lg:w-20 lg:h-40 flex-none self-center ">
-          <a href="/members/{{ member.data.slug}}/" class="grow-1 lg:absolute lg:-ml-20 lg:p-4 lg:h-full lg:w-2-full">
-            <img class="object-cover rounded-full bg-gray-50 ring-2 ring-vs-yellow-400 h-full w-full" src="{{ member.data.image }}" alt="{{ member.data.name }} profile picture">
+    <div class="flex flex-col rounded-lg shadow-xl mt-20 lg:mt-0 lg:ml-20 max-w-lg mx-auto">
+      <div class="flex-none flex flex-col lg:flex-row content-center">
+        <div class="relative w-40 h-20 lg:w-20 lg:h-40 flex-none self-center ">
+          <a href="/members/{{ member.data.slug}}/" class="grow-1 absolute w-full h-2-full -mt-20 lg:mt-0 lg:-ml-20 p-4 lg:h-full lg:w-2-full">
+            <img class="object-cover rounded-full ring-2 ring-vs-yellow-400 h-full w-full" src="{{ member.data.image }}" alt="{{ member.data.name }} profile picture">
           </a>
         </div>
-        <div class="flex flex-col justify-evenly flex-1 px-2">
-          <a href="/members/{{ member.data.slug}}/" class="">
-            <h4 class="text-2xl font-semibold">
+        <div class="flex flex-col justify-evenly text-center lg:text-left flex-1 px-2">
+          <a href="/members/{{ member.data.slug}}/">
+            <h4 class="text-2xl font-semibold {{colors.headingsDefault}}">
               {{ member.data.name }}
             </h4>
             <h5 class="text-gray-700 font-normal text-lg italic text-balance">{{member.data.jobTitle}}</h5>

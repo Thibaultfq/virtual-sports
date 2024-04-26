@@ -30,6 +30,7 @@ module.exports = {
       }),
       // created my own heights so can specify for Heros
       height: (theme) => ({
+        '2-full': '200%',
         'screen-1/2': '50vh',
         'screen-3/4': '75vh',
         'screen-9/10': '90vh',
