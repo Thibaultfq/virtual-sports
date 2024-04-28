@@ -1,6 +1,6 @@
 ---
 title: Blog Posts
-date: 2020-08-05
+date: 2024-04-28
 description: The Posts List display is controled in /src/_data/structure.js and ships with 4 options.
 layout: page
 eleventyImport:
@@ -18,7 +18,10 @@ pagination:
   size: 12
   reverse: true
   alias: posts
+  addAllPagesToCollections: true
 permalink: "blog/{% if pagination.pageNumber > 0 %}{{ pagination.pageNumber + 1 }}/{% endif %}index.html"
+eleventyComputed:
+  dateModified: "{{collections.post | getMostRecentPost | getProp('data.date') | dateToFormat('yyyy-MM-dd')}}"
 ---
 {% set postslist = posts %}
 {# 

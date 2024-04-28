@@ -2,14 +2,18 @@
 layout: page
 pagination:
   data: collections
+  addAllPagesToCollections: true
   size: 1
   alias: tag
   filter:
     - member
     - pages
     - post
+    - tag
+    - all
 permalink: "tags/{{ tag | slugify  }}/"
 eleventyComputed:
+  dateModified: "{{collections.post | getMostRecentPost | getProp('page.date') | dateToFormat('yyyy-MM-dd')}}"
   title: Blog Posts Tagged '{{ tag }}'
 ---
 {# 
@@ -28,6 +32,7 @@ eleventyComputed:
   Please see instructions in /src/_data/structure.js
 #}
 {% set postlist = ['components/', tagStyle, '.njk'] %}
+{# add the postlist component #}
 {% include postlist | join %}
 
 <div class="border-t border-gray-300">

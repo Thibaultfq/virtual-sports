@@ -1,6 +1,7 @@
 ---
 permalink: tags/
 layout: page
+date: 2024-04-28
 title: All Tags
 subtitle: Click on a tag to see blog posts about it.
 eleventyNavigation:
@@ -10,6 +11,8 @@ eleventyNavigation:
   order: 1
 eleventyImport:
   collections: ["tag"]
+eleventyComputed:
+  dateModified: "{{collections.post | getMostRecentPost | getProp('data.date') | dateToFormat('yyyy-MM-dd')}}"
 ---
 
 <div class="max-w-screen-md mx-auto">
