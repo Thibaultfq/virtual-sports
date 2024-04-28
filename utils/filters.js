@@ -18,9 +18,17 @@ module.exports = {
        *  when working with old /yyyy/MM/dd/slug format from Wordpress exports
        */
       dateToFormat: (date, format) => {
-        return DateTime.fromJSDate(date, {
-          zone: 'utc',
-        }).toFormat(String(format))
+        if (typeof date === 'string') {
+          return DateTime.fromISO(date, {
+            zone: 'utc',
+          }).toFormat(String(format))
+        }
+        if (date instanceof Date) {
+          return DateTime.fromJSDate(date, {
+            zone: 'utc',
+          }).toFormat(String(format))
+        }
+        return date
       },
 
       /**
@@ -32,6 +40,13 @@ module.exports = {
           replacement: '-',
           remove: /[*+~.·,()'"`´%!?¿:@]/g,
         })
+      },
+
+      getProp: (data, prop) => {
+        if (!data || !prop || typeof prop !== 'string') {
+          return null
+        }
+        return prop.split('.').reduce((acc, item) => acc[item], data)
       },
 
       /**
@@ -125,6 +140,15 @@ module.exports = {
         return posts.filter((a) => a.data.author === key)
       },
 
+      getMostRecentPost: (posts) => {
+        if (!Array.isArray(posts) || posts.length === 0) {
+          console.warn('no posts array provided')
+          return null
+        }
+        return posts.reduce((acc, curr, index) => (curr.page.date > acc.page.date && index ? curr : acc))
+        //.data.date
+      },
+
       /**
        *
        * @param {*} number
@@ -159,7 +183,7 @@ module.exports = {
 
       // filter an array of tags to get only the "custom" tags in a post and not the default tags that define a collection such as 'all' or 'post'
       getOnlyCustomTags: (tags) => {
-        return (tags || []).filter((tag) => ['all', 'nav', 'post'].indexOf(tag) === -1)
+        return (tags || []).filter((tag) => ['all', 'nav', 'post', 'tag', 'all', 'pages'].indexOf(tag) === -1)
       },
 
       /**
