@@ -21,7 +21,7 @@ pagination:
   addAllPagesToCollections: true
 permalink: "blog/{% if pagination.pageNumber > 0 %}{{ pagination.pageNumber + 1 }}/{% endif %}index.html"
 eleventyComputed:
-  dateModified: "{{collections.post | getMostRecentPost | getProp('data.date') | dateToFormat('yyyy-MM-dd')}}"
+  dateModified: "{{collections.post | getMostRecentPost | getProp('page.date') | dateToFormat('yyyy-MM-dd')}}"
 ---
 {% set postslist = posts %}
 {# 
