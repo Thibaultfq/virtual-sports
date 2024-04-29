@@ -2,8 +2,8 @@
   <div class="{{structure.nav_height_unscrolled}} flex-none invisible"></div>
 {% endif %}
 
-<div class="grow flex flex-col items-start justify-start {{ heroSettings.headingTextColor or 'text-white' }} {{ structure.g_pageWidth }}">
-  <div class="flex-grow font-semibold leading-tight {{ heroSettings.headingTextCase }} mxsonly:text-2xl text-3xl sm:text-4xl md:text-6xl mt-4 sm:mt-6 md:mt-12 lg:mt-20 xl:mt-28 ">
+<div class="grow flex flex-col items-start justify-start {{ heroSettings.headingTextColor or 'text-white' }} w-full {{ structure.g_pageWidth }}">
+  <div class="w-full flex-grow font-semibold leading-tight {{ heroSettings.headingTextCase }} mxsonly:text-3xl text-4xl md:text-6xl mt-4 sm:mt-6 md:mt-12 lg:mt-16 xl:mt-20 2xl:mt-24 ">
     {% if typedJsStrings and typedJsBase %}
       {% typedjs typedJsStrings,
       typedJsBase %}
@@ -12,7 +12,7 @@
     {% endif %}
 
   </div>
-  <div class="mxsonly:my-4 my-8 sm:my-10 md:my-16 lg:my-24 xl:my-28 pr-12 text-2xl md:text-3xl lg:text-5xl mxsonly:font-light text-balance {{ heroSettings.subheadingTextColor }}">
+  <div class="mxsonly:mb-4 mb-8 sm:mb-10 md:mb-16 lg:mb-20 xl:mb-24 2xl:mb-28 pr-12 text-2xl md:text-3xl lg:text-4xl xl:text-5xl mxsonly:font-light text-balance {{ heroSettings.subheadingTextColor }}">
     {{ heroSettings.subheadingText | renderInlineMarkdown }}
   </div>
   {% if heroSettings.buttonText %}
