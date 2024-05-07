@@ -17,7 +17,7 @@ seo:
     <div class="lg:col-span-2  px-4 py-4 bg-gray-50 sm:px-6 lg:px-8 lg:py-8 xl:pr-12">
       <div class="max-w-screen-md mx-auto">
         <p class="mt-4 text-xl ">
-          Send me an email of fill in this contact form and I get back to you as soon as possible!</p>
+          Send me an email or fill in this contact form and I get back to you as soon as possible!</p>
         <dl class="mt-4 text-xl ">
           <div>
             <dt class="sr-only">Postal address</dt>
@@ -62,7 +62,7 @@ seo:
           <div>
             <label for="full_name" class="sr-only">Full name</label>
             <div class="relative rounded-md shadow-sm">
-              <input id="full_name" name="name" class="block w-full px-4 py-3 mb-6 placeholder-gray-500 transition duration-150 ease-in-out form-input" placeholder="Full name">
+              <input required id="full_name" name="name" class="block w-full px-4 py-3 mb-6 placeholder-gray-500 transition duration-150 ease-in-out form-input" placeholder="Full name">
             </div>
           </div>
           <div>
@@ -72,18 +72,24 @@ seo:
             </div>
           </div>
           <div>
-            <label for="phone" class="sr-only">Phone</label>
+            <label for="orcid" class="sr-only">ORCID (optional)</label>
             <div class="relative rounded-md shadow-sm">
-              <input id="phone" name="phone" class="block w-full px-4 py-3 mb-6 placeholder-gray-500 transition duration-150 ease-in-out form-input" placeholder="Phone">
+              <input id="orcid" name="orcid" class="block w-full px-4 py-3 mb-6 placeholder-gray-500 transition duration-150 ease-in-out form-input" placeholder="ORCID (optional)">
+            </div>
+          </div>
+          <div>
+            <label for="profileURL" class="sr-only">Personal Profile link (optional)</label>
+            <div class="relative rounded-md shadow-sm">
+              <input id="profileURL" name="profileURL" class="block w-full px-4 py-3 mb-6 placeholder-gray-500 transition duration-150 ease-in-out form-input" placeholder="LinkedIn / ResearchGate / University profile page (optional)">
             </div>
           </div>
           <div>
             <label for="message" class="sr-only">Message</label>
             <div class="relative rounded-md shadow-sm">
-              <textarea id="message" name="message" rows="4" class="block w-full px-4 py-3 mb-6 placeholder-gray-500 transition duration-150 ease-in-out form-input" placeholder="Message"></textarea>
+              <textarea required id="message" name="message" rows="4" class="block w-full px-4 py-3 mb-6 placeholder-gray-500 transition duration-150 ease-in-out form-input" placeholder="Message"></textarea>
             </div>
           </div>
-          <div data-netlify-recaptcha="true"></div>
+          <div class="mb-6" data-netlify-recaptcha="true"></div>
           <div>
             {% ctaButton 'Submit', '', 'submit'%}
           </div>
