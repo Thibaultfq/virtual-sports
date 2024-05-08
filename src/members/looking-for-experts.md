@@ -3,7 +3,7 @@ slug: looking-for-experts
 name: Looking For Experts
 image: "/assets/images/members/looking-for-expert.webp"
 homepageExpert: true
-homepageExpertOrder: 3
+homepageExpertOrder: 4
 university: ''
 department: ''
 researchGroup: ''

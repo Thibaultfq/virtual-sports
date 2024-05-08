@@ -1,6 +1,7 @@
 ---
 slug: anne-tjønndal
 name: Anne Tjønndal
+date: 2024-03-22T00:00:00.000Z
 image: "/assets/images/members/anne-tjonndal.webp"
 email: anne.b.tjonndal@nord.no
 homepageExpert: true
