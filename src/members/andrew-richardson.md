@@ -2,7 +2,7 @@
 slug: andrew-richardson
 name: Andrew Richardson
 date: 2024-05-08T00:00:00.000Z
-image: "/assets/images/members/looking-for-expert.webp"
+image: "/assets/images/members/andrew-richardson.webp"
 email: andrew.richardson@newcastle.ac.uk
 homepageExpert: true
 homepageExpertOrder: 3
@@ -49,7 +49,7 @@ Andrew's academic background covers multiple topics of sport and exercise scienc
 
 My current role as a Research Associate is to work on a research project evaluating health and well-being outcomes caused by gambling-related harms in the North East. Funding from the Gambling Commission to the North East Association of Directors of Public Health (ADPH) has been secured to develop, implement, and evaluate a programme of work relating to Gambling Related Harms in the North East. 
 
-I am one of the Editors at the International Journal of Esports [(IJESPORTS)](https://www.ijesports.org/) (2022 - ongoing), I have coached and competed internationally for the Ireland Powerlifting team (2014-2016), I have worked as a Gym Instructor and Personal trainer (2014 - 2022) and I have worked as a Senior Harm Reduction worker helping to run a needle exchange in Northampton (2022 - 2023).
+Andrew is one of the editors at the International Journal of Esports [(IJESPORTS)](https://www.ijesports.org/) (2022 - ongoing), he has coached and competed internationally for the Ireland Powerlifting team (2014-2016), has worked as a Gym Instructor and Personal trainer (2014 - 2022) and has worked as a Senior Harm Reduction worker helping to run a needle exchange in Northampton (2022 - 2023).
 
 # Why the interest in virtual sports?
 
