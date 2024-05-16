@@ -55,6 +55,8 @@ heroSettings:
       textClass: "text-red-300"
 taglimit: 10
 # Homepage only front matter ---
+svgRelativePaths: #append the spritemap with memberlogo for homepage
+  - /memberLogos 
 postsListStyle: postslistthumbs # postslistcards
 typedJsStrings:
   - "gamified traditional sports."
@@ -68,8 +70,6 @@ memberLogos: #add the filenames of the logo's of members to be included below
   - logo_UGent_EN
   - newcastle-university
 ---
-{# include svgsprite with memberLogos only on homepage #}
-{% svgspriteMemberLogos %}
 
 <section class="relative">
   <img class="absolute top-0 left-0 w-full opacity-30 -z-10" src="/assets/images/home/virtual-sports-dots-bg.svg" loading="lazy" alt="background connected dots"/>

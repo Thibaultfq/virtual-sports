@@ -8,10 +8,11 @@ const structure = require('./src/_data/structure.js')
 const filterFactory = require('./utils/filters.js')
 const njkFilterFactory = require('./utils/njkFilters.js')
 const njkGlobalsFactory = require('./utils/njkGlobals.js')
-const sprite = require('./utils/sprite.js')
+// const sprite = require('./utils/sprite.js')
 const shortcodesFactory = require('./utils/shortcodes.js')
 const pairedshortcodesFactory = require('./utils/paired-shortcodes.js')
 const pluginDrafts = require('./eleventy.config.drafts.js')
+const pluginSprite = require('./eleventy.config.sprite.js')
 const { minify } = require('terser')
 const htmlmin = require('html-minifier')
 
@@ -28,7 +29,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(pluginRss)
   eleventyConfig.addPlugin(pluginNavigation)
   eleventyConfig.addPlugin(pluginDrafts)
-  sprite.initSpritePlugin(eleventyConfig)
+  eleventyConfig.addPlugin(pluginSprite)
 
   /**
    * Custom Watch Targets

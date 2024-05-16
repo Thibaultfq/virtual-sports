@@ -1,5 +1,7 @@
 ---
 transparentNav: false #set default false transparentNav attribute for all pages
+svgRelativePaths:
+  - /site
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -22,7 +24,8 @@ transparentNav: false #set default false transparentNav attribute for all pages
     {%- include "partials/head.njk" %}
   </head>
   <body class="{{ colors.siteTextCustom or siteTextDefault }}">
-    {% svgsprite %}
+    {# We need to await the svgSprite because it gets cached so the second built page uses the cache and does not rebuild it every time. awaiting is not possible in shortcode but only in filter, so used a filter instead #}
+    {{ svgRelativePaths | svgsprite | safe }}
     <div class="flex flex-col min-h-svh">
       {% if transparentNav != true %}
         <div class="{{structure.nav_height_unscrolled}} invisible"></div>

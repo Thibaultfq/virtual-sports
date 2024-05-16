@@ -1,6 +1,7 @@
 <div x-data="{}"
     x-init="$nextTick(() => {
         let ul = $refs.logos;
+        ul.querySelectorAll('li svg desc').forEach(d => d.remove())
         ul.insertAdjacentHTML('afterend', ul.outerHTML);
         ul.nextSibling.setAttribute('aria-hidden', 'true');
     })"
@@ -9,8 +10,7 @@
         {% for logo in memberLogos %}
             <li class="px-4 md:px-8">
                 {% svg logo,
-                "text-vs-blue-900 w-full max-w-48 min-w-20 sm:min-w-28 md:min-w-36",
-                logo %}
+                "text-vs-blue-900 w-full max-w-48 min-w-20 sm:min-w-28 md:min-w-36"%}
             </li>
         {% endfor %}
     </ul>
