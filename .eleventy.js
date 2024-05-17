@@ -48,6 +48,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy('src/*.ico')
   eleventyConfig.addPassthroughCopy('src/robots.txt')
   eleventyConfig.addPassthroughCopy({ 'seo_config/*.html': '/' })
+  eleventyConfig.addPassthroughCopy({ 'netlify_config/**/*': '/' })
   eleventyConfig.addPassthroughCopy('src/assets/images/')
   eleventyConfig.addPassthroughCopy('src/assets/video/')
 
