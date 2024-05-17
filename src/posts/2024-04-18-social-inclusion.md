@@ -1,6 +1,6 @@
 ---
 title: Sports Technology, Virtual Sports and Social inclusion
-date: Last Modified
+date: 2024-04-28T00:00:00.000Z
 excerpt: The social inclusion potential of Virtual Sports
 author: anne-tjønndal
 draft: false
