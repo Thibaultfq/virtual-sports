@@ -1,5 +1,5 @@
 ---
-slug: anne-tjønndal
+slug: anne-tjonndal
 name: Anne Tjønndal
 date: 2024-03-22T00:00:00.000Z
 image: "/assets/images/members/anne-tjonndal.webp"
