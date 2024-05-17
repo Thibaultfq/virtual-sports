@@ -17,6 +17,6 @@ eleventyImport:
   Below, you find an overview of all members associated with the Virtual Sports Research Network and their direct contact information. Are you interested in joining the network? <a href="/contact">Get in touch!</a>
 </p>
 <div>
-  {% set memberslist = collections.member | sort(false, false, "data.name") %}
+  {% set memberslist = collections.member | sort(false, false, "data.date") %}
   {% include "components/memberslistcards.njk" %}
 </div>
