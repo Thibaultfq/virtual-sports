@@ -2,7 +2,7 @@
 title: Do Virtual Sports Work Better for Men than Women?
 date: 2024-03-22T00:00:00.000Z
 excerpt: Insights on gender issues and equality in Virtual Sports
-author: anne-tjønndal
+author: anne-tjonndal
 draft: false
 seo: # SEO values are used for OG and will overwrite 'title' and 'excerpt' above
   title:
