@@ -4,7 +4,7 @@ name: Looking For Experts
 image: "/assets/images/members/looking-for-expert.webp"
 date: 2025-03-20T00:00:00.000Z
 homepageExpert: true
-homepageExpertOrder: 4
+homepageExpertOrder: 5
 university: ''
 department: ''
 researchGroup: ''
