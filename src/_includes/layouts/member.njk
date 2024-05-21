@@ -16,8 +16,12 @@ eleventyComputed:
         <div class="w-full md:w-4/12 md:order-3 lg:text-right lg:self-center">
           <div class="flex flex-row justify-center w-full">
             {% if personalWebsites[0] and personalWebsites[0].url %}
-              <a aria-label="Link to {{ personalWebsites[0].label }}" alt="Link to {{ personalWebsites[0].label }}" class="text-vs-blue-900 hover:text-vs-yellow-500" href="{{ personalWebsites[0].url | url }}">
-                {% svg "website", "mx-2 h-6 w-6 fill-current", personalWebsites[0].label %}</a>
+              {% for personalSite in personalWebsites %}
+                {% if personalSite.url %}
+                  <a aria-label="Link to {{ personalSite.label }}" alt="Link to {{ personalSite.label }}" class="text-vs-blue-900 hover:text-vs-yellow-500" href="{{ personalSite.url | url }}">
+                    {% svg "website", "mx-2 h-6 w-6 fill-current", personalSite.label %}</a>
+                {% endif %}
+              {% endfor %}
             {% endif %}
             {% if email %}
               <a aria-label="email {{ name }}" alt="email {{ name }}" class="text-vs-blue-900 hover:text-vs-yellow-500" href="mailto:{{ email}}">
