@@ -5,12 +5,12 @@ date: 2024-05-08T00:00:00.000Z
 image: "/assets/images/members/andrew-richardson.webp"
 email: andrew.richardson@newcastle.ac.uk
 homepageExpert: true
-homepageExpertOrder: 3
+homepageExpertOrder: 4
 university: Newcastle University
 department: Faculty of Medical Sciences
 researchGroup: Population Health Sciences Institute
-jobTitle: Doctor of Social Policy, Postdoctoral Research Associate in Gambling Harms 
-bioShort: Andrew covers topics on anti-doping, image and performance enhancing drugs, body image, transgender sport, eSports, physical activity and, last but not least, virtual sports.
+jobTitle: Postdoctoral Research Associate in Gambling Harms 
+bioShort: Andrew is Doctor of Social Policy and covers topics on anti-doping, image and performance enhancing drugs, body image, transgender sport, eSports, physical activity and, last but not least, virtual sports.
 bioLong: 
 groupWebsite:
   label: Population Health Sciences Institute
