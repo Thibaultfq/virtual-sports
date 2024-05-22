@@ -25,6 +25,8 @@ universityWebsite:
   url: https://www.howest.be/en
   email: 
 personalWebsites:
+- label: Sport Innovation Campus
+  url: https://www.sportinnovatiecampus.be/team
 - label: Fitfluencers
   url: https://www.fitfluencers.eu
 - label: GenZlab
