@@ -30,12 +30,8 @@ personalWebsites:
 socialWebsites:
 - label: orcid
   url: https://orcid.org/0000-0002-8579-1539
-- label: github
-  url: 
-- label: instagram
-  url: ''
-- label: pinterest
-  url: ''
+- label: googlescholar
+  url: https://scholar.google.com/citations?user=3pm67fsAAAAJ
 - label: linkedin
   url: https://www.linkedin.com/in/anne-tj%C3%B8nndal-aa481151/
 - label: X
