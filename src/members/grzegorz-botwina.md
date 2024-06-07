@@ -5,7 +5,7 @@ date: 2024-05-28T00:00:00.000Z
 image: "/assets/images/members/grzegorz-botwina.webp"
 email: grzegorz.botwina@eunik.org
 homepageExpert: true
-homepageExpertOrder: 3
+homepageExpertOrder: 4
 university: University of Warsaw
 department: Faculty of Management
 researchGroup: 
