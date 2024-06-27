@@ -29,17 +29,19 @@ module.exports = {
               `
       },
 
-      ctaButton: function (content, classes, type = 'button') {
+      ctaButton: function (content, classes, type = 'button', href = '') {
         //to access variables in nunjuncks, use this.ctx in filters and shortcodes
-        return `<button type="${type}" class="text-2xl md:text-3xl px-3 py-2 text-balance font-medium rounded-md ${
+        return `${
+          href ? '<a href=' + href + '>' : ''
+        }<button type="${type}" class="text-2xl md:text-3xl px-3 py-2 text-balance font-medium rounded-md ${
           this.ctx.colors.buttonDefault.text || this.ctx.colors.buttonCustom.text
         } ${this.ctx.colors.buttonDefault.textHover || this.ctx.colors.buttonCustom.textHover} ${
           this.ctx.colors.buttonDefault.bg || this.ctx.colors.buttonCustom.bg
         } ${this.ctx.colors.buttonDefault.bgHover || this.ctx.colors.buttonCustom.bgHover} ${
           this.ctx.colors.buttonDefault.border || this.ctx.colors.buttonCustom.border
-        } ${classes ? classes : ''}">
-        ${content}
-        </button>`
+        } ${classes ? classes : ''}">${content}
+        </button>
+        ${href ? '</a>' : ''}`
       },
 
       heading: function (content, subheading, classes = '', anchorLink = true) {
