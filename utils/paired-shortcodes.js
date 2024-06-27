@@ -38,7 +38,7 @@ module.exports = {
        * And a padding of 1rem (16px) which you may or may not want to delete depending on your design updates.
        *
        * Usage in .md files:
-       *  {% wrap "tailwind classes here" $} Content goes here {% endwrap %}
+       *  {% wrap "tailwind classes here" %} Content goes here {% endwrap %}
        */
       wrap: function (content, classes = '') {
         return `<div class="${classes}">${content}</div>`
