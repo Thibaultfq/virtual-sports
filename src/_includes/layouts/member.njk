@@ -9,11 +9,11 @@ eleventyComputed:
   {% set posts = collections.post | getPostsByAuthor(slug) %}
   <section class="pb-4 md:pb-10 ">
     <div class=" flex flex-col break-words w-full">
-      <div class="flex flex-wrap justify-center gap-y-6 md:gap-y-0">
-        <div class="w-full md:w-4/12 md:order-2 flex justify-center">
-          <img class="h-full w-full max-w-56 max-h-56 object-cover rounded-full shadow-xl bg-gray-50 ring-2 ring-vs-yellow-400" src="{{ image }}" alt="{{name }} profile picture">
+      <div class="flex flex-wrap justify-center gap-y-6 lg:gap-y-0">
+        <div class="w-full lg:w-4/12 lg:order-2 flex justify-center">
+          <img class="h-full w-full aspect-square max-w-56 max-h-56 object-cover rounded-full shadow-xl bg-gray-50 ring-2 ring-vs-yellow-400" src="{{ image }}" alt="{{name }} profile picture">
         </div>
-        <div class="w-full md:w-4/12 md:order-3 lg:text-right lg:self-center">
+        <div class="w-full lg:w-4/12 lg:order-3 lg:text-right lg:self-center">
           <div class="flex flex-row justify-center w-full">
             {% if personalWebsites[0] and personalWebsites[0].url %}
               {% for personalSite in personalWebsites %}
@@ -36,7 +36,7 @@ eleventyComputed:
             {% endfor %}
           </div>
         </div>
-        <div class="w-full md:w-4/12 md:order-1 flex flex-col justify-center">
+        <div class="w-full lg:w-4/12 lg:order-1 flex flex-col justify-center">
           <div class="flex flex-none max-w-full w-full justify-center gap-8">
             <div class="text-center">
               <span class="text-4xl font-bold block uppercase tracking-wide text-vs-blue-900">
