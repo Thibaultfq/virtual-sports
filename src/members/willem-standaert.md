@@ -50,7 +50,7 @@ Willem Standaert is an Associate Professor in the Strategic Marketing Innovation
 Willem's research explores the intersection of technology and human behavior. The first case he examined was Formula E, because of the various ways in which digital technologies were used (e.g., eSports, Virtual Reality, FanBoost). This also led to the development of a framework on hybrid sport configurations, from digitally supported to digitally translated. His recent work focuses on digitalization in sports such as gymnastics and skateboarding, examining the opportunities and challenges presented by artificial intelligence and other emerging technologies for fan engagement and athlete development. Other current work is at the intersection of diversity and inclusion and digital fan engagement. Finally, since 2022, Willem has been a (co-)chair of track that focuses on Digitalization of Sports (including Virtual Sports) and that is part of the [European Conference on Information Systems](https://aisnet.org/page/ECISPage).
 
 # Teaching Activities
-Willem develops and delivers courses on business strategy, management, and marketing. In addition to traditional lectures, he utilizes innovative teaching methods such as case studies to provide students with a practical understanding of the latest trends in digital transformation. To appeal to students, his teaching [cases explore the digital strategies of leading organizations in the sports industry such as the Royal Belgian Football Association](https://footbelsite-prod.rbfa.be/en/about-us/rbfa-knowledge-centre/studies/researchers-hec-liege-studied-our-football-social) and the Drone Racing League.
+Willem develops and delivers courses on business strategy, management, and marketing. In addition to traditional lectures, he utilizes innovative teaching methods such as case studies to provide students with a practical understanding of the latest trends in digital transformation. To appeal to students, his teaching cases explore the digital strategies of leading organizations in the sports industry such as the [Royal Belgian Football Association](https://footbelsite-prod.rbfa.be/en/about-us/rbfa-knowledge-centre/studies/researchers-hec-liege-studied-our-football-social) and the [Drone Racing League](https://journals.sagepub.com/doi/10.1177/2043886920939252).
 
 # References
 
@@ -62,14 +62,19 @@ Mazurova, E., & Standaert, W. (2024) "Implementing Artificial Intelligence acros
 
 Mazurova, E., Standaert, W., Penttinen, E., & Tan, F. (2022) “Paradoxical Tensions Related to AI-Powered Evaluation Systems in Competitive Sports”, *Information Systems Frontiers*, Vol 24:3 pp. 897–922.
 
+Göbeler, L., Standaert, W. & Xiao, X. (2021) “Hybrid Sport Configurations: The Intertwining of the Physical and the Digital”, *54th Hawaii International Conference on System Sciences*, Virtual Conference.
+
 Jarvenpaa, S., & Standaert, W.\* (2018). “Digital Probes as Opening Possibilities of Generativity”, *Journal of the Association for Information Systems*, 19 (10): 982-1,000.
 
-Göbeler, L., Standaert, W. & Xiao, X. (2021) “Hybrid Sport Configurations: The Intertwining of the Physical and the Digital”, *54th Hawaii International Conference on System Sciences*, Virtual Conference.
 
 ## Teaching cases
 
 Standaert, W., Xiao, X., Su, N., & Balliauw, M. "The Royal Belgian Football Association: Redesigning a World-Class Digital Strategy”, Ivey Publishing (2024).
 
+Standaert, W. “Product Digitalization at Nike: The Future is Now”, Journal of Information Technology Teaching Cases (2022), Vol 12:1 pp. 28-34; available at https://journals.sagepub.com/doi/10.1177/2043886920963286.
+
+Standaert, W. (2021). Digital growth strategies at Drone Racing League. *Journal of Information Technology Teaching Cases*, 11(1), 2-7. https://doi.org/10.1177/2043886920939252
+
 Standaert, W., Xiao, X., & Su, N. "The Royal Belgian Football Association: A World-Class Digital Strategy”, Ivey Publishing (2021).
 
-Standaert, W. “Product Digitalization at Nike: The Future is Now”, Journal of Information Technology Teaching Cases (2022), Vol 12:1 pp. 28-34; available at [https://journals.sagepub.com/doi/10.1177/2043886920963286](https://journals.sagepub.com/doi/10.1177/2043886920963286).
+
