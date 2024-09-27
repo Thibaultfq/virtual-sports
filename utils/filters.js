@@ -183,7 +183,7 @@ module.exports = {
 
       // filter an array of tags to get only the "custom" tags in a post and not the default tags that define a collection such as 'all' or 'post'
       getOnlyCustomTags: (tags) => {
-        return (tags || []).filter((tag) => ['all', 'nav', 'post', 'tag', 'all', 'pages'].indexOf(tag) === -1)
+        return (tags || []).filter((tag) => ['all', 'nav', 'post', 'tag', 'all', 'pages', 'member'].indexOf(tag) === -1)
       },
 
       /**

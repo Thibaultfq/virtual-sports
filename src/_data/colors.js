@@ -112,6 +112,12 @@ module.exports = {
   headingsCustom: '',
 
   /**
+   * marked text classes colors
+   */
+  markedTextDefaultPrimary: 'bg-vs-yellow-200',
+  markedTextDefaultSecondary: 'bg-vs-blue-100',
+
+  /**
    * prose classes colors
    */
   headingsProseDefault: 'prose-headings:text-vs-blue-900',

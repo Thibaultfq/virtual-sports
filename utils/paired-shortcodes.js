@@ -120,6 +120,15 @@ module.exports = {
       explainerVideoLeft: function (content, heading, videoFileName, videoAlt, videoSource) {
         return explainerVideo('sm:flex-row-reverse', content, heading, videoFileName, videoAlt, videoSource)
       },
+
+      /**
+       *
+       * Usage in .md files:
+       *  {% marked "tailwind classes here" %} Content goes here {% endmarked %}
+       */
+      marked: function (content, classes = '') {
+        return `<mark class="${this.ctx.colors.markedTextDefaultPrimary} ${classes}">${content}</mark>`
+      },
     }
   },
 }
