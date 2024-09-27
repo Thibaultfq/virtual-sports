@@ -22,7 +22,7 @@ author: "{{ meta.authorURL }}" # default value thibault-fouquaert. post authors 
           <div class="flex-shrink-0 mr-3">
             <a href="/members/{{ member.data.slug }}/">
               {# this equals author datafield #}
-              <img class="w-16 h-16 rounded-full border" src="{{ member.data.image }}" alt=" Photo of {{ member.data.name }}"/>
+              <img class="w-16 h-16 rounded-full border object-cover object-center" src="{{ member.data.image }}" alt=" Photo of {{ member.data.name }}"/>
             </a>
           </div>
         {% endif %}
