@@ -14,7 +14,7 @@ module.exports = {
 
   g_prose:
     'font-serif max-w-none prose lg:prose-lg prose-headings:font-sans prose-img:w-full md:prose-figure:w-11/12 prose-figure:mx-auto',
-
+  g_prose_youtube: 'md:w-11/12 mx-auto',
   /**
    * height of the navbar and the logo within when page is on top
    */
