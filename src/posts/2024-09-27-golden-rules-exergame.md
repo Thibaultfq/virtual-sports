@@ -20,9 +20,13 @@ tags:
   - research
   - sport-for-all
 ---
-While exergames are not the same as virtual sports (see the [about page](/about) for that :eyes:), it is relevant to discuss and showcase the best practices around exergames as well. Hence, this blogpost! 
+While exergames are **not the same** as virtual sports (see the [about page](/about) for that :eyes:), it is nonetheless relevant to discuss and showcase the best practices around exergames. Hence, this blogpost! 
 
-Often, a virtual sport is rooted in what once started as an exergame. It makes sense that some exergames develop into a virtual sport because it becomes more closely linked to a traditional sport, or its  technology used developed to such extent that it allows to accurately measure physical output so that legitimate competitions can take place or that they perfectly blend in with or simulate traditional sporting activities and get used during sports training and practice.  The reverse development is also possible, where a virtual sports (e.g. high-end simulator) trickle down to exergaming with fun game modes that focus more around physical activity rather then the traditional sport. While this showcases how these concepts are related, it should also be noticed that not not all exergames will and should develop into virtual sports or vice versa.
+Often, a virtual sport is rooted in what once started as an exergame. It makes sense that some **exergames develop into virtual sports** for two main reasons. 
+1.  Because the exergame becomes more closely linked to a traditional sport. 
+2.  Because the exergame's underlying technology has developed and starts to meet new requirements in terms of accurate and valid measurements of physical output, which are needed for legitimate competitions to take place, for a seamless blend-in and use with sports training and practice, or for a seamless simulation of traditional sporting activities. 
+
+The reverse development is also possible, i.e., where a virtual sport (e.g. high-end simulator) **trickles down** to an exergame with fun game modes that focus more around physical activity rather then the traditional sport. While this showcases how these concepts are related and why it is important to discuss both virtual sports and exergames, it should also be noticed that not not all exergames will and should develop into virtual sports or vice versa.
 
 # Whitepaper based on experiences at the Sports Innovation Campus.
 ## Why this white paper?
