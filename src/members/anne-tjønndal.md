@@ -4,8 +4,6 @@ name: Anne Tjønndal
 date: 2024-03-22T00:00:00.000Z
 image: "/assets/images/members/anne-tjonndal.webp"
 email: anne.b.tjonndal@nord.no
-homepageExpert: true
-homepageExpertOrder: 2
 university: Nord University
 department: Faculty of Social Sciences
 researchGroup: Response

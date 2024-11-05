@@ -84,16 +84,12 @@ module.exports = {
        * @param {*} members data json members
        * @returns members that are experts to be shown on the homepage.
        */
-      getHomepageExperts: (members) => {
+      getHomepageExperts: (members, homePageMembersSlugsSorted) => {
         return members
-          .filter(
-            (member) =>
-              member.data.homepageExpert !== undefined &&
-              member.data.homepageExpert == true &&
-              member.data.homepageExpertOrder !== undefined &&
-              !isNaN(member.data.homepageExpertOrder)
+          .filter((member) => homePageMembersSlugsSorted.indexOf(member.data.slug) !== -1) //filter method makes shallow copy, safe to sort afterwards.
+          .sort(
+            (a, b) => homePageMembersSlugsSorted.indexOf(a.data.slug) - homePageMembersSlugsSorted.indexOf(b.data.slug)
           )
-          .sort((a, b) => a.data.homepageExpertOrder - b.data.homepageExpertOrder)
       },
 
       /**

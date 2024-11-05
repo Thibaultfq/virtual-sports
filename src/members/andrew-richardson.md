@@ -4,8 +4,6 @@ name: Andrew Richardson
 date: 2024-05-08T00:00:00.000Z
 image: "/assets/images/members/andrew-richardson.webp"
 email: andrew.richardson@newcastle.ac.uk
-homepageExpert: true
-homepageExpertOrder: 6
 university: Newcastle University
 department: Faculty of Medical Sciences
 researchGroup: Population Health Sciences Institute
