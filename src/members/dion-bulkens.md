@@ -6,7 +6,7 @@ date: 2024-11-04T00:00:00.000Z
 university: 'Knowledge Centre for Sport & Physical Activity'
 department: ''
 researchGroup: ''
-jobTitle: 'Specialist esports, Gaming and Gamification'
+jobTitle: 'Specialist esports, gaming and gamification'
 bioShort: Dion makes knowledge about virtual sports and esports - based on science, policy and practice - available and applicable for Dutch professionals involved in sports.
 bioLong: ''
 email: 'dion.bulkens@kenniscentrumsportenbewegen.nl'
@@ -40,6 +40,6 @@ socialWebsites:
   url: ''
 ---
 
-The knowledge Centre for Sport & Physical Activity makes knowledge about virtual sports, esports, gaming and Gamification - based on science, policy and practice - available and applicable for Dutch professionals involved in sport. Dion is up to date with developments in the field of esports, Gaming and Gamification (EGG). By looking objectively at the developments in the field and in scientific research it is possible to provide policy makers, researchers and professionals in sports and physical activity with advice. 
+The knowledge Centre for Sport & Physical Activity makes knowledge about virtual sports, esports, gaming and gamification - based on science, policy and practice - available and applicable for Dutch professionals involved in sport. Dion is up to date with developments in the field of esports, gaming and gamification (EGG). By looking objectively at the developments in the field and in scientific research it is possible to provide policy makers, researchers and professionals in sports and physical activity with advice. 
 
-Discussion partners include municipal, provincial and government officials, developers and researchers from colleges and universities, as well as professionals and practitioners from both fields of traditional sports and esports, Gaming and Gamification. Examples of our work are the [Knowledge event esports, gaming and gamification (in Dutch) :calendar:](https://kenniseventegg.nl/) and the [Knowledge Agenda Esports: performance enhancement :paperclip:](https://www.kennisbanksportenbewegen.nl/?file=11555&m=1702887392&action=file.download).
+Discussion partners include municipal, provincial and government officials, developers and researchers from colleges and universities, as well as professionals and practitioners from both fields of traditional sports and esports, gaming and gamification. Examples of our work are the [Knowledge event esports, gaming and gamification (in Dutch) :calendar:](https://kenniseventegg.nl/) and the [Knowledge Agenda Esports: performance enhancement :paperclip:](https://www.kennisbanksportenbewegen.nl/?file=11555&m=1702887392&action=file.download).
