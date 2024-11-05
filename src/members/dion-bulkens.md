@@ -6,8 +6,8 @@ date: 2024-11-04T00:00:00.000Z
 university: 'Knowledge Centre for Sport & Physical Activity'
 department: ''
 researchGroup: ''
-jobTitle: 'Specialist eSports, Gaming and Gamification'
-bioShort: Dion makes knowledge about virtual sports and eSports - based on science, policy and practice - available and applicable for Dutch professionals involved in Sports.
+jobTitle: 'Specialist esports, Gaming and Gamification'
+bioShort: Dion makes knowledge about virtual sports and esports - based on science, policy and practice - available and applicable for Dutch professionals involved in sports.
 bioLong: ''
 email: 'dion.bulkens@kenniscentrumsportenbewegen.nl'
 groupWebsite:
@@ -17,7 +17,7 @@ departmentWebsite:
 universityWebsite:
   url: https://www.kenniscentrumsportenbewegen.nl/en/
 personalWebsites:
-- label: eSports Page of the Knowledge centre (in Dutch)
+- label: Esports Page of the Knowledge centre (in Dutch)
   url: https://www.kenniscentrumsportenbewegen.nl/themas/esports/
 socialWebsites:
 - label: linkedin
@@ -29,7 +29,7 @@ socialWebsites:
 - label: googlescholar
   url: ''
 - label: X
-  url: 'https://twitter.com/dion_bulke79437'
+  url: ''
 - label: github
   url: ''
 - label: instagram
@@ -40,6 +40,6 @@ socialWebsites:
   url: ''
 ---
 
-The knowledge Centre for Sport & Physical Activity makes knowledge about virtual sports, eSports, gaming and Gamification - based on science, policy and practice - available and applicable for Dutch professionals involved in sport. Dion is up to date with developments in the field of eSports, Gaming and Gamification (EGG). By looking objectively at the developments in the field and in scientific research it is possible to provide policy makers, researchers and professionals in sports and physical activity with advice. 
+The knowledge Centre for Sport & Physical Activity makes knowledge about virtual sports, esports, gaming and Gamification - based on science, policy and practice - available and applicable for Dutch professionals involved in sport. Dion is up to date with developments in the field of esports, Gaming and Gamification (EGG). By looking objectively at the developments in the field and in scientific research it is possible to provide policy makers, researchers and professionals in sports and physical activity with advice. 
 
-Discussion partners include municipal, provincial and government officials, developers and researchers from colleges and universities, as well as professionals and practitioners from both fields of traditional sports and eSports, Gaming and Gamification. Examples of our work are the [Knowledge event eSports, gaming and gamification (in Dutch) :calendar:](https://kenniseventegg.nl/) and the [Knowledge agenda eSports: performance enhancement :paperclip:](https://www.kennisbanksportenbewegen.nl/?file=11555&m=1702887392&action=file.download).
+Discussion partners include municipal, provincial and government officials, developers and researchers from colleges and universities, as well as professionals and practitioners from both fields of traditional sports and esports, Gaming and Gamification. Examples of our work are the [Knowledge event esports, gaming and gamification (in Dutch) :calendar:](https://kenniseventegg.nl/) and the [Knowledge Agenda Esports: performance enhancement :paperclip:](https://www.kennisbanksportenbewegen.nl/?file=11555&m=1702887392&action=file.download).
