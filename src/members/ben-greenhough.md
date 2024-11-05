@@ -3,8 +3,6 @@ slug: ben-greenhough
 name: Ben Greenhough
 image: "/assets/images/members/ben-greenhough.webp"
 date: 2024-09-18T00:00:00.000Z
-homepageExpert: true
-homepageExpertOrder: 8
 university: 'University of Hull'
 department: 'Rezzil'
 researchGroup: ''

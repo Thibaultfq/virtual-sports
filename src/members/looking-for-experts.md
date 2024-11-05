@@ -3,8 +3,6 @@ slug: looking-for-experts
 name: Looking For Experts
 image: "/assets/images/members/looking-for-expert.webp"
 date: 2025-03-20T00:00:00.000Z
-homepageExpert: false
-homepageExpertOrder: 9
 university: ''
 department: ''
 researchGroup: ''

@@ -4,8 +4,6 @@ name: Daniel Westmattelmann
 date: 2024-06-07T00:00:00.000Z
 image: "/assets/images/members/daniel-westmattelmann.webp"
 email: d.west@wwu.de
-homepageExpert: true
-homepageExpertOrder: 3
 university: University of Münster
 department: Center for Management
 researchGroup: Chair of Organization, Human Resource Management and Innovation
