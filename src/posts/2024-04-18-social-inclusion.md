@@ -17,7 +17,7 @@ hero: # options: carousel, graphic, video, split (text & image), leave blank to 
 tags:
   - sport-for-all
   - Zwift
-  - Social Inclusion
+  - social inclusion
 ---
 While technological innovations may have a transformative impact across all levels of sports, they are often developed and adopted in relation to high-performance sports. Several scholars within the field of sport science argue that athletic performance enhancement has come to be dependent on innovations in sports technology. For instance, as early as 2008, [Lippi and colleagues](https://doi.org/10.1093/bmb/ldn029) argued that the *‘‘future limits to athletic performance will be determined less and less by innate physiology of the athlete, and more and more by scientific and technological advances’’*. This has been echoed by others, such as [Balmer, Pleasence and Nevill (p. 1018, 2012)](https://doi.org/10.1080/02640414.2011.587018): *“In the absence of technical or technological intervention, no general improvement in performance (i.e. across finalists) should be expected. Of course, this is not to say that an extraordinary performance could, for example, break a jumping world record, simply that, based on historic growth across finalists, there is no reason to expect further general improvement”*. Similar arguments are also found in Rayvon Fouché’s book [Game Changer -The Technoscientific Revolution in Sports (2017)](https://www.researchgate.net/publication/321700678_Game_changer_The_technoscientific_revolution_in_sports). What does all this mean? Simply put, elite sporting competitions, technologically advanced and innovative gear, training methods, injury prevention and data analytics can make up the ‘marginal gains’ or the thin line between winning and losing. 
 
