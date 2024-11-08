@@ -7,12 +7,27 @@ draft: false
 seo: # SEO values are used for OG and will overwrite 'title' and 'excerpt' above
   title:
   description:
-  image: # used for OG:image and Twitter:image. Overrides default set in _data/meta.siteImage
+  image: 2024/11/STRN-virtual-sports-3.webp # used for OG:image and Twitter:image. Overrides default set in _data/meta.siteImage
 images: # relative to /src/assets/images/
-  feature: 2024/11/strn-virtual-sports.webp
-  thumb: 2024/11/strn-virtual-sports.webp
+  feature: # none because hero
+  thumb: 2024/11/STRN-virtual-sports-3.webp
   align: # object-center (default) - other options at https://tailwindcss.com/docs/object-position
-  height: md:h-screen-1/2 # optional. Default = h-48 md:h-screen-1/3
+  height: # optional. Default = h-48 md:h-screen-1/3
+hero: carousel
+heroSettings:
+  height: h-screen-1/3 md:h-screen-1/2
+  carouselAutoplay: true
+  carousel: #use Arrays of unnamed Objects
+    - image: /assets/images/2024/11/STRN-virtual-sports-3.webp
+      text: "Virtual Sports at STRN 2024 Summit"
+    - image: /assets/images/2024/11/STRN-virtual-sports-1.webp
+      text: "STRN 2024 Summit"
+    - image: /assets/images/2024/11/STRN-virtual-sports-4.webp
+      text: "Anne Tjønndal at STRN 2024 Summit"
+    - image: /assets/images/2024/11/STRN-virtual-sports-0.webp
+      text: "STRN 2024 Summit"
+    - image: /assets/images/2024/11/STRN-virtual-sports-2.webp
+      text: "Moderated discussion"
 tags:
   - event
   - social inclusion
@@ -31,13 +46,15 @@ tags:
  3. Gender Biases (e.g. [Do virtual sports work better for men than women?](/2024/03/22/do-virtual-sports-work-better-for-men-than-women))
  4. Integrity, policy & governance (e.g. [Threats and Issues to the Integrity of Virtual Sports and eSports](/2024/06/12/threats-and-issues-to-the-integrity-of-virtual-sports-and-esports))
 
-How to address and solve these issues? Well, if the answers were already there, there would be no need to have a discussion session around this at the STRN Summit :bulb:. Hence, Anne addresses the need for **more social science research** to achieve an ethical and democratic use of novel technologies in sport such as virtual sports.
+How to address and solve these issues? Well, if the answers were already there, there would be no need to have a discussion session around this at the STRN Summit :bulb:. Hence, Anne addresses the need for **more social science research** besides performance enhancement research to achieve an ethical and democratic use of novel technologies in sport such as virtual sports. Interdisciplinary efforts are therefore essential to make sure everyone has access and the tools to practice virtual sport, whether that is for performance or non-performance usage.
 
 ## Data challenges: transferability and transparency
 
 Daniel explained challenges with the data involved in virtual sports: how does data based on real, physical, efforts translate into virtual performances? And is this transparent and fair as perceived by the participants in virtual sports?
 
-To this end, the **performance-result gap** is presented. The study of Daniel and colleagues (Westmattelmann et al., 2022) showcases the discrepancy between input and output. The average performance of the winner in a virtual cycling race can be lower than the average performance of subsequent ranked athletes. In other words, the final virtual cycling race its result is not 100% explained by physical performance but -- just like in real world racing -- other elements besides physical performance are at play that will influence the (virtual) race results. While we know the factors at play in real world racing (e.g. gravity, air resistance, rolling resistance), we do not know all factors at play in virtual sports (e.g. on the Zwift platform during virtual cycling races). As a results, virtual sports (esports) competitions are faced with a **transparency gap** for those participating and seeking an explanation for their results based on their input :biking_man:. Such **transparency is however needed to address ethical challenges** such as integrity and fairness (see also Anne's part).
+To this end, the **performance-result gap** is presented. The study of Daniel and colleagues (Westmattelmann et al., 2022) showcases the discrepancy between input and output. The average performance of the winner in a virtual cycling race can be lower than the average performance of subsequent ranked athletes. In other words, the final virtual cycling race its result is not 100% explained by physical performance but -- just like in real world racing -- other elements besides physical performance are at play that will influence the (virtual) race results. While we know the factors at play in real world racing (e.g. gravity, air resistance, rolling resistance), we do not know all factors at play in virtual sports (e.g. on the Zwift platform during virtual cycling races). As a results, virtual sports (esports) competitions are faced with a **transparency gap** for those participating and seeking an explanation for their results based on their input :biking_man:. Such **transparency is however needed to address ethical challenges** such as integrity and fairness (see also Anne's part). To this end, the development of **virtual sports data dashboards** could be beneficial to explain how this is transformed and increase transparency.
+
+
 
 ![Slide from Daniel's presentation to illustrate the transparency gap.](/assets/images/2024/11/slide-performance-result-gap.webp)
 
@@ -50,7 +67,7 @@ Third in row, Ben discussed the relevance of virtual sports for performance anal
 
 ## Concluding
 
-Thibault concludes this session by lining up each of the earlier presented perspectives on what is needed to increase the relevance of virtual sports for human health and performance. Each perspective is important in its own way and contributes to making virtual sports' relevant. Therefore, Thibault argues that virtual sports would benefit from an integrative approach and the development of an **integrative assessment tool**. Such tool could serve multiple purposes, but more importantly, would assure that not only performance but also human health and societal perspectives are incorporated in the development and use of virtual sports. For example, an integrative assessment tool could:
+Thibault concludes this session by lining up each of the earlier presented perspectives on what is needed to increase the relevance of virtual sports for human health and performance. Each perspective is important in its own way and contributes to making virtual sports' relevant. Therefore, Thibault argues that virtual sports would benefit from an integrative approach and the development of an **integrative assessment tool** along with clear guidelines on ethical yet effective use of virtual sports. Such tool could help outline the needed requirements and give insights into how existing solutions meet these requirements. More importantly, an integrative approach would assure that not only requirements for performance but also human health and societal are incorporated in the development and use of virtual sports. For example, an integrative assessment tool could:
 1. Increase awareness amongst key stakeholders in sport policy, on all of the topics of social issues, health, or performance
 2. Allow to discover, recognise and assess the potential of a new virtual variants within a (traditional) sport
 3. Provide strategies on both long and short term approach to virtual sports for all of the topics of social issues, health, or performance. 
