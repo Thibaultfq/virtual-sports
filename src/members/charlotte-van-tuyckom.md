@@ -2,9 +2,9 @@
 slug: charlotte-van-tuyckom
 name: Charlotte Van Tuyckom
 date: 2024-05-16T00:00:00.000Z
-image: "/assets/images/members/charlotte-van-tuyckom.webp"
+image: "members/charlotte-van-tuyckom.webp"
 seo:
-  image: "/assets/images/members/charlotte-van-tuyckom.webp"
+  image: "members/charlotte-van-tuyckom.webp"
 email: charlotte.van.tuyckom@howest.be
 university: Howest University College
 department:  Department of Sport and movement sciences

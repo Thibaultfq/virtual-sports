@@ -1,9 +1,9 @@
 ---
 slug: ben-greenhough
 name: Ben Greenhough
-image: "/assets/images/members/ben-greenhough.webp"
+image: "members/ben-greenhough.webp"
 seo:
-  image: "/assets/images/members/ben-greenhough.webp"
+  image: "members/ben-greenhough.webp"
 date: 2024-09-18T00:00:00.000Z
 university: 'University of Hull'
 department: 'Rezzil'

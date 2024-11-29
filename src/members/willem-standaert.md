@@ -1,9 +1,9 @@
 ---
 slug: willem-standaert
 name: Willem Standaert
-image: "/assets/images/members/willem-standaert.webp"
+image: "members/willem-standaert.webp"
 seo:
-  image: "/assets/images/members/willem-standaert.webp"
+  image: "members/willem-standaert.webp"
 date: 2024-09-12T00:00:00.000Z
 university: HEC Liège Management School - University of Liège
 department: Strategic Marketing Innovation Department

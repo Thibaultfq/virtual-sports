@@ -3,7 +3,7 @@
     {% if authorIsMember %}
       <div class="flex-shrink-0 mr-3">
         <a href="/members/{{ post.data.author }}/">
-          <img class="w-10 h-10 aspect-square object-cover rounded-full border" src="{{ memberPost.data.image }}" alt=" Photo of {{ memberPost.data.name }}">
+          <img class="w-10 h-10 aspect-square object-cover rounded-full border" src="/assets/images/{{ memberPost.data.image }}" alt=" Photo of {{ memberPost.data.name }}">
         </a>
       </div>
     {% endif %}

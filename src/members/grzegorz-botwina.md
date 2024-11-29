@@ -2,9 +2,9 @@
 slug: grzegorz-botwina
 name: Grzegorz Botwina
 date: 2024-05-28T00:00:00.000Z
-image: "/assets/images/members/grzegorz-botwina.webp"
+image: "members/grzegorz-botwina.webp"
 seo:
-  image: "/assets/images/members/grzegorz-botwina.webp"
+  image: "members/grzegorz-botwina.webp"
 email: grzegorz.botwina@eunik.org
 university: University of Warsaw
 department: Faculty of Management

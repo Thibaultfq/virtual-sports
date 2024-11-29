@@ -2,9 +2,9 @@
 slug: daniel-westmattelmann
 name: Daniel Westmattelmann
 date: 2024-06-07T00:00:00.000Z
-image: "/assets/images/members/daniel-westmattelmann.webp"
+image: "members/daniel-westmattelmann.webp"
 seo:
-  image: "/assets/images/members/daniel-westmattelmann.webp"
+  image: "members/daniel-westmattelmann.webp"
 email: d.west@wwu.de
 university: University of Münster
 department: Center for Management
