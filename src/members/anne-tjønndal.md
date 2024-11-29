@@ -3,7 +3,7 @@ slug: anne-tjonndal
 name: Anne Tjønndal
 date: 2024-03-22T00:00:00.000Z
 image: "/assets/images/members/anne-tjonndal.webp"
-email: anne.b.tjonndal@nord.no
+email: anne.tjonndal@nord.no
 university: Nord University
 department: Faculty of Social Sciences
 researchGroup: Response
@@ -13,15 +13,12 @@ bioLong:
 groupWebsite:
   label: Research Group for Sport and Society (RESPONSE)
   url: https://site.nord.no/response/en/
-  email: anne.b.tjonndal@nord.no
 departmentWebsite:
   label: Faculty of Social Sciences
   url: https://www.nord.no/en/about/faculties-and-centres/faculty-of-social-sciences
-  email: anne.b.tjonndal@nord.no
 universityWebsite:
   label: Nord University
   url: https://www.nord.no/
-  email: anne.b.tjonndal@nord.no
 personalWebsites:
 - label: Researcher Profile UGent
   url: https://www.nord.no/om/ansatte/anne-tjonndal
