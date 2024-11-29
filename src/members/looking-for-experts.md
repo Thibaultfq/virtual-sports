@@ -9,7 +9,7 @@ university: ''
 department: ''
 researchGroup: ''
 jobTitle: ''
-bioShort: Interested in joining the Virtual Sports Network? We're currently still
+bioShort: Interested in joining the Virtual Sports Research Network? We're currently still
   looking for experts on the topics around virtual sports :eyes:!
 bioLong: ''
 email: ''
@@ -43,4 +43,4 @@ socialWebsites:
   url: ''
 ---
 
-# We are still looking for academic experts to join the Virtual Sports Network!
+# We are still looking for academic experts to join the Virtual Sports Research Network!
