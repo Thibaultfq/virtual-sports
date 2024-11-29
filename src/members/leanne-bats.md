@@ -41,9 +41,9 @@ socialWebsites:
 ---
 
 # Who is Leanne?
-Leanne Bats is the Head of Digital and Innovation at Sport Waikato, where she leads efforts to tackle inactivity through innovative solutions. With is an ex-international footballer with a background in emerging technology, youth engagement, digital marketing, and psychology. Leanne has worked with some of the world's largest sports brands, including FC Barcelona, All Blacks, and Black Ferns.
+Leanne Bats is the Head of Digital and Innovation at [Sport Waikato](https://www.sportwaikato.org.nz/), where she leads efforts to tackle inactivity through innovative solutions. With is an ex-international footballer with a background in emerging technology, youth engagement, digital marketing, and psychology. Leanne has worked with some of the world's largest sports brands, including FC Barcelona, All Blacks, and Black Ferns.
 
-Her role at Sport Waikato focuses on creating a '**living laboratory**' for experimentation, innovation, and motivation in physical activity, with the [ambitious goal](https://www.sportwaikato.org.nz/about-us/movingwaikato.aspx) of **getting 75% of the population moving by 2030**.
+ Sport Waikato is a Charitable Trust that operates with local stakeholders (e.g. primary and secondary schools), the adult population, and is major partner of [Sport New Zealand](https://sportnz.org.nz/). Sport waikato has the [ambitious goal](https://www.sportwaikato.org.nz/about-us/movingwaikato.aspx) of **getting 75% of the population in Waikato moving by 2030**. Leanne's role at Sport Waikato focuses on creating a '**living laboratory**' for experimentation, innovation, and motivation in physical activity. Leanne creates value for the Waikato region by getting people to be more physically active, but beyond that she aims to try and lead the world in innovating on ways to do that.
 
 This work combines her expertise in **digital transformation, community engagement, and public health** approaches to the sports sector. Leanne is passionate about harnessing technology to inspire the next generation of sports fans and participants. She believes that through collaboration across sectors—sports, technology, gaming, wellness—we can create impactful solutions that promote active lifestyles for all.
 
@@ -64,3 +64,4 @@ To support the goal of Sport Waikato with evidence-based research, Leanne is int
 4. **The verification, efficacy and positive impact of Virtual Sports and exergame titles** - Is there a role for a leading authority on this (like a health stamp on food or a rating on a film), via robust studies on game titles. Who should it be and what should these labels take into account?
 
 # Research Collaboration with Sport Waikato 
+Leanne is happy to explore research with universities on the aforementioned topics (and beyond), where Sport Waikato can offer access to a real world environment, to put theories into the wild :woman_scientist:.
