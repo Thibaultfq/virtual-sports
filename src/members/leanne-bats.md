@@ -2,6 +2,8 @@
 slug: leanne-bats
 name: Leanne Bats
 image: "/assets/images/members/leanne-bats.webp"
+seo: # SEO values are used for OG
+  image: "/assets/images/members/leanne-bats.webp"
 date: 2024-11-15T00:00:00.000Z
 university: 'Sport Waikato - Regional Charitable Trust, New Zealand'
 department: ''

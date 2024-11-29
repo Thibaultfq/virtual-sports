@@ -2,6 +2,8 @@
 slug: dion-bulkens
 name: Dion Bulkens
 image: "/assets/images/members/dion-bulkens.webp"
+seo:
+  image: "/assets/images/members/dion-bulkens.webp"
 date: 2024-11-04T00:00:00.000Z
 university: 'Knowledge Centre for Sport & Physical Activity'
 department: ''

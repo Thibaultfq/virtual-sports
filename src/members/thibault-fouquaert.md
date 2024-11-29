@@ -3,6 +3,8 @@ slug: thibault-fouquaert
 name: Thibault Fouquaert
 date: 2024-03-20T00:00:00.000Z
 image: "/assets/images/members/thibault-fouquaert.webp"
+seo:
+  image: "/assets/images/members/thibault-fouquaert.webp"
 email: thibault.fouquaert@ugent.be
 university: Ghent University
 department: Department of Movement and Sport Sciences

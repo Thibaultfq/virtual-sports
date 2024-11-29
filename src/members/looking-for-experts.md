@@ -2,6 +2,8 @@
 slug: looking-for-experts
 name: Looking For Experts
 image: "/assets/images/members/looking-for-expert.webp"
+seo:
+  image: "/assets/images/members/looking-for-expert.webp"
 date: 2025-03-20T00:00:00.000Z
 university: ''
 department: ''

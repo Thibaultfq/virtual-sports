@@ -3,6 +3,8 @@ slug: andrew-richardson
 name: Andrew Richardson
 date: 2024-05-08T00:00:00.000Z
 image: "/assets/images/members/andrew-richardson.webp"
+seo: # SEO values are used for OG
+  image: "/assets/images/members/andrew-richardson.webp"
 email: andrew.richardson@newcastle.ac.uk
 university: Newcastle University
 department: Faculty of Medical Sciences
