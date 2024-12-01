@@ -9,7 +9,7 @@ university: 'TheZommunique & The Virtual Velo Podcast'
 department: ''
 researchGroup: ''
 jobTitle: 'Independent Cycling Esports Journalist'
-bioShort: Chris is the creator of the cycling esports website TheZommunique.com and co-host of The Virtual Velo Podcast. 
+bioShort: Chris is the creator of the cycling esports website TheZommunique.com and co-host of The Virtual Velo Podcast. As a trusted voice with great knowledge and connections in the cycling esports field, he understands the contemporary challenges and aims to tackle these to ensure cycling esports' success. 
 bioLong: ''
 email: 'chris@thezommunique.com'
 groupWebsite:
@@ -40,7 +40,7 @@ Chris' position as **the only independent cycling esports journalist** shines th
 
 Chris co-hosts [The Virtual Velo Podcast](https://thezommunique.com/the-virtual-velo-podcast-p-b-thezommunique-com/) with cycling commentator [Prof. Emma Martin](https://www.shu.ac.uk/about-us/our-people/staff-profiles/emma-martin). Together, they engage with influential figures from the cycling esports community to discuss and debate the sport’s future, including the UCI Esports Coordinator Jacob Fraser, national governing bodies, virtual cycling platform leaders, and multiple world champions, offering a platform for impactful conversations that drive the trajectory of the developing discipline.
 
-His contributions to cycling esports have not gone unnoticed, with his work cited in [multiple research papers](#referenced-in-research) exploring the burgeoning and rapidly growing discipline.
+His contributions to cycling esports have not gone unnoticed, with his work cited in [peer-reviewed research](#referenced-in-research) exploring the burgeoning and rapidly growing discipline.
 
 
 ## Chris' Mission
@@ -52,7 +52,7 @@ Combining his healthcare expertise with extensive cycling knowledge, Chris appro
 With deep connections in the cycling esports community, including the UCI and National Governing Bodies, virtual cycling platforms, athletes, and community leaders, Chris has established himself as a **trusted voice**, delivering insightful stories that explore the sport’s nuances and give athletes’ avatars a personality and a voice. 
 
 # Research interest
-Given Chris' immense knowledge and deep connections within the cycling eSports field, he understand the the contemporary challenges and issues these new virtual sports disciplines are faced with better then no one else. To this extent, Chris is committed to **sharing his unique skillset with the scientific community** and using it as a vehicle to ensure cycling esports' success. 
+Given Chris’ immense knowledge and deep connections within the cycling esports field, he has a unique understanding of the contemporary challenges and issues these new virtual disciplines face. To this extent, Chris is committed to **sharing his unique skillset with the scientific community** and using it as a vehicle to ensure cycling esports' success. 
 
 Some of the contemporary topics in virtual sports such as cycling esports that comes to mind of Chris are:
 -  universal governance model (UCI vs. traditional esports organization)
@@ -68,7 +68,7 @@ Richardson, A., Berger, N., & Smith, P. (2023). Perceptions of Cheating and Dopi
 
 # Impressions
 
- {% wrap "sm:w-1/2 mx-auto" %} 
+ {% wrap "sm:w-2/3 md:w-1/2 mx-auto" %} 
  <figure>
 {{ "![Chris at the 2024 UCI Cycling Esports World Championship](/assets/images/members/christopher-schwenker/christopher-schwenker-uci2024WC.webp)" | renderInlineMarkdown | safe }}
 <figcaption>Chris at the 2024 UCI Cycling Esports World Championship<figcaption>
