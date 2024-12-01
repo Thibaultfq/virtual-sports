@@ -1,7 +1,7 @@
 module.exports = {
   siteURL: process.env.URL || 'http://localhost:8080',
   siteName: 'Virtual Sports',
-  siteDescription: 'Science Communication and Expert Network',
+  siteDescription: 'Science Communication blog and Research Network',
   siteImage: '/assets/images/default-image-virtual-sports.webp',
   lang: 'en',
   locale: 'en_uk',
