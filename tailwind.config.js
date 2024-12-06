@@ -79,7 +79,7 @@ module.exports = {
         },
       }),
       animation: {
-        'infinite-scroll': 'infinite-scroll 20s linear infinite',
+        'infinite-scroll': 'infinite-scroll 30s linear infinite',
       },
       keyframes: {
         'infinite-scroll': {
