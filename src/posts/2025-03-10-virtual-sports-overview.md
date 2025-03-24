@@ -1,6 +1,6 @@
 ---
 title: "Virtual Sports: an overview of what exists and what is possible"
-date: 2025-03-10T00:00:00.000Z
+date: 2025-03-24T00:00:00.000Z
 excerpt: Virtual Sports are emerging in all kind of formats, to which this blogpost provides an overview
 author: thibault-fouquaert
 draft: false
