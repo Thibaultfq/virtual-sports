@@ -45,6 +45,61 @@ module.exports = {
       },
 
       /**
+       * ===== grid wrapper - REQUIRED =====
+       *
+       * Using this grid wrapper and 'cell' below to create equally column-sized rows.
+       *https://v3.tailwindcss.com/docs/grid-template-columns
+       * you can create tabular content in your .md files.
+       *
+       * Usage in .md files:
+       *  {% grid "optional additional tailwind classes" %}
+       *    {% cell "optional add tailwind classes" %} for cell {% endcell %}
+       *    {% cell "optional add tailwind classes" %} content for cell {% endcell %}
+       *  {% endgrid %}
+       */
+      grid: function (content, gridcols = '', classes = '') {
+        return `<div class="grid overflow-x-auto ${gridcols} gap-y-0 gap-x-0 [&_p]:text-left ${classes}">${content}</div>`
+      },
+
+      /** See usage example above.
+       * You can add as many 'rows' using grid-cols-subgrid spanning the same amount of cols as defined in the grid
+       * optional to have expandable 2nd row if exapandable is true
+       * default cols = 5
+       * default expandable rows are 2
+       * insert expandable rows using the collapseWrapper (see below)
+       */
+      gridRowsExpandable: function (content, colSpan = '', rowSpan = '', expanded = false, classes = '') {
+        return `<div x-data="{ expanded: ${expanded} }" class="grid grid-cols-subgrid  ${rowSpan} ${colSpan} ${classes}">
+          ${content}
+          </div>`
+      },
+
+      /**
+       * Same as gridRowExpandable but without the feature to expand into multiple rows.
+       */
+      gridRow: function (content, colSpan = '', collapse = false, classes = '') {
+        return `<div ${
+          collapse ? 'x-show="expanded" x-collapse' : ''
+        } class="grid grid-cols-subgrid [&_*]:my-0 [&>*]:px-2 [&>*]:pb-1 ${colSpan} ${classes}">${content}</div>`
+      },
+
+      /**
+       * Link to click for content to expand/show using Alpine.js x-collapse
+       */
+      expandLink: function (content, classes = '') {
+        return `<a @click="expanded = ! expanded" role="button" tabindex="0" class="cursor-pointer ${classes}">${markdownLib.renderInline(
+          content.trim()
+        )}</a>`
+      },
+
+      /** See usage example above.
+       * You can add as many 'cells' as you want rows to fill up with column-equally sized cells
+       */
+      cell: function (content, classes = '') {
+        return `<p class="${classes}">${markdownLib.renderInline(content.trim())}</p>`
+      },
+
+      /**
        * ===== Column Wrapper & Cols - REQUIRED =====
        *
        * Using this column wrapper and 'cols' below

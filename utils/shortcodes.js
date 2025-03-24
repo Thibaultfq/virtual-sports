@@ -88,15 +88,26 @@ module.exports = {
         const slug = vid ? vid : 'oHg5SJYRHA0'
         const title = vtitle ? vtitle : 'YouTube Video'
         const ratio = vratio ? vratio : '16:9'
-        const classes = vclasses ? vclasses : ''
+        const classes = vclasses ? vclasses : structure.g_prose_youtube
         const start = vstart ? vstart.split(':').reduce((minute, seconds) => Number(minute) * 60 + Number(seconds)) : ''
         const padding = ratio.split(':').reduce((first, second) => (second / first) * 100)
 
-        return `
-        <div class="${structure.g_prose_youtube} ${classes}" >
+        return `<div class="${classes}" >
         <div id="${slug}" style="position:relative; width:100%; padding-bottom:${padding}%"><iframe style="position:absolute; top:0; right:0; bottom:0; left:0; width:100%; height:100%" width="100%" height="100%" title="${title}" src="https://www.youtube.com/embed/${slug}${
           start ? `?start=${start}` : ''
         }" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div></div>`
+      },
+
+      exergameEsportScorebar: function (score) {
+        return `<div @click="expanded = ! expanded" role="button" tabindex="0" class="w-full min-w-40 space-y-2 not-prose cursor-pointer">
+        <p class="font-sans text-base text-vs-blue-900 flex items-center justify-between font-semibold">
+          <span>exergame</span>
+          <span>esport</span>
+        </p>
+        <div class="w-full bg-vs-blue-50 block rounded-full overflow-hidden h-2">
+          <div class="h-full rounded-none bg-vs-blue-600" style="width:${score}%"></div>
+        </div>
+        </div>`
       },
     }
   },
