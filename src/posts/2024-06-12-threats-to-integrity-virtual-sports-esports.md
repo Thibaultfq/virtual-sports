@@ -15,8 +15,8 @@ images: # relative to /src/assets/images/
   height: # optional. Default = h-48 md:h-screen-1/3
 hero: # options: carousel, graphic, video, split (text & image), leave blank to have no hero
 tags:
-  - eSports
-  - Integrity Issues
+  - esports
+  - integrity issues
   - cheating
   - doping
 ---

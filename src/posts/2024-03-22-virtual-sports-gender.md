@@ -17,7 +17,7 @@ images: # relative to /src/assets/images/
 hero: # options: carousel, graphic, video, split (text & image), leave blank to have no hero
 tags:
   - gender
-  - Science and Technology Studies
+  - science and technology studies
   - inequality
   - research
 ---
