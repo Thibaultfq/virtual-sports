@@ -13,7 +13,7 @@ module.exports = {
   g_fullpageSectionWidth: 'max-w-screen-2xl mx-4 lg:mx-8 2xl:mx-auto mt-20 lg:mt-40',
 
   g_prose:
-    'font-serif max-w-none prose lg:prose-lg prose-headings:font-sans prose-img:w-full md:prose-figure:w-11/12 prose-figure:mx-auto',
+    'font-serif max-w-none prose lg:prose-lg prose-headings:font-sans prose-img:w-full md:prose-figure:w-11/12 prose-figure:mx-auto prose-table:table-auto prose-th:font-serif prose-th:align-text-bottom prose-th:pt-4 prose-th:pb-0.5',
   g_prose_youtube: 'md:w-11/12 mx-auto',
   /**
    * height of the navbar and the logo within when page is on top

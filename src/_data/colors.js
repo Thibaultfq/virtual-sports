@@ -119,9 +119,13 @@ module.exports = {
 
   /**
    * prose classes colors
+   * TODO: change in tailwind v4 for stacked classes (v3 first:prose-td:... --> v4 prose-td:first:...)
    */
   headingsProseDefault: 'prose-headings:text-vs-blue-900',
   headingsProseCustom: '',
+  tableProseDefault:
+    'prose-tr:border-vs-blue-900 prose-th:border-vs-blue-900 prose-tr:border-double last:[&_tbody>tr]:border-b-8 first:[&_thead>tr]:border-t-8 first:[&_tbody>tr]:border-solid first:[&_tbody>tr]:border-t-4',
+  tableProseCustom: '',
   linksProseDefault: 'prose-a:text-vs-blue-700 hover:prose-a:text-vs-blue-600',
   linksProseCustom: '',
 

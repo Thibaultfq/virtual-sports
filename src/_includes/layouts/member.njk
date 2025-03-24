@@ -86,7 +86,7 @@ eleventyComputed:
     </div>
   </section>
 
-  <section class=" {{structure.g_prose}} {{colors.headingsProseCustom or colors.headingsProseDefault}} {{colors.linksProseCustom or colors.linksProseDefault}} max-w-none py-4 md:py-10 border-t border-vs-blue-900">{{ content | safe }}</section>
+  <section class=" {{structure.g_prose}} {{colors.headingsProseCustom or colors.headingsProseDefault}} {{colors.linksProseCustom or colors.linksProseDefault}} {{colors.tableProseCustom or colors.tableProseDefault}} max-w-none py-4 md:py-10 border-t border-vs-blue-900">{{ content | safe }}</section>
 
   {% if tagsOfPosts | length and posts | length %}
     <section class="pb-4 md:pb-10  border-t border-vs-blue-900">

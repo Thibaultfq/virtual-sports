@@ -49,7 +49,7 @@ author: "{{ meta.authorURL }}" # default value thibault-fouquaert. post authors 
   {% endif %}
 
   {# <div class="font-serif text-xl leading-10 text-justify"> #}
-  <div class="{{structure.g_prose}} {{colors.headingsProseCustom or colors.headingsProseDefault}} {{colors.linksProseCustom or colors.linksProseDefault}} ">
+  <div class="{{structure.g_prose}} {{colors.headingsProseCustom or colors.headingsProseDefault}} {{colors.linksProseCustom or colors.linksProseDefault}} {{colors.tableProseCustom or colors.tableProseDefault}}">
 
     {{ layoutContent | safe }}
   </div>
