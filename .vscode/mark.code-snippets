@@ -21,5 +21,12 @@
         "{% marked %}${TM_SELECTED_TEXT}{% endmarked %}$1"
     ],
 	"description": "wraps the markdown with <mark> brackets through its paired shortcode"
+},
+"Cell paired-shortcode": {
+    "prefix": "cell",
+    "body": [
+        "{% cell %}${TM_SELECTED_TEXT}{% endcell %}$1"
+    ],
+	"description": "wraps the markdown with cell wrapper paired shortcode"
 }
 }
