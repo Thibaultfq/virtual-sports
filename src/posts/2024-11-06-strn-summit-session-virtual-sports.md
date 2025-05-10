@@ -31,7 +31,7 @@ heroSettings:
 tags:
   - event
   - social inclusion
-  - integrity
+  - integrity issues
   - performance
 ---
  On September 18-20th 2024, the [Sport Tech Research Network (STRN) Summit](https://strn.co/summit/summit-2024) held place. It featured a variety of topics on innovation in sports, one of which was **the increasing relevance of virtual sports on human health and performance**. Four members of the Virtual Sports Research network participated in this session: professor [Anne Tjønndal](/members/anne-tjonndal), professor [Daniel Westmattelmann](/members/daniel-westmattelmann), dr. [Ben Greenhough](/members/ben-greenhough), and (myself) [Thibault Fouquaert](/members/thibault-fouquaert). This blogpost will shortly discuss what our network members presented about their research and perspectives on Virtual Sports.
