@@ -1,6 +1,6 @@
 ---
 title: "The Input-Output Principle of Virtual Sports"
-date: 2025-03-24T00:00:00.000Z
+date: 2025-05-12T00:00:00.000Z
 excerpt: Exploring the new playing field in sports, where transparency and perception of fairness appear crucial
 author: daniel-westmattelmann
 draft: false
