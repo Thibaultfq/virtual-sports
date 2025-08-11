@@ -1,6 +1,6 @@
 ---
 title: Digital Innovation in Cycling – Key Insights from the DigiCycle Research Report
-date: 2025-08-05T12:30:34.000Z
+date: 2025-08-12T12:30:34.000Z
 excerpt: Can virtual sports effectively increase engagement in traditional disciplines? 
 author: grzegorz-botwina
 draft: false
