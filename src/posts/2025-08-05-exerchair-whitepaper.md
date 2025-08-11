@@ -1,9 +1,9 @@
 ---
 title: "EXERCHAIR: Innovation in motion" 
-date: 2025-08-05T15:02:22.000Z
+date: 2025-08-26T15:02:22.000Z
 excerpt: Making exergaming accessible for wheelchair users
 author: charlotte-van-tuyckom
-draft: false
+draft: true
 seo: # SEO values are used for OG and will overwrite 'title' and 'excerpt' above
   title:
   description:
