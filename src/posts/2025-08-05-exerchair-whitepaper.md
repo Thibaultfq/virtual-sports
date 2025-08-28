@@ -1,16 +1,16 @@
 ---
 title: "EXERCHAIR: Innovation in motion" 
-date: 2025-08-26T15:02:22.000Z
+date: 2025-09-04T15:02:22.000Z
 excerpt: Making exergaming accessible for wheelchair users
 author: charlotte-van-tuyckom
 draft: true
 seo: # SEO values are used for OG and will overwrite 'title' and 'excerpt' above
   title:
   description:
-  image: /2025/08/exerchair_virtual_sports_banner.webp # used for OG:image and Twitter:image. Overrides default set in _data/meta.siteImage
+  image: /2025/09/exerchair_virtual_sports_banner.webp # used for OG:image and Twitter:image. Overrides default set in _data/meta.siteImage
 images: # relative to /src/assets/images/ eg. /20225/05/img.webp
-  feature: /2025/08/exerchair_virtual_sports_banner.webp
-  thumb: /2025/08/exerchair_virtual_sports_banner.webp
+  feature: /2025/09/exerchair_virtual_sports_banner.webp
+  thumb: /2025/09/exerchair_virtual_sports_banner.webp
   fit: object-contain #use this to make the feature image be fully contained within the given height
   align: # object-center (default) - other options at https://tailwindcss.com/docs/object-position
   height: h-screen-1/3 md:h-screen-1/2 # optional. Default = h-48 md:h-screen-1/3
