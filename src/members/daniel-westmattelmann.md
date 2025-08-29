@@ -9,7 +9,7 @@ email: d.west@wwu.de
 university: University of Münster
 department: Center for Management
 researchGroup: Chair of Organization, Human Resource Management and Innovation
-jobTitle: Assistant Professor of Digitalization, Sports, and Health Management
+jobTitle: Associate Professor of Digitalization, Sports, and Health Management
 bioShort: Daniel's work focuses on the dynamic interplay between digitalization, sports, and health management. This includes topics such as sports digitalization, sports management, transparency and fairness, and innovation in sports.
 bioLong: 
 groupWebsite:
@@ -39,7 +39,7 @@ socialWebsites:
 
 # Who is Daniel
 
-Daniel is an Assistant Professor of Digitalization, Sports, and Health Management at the Center for Management, University of Muenster, Germany. With a PhD in Business Administration from the interdisciplinary research training group "Trust and Communication in a Digitized World," funded by the German Research Foundation, Daniel combines academic rigour with real-world expertise.
+Daniel is an Associate Professor of Digitalization, Sports, and Health Management at the Center for Management, University of Muenster, Germany. With a PhD in Business Administration from the interdisciplinary research training group "Trust and Communication in a Digitized World," funded by the German Research Foundation, Daniel combines academic rigour with real-world expertise.
 
 Daniel's passion for sports extends beyond academia. For twelve years, he was a professional cyclist, securing victories in international races and competing in prestigious events like the World Road Championships. His deep understanding of the sports world from an athlete's perspective informs his research and professional endeavours.
 
