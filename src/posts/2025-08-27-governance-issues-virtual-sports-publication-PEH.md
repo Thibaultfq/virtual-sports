@@ -1,7 +1,7 @@
 ---
 # reminder: images are linked (between blank lines) as ![Alt text & footnote](/assets/images/202Y/MM/foo.webp)
 title: Scientific Insights on Governance Issues in Virtual Sports
-date: 2025-08-27T11:37:04.000Z
+date: 2025-08-29T11:37:04.000Z
 excerpt: Using the field of virtual cycling and virtual triathlon as a case, this research paper identifies and discusses four governance issues in virtual cycling which include (1) doping, (2) platform fragmentation and commercial interests, (3) transparency and open criteria, and (4) commitment and decision-making.
 author: thibault-fouquaert
 draft: false
@@ -29,12 +29,12 @@ tags:
 
 Virtual sports are increasingly developed into competitive sporting disciplines. For example, the UCI organises an [UCI Cycling Esports World Championship](https://www.uci.org/competition-hub/2025-uci-cycling-esports-world-championships/7yaBDFMwGaC5IMoH0tUAeh) while World Triathlon partners with SuperTri to host an [E World Triathlon Championship](https://triathlon.org/e-world-triathlon-championship). 
 
-As these sports take place in hybrid environment, i.e. physical performances are translated into virtual platforms or games, new challenges from both sports and esports arise. The recently published study '["There are a lot of vulnerabilities still left": Governance Issues in Virtual Sports](https://doi.org/10.1016/j.peh.2025.100360)', part of the special issue [Integrity, Health and Governance Issues in Esports and Virtual Sports](https://www.sciencedirect.com/science/journal/22112669/vsi/107J7HTLKCW) in [Performance Enhancement & Health](https://www.sciencedirect.com/journal/performance-enhancement-and-health), dives into the governance issues that exists in competitive virtual sports (esports) anno 2024-2025.
+As these sports take place in hybrid environment, i.e. physical performances are translated into virtual platforms or games, new challenges from both sports and esports arise. The recently published study '["There are a lot of vulnerabilities still left": Governance Issues in Virtual Sports](https://doi.org/10.1016/j.peh.2025.100360)' - part of the special issue [Integrity, Health and Governance Issues in Esports and Virtual Sports](https://www.sciencedirect.com/science/journal/22112669/vsi/107J7HTLKCW) in [Performance Enhancement & Health](https://www.sciencedirect.com/journal/performance-enhancement-and-health) - dives into the governance issues that exists in competitive virtual sports (esports) anno 2024-2025.
 
 Methodologically, we interviewed 16 key stakeholders in virtual cycling and virtual triathlon which mainly comprised international sport governing bodies (e.g. IOC), elite athletes, virtual platform developers, and esports content creators.
 
 # Four governance issues
-Our qualitative collective analysis yielded insights into four types of governance issues
+Our qualitative collective analysis yielded insights into four types of governance issues in virtual cycling and virtual triathlon.
 1. :pill: Doping
 2. :moneybag: Platform fragmentation and commercial interests
 3. :eyes: Transparency and open criteria 
@@ -50,7 +50,7 @@ Doping is an issue that long plagued sports, which is unfortunately also the cas
 ![Both PEDs and mechanical doping are still an issue in virtual cycling](/assets/images/2025/08/doping-governance-issues-virtual-cycling.webp)
 
 ## :moneybag: Platform fragmentation and commercial interests
-Virtual sports heavily relies on its game or virtual platform, which are commercially-driven platforms. While commercial stakeholders with commercial interest are completely normal within sports, the power relation with these type of stakeholders is somewhat different for virtual sports and esports. This creates an interesting challenge to balance out the commercial development of the games versus the development that supports athletes and sport governing bodies, like standardisation, fairly managing intellectual property rights etc. The latter features are often less interesting from a commercial standpoint, for example, the vast majority of (leisure) Zwift users does not need any independent performance verification.
+Virtual sports heavily relies on its game or virtual platform, which are commercially-driven platforms. While commercial stakeholders with commercial interest are completely normal within sports, the power relation with these type of stakeholders is somewhat different for virtual sports and esports. This creates an interesting challenge to balance out the commercial development of the games versus the development that supports athletes and sport governing bodies, like standardisation, fairly managing intellectual property rights etc. The latter features are often less interesting from a commercial standpoint, for example, the vast majority of (leisure) Zwift users does not need independent performance verification.
 
 > [We need] some sort of a common ground so that we can progress with an international ranking system, an international calendar, getting an independent performance verification service, getting standardization across all the platforms. [...] (Floyd)
 
@@ -70,7 +70,7 @@ Last, our results suggest that some national and international federation not ye
 
 
 # Conclusion
-Our findings indicate that **governance issues** in virtual sports (here, virtual cycling and virtual triathlon) experienced by stakeholders **converge with those of both sport and esports**. These issues encompass physical-, cognitive-, software-, and hardware related **manipulation**, as well as concerns around stakeholders transparency, commitment, **power relations** and **intersection of commercial interests, data privacy, and performance verification**.
+Our findings indicate that **governance issues** in virtual sports (here, virtual cycling and virtual triathlon) experienced by stakeholders **converge with those of both sport and esports**. These issues encompass physical-, cognitive-, software-, and hardware related **manipulation**, as well as concerns around stakeholders transparency, commitment, **power relations** and **imbalances at the intersection of commercial interests, data privacy, and performance verification**.
 
 You can read all details like the applied theoretical frameworks and methodology of this study in our [online published article (DOI: 10.1016/j.peh.2025.100360)](https://doi.org/10.1016/j.peh.2025.100360)
 
