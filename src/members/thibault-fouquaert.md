@@ -30,6 +30,8 @@ personalWebsites:
 socialWebsites:
 - label: orcid
   url: https://orcid.org/0000-0001-7526-7904
+- label: googlescholar
+  url: https://scholar.google.com/citations?user=AtZKGTcAAAAJ&hl=en
 - label: github
   url: https://github.com/Thibaultfq
 - label: instagram
