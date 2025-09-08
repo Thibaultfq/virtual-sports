@@ -5,7 +5,7 @@ date: 2024-05-28T00:00:00.000Z
 image: "members/grzegorz-botwina.webp"
 seo:
   image: "members/grzegorz-botwina.webp"
-email: grzegorz.botwina@eunik.org
+email: gb@govsport.eu
 university: University of Warsaw
 department: Faculty of Management
 researchGroup: 
