@@ -6,7 +6,9 @@
         ul.nextSibling.setAttribute('aria-hidden', 'true');
     })"
     class="min-w-full inline-flex flex-nowrap overflow-hidden mask-linear-white">
-    <ul x-ref="logos" class="shrink-0 list-none m-0 p-0 min-w-[75%] flex flex-nowrap items-center justify-center animate-infinite-scroll">
+    {# default animation duration is set in tailwind.config.js within the infinite-scroll extend #}
+    {# set animation-duration dynamically to 5 seconds per logo #}
+    <ul style="animation-duration: {{ (memberLogos | length)*5 }}s" x-ref="logos" class="shrink-0 list-none m-0 p-0 min-w-[75%] flex flex-nowrap items-center justify-center animate-infinite-scroll">
         {% for logo in memberLogos %}
             <li class="px-4 md:px-8">
                 {% svg logo,
