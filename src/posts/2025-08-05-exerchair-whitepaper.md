@@ -68,7 +68,7 @@ Finally, the importance of **co-creation** cannot be overstated. Actively involv
 ## EXERCHAIR: an innovative best practice
 At the Sports Innovation Campus, the ambition to make exergaming more accessible for wheelchair users evolved into a **concrete research project: EXERCHAIR**. This project exemplifies how technological innovation, scientific research, and user-centred design principles can come together to create truly inclusive solutions.
 
-![Exerchair in action (1/2) at the Sports Innovation Campus](/assets/images/2025/08/exerchair_1.webp)
+![Exerchair in action (1/2) at the Sports Innovation Campus](/assets/images/2025/09/exerchair_1.webp)
 
 
 The EXERCHAIR project builds on earlier initiatives such as the iPlay setup and the MoCapForAll framework, both of which promote physical activity through motion capture and interactive gaming. EXERCHAIR specifically focuses on adapting these existing systems for use by people in wheelchairs. This includes refining the motion capture technology to accurately register more subtle movements from a seated position and tailoring the gameplay experience to match the physical abilities of different types of wheelchair users.
@@ -87,7 +87,7 @@ The **initial results are promising**. During testing sessions conducted in coll
 
 With EXERCHAIR, the Sport Innovation Campus is taking an important step towards a more inclusive future — one in which exergaming becomes an integral part of physical activity and health offerings for wheelchair users.
 
-![Exerchair in action (2/2) at the Sports Innovation Campus](/assets/images/2025/08/exerchair_2.webp)
+![Exerchair in action (2/2) at the Sports Innovation Campus](/assets/images/2025/09/exerchair_2.webp)
 
 ## References
 Farizi, F. D., Hoang, T., Bangay, S., & Greuter, S. (2021). Developing design guidelines for virtual reality-based decision-making training for team sports. Extended Abstracts of the 2021 Annual Symposium on Computer-Human Interaction in Play, 61–66. https://doi.org/10.1145/3450337.3483477
