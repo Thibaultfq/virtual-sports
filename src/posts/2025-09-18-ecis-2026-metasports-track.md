@@ -4,7 +4,7 @@ title: (e)Sports, Gaming and Meta-Sports track at the 2026 European Conference o
 date: 2025-09-18T10:09:18.000Z
 excerpt: The ECIS 2026 track on (e)Sports, gaming and Meta-Sports explores the organisational and societal impact of the interplay between technology, gaming and physical activity. The track is chaired by members of the Virtual Sports Research Network.
 author: daniel-westmattelmann
-draft: true
+draft: false
 seo: # SEO values are used for OG and will overwrite 'title' and 'excerpt' above
   title:
   description:
@@ -26,7 +26,7 @@ tags:
 
 Since 2022, the [Esports, Gaming, and Meta-Sports track](https://ecis2026.it/track-descriptions/esports-gaming-and-meta-sports/) at the European Conference on Information Systems (ECIS) has developed into a key platform for research on sports digitalisation. Initially focused on esports and gaming, the track now also addresses meta-sports, virtual sports and mixed-reality sports (choose whichever name you like most :wink:), reflecting the growing research on the integration of physical activity and digital environments.
 
-For ECIS 2026 in Milan, the track is featured again and chaired by some members of the Virtual Sports Research Network, including [Daniel Westmattelmann](/members/daniel-westmattelmann/) and [Willem Standaert](/members/willem-standaert/). The third track chair is Xiao Xiao. All track chairs have recently contributed extensively to the field of sport digitalisation and virtual sports. In a recent blogpost for example, a new study by Daniel and colleagues on the [Input-Output Principle in Virtual Sports](/2025/05/12/the-input-output-principle-of-virtual-sports/) got discussed.
+For ECIS 2026 in Milan, the track is featured again and chaired by some members of the Virtual Sports Research Network, including [Daniel Westmattelmann](/members/daniel-westmattelmann/) and [Willem Standaert](/members/willem-standaert/). The third track chair is Xiao Xiao. All track chairs have recently contributed extensively to the field of sport digitalisation and virtual sports. In a recent blogpost for example, a new study by Westmattelmann and colleagues on the [Input-Output Principle in Virtual Sports](/2025/05/12/the-input-output-principle-of-virtual-sports/) got discussed.
 
 # Track Scope
 The track invites research on esports, gaming, and meta-sports, with a particular interest in sports where physical performance is combined with digital technologies. Relevant topics related to virtual sports include (but are not limited to):
@@ -46,6 +46,6 @@ Researchers interested in contributing are encouraged to submit their work or co
 
 - Submission Deadline for full and short paper: November 17, 2025
 - Notification of Acceptance: February 28, 2026
-- Conference Dates: June 15–17, 2026, Milan, Italy
+- Conference Date: June 15–17, 2026, Milan, Italy
 
 Full details and [submission guidelines](https://ecis2026.it/call-for-submissions/) are available on the ECIS 2026 website. The track description can be found here.
