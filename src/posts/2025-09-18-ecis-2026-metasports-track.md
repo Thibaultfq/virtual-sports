@@ -1,7 +1,7 @@
 ---
 # reminder: images are linked (between blank lines) as ![Alt text & footnote](/assets/images/202Y/MM/foo.webp)
 title: (e)Sports, Gaming and Meta-Sports track at the 2026 European Conference on Information Systems
-date: 2025-09-18T10:09:18.000Z
+date: 2025-10-14T10:09:18.000Z
 excerpt: The ECIS 2026 track on (e)Sports, gaming and Meta-Sports explores the organisational and societal impact of the interplay between technology, gaming and physical activity. The track is chaired by members of the Virtual Sports Research Network.
 author: daniel-westmattelmann
 draft: false
