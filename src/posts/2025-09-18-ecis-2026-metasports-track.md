@@ -24,7 +24,7 @@ tags:
   - metaverse
 ---
 
-Since 2022, the [Esports, Gaming, and Meta-Sports track](https://ecis2026.it/track-descriptions/esports-gaming-and-meta-sports/) at the European Conference on Information Systems (ECIS) has developed into a key platform for research on sports digitalisation. Initially focused on esports and gaming, the track now also addresses meta-sports, virtual sports and mixed-reality sports (choose whichever name you like most :wink:), reflecting the growing research on the integration of physical activity and digital environments.
+Since 2022, the [Esports, Gaming, and Meta-Sports track](https://ecis2026.it/track-descriptions/esports-gaming-and-meta-sports/) at the European Conference on Information Systems (ECIS) has developed into a key platform for research on sports digitalisation. Initially focused on esports and gaming, the track now also addresses meta-sports, virtual sports and mixed-reality sports, reflecting the growing research on the integration of physical activity and digital environments.
 
 For ECIS 2026 in Milan, the track is featured again and chaired by some members of the Virtual Sports Research Network, including [Daniel Westmattelmann](/members/daniel-westmattelmann/) and [Willem Standaert](/members/willem-standaert/). The third track chair is Xiao Xiao. All track chairs have recently contributed extensively to the field of sport digitalisation and virtual sports. In a recent blogpost for example, a new study by Westmattelmann and colleagues on the [Input-Output Principle in Virtual Sports](/2025/05/12/the-input-output-principle-of-virtual-sports/) got discussed.
 
