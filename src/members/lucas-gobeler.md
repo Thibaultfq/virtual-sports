@@ -43,6 +43,7 @@ socialWebsites:
 - label: pinterest
   url: ''
 ---
+# Who is Lucas?
 Lucas holds an academic background in Business Administration and Information Systems Management (B\.Sc., M\.Sc., University of Mannheim; M\.Sc., Copenhagen Business School). He completed his PhD at Copenhagen Business School in 2024, where his research focused on the digital innovation of physical activities, with a particular emphasis on sports digitalization (Göbeler, [2024](https://research.cbs.dk/en/publications/shifting-and-shaping-physicality-in-digital-innovation/)).
 
 Lucas is currently a postdoctoral researcher at the University of Hamburg, Chair of Information Systems and Digital Innovation. His research examines the digitalization of traditional sports, the health implications of born-digital sports, and the role of physicality in digital innovation contexts. In addition to his research activities, he teaches master’s-level courses on sports digitalization.
