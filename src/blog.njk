@@ -18,7 +18,7 @@ pagination:
   size: 12
   reverse: true
   alias: posts
-  addAllPagesToCollections: true
+  addAllPagesToCollections: false
 permalink: "blog/{% if pagination.pageNumber > 0 %}{{ pagination.pageNumber + 1 }}/{% endif %}index.html"
 eleventyComputed:
   dateModified: "{{collections.post | getMostRecentPost | getProp('page.date') | dateToFormat('yyyy-MM-dd')}}"
