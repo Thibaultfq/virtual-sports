@@ -41,7 +41,7 @@ module.exports = {
        *  {% wrap "tailwind classes here" %} Content goes here {% endwrap %}
        */
       wrap: function (content, classes = '') {
-        return `<div class="${classes}">${content}</div>`
+        return `<div class="${classes}">${markdownLib.render(content)}</div>`
       },
 
       /**
