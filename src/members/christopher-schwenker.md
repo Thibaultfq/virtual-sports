@@ -69,9 +69,6 @@ Richardson, A., Berger, N., & Smith, P. (2023). Perceptions of Cheating and Dopi
 # Impressions
 
  {% wrap "sm:w-2/3 md:w-1/2 mx-auto" %} 
- <figure>
-{{ "![Chris at the 2024 UCI Cycling Esports World Championship](/assets/images/members/christopher-schwenker/christopher-schwenker-uci2024WC.webp)" | renderInlineMarkdown | safe }}
-<figcaption>Chris at the 2024 UCI Cycling Esports World Championship<figcaption>
- </figure>
+![Chris at the 2024 UCI Cycling Esports World Championship](/assets/images/members/christopher-schwenker/christopher-schwenker-uci2024WC.webp)
  {% endwrap %}
 
