@@ -11,7 +11,7 @@ eleventyNavigation:
 eleventyImport:
   collections: ["tag"]
 eleventyComputed:
-  dateModified: "{{collections.post | getMostRecentPost | getProp('page.date') | dateToFormat('yyyy-MM-dd')}}"
+  dateModified: "{{collections.post | getMostRecentPage | getProp('page.date') | dateToFormat('yyyy-MM-dd')}}"
 ---
 
 <div class="max-w-screen-md mx-auto">

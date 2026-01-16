@@ -13,7 +13,7 @@ pagination:
     - all
 permalink: "tags/{{ tag | slugify  }}/"
 eleventyComputed:
-  dateModified: "{{collections.post | getMostRecentPost | getProp('page.date') | dateToFormat('yyyy-MM-dd')}}"
+  dateModified: "{{collections.post | getMostRecentPage | getProp('page.date') | dateToFormat('yyyy-MM-dd')}}"
   title: Blog Posts Tagged '{{ tag }}'
 ---
 {# 
