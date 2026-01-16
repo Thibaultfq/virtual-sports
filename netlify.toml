@@ -3,11 +3,12 @@
 # these settings. You can define environment variables
 # here but we recommend using the Netlify UI for sensitive
 # values to keep them out of your source repository.
+# specific NPM_VERSION if the used Node version uses a different one that specified in package.json
 [context.production]
 publish = "dist"
 command = "npm run build"
 ELEVENTY_PRODUCTION = "true"
-environment = { NODE_VERSION = "22.22.0", NPM_VERSION = "11.7.0", NODE_ENV = "production" }
+environment = { NODE_VERSION = "^22.22.0", NPM_VERSION = "11.7.0", NODE_ENV = "production" }
 
 
 # Dev context: environment variables set here
@@ -17,6 +18,7 @@ environment = { NODE_VERSION = "22.22.0", NPM_VERSION = "11.7.0", NODE_ENV = "pr
 # branch context configured.
 [context.dev.environment]
 NODE_ENV = "development"
+NODE_VERSION = "^22.22.0"
 NPM_VERSION = "11.7.0"
 ELEVENTY_PRODUCTION = "false"
 
@@ -24,5 +26,6 @@ ELEVENTY_PRODUCTION = "false"
 # this specific branch will inherit these settings.
 [context.staging.environment] # “staging” is a branch name
 NODE_ENV = "production"
+NODE_VERSION = "^22.22.0"
 NPM_VERSION = "11.7.0"
 ELEVENTY_PRODUCTION = "true"
