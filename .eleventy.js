@@ -1,7 +1,7 @@
 import pluginRss from '@11ty/eleventy-plugin-rss'
 import pluginNavigation from '@11ty/eleventy-navigation'
 import markdownIt from 'markdown-it'
-import markdownItEmoji from 'markdown-it-emoji'
+import { full as markdownItEmoji } from 'markdown-it-emoji'
 import markdownItFigureCaption from 'markdown-it-image-figures'
 import markdownItAnchor from 'markdown-it-anchor'
 import structure from './src/_data/structure.js'
@@ -82,6 +82,7 @@ export default function (eleventyConfig) {
           minifyJS: true,
           minifyCSS: true,
           minifyURLs: true,
+          customEventAttributes: [/x-init/], //minify custom Alpine.js x-init attribute
         })
 
         return minified
