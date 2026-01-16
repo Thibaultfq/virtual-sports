@@ -19,6 +19,9 @@ hero:
 tags:
   - virtual cycling
   - zwift
+  - research
+  - sport-for-all
+  - diffusion-of-innovation
 ---
 
 With the International Olympic Committee announcing the Olympic Esports Games for the near future ([although postponed for 2027](https://www.olympics.com/ioc/news/ioc-statement-on-the-olympic-esports-games)) and federations like the UCI investing in new disciplines, digital forms of sport are becoming increasingly visible. While we often see individual athletes using platforms like Zwift or MyWhoosh from home, less is known about how traditional voluntary sports clubs are adopting these innovations, for example as part of their offered services. How about a Sunday club ride on Zwift  when its raining?
