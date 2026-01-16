@@ -1,15 +1,17 @@
-const SVGSprite = require('./utils/svg-sprite/SVGSprite.js')
-const config = require('./utils/svg-sprite/options.js')
+import { SVGSprite } from './utils/svg-sprite/SVGSprite.js'
+import { config } from './utils/svg-sprite/options.js'
 
+const globalClasses = 'fill-current'
+const defaultClasses = ''
 let idCounter = 0
 let spriteSet = {}
 
-module.exports = (eleventyConfig) => {
+export function pluginSprite(eleventyConfig) {
   // eleventyConfig.on('beforeBuild', async () => {
   //   await svgSpriteInstance.compile()
   // })
 
-  eleventyConfig.addFilter(config.svgSpriteShortcode, async (paths) => {
+  eleventyConfig.addFilter('svgsprite', async (paths) => {
     //the sprites are made during build because the folders to generate the sprites from are provided in the frontmatter data. There is no beforeBuild in this case.
     // the spritemap cache still gets used during build
     //only create a new SVGSprite instance for every new unique path combination (pathkey)
@@ -32,7 +34,7 @@ module.exports = (eleventyConfig) => {
       }
     }
 
-    pathsKey = paths.join('|') // create a unique key for every array of provided paths
+    const pathsKey = paths.join('|') // create a unique key for every array of provided paths
 
     // if the pathsKey does not exist, add new svgSprite instance to cache set and build it once
     if (spriteSet.hasOwnProperty(pathsKey)) {
@@ -51,7 +53,7 @@ module.exports = (eleventyConfig) => {
   })
 
   //todo: change params to attributes object
-  eleventyConfig.addShortcode(config.svgShortcode, (name, classes, desc, attrs) => {
+  eleventyConfig.addShortcode('svg', (name, classes, desc, attrs) => {
     if (!name) {
       throw new Error('svgSprite Plugin: name of SVG must be specified')
     }
@@ -64,7 +66,7 @@ module.exports = (eleventyConfig) => {
     }
 
     const nameAttr = name
-    const classesAttr = `${config.globalClasses} ${classes || config.defaultClasses}`
+    const classesAttr = `${globalClasses} ${classes || defaultClasses}`
     // "desc" is required for accessibility and Lighthouse validations
     const descAttr = desc || `${nameAttr} icon`
     // a unique id is generated so that the svg references the correct description in aria-labelledby

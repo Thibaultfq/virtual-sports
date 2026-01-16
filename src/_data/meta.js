@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   siteURL: process.env.URL || 'http://localhost:8080',
   siteName: 'Virtual Sports',
   siteDescription: 'Science Communication blog and Research Network',

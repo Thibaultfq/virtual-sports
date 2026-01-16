@@ -1,22 +1,21 @@
-const pluginRss = require('@11ty/eleventy-plugin-rss')
-const pluginNavigation = require('@11ty/eleventy-navigation')
-const markdownIt = require('markdown-it')
-const markdownItEmoji = require('markdown-it-emoji')
-const markdownItFigureCaption = require('markdown-it-image-figures')
-const markdownItAnchor = require('markdown-it-anchor')
-const structure = require('./src/_data/structure.js')
-const filterFactory = require('./utils/filters.js')
-const njkFilterFactory = require('./utils/njkFilters.js')
-const njkGlobalsFactory = require('./utils/njkGlobals.js')
-// const sprite = require('./utils/sprite.js')
-const shortcodesFactory = require('./utils/shortcodes.js')
-const pairedshortcodesFactory = require('./utils/paired-shortcodes.js')
-const pluginDrafts = require('./eleventy.config.drafts.js')
-const pluginSprite = require('./eleventy.config.sprite.js')
-const { minify } = require('terser')
-const htmlmin = require('html-minifier')
+import pluginRss from '@11ty/eleventy-plugin-rss'
+import pluginNavigation from '@11ty/eleventy-navigation'
+import markdownIt from 'markdown-it'
+import markdownItEmoji from 'markdown-it-emoji'
+import markdownItFigureCaption from 'markdown-it-image-figures'
+import markdownItAnchor from 'markdown-it-anchor'
+import structure from './src/_data/structure.js'
+import { init as filterFactory } from './utils/filters.js'
+import { init as njkFiltersFactory } from './utils/njkFilters.js'
+import { init as njkGlobalsFactory } from './utils/njkGlobals.js'
+import { init as shortcodesFactory } from './utils/shortcodes.js'
+import { init as pairedshortcodesFactory } from './utils/paired-shortcodes.js'
+import { pluginDrafts } from './eleventy.config.drafts.js'
+import { pluginSprite } from './eleventy.config.sprite.js'
+import { minify } from 'terser'
+import { minify as html_minifier } from 'html-minifier-terser'
 
-module.exports = function (eleventyConfig) {
+export default function (eleventyConfig) {
   eleventyConfig.setServerOptions({
     showAllHosts: true, // Show local network IP addresses for device testing (e.g. use devServer on mobile devices)
   })
@@ -25,7 +24,7 @@ module.exports = function (eleventyConfig) {
    * Plugins
    * @link https://www.11ty.dev/docs/plugins/
    */
-
+  //eleventyConfig.addPlugin(UpgradeHelper)
   eleventyConfig.addPlugin(pluginRss)
   eleventyConfig.addPlugin(pluginNavigation)
   eleventyConfig.addPlugin(pluginDrafts)
@@ -74,10 +73,15 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addTransform('htmlmin', function (content) {
     if (process.env.NODE_ENV?.trim() === 'production') {
       if ((this.page.outputPath || '').endsWith('.html')) {
-        let minified = htmlmin.minify(content, {
+        let minified = html_minifier(content, {
           useShortDoctype: true,
           removeComments: true,
           collapseWhitespace: true,
+          collapseInlineTagWhitespace: true,
+          removeComments: true,
+          minifyJS: true,
+          minifyCSS: true,
+          minifyURLs: true,
         })
 
         return minified
@@ -118,17 +122,17 @@ module.exports = function (eleventyConfig) {
     })
   eleventyConfig.setLibrary('md', markdownLib)
 
-  const njkGlobals = njkGlobalsFactory.init(eleventyConfig)
+  const njkGlobals = njkGlobalsFactory(eleventyConfig)
   Object.keys(njkGlobals).forEach((filterName) => {
     eleventyConfig.addNunjucksGlobal(filterName, njkGlobals[filterName])
   })
 
-  const njkFilters = njkFilterFactory.init(eleventyConfig, markdownLib)
+  const njkFilters = njkFiltersFactory(eleventyConfig, markdownLib)
   Object.keys(njkFilters).forEach((filterName) => {
     eleventyConfig.addNunjucksFilter(filterName, njkFilters[filterName])
   })
 
-  const filters = filterFactory.init(eleventyConfig, markdownLib) //use a factory so we can pass the eleventyConfig, which could be used in filters to access other filters. see https://www.11ty.dev/docs/filters/
+  const filters = filterFactory(eleventyConfig, markdownLib) //use a factory so we can pass the eleventyConfig, which could be used in filters to access other filters. see https://www.11ty.dev/docs/filters/
   /**
    * Filters
    * @link https://www.11ty.io/docs/filters/
@@ -137,7 +141,7 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addFilter(filterName, filters[filterName])
   })
 
-  const shortcodes = shortcodesFactory.init(eleventyConfig, markdownLib)
+  const shortcodes = shortcodesFactory(eleventyConfig, markdownLib)
   /**
    * Shortcodes
    * @link https://www.11ty.io/docs/shortcodes/
@@ -146,7 +150,7 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addShortcode(shortcodeName, shortcodes[shortcodeName])
   })
 
-  const pairedshortcodes = pairedshortcodesFactory.init(eleventyConfig, markdownLib)
+  const pairedshortcodes = pairedshortcodesFactory(eleventyConfig, markdownLib)
 
   /**
    * Paired Shortcodes

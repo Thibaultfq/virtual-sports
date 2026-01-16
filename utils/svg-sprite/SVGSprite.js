@@ -1,19 +1,19 @@
-const { glob } = require('glob')
-const fs = require('fs')
-const path = require('path')
-const fsPromises = require('fs/promises')
-const SVGSpriter = require('svg-sprite')
-const Vinyl = require('vinyl')
+import { glob } from 'glob'
+import { statSync, readFileSync } from 'fs'
+import { resolve as _resolve, dirname as _dirname } from 'path'
+import { access, mkdir, writeFile as _writeFile } from 'fs/promises'
+import SVGSpriter from 'svg-sprite'
+import Vinyl from 'vinyl'
 
 let spriteCache = {}
 
 class SVGSprite {
   constructor(paths, config) {
-    this.paths = paths.map((p) => path.resolve(config.base + p))
+    this.paths = paths.map((p) => _resolve(config.base + p))
     this.config = config
     //    this.cwd = path.resolve(config.path)
     if (config.outputFilepath) {
-      this.outputFilepath = path.resolve(config.outputFilepath)
+      this.outputFilepath = _resolve(config.outputFilepath)
     }
     this.spriteConfig = config.spriteConfig
   }
@@ -24,7 +24,7 @@ class SVGSprite {
       .map((globArray, index) => globArray.map((p) => ({ absolutePath: p, basePath: this.paths[index] })))
       .flat(1)
     //const files = await glob(`**/*.svg`, { cwd: this.cwd })
-    const newCacheKey = files.map((file) => `${file.absolutePath}:${fs.statSync(file.absolutePath).mtimeMs}`).join('|')
+    const newCacheKey = files.map((file) => `${file.absolutePath}:${statSync(file.absolutePath).mtimeMs}`).join('|')
 
     if (spriteCache.cacheKey === newCacheKey) {
       // if the cacheKey is the same, don't need to rebuild sprite
@@ -42,7 +42,7 @@ class SVGSprite {
         new Vinyl({
           path: file.absolutePath,
           base: file.basePath,
-          contents: fs.readFileSync(file.absolutePath),
+          contents: readFileSync(file.absolutePath),
         })
       )
     })
@@ -80,7 +80,7 @@ class SVGSprite {
 
 async function isExists(path) {
   try {
-    await fsPromises.access(path)
+    await access(path)
     return true
   } catch {
     return false
@@ -89,16 +89,16 @@ async function isExists(path) {
 
 async function writeFile(filePath, data) {
   try {
-    const dirname = path.dirname(filePath)
+    const dirname = _dirname(filePath)
     const exist = await isExists(dirname)
     if (!exist) {
-      await fsPromises.mkdir(dirname, { recursive: true })
+      await mkdir(dirname, { recursive: true })
     }
 
-    await fsPromises.writeFile(filePath, data, 'utf8')
+    await _writeFile(filePath, data, 'utf8')
   } catch (err) {
     throw new Error(err)
   }
 }
 
-module.exports = SVGSprite
+export { SVGSprite }

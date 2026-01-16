@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   /**
    * ************************ IMPORTANT *********************************
    *  A few colors for links, blockquotes, code, etc. are set in the

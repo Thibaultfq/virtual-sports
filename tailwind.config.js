@@ -1,8 +1,10 @@
-const plugin = require('tailwindcss/plugin')
-const structure = require('./src/_data/structure.js')
-const tailwind_custom_plugins = require('./utils/tailwind-plugins.js')
+import plugin from 'tailwindcss/plugin'
+import structure from './src/_data/structure.js'
+import forms from '@tailwindcss/forms'
+import typography from '@tailwindcss/typography'
+import { breakpointInspector } from './utils/tailwind-plugins.js'
 
-module.exports = {
+export default {
   content: [
     './src/**/*.html',
     './src/**/*.njk',
@@ -134,11 +136,11 @@ module.exports = {
   },
   variants: {},
   plugins: [
-    require('@tailwindcss/forms'),
-    require('@tailwindcss/typography'),
+    forms,
+    typography,
     plugin(function ({ addVariant }) {
       addVariant('mobile-only', "@media screen and (max-width: theme('screens.sm'))") // instead of hard-coded 640px use sm breakpoint value from config. Or anything
     }),
-    plugin(tailwind_custom_plugins.breakpointInspector), //adds current breakpoint to bottom of screen
+    breakpointInspector, //adds current breakpoint to bottom of screen
   ],
 }
