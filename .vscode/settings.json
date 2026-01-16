@@ -30,5 +30,8 @@
         "Thibault",
         "virtuality",
         "Zwift"
-    ]
+    ],
+    "cSpell.enabledFileTypes": {
+        "javascript": false
+    }
 }
