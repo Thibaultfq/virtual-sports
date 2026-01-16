@@ -4,7 +4,7 @@ name: Looking For Experts
 image: "members/looking-for-expert.webp"
 seo:
   image: "members/looking-for-expert.webp"
-date: 9999-03-20T00:00:00.000Z
+date: 2024-03-19T00:00:00.000Z
 university: ''
 department: ''
 researchGroup: ''
