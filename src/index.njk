@@ -54,6 +54,8 @@ heroSettings:
       text: "Hello world 3"
       textClass: "text-red-300"
 taglimit: 10
+eleventyComputed:
+  dateModified: "{{collections.all | getMostRecentPage | getProp('page.date') | dateToFormat('yyyy-MM-dd')}}"
 # Homepage only front matter ---
 svgRelativePaths: #append the spritemap with memberlogo for homepage, relative to src/assets/svg
   - /memberLogos 
@@ -123,7 +125,7 @@ homePageMembersSlugsSorted: #array of the slugs IN ORDER of members to be listed
             A growing interest in Virtual Sports
           </h3>
           <p>Because of Virtual Sports' unique and innovative nature, there is a growing interest in Virtual Sports.
-            <b>The mission of this science communication page and network is to address this interest.</b>
+            <b>The mission of this science communication blog and research network is to address this interest.</b>
           </p>
           <p>Our aims are (1) to set a name for the Virtual Sports 'label' as a new type of physical and sports-alike (eSports) games, 
             (2) to inform people on the perspectives and debates virtual sports brings to the sports sector and academia, 
