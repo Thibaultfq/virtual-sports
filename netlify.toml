@@ -7,7 +7,7 @@
 publish = "dist"
 command = "npm run build"
 ELEVENTY_PRODUCTION = "true"
-environment = { NODE_VERSION = "22.22.0", NODE_ENV = "production" }
+environment = { NODE_VERSION = "22.22.0", NPM_VERSION = "11.7.0", NODE_ENV = "production" }
 
 
 # Dev context: environment variables set here
