@@ -33,5 +33,6 @@
     ],
     "cSpell.enabledFileTypes": {
         "javascript": false
-    }
+    },
+    "cSpell.ignorePaths": ["package.json"]
 }
