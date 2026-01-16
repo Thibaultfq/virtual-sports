@@ -7,7 +7,7 @@ export function init(eleventyConfig, markdownLib) {
      * @returns reading time of a page or post collection object
      */
     readingTime: (postOrContent) => {
-      const content = typeof postOrContent === 'string' ? postOrContent : postOrContent.templateContent
+      const content = typeof postOrContent === 'string' ? postOrContent : postOrContent.content
       return readingTime(content).text
     },
   }
