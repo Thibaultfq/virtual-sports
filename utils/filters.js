@@ -86,7 +86,7 @@ export function init(eleventyConfig, markdownLib) {
       return members
         .filter((member) => homePageMembersSlugsSorted.indexOf(member.data.slug) !== -1) //filter method makes shallow copy, safe to sort afterwards.
         .sort(
-          (a, b) => homePageMembersSlugsSorted.indexOf(a.data.slug) - homePageMembersSlugsSorted.indexOf(b.data.slug)
+          (a, b) => homePageMembersSlugsSorted.indexOf(a.data.slug) - homePageMembersSlugsSorted.indexOf(b.data.slug),
         )
     },
 
@@ -164,16 +164,6 @@ export function init(eleventyConfig, markdownLib) {
         .filter((tag) => ['post'].indexOf(tag) === -1)
         .sort()
       //filter from tags that are used to define main collections
-    },
-
-    // Return all the tags used in a collection
-    getAllTags: (collection) => {
-      let tagSet = new Set()
-      for (let item of collection) {
-        ;(item.data.tags || []).forEach((tag) => tagSet.add(tag))
-      }
-      //checks if contains case sensitive doubles because of slugify filter so that's handeled automatically.
-      return Array.from(tagSet)
     },
 
     // filter an array of tags to get only the "custom" tags in a post and not the default tags that define a collection such as 'all' or 'post'
