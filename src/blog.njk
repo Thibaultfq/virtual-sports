@@ -23,13 +23,13 @@ permalink: "blog/{% if pagination.pageNumber > 0 %}{{ pagination.pageNumber + 1 
 eleventyComputed:
   dateModified: "{{collections.post | getMostRecentPage | getProp('page.date') | dateToFormat('yyyy-MM-dd')}}"
 ---
-{% set postslist = posts %}
+{% set postlistData = posts %}
 {# 
   Allows a user to easily change the Tag List Style.
   Please see instructions in /src/_data/structure.js >>> ===== Post List Style Options =====
 #}
-{% set postlist = ['components/', structure.postListStyle, '.njk'] %}
-{% include postlist | join %}
+{% set postlistComponent = ['components/', structure.postListStyle, '.njk'] %}
+{% include postlistComponent | join %}
 
 {# ===== Paginate based on "size" frontmatter value above =====  #}
 {# Don't even include the pagination component if there are fewer posts than needed to paginate  #}

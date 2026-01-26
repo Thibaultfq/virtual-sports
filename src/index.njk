@@ -148,7 +148,7 @@ homePageMembersSlugsSorted: #array of the slugs IN ORDER of members to be listed
     {% heading "Most Recent Blog Posts"%}
 
     <div class="mx-auto max-w-full pb-10 lg:pb-14">
-      {% set postslist = collections.post | reverse | limit(3) %}
+      {% set postlistData = collections.post | reverse | limit(3) %}
       {% set postlistComponent = ['components/', postsListStyle, '.njk'] %}
       {% include postlistComponent | join %}
     </div>

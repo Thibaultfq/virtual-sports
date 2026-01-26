@@ -17,7 +17,7 @@ eleventyExcludeFromCollections: true
 
 </h3>
 
-{% set postslist = collections.post | limit(9) %}
-{% set postlist = ['components/', structure.postListStyle, '.njk'] %}
-{% include postlist | join %}
+{% set postlistData = collections.post | limit(9) %}
+{% set postlistComponent = ['components/', structure.postListStyle, '.njk'] %}
+{% include postlistComponent | join %}
 </div>
