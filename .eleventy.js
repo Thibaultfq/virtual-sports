@@ -76,8 +76,8 @@ export default function (eleventyConfig) {
         let minified = html_minifier(content, {
           useShortDoctype: true,
           removeComments: true,
-          collapseWhitespace: true,
-          collapseInlineTagWhitespace: true,
+          collapseWhitespace: true, //removes whitespace characters which would not affect the rendered results.
+          collapseInlineTagWhitespace: false, //removes all whitespaces around tags regardless, which works for cases like custom CSS. It can potentially break the rendering of some elements, so use with caution.
           removeComments: true,
           minifyJS: true,
           minifyCSS: true,
