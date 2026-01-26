@@ -48,10 +48,8 @@ author: "{{ meta.authorURL }}" # default value thibault-fouquaert. post authors 
     </div>
   {% endif %}
 
-  {# <div class="font-serif text-xl leading-10 text-justify"> #}
   <div class="{{structure.g_prose}} {{colors.headingsProseCustom or colors.headingsProseDefault}} {{colors.linksProseCustom or colors.linksProseDefault}} {{colors.tableProseCustom or colors.tableProseDefault}}">
-
-    {{ layoutContent | safe }}
+    {{ content | safe }}
   </div>
 
   {% if structure.g_showTagPills or structure.g_showSocialShareIcons %}
