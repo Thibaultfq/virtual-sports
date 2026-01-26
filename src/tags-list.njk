@@ -15,7 +15,7 @@ eleventyComputed:
 ---
 
 <div class="max-w-screen-md mx-auto">
-  {% set tags = collections.all | getAllTags | getOnlyCustomTags | sort %}
+  {% set tags = collections.tagList %}
   {% set tagTextSize = 'text-xl'%}
   {% set tagPadding = "px-4 py-2"%}
   {% set tagListSpacing = "m-2"%}

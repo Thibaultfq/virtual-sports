@@ -31,6 +31,21 @@ export default function (eleventyConfig) {
   eleventyConfig.addPlugin(pluginSprite)
 
   /**
+   * Custom Collections
+   */
+  eleventyConfig.addCollection('tagList', function (collectionApi) {
+    let tagSet = new Set()
+    collectionApi.getAll().forEach((item) => {
+      if ('tags' in item.data) {
+        let tags = item.data.tags
+        tags = (tags || []).filter((tag) => ['all', 'nav', 'post', 'tag', 'all', 'pages', 'member'].indexOf(tag) === -1)
+        tags.forEach((tag) => tagSet.add(tag))
+      }
+    })
+    return Array.from(tagSet).sort()
+  })
+
+  /**
    * Custom Watch Targets
    * for when the Tailwind config or .css files change...
    * by default not watched by 11ty

@@ -1,25 +1,18 @@
 ---
 layout: page
 pagination:
-  data: collections
-  addAllPagesToCollections: true
+  data: collections.tagList
   size: 1
   alias: tag
-  filter:
-    - member
-    - pages
-    - post
-    - tag
-    - all
 permalink: "tags/{{ tag | slugify  }}/"
 eleventyComputed:
   dateModified: "{{collections.post | getMostRecentPage | getProp('page.date') | dateToFormat('yyyy-MM-dd')}}"
   title: Blog Posts Tagged '{{ tag }}'
 ---
 {# 
-  We set this to 'postslist' so we can use the same postslist components as the /blog 
+  We set this to 'postlistData' so we can use the same postlistComponents as the /blog 
 #}
-{% set postslist = collections[tag] %}
+{% set postlistData = collections[tag] | reverse %}
 
 {# 
   Either inherit the 'postListStyle' or use another layout
@@ -31,12 +24,12 @@ eleventyComputed:
   Allows a user to easily change the Tag List Style.
   Please see instructions in /src/_data/structure.js
 #}
-{% set postlist = ['components/', tagStyle, '.njk'] %}
+{% set postlistComponent = ['components/', tagStyle, '.njk'] %}
 {# add the postlist component #}
-{% include postlist | join %}
+{% include postlistComponent | join %}
 
 <div class="border-t border-gray-300">
   <h4 class="{{ colors.tagPillCustom.text or colors.tagPillDefault.text }}">All Tags:</h4>
-  {% set tags = collections.all | getAllTags | getOnlyCustomTags | sort %}
+  {% set tags = collections.tagList %}
   {% include "components/tagpills.njk" %}
 </div>
