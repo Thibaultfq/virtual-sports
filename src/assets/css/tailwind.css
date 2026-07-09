@@ -1,17 +1,63 @@
-html,
-body {
-  overflow-x: hidden;
-  scroll-behavior: smooth;
+@import 'tailwindcss';
+
+@config '../../../tailwind.config.js';
+
+:root {
+  --navbar-height: 7rem; /* default / mobile navbar height (h-28 = 7rem) */
+  --navbar-height-scrolled: 3.5rem; /* default / mobile navbar scrolled height (h-14 = 3.5rem) */
+  --logo-height-unscrolled: 4rem; /* default / mobile logo height (h-16 = 4rem) */
+  --logo-height-scrolled: 2.5rem; /* default / mobile logo scrolled height (h-10 = 2.5rem) */
+
+  @media (width >= --theme(--breakpoint-sm)) {
+    --navbar-height: 8rem; /* sm breakpoint navbar height (h-32 = 8rem) */
+    --navbar-height-scrolled: 5rem; /* sm breakpoint navbar scrolled height (h-20 = 5rem) */
+    --logo-height-unscrolled: 4rem; /* sm breakpoint logo height (h-16 = 4rem) */
+    --logo-height-scrolled: 3rem; /* sm breakpoint logo scrolled height (h-12 = 3rem) */
+  }
 }
+
+@theme {
+  --height-nav-unscrolled: var(--navbar-height);
+  --height-nav-scrolled: var(--navbar-height-scrolled);
+  --height-logo-unscrolled: var(--logo-height-unscrolled);
+  --height-logo-scrolled: var(--logo-height-scrolled);
+  --height-screen-minus-navbar: calc(100svh - var(--navbar-height));
+  --min-height-screen-minus-navbar: calc(100svh - var(--navbar-height));
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
 }
 
 @layer base {
-p a,
-li a,
-blockquote a,
-dd a {
-  @apply text-vs-blue-700;
+  html,
+  body {
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+  }
 }
+
+@layer base {
+  p a,
+  li a,
+  blockquote a,
+  dd a {
+    @apply text-vs-blue-700;
+  }
 }
 
 /* custom classes */

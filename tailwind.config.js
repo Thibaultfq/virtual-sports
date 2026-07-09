@@ -1,4 +1,3 @@
-import structure from './src/_data/structure.js'
 import forms from '@tailwindcss/forms'
 import typography from '@tailwindcss/typography'
 import { breakpointInspector } from './utils/tailwind-plugins.js'
@@ -38,14 +37,6 @@ export default {
         'screen-2/3': '66vh',
         'screen-1/4': '25vh',
         'screen-1/5': '20vh',
-        'screen-minus-navbar': `calc(100svh - ${theme(
-          `spacing.${Math.max(...structure.nav_height_unscrolled.match(/\d+/gi).map(Number))}`,
-        )})`,
-      }),
-      minHeight: (theme) => ({
-        'screen-minus-navbar': `calc(100svh - ${theme(
-          `spacing.${Math.max(...structure.nav_height_unscrolled.match(/\d+/gi).map(Number))}`,
-        )})`,
       }),
       width: (theme) => ({
         '2-full': '200%',

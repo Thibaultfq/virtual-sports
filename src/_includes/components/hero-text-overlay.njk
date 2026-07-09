@@ -1,9 +1,9 @@
 {% if transparentNav == true %}
-  <div class="{{structure.nav_height_unscrolled}} flex-none invisible"></div>
+  <div class="h-nav-unscrolled flex-none invisible"></div>
 {% endif %}
 
 <div class="grow flex flex-col items-start justify-start {{ heroSettings.headingTextColor or 'text-white' }} w-full {{ structure.g_pageWidth }}">
-  <div class="w-full flex-grow font-semibold leading-tight {{ heroSettings.headingTextCase }} mxsonly:text-3xl text-4xl md:text-6xl mt-4 sm:mt-6 md:mt-12 lg:mt-16 xl:mt-20 2xl:mt-24 ">
+  <div class="w-full grow font-semibold leading-tight {{ heroSettings.headingTextCase }} mxsonly:text-3xl text-4xl md:text-6xl mt-4 sm:mt-6 md:mt-12 lg:mt-16 xl:mt-20 2xl:mt-24 ">
     {% if typedJsStrings and typedJsBase %}
       {% typedjs typedJsStrings,
       typedJsBase %}

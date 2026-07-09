@@ -28,7 +28,7 @@ svgRelativePaths:
     {{ svgRelativePaths | svgsprite | safe }}
     <div class="flex flex-col min-h-svh">
       {% if transparentNav != true %}
-        <div class="{{structure.nav_height_unscrolled}} invisible"></div>
+        <div class="h-nav-unscrolled invisible"></div>
       {% endif %}
       {% include "components/nav.njk" %}
 
@@ -44,7 +44,7 @@ svgRelativePaths:
       {% endif %}
 
       {% if transparentNav == true and not hero %}
-        <div class="{{structure.nav_height_unscrolled}} invisible"></div>
+        <div class="h-nav-unscrolled invisible"></div>
       {% endif %}
 
       {# If any frontmatter includes images.feature, insert it at the top of the page, below the nav and outside the default wrapper below. #}
