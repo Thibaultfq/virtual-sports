@@ -66,7 +66,7 @@ export function init(eleventyConfig, markdownLib) {
         ${a}
         </h2>
         ${h3}
-        <div class="w-full mb-8 md:mb-28"><div class="h-1 mx-auto bg-gradient-to-r from-vs-yellow-400 to-vs-yellow-600 w-48 sm:w-64 md:w-96 my-0 py-0 rounded-t"></div></div>`
+        <div class="w-full mb-8 md:mb-28"><div class="h-1 mx-auto bg-linear-to-r from-vs-yellow-400 to-vs-yellow-600 w-48 sm:w-64 md:w-96 my-0 py-0 rounded-t"></div></div>`
     },
 
     /**

@@ -3,19 +3,16 @@ body {
   overflow-x: hidden;
   scroll-behavior: smooth;
 }
+}
 
-@tailwind base;
-
+@layer base {
 p a,
 li a,
 blockquote a,
 dd a {
   @apply text-vs-blue-700;
 }
-
-@tailwind components;
-
-@tailwind utilities;
+}
 
 /* custom classes */
 .mask-linear-white {
@@ -25,13 +22,13 @@ dd a {
 
 /* Flickity custom */
 .flickity-button {
-  @apply bg-gradient-to-r from-vs-yellow-400 to-vs-yellow-600 text-white !important;
+  @apply bg-linear-to-r! from-vs-yellow-400! to-vs-yellow-600! text-white!;
 }
 
 .flickity-button:hover {
-  @apply hover:from-vs-yellow-500 hover:to-vs-yellow-700 !important;
+  @apply hover:from-vs-yellow-500! hover:to-vs-yellow-700!;
 }
 
 .flickity-prev-next-button {
-  @apply w-10 h-10 !important;
+  @apply w-10! h-10!;
 }

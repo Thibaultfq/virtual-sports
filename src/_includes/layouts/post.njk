@@ -19,7 +19,7 @@ author: "{{ meta.authorURL }}" # default value thibault-fouquaert. post authors 
     <div class="flex justify-between my-4 text-md">
       <div class="flex items-center">
         {% if authorIsMember %}
-          <div class="flex-shrink-0 mr-3">
+          <div class="shrink-0 mr-3">
             <a href="/members/{{ member.data.slug }}/">
               {# this equals author datafield #}
               <img class="w-16 h-16 rounded-full border object-cover object-center" src="/assets/images/{{ member.data.image }}" alt=" Photo of {{ member.data.name }}"/>
@@ -51,7 +51,7 @@ author: "{{ meta.authorURL }}" # default value thibault-fouquaert. post authors 
   {# <div class="font-serif text-xl leading-10 text-justify"> #}
   <div class="{{structure.g_prose}} {{colors.headingsProseCustom or colors.headingsProseDefault}} {{colors.linksProseCustom or colors.linksProseDefault}} {{colors.tableProseCustom or colors.tableProseDefault}}">
 
-    {{ layoutContent | safe }}
+    {{ content | safe }}
   </div>
 
   {% if structure.g_showTagPills or structure.g_showSocialShareIcons %}

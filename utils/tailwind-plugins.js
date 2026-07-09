@@ -4,9 +4,15 @@ export function breakpointInspector({ addBase, theme }) {
   const screens = theme('screens', {})
   const breakpoints = Object.keys(screens)
 
+  if (breakpoints.length === 0) return
+
+  const firstBreakpoint = breakpoints[0]
+  const firstScreen = screens[firstBreakpoint]
+  const firstValue = typeof firstScreen === 'string' ? firstScreen : (firstScreen?.min || firstScreen?.max || '')
+
   addBase({
     'body::after': {
-      content: `"Current breakpoint default (< ${screens[breakpoints[0]]})"`,
+      content: `"Current breakpoint default (< ${firstValue})"`,
       position: 'fixed',
       right: '.5rem',
       bottom: '.5rem',
@@ -19,10 +25,26 @@ export function breakpointInspector({ addBase, theme }) {
       zIndex: '99999',
     },
     ...breakpoints.reduce((acc, current) => {
-      acc[`@media (min-width: ${screens[current]})`] = {
-        'body::after': {
-          content: `"Current breakpoint ${current}"`,
-        },
+      const screen = screens[current]
+      let mediaQuery = ''
+      if (typeof screen === 'string') {
+        mediaQuery = `@media (min-width: ${screen})`
+      } else if (screen && typeof screen === 'object') {
+        const parts = []
+        if (screen.min) parts.push(`(min-width: ${screen.min})`)
+        if (screen.max) parts.push(`(max-width: ${screen.max})`)
+        if (screen.raw) {
+          mediaQuery = `@media ${screen.raw}`
+        } else if (parts.length > 0) {
+          mediaQuery = `@media ${parts.join(' and ')}`
+        }
+      }
+      if (mediaQuery) {
+        acc[mediaQuery] = {
+          'body::after': {
+            content: `"Current breakpoint ${current}"`,
+          },
+        }
       }
       return acc
     }, {}),

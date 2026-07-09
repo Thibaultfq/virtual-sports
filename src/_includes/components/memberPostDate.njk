@@ -1,7 +1,7 @@
 <div class="flex justify-between">
   <div class="flex items-center">
     {% if authorIsMember %}
-      <div class="flex-shrink-0 mr-3">
+      <div class="shrink-0 mr-3">
         <a href="/members/{{ post.data.author }}/">
           <img class="w-10 h-10 aspect-square object-cover rounded-full border" src="/assets/images/{{ memberPost.data.image }}" alt=" Photo of {{ memberPost.data.name }}">
         </a>
