@@ -1,5 +1,3 @@
-import plugin from 'tailwindcss/plugin'
-import structure from './src/_data/structure.js'
 import forms from '@tailwindcss/forms'
 import typography from '@tailwindcss/typography'
 import { breakpointInspector } from './utils/tailwind-plugins.js'
@@ -20,7 +18,6 @@ export default {
     extend: {
       screens: {
         // we work mobile-first and use no breakpoint variant for mobile classes. This works for most modern mobile devices. However, some older devices (eg iPhone 5/SE) have a much smaller viewport than modern devices, for which we want to target only these devices specifically to do minor tweaks. This is thus only used sparsely if the standard mobile-first design does not fit these smaller viewport devices.
-        //mso: mobile-xs-only
         mxsonly: { max: '374px' },
         // => @media (min-width: 640px and max-width: 767px) { ... }
       },
@@ -40,14 +37,6 @@ export default {
         'screen-2/3': '66vh',
         'screen-1/4': '25vh',
         'screen-1/5': '20vh',
-        'screen-minus-navbar': `calc(100svh - ${theme(
-          `spacing.${Math.max(...structure.nav_height_unscrolled.match(/\d+/gi).map(Number))}`
-        )})`,
-      }),
-      minHeight: (theme) => ({
-        'screen-minus-navbar': `calc(100svh - ${theme(
-          `spacing.${Math.max(...structure.nav_height_unscrolled.match(/\d+/gi).map(Number))}`
-        )})`,
       }),
       width: (theme) => ({
         '2-full': '200%',
@@ -138,9 +127,6 @@ export default {
   plugins: [
     forms,
     typography,
-    plugin(function ({ addVariant }) {
-      addVariant('mobile-only', "@media screen and (max-width: theme('screens.sm'))") // instead of hard-coded 640px use sm breakpoint value from config. Or anything
-    }),
     breakpointInspector, //adds current breakpoint to bottom of screen
   ],
 }

@@ -6,18 +6,19 @@ subtitle: Click on a tag to see blog posts about it.
 eleventyNavigation:
   key: tagsList
   parent: footer
-  title: All Tags 
+  title: All Tags
   order: 1
 eleventyImport:
   collections: ["tag"]
 eleventyComputed:
   dateModified: "{{collections.post | getMostRecentPage | getProp('page.date') | dateToFormat('yyyy-MM-dd')}}"
+
 ---
 
-<div class="max-w-screen-md mx-auto">
-  {% set tags = collections.tagList %}
-  {% set tagTextSize = 'text-xl'%}
-  {% set tagPadding = "px-4 py-2"%}
-  {% set tagListSpacing = "m-2"%}
+<div class="max-w-(--breakpoint-md) mx-auto">
+  {% set tags = collections.all | getAllTags | getOnlyCustomTags | sort %}
+  {% set tagTextSize = 'text-xl' %}
+  {% set tagPadding = "px-4 py-2" %}
+  {% set tagListSpacing = "m-2" %}
   {% include "components/tagpills.njk" %}
 </div>

@@ -40,7 +40,7 @@ export default {
     text: 'sm:text-vs-blue-900',
     textActive: 'sm:text-white',
     textHover: 'sm:hover:text-vs-blue-800',
-    textActiveBg: 'sm:bg-gradient-to-r from-vs-yellow-400 to-vs-yellow-600 rounded-md',
+    textActiveBg: 'sm:bg-linear-to-r from-vs-yellow-400 to-vs-yellow-600 rounded-md',
     textFocus: 'sm:focus:text-vs-blue-700',
     mobileBarBg: 'bg-white',
     mobileBg: 'bg-white',
@@ -124,9 +124,9 @@ export default {
   headingsProseDefault: 'prose-headings:text-vs-blue-900',
   headingsProseCustom: '',
   tableProseDefault:
-    'prose-tr:border-vs-blue-900 prose-th:border-vs-blue-900 prose-tr:border-double last:[&_tbody>tr]:border-b-8 first:[&_thead>tr]:border-t-8 first:[&_tbody>tr]:border-solid first:[&_tbody>tr]:border-t-4',
+    'prose-tr:border-vs-blue-900 prose-th:border-vs-blue-900 prose-tr:border-double [&_tbody>tr]:last:border-b-8 [&_thead>tr]:first:border-t-8 [&_tbody>tr]:first:border-solid [&_tbody>tr]:first:border-t-4',
   tableProseCustom: '',
-  linksProseDefault: 'prose-a:text-vs-blue-700 hover:prose-a:text-vs-blue-600',
+  linksProseDefault: 'prose-a:text-vs-blue-700 prose-a:hover:text-vs-blue-600',
   linksProseCustom: '',
 
   /**
@@ -176,7 +176,7 @@ export default {
   buttonDefault: {
     text: 'text-white',
     textHover: '',
-    bg: 'bg-gradient-to-r from-vs-yellow-400 to-vs-yellow-600',
+    bg: 'bg-linear-to-r from-vs-yellow-400 to-vs-yellow-600',
     bgHover: 'hover:from-vs-yellow-500 hover:to-vs-yellow-700',
     border: 'border-vs-yellow-900',
   },

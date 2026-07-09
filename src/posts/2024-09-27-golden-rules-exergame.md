@@ -391,7 +391,7 @@ A multidisciplinary team is the key to a successful exergame. By **combining dif
 # Rule 10: the indispensable coach
 Workout apps are all over the app store, but it's not always clear in those apps how to perform all the exercises correctly. Let alone getting personalized guidance. In that sense, a human coach is still often preferred. It's the same with exergames: **a good guide often makes the difference between success and failure**. The digital or virtual aspect of exergames therefore does not mean that less guidance is needed. On the contrary. A game may work technically excellent, but it does not automatically induce enough movement.
 
-![Despite its technological features, some exergames still need personal coaching and guidance for the best experience](src/assets/images/2024/09/exergame-coaching.webp)
+![Despite its technological features, some exergames still need personal coaching and guidance for the best experience](/assets/images/2024/09/exergame-coaching.webp)
 
 ## What makes a good coach?
 

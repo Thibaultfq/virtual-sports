@@ -8,24 +8,13 @@ export default {
    * across the entire site so there is consistency on margins, padding, max width
    * at all screen sizes.
    */
-  g_pageWidth: 'max-w-screen-2xl px-4 md:px-10 lg:px-20 2xl:px-30 mx-auto',
-  g_blogWidth: 'max-w-screen-lg px-4 md:px-10 lg:px-20 mb-4 md:mb-10 mx-auto',
-  g_fullpageSectionWidth: 'max-w-screen-2xl mx-4 lg:mx-8 2xl:mx-auto mt-20 lg:mt-40',
+  g_pageWidth: 'max-w-(--breakpoint-2xl) px-4 md:px-10 lg:px-20 2xl:px-30 mx-auto',
+  g_blogWidth: 'max-w-(--breakpoint-lg) px-4 md:px-10 lg:px-20 mb-4 md:mb-10 mx-auto',
+  g_fullpageSectionWidth: 'max-w-(--breakpoint-2xl) mx-4 lg:mx-8 2xl:mx-auto mt-20 lg:mt-40',
 
   g_prose:
     'font-serif max-w-none prose lg:prose-lg prose-headings:font-sans prose-img:w-full md:prose-figure:w-11/12 prose-figure:mx-auto prose-table:table-auto prose-th:font-serif prose-th:align-text-bottom prose-th:pt-4 prose-th:pb-0.5',
   g_prose_youtube: 'md:w-11/12 mx-auto',
-  /**
-   * height of the navbar and the logo within when page is on top
-   */
-  nav_height_unscrolled: 'h-28 sm:h-32',
-  logo_height_unscrolled: 'h-16 sm:h-16',
-
-  /**
-   * height of the navbar and the logo within once scrolled
-   */
-  nav_height_scrolled: 'h-14 sm:h-20',
-  logo_height_scrolled: 'h-10 sm:h-12',
 
   /**
    * Globally disable display of Tag pills/links

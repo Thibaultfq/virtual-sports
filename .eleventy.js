@@ -67,6 +67,33 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy('src/assets/video/')
 
   /**
+   * Custom tag collection for pagination.
+   * Extracts all unique tags from markdown files.
+   * Maps tags to their slugified representation to prevent DuplicatePermalinkOutputErrors
+   * (e.g. preventing 'diffusion of innovation' and 'diffusion-of-innovation' from colliding).
+   */
+  eleventyConfig.addCollection('customTags', function (collectionApi) {
+    const allItems = collectionApi.getAll()
+    const slugMap = new Map() // Key: slugified tag (unique), Value: original tag name
+    const slugifyFilter = eleventyConfig.getFilter('slugify')
+
+    for (let item of allItems) {
+      ;(item.data.tags || []).forEach((tag) => {
+        const slug = slugifyFilter(tag)
+        // If we haven't seen this slug yet, map it to the first spelling/casing we find
+        if (slug && !slugMap.has(slug)) {
+          slugMap.set(slug, tag)
+        }
+      })
+    }
+
+    // Return list of original tags (resolved to unique slugs) filtered to omit system tags
+    return Array.from(slugMap.values())
+      .filter((tag) => ['all', 'nav', 'post', 'tag', 'pages', 'member'].indexOf(tag) === -1)
+      .sort()
+  })
+
+  /**
    * Add JS minified. Call this filter in a (e.g. base) NJK file to include minified JS file
    */
   eleventyConfig.addNunjucksAsyncFilter('jsmin', async function (code, callback) {

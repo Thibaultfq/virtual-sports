@@ -21,7 +21,7 @@ export function init(eleventyConfig, markdownLib) {
           <source src="/assets/video/explainers/${videoFileNamewithoutExtension}.webm" type='video/webm; codecs="vp9"'>
           <source src="/assets/video/explainers/${videoFileNamewithoutExtension}.mp4" type='video/mp4; codecs="avc1.42401E"'>
           </video>
-          <span class="absolute backdrop-blur-sm bg-white bg-opacity-50 text-xs bottom-0 right-0 p-1 rounded text-gray-700">${videoSource}</span>
+          <span class="absolute backdrop-blur-xs bg-white bg-opacity-50 text-xs bottom-0 right-0 p-1 rounded-sm text-gray-700">${videoSource}</span>
         </div>
       </section>`
     //  onmouseover="this.play()" onmouseout="this.pause()"
@@ -79,7 +79,7 @@ export function init(eleventyConfig, markdownLib) {
     gridRow: function (content, colSpan = '', collapse = false, classes = '') {
       return `<div ${
         collapse ? 'x-show="expanded" x-collapse' : ''
-      } class="grid grid-cols-subgrid [&_*]:my-0 [&>*]:px-2 [&>*]:pb-1 ${colSpan} ${classes}">${content}</div>`
+      } class="grid grid-cols-subgrid **:my-0 *:px-2 *:pb-1 ${colSpan} ${classes}">${content}</div>`
     },
 
     /**
