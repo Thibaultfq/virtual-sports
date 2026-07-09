@@ -1,38 +1,43 @@
 {% set navPages = collections.pages | eleventyNavigation("nav") %}
 {# if transparentNav is true, add transparent background and change to white on scroll, remove from document flow on desktop with position fixsed or on mobile absolute. #}
-<nav x-data="{ open: false, scrolledNav: window.pageYOffset > 20 }" 
-    @scroll.window="scrolledNav = (window.pageYOffset > 20) ? true : false" 
-    class="fixed top-0 left-0 z-50 w-screen" 
-    :class="{% if transparentNav %} [ !open? 'bg-transparent' : '{{colors.navCustom.mobileBarBg or colors.navDefault.mobileBarBg}}', !scrolledNav? 'bg-transparent' : '{{colors.navCustom.barBg or colors.navDefault.barBg}} shadow-sm'] {% else %} '{{colors.navCustom.barBg or colors.navDefault.barBg}} {{colors.navCustom.mobileBarBg or colors.navDefault.mobileBarBg}} shadow-sm' {% endif %}">
-    <div class="sm:px-5 md:px-10 lg:px-24 xl:px-40">
-        <div class="flex justify-between transition-all" 
-        :class="scrolledNav ? 'h-nav-scrolled sm:text-sm' : 'h-nav-unscrolled sm:text-lg' ">
-            <div class="flex justify-center grow min-w-0 items-center">
-                {# small logo hidden on sm and above #}
-                {#                 <a
+<nav
+  x-data="{ open: false, scrolledNav: window.pageYOffset > 20 }"
+  @scroll.window="scrolledNav = (window.pageYOffset > 20) ? true : false"
+  class="fixed top-0 inset-x-0 z-50 w-full max-w-(--breakpoint-2xl) mx-auto"
+  :class="{% if transparentNav %} [ !open? 'bg-transparent' : '{{colors.navCustom.mobileBarBg or colors.navDefault.mobileBarBg}}', !scrolledNav? 'bg-transparent' : '{{colors.navCustom.barBg or colors.navDefault.barBg}} shadow-sm'] {% else %} '{{colors.navCustom.barBg or colors.navDefault.barBg}} {{colors.navCustom.mobileBarBg or colors.navDefault.mobileBarBg}} shadow-sm' {% endif %}"
+>
+  <div class="sm:px-5 md:px-10 lg:px-24 xl:px-40">
+    <div
+      class="flex justify-between transition-all"
+      :class="scrolledNav ? 'h-nav-scrolled sm:text-sm' : 'h-nav-unscrolled sm:text-lg' "
+    >
+      <div class="flex justify-center grow min-w-0 items-center">
+        {# small logo hidden on sm and above #}
+        {#                 <a
                     aria-label="Mobile Logo Virtual Sports"
                     href="/"
                     class="block py-2 sm:hidden h-logo-unscrolled {{ colors.logoCustom.mobile or colors.logoDefault.mobile }} {{ colors.logoCustom.hover or colors.logoDefault.hover }}"
                     alt="Mobile Logo Virtual Sports">
                     {% svg "virtual-sports-square-logo", "fill-current h-full", "Virtual Sports Mobile Logo" %}
                 </a> #}
-                {# large logo hidden on <sm (mobile), block on sm #}
-                <a
-                    aria-label="Desktop Logo Virtual Sports"
-                    href="/"
-                    :class="scrolledNav ? 'h-logo-scrolled' : 'h-logo-unscrolled'"
-                    class="flex grow px-2 sm:px-0 {{colors.logoCustom.desktop or colors.logoDefault.desktop }} {{colors.logoCustom.hover or colors.logoDefault.hover }}"
-                    alt="Desktop Logo Virtual Sports">
-                    {# {% svg "virtual-sports-banner-logo", "flex justify-start fill-current h-full w-full drop-shadow-md {{ colors.logoCustom.hover or colors.logoDefault.hover }}", "The Logo" %} #}
-                    {% svg "virtual-sports-banner-logo-gradient", "justify-start h-full w-full drop-shadow-md", "Virtual Sports Logo" %}
+        {# large logo hidden on <sm (mobile), block on sm #}
+        <a
+          aria-label="Desktop Logo Virtual Sports"
+          href="/"
+          :class="scrolledNav ? 'h-logo-scrolled' : 'h-logo-unscrolled'"
+          class="flex grow px-2 sm:px-0 {{colors.logoCustom.desktop or colors.logoDefault.desktop }} {{colors.logoCustom.hover or colors.logoDefault.hover }}"
+          alt="Desktop Logo Virtual Sports"
+        >
+          {# {% svg "virtual-sports-banner-logo", "flex justify-start fill-current h-full w-full drop-shadow-md {{ colors.logoCustom.hover or colors.logoDefault.hover }}", "The Logo" %} #}
+          {%
+            svg "virtual-sports-banner-logo-gradient", "justify-start h-full w-full drop-shadow-md", "Virtual Sports Logo"
+          %}
+        </a>
+      </div>
+      <div class="hidden sm:ml-6 sm:flex sm:items-center">
+        {# 11ty Nav Plugin loop  #}
 
-                </a>
-            </div>
-            <div
-                class="hidden sm:ml-6 sm:flex sm:items-center">
-                {# 11ty Nav Plugin loop  #}
-
-                {# Pseudo code for nested if classes 
+        {# Pseudo code for nested if classes 
             if transparentNav
                 if currentPage
                     '{{ colors.navCustom.textActiveBg or colors.navDefault.textActiveBg }} {{ colors.navCustom.textActive or colors.navDefault.textActive }}'
@@ -50,66 +55,88 @@
                     '{{colors.navCustom.text or colors.navDefault.text}}'
         
         #}
-                {% for entry in navPages %}
-                    <a href="{{ entry.url | url }}" alt="Link to {{ entry.title }}" 
-                    :class="{{ transparentNav == true }} ? ({{ page.url === entry.url }} ? '{{ colors.navCustom.textActiveBg or colors.navDefault.textActiveBg }} {{ colors.navCustom.textActive or colors.navDefault.textActive }}' : (scrolledNav ? '{{colors.navCustom.text or colors.navDefault.text}}' : '{{colors.transparentNav.text or colors.transparentNav.text}}')) : ({{ page.url === entry.url or (page.url !== false and (entry.url in page.url and entry.url !== '/')) }} ? '{{ colors.navCustom.textActiveBg or colors.navDefault.textActiveBg }} {{ colors.navCustom.textActive or colors.navDefault.textActive }}' : '{{colors.navCustom.text or colors.navDefault.text}}')"
-                    class=" px-3 py-2 font-semibold items-center focus:outline-hidden transition duration-150 ease-in-out">
-                        {{ entry.title }}
-                    </a>
-                {% endfor %}
-            </div>
-            {# Right side of Navbar  #}
-            {# MOBILE MENU  #}
-            {# flex #}
-            <div class="flex items-center mr-1 sm:hidden">
-                {# Mobile menu button #}
-                {#  #}
-                <button
-                    @click="open = !open"
-                    class="p-2 focus:outline-hidden transition duration-150 ease-in-out rounded-md  {{ colors.navCustom.mobileButton or colors.navDefault.mobileButton }} {{ colors.navCustom.mobileButtonHover or colors.navDefault.mobileButtonHover }} {{ colors.navCustom.mobileButtonBgHover or colors.navDefault.mobileButtonBgHover }} "
-                    x-bind:aria-label="open ? 'Close main menu' : 'Main menu'"
-                    aria-label="Main menu"
-                    x-bind:aria-expanded="open">
-                    {# Icon when menu is closed.  #}
-                    <svg
-                        x-state:on="Menu open"
-                        x-state:off="Menu closed"
-                        :class="{ 'hidden': open, 'block': !open }"
-                        class="block w-6 h-6"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                    {# Icon when menu is open.  #}
-                    <svg
-                        x-state:on="Menu open"
-                        x-state:off="Menu closed"
-                        :class="{ 'hidden': !open, 'block': open }"
-                        class="hidden w-6 h-6"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                    </svg>
-                </button>
-            </div>
-        </div>
+        {% for entry in navPages %}
+          <a
+            href="{{ entry.url | url }}"
+            alt="Link to {{ entry.title }}"
+            :class="{{ transparentNav == true }} ? ({{ page.url === entry.url }} ? '{{ colors.navCustom.textActiveBg or colors.navDefault.textActiveBg }} {{ colors.navCustom.textActive or colors.navDefault.textActive }}' : (scrolledNav ? '{{colors.navCustom.text or colors.navDefault.text}}' : '{{colors.transparentNav.text or colors.transparentNav.text}}')) : ({{ page.url === entry.url or (page.url !== false and (entry.url in page.url and entry.url !== '/')) }} ? '{{ colors.navCustom.textActiveBg or colors.navDefault.textActiveBg }} {{ colors.navCustom.textActive or colors.navDefault.textActive }}' : '{{colors.navCustom.text or colors.navDefault.text}}')"
+            class="px-3 py-2 font-semibold items-center focus:outline-hidden transition duration-150 ease-in-out"
+          >
+            {{ entry.title }}
+          </a>
+        {% endfor %}
+      </div>
+      {# Right side of Navbar  #}
+      {# MOBILE MENU  #}
+      {# flex #}
+      <div class="flex items-center mr-1 sm:hidden">
+        {# Mobile menu button #}
+        {#  #}
+        <button
+          @click="open = !open"
+          class="p-2 focus:outline-hidden transition duration-150 ease-in-out rounded-md {{ colors.navCustom.mobileButton or colors.navDefault.mobileButton }} {{ colors.navCustom.mobileButtonHover or colors.navDefault.mobileButtonHover }} {{ colors.navCustom.mobileButtonBgHover or colors.navDefault.mobileButtonBgHover }}"
+          x-bind:aria-label="open ? 'Close main menu' : 'Main menu'"
+          aria-label="Main menu"
+          x-bind:aria-expanded="open"
+        >
+          {# Icon when menu is closed.  #}
+          <svg
+            x-state:on="Menu open"
+            x-state:off="Menu closed"
+            :class="{ 'hidden': open, 'block': !open }"
+            class="block w-6 h-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            >
+            </path>
+          </svg>
+          {# Icon when menu is open.  #}
+          <svg
+            x-state:on="Menu open"
+            x-state:off="Menu closed"
+            :class="{ 'hidden': !open, 'block': open }"
+            class="hidden w-6 h-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"
+            >
+            </path>
+          </svg>
+        </button>
+      </div>
     </div>
-    <div
-        x-description="Mobile menu, toggle classes based on menu state."
-        x-state:on="Menu open"
-        x-state:off="Menu closed"
-        :class="{ 'block': open, 'hidden': !open }"
-        class="hidden sm:hidden">
-        <div
-            class="pt-2 pb-3">
-            {# 11ty Nav Plugin loop  #}
-            {% for entry in navPages %}
-                <a href="{{ entry.url | url }}" alt="Link to {{ entry.title }}" class="block pl-4 pr-4 py-2 {% if page.url == entry.url %}{{ colors.navCustom.mobileBgActive or colors.navDefault.mobileBgActive }} {{ colors.navCustom.mobileTextActive or colors.navDefault.mobileTextActive }}{% else %}{{ colors.navCustom.mobileBg or colors.navDefault.mobileBg }} {{ colors.navCustom.mobileTextHover or colors.navDefault.mobileTextHover }} {{ colors.navCustom.mobileBgHover or colors.navDefault.mobileBgHover }}  {% endif %} text-base font-medium  {{ colors.navCustom.mobileText or colors.navDefault.mobileText }}  focus:outline-hidden {{ colors.navCustom.mobileTextFocus or colors.navDefault.mobileTextFocus }} {{ colors.navCustom.mobileBgFocus or colors.navDefault.mobileBgFocus }} transition duration-150 ease-in-out">
-                    {{ entry.title }}
-                </a>
-            {% endfor %}
-        </div>
+  </div>
+  <div
+    x-description="Mobile menu, toggle classes based on menu state."
+    x-state:on="Menu open"
+    x-state:off="Menu closed"
+    :class="{ 'block': open, 'hidden': !open }"
+    class="hidden sm:hidden"
+  >
+    <div class="pt-2 pb-3">
+      {# 11ty Nav Plugin loop  #}
+      {% for entry in navPages %}
+        <a
+          href="{{ entry.url | url }}"
+          alt="Link to {{ entry.title }}"
+          class="block pl-4 pr-4 py-2 {% if page.url == entry.url %}{{ colors.navCustom.mobileBgActive or colors.navDefault.mobileBgActive }} {{ colors.navCustom.mobileTextActive or colors.navDefault.mobileTextActive }}{% else %}{{ colors.navCustom.mobileBg or colors.navDefault.mobileBg }} {{ colors.navCustom.mobileTextHover or colors.navDefault.mobileTextHover }} {{ colors.navCustom.mobileBgHover or colors.navDefault.mobileBgHover }} {% endif %} text-base font-medium {{ colors.navCustom.mobileText or colors.navDefault.mobileText }} focus:outline-hidden {{ colors.navCustom.mobileTextFocus or colors.navDefault.mobileTextFocus }} {{ colors.navCustom.mobileBgFocus or colors.navDefault.mobileBgFocus }} transition duration-150 ease-in-out"
+        >
+          {{ entry.title }}
+        </a>
+      {% endfor %}
     </div>
+  </div>
 </nav>
