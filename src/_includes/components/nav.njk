@@ -3,10 +3,10 @@
 <nav
   x-data="{ open: false, scrolledNav: window.pageYOffset > 20 }"
   @scroll.window="scrolledNav = (window.pageYOffset > 20) ? true : false"
-  class="fixed top-0 inset-x-0 z-50 w-full max-w-(--breakpoint-2xl) mx-auto"
-  :class="{% if transparentNav %} [ !open? 'bg-transparent' : '{{colors.navCustom.mobileBarBg or colors.navDefault.mobileBarBg}}', !scrolledNav? 'bg-transparent' : '{{colors.navCustom.barBg or colors.navDefault.barBg}} shadow-sm'] {% else %} '{{colors.navCustom.barBg or colors.navDefault.barBg}} {{colors.navCustom.mobileBarBg or colors.navDefault.mobileBarBg}} shadow-sm' {% endif %}"
+  class="fixed top-0 inset-x-0 z-50 w-full"
+  :class="{% if transparentNav %} [ !open? 'bg-transparent' : '{{colors.navCustom.mobileBarBg or colors.navDefault.mobileBarBg}}', !scrolledNav? 'bg-transparent' : '{{colors.navCustom.barBg or colors.navDefault.barBg}} shadow-[0_4px_10px_-4px_rgba(0,0,0,0.2)]'] {% else %} '{{colors.navCustom.barBg or colors.navDefault.barBg}} {{colors.navCustom.mobileBarBg or colors.navDefault.mobileBarBg}} shadow-[0_4px_10px_-4px_rgba(0,0,0,0.2)]' {% endif %}"
 >
-  <div class="sm:px-5 md:px-10 lg:px-24 xl:px-40">
+  <div class="max-w-(--breakpoint-2xl) mx-auto sm:px-5 md:px-10 lg:px-24 xl:px-40">
     <div
       class="flex justify-between transition-all"
       :class="scrolledNav ? 'h-nav-scrolled sm:text-sm' : 'h-nav-unscrolled sm:text-lg' "
