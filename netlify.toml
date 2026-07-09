@@ -8,7 +8,7 @@
 publish = "dist"
 command = "npm run build"
 ELEVENTY_PRODUCTION = "true"
-environment = { NODE_VERSION = "^22.22.0", NPM_VERSION = "11.7.0", NODE_ENV = "production" }
+environment = { NODE_VERSION = "^24.0.0", NPM_VERSION = "12.0.0", NODE_ENV = "production" }
 
 
 # Dev context: environment variables set here
@@ -18,14 +18,14 @@ environment = { NODE_VERSION = "^22.22.0", NPM_VERSION = "11.7.0", NODE_ENV = "p
 # branch context configured.
 [context.dev.environment]
 NODE_ENV = "development"
-NODE_VERSION = "^22.22.0"
-NPM_VERSION = "11.7.0"
+NODE_VERSION = "^24.0.0"
+NPM_VERSION = "12.0.0"
 ELEVENTY_PRODUCTION = "false"
 
 # Specific branch context: all deploys from
 # this specific branch will inherit these settings.
 [context.staging.environment] # “staging” is a branch name
 NODE_ENV = "production"
-NODE_VERSION = "^22.22.0"
-NPM_VERSION = "11.7.0"
+NODE_VERSION = "^24.0.0"
+NPM_VERSION = "12.0.0"
 ELEVENTY_PRODUCTION = "true"
