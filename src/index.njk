@@ -26,11 +26,11 @@ heroSettings:
     image: # home/plane.jpg # 
     imagePosition: # options = bg-center (default), bg-left, bg-right
     video: # always provide a mp4 and webm optimized file format. These are muted video's so the audio codec is absent.
-      mp4: /assets/video/home/bg-video-virtual-sports.mp4
-      webm: /assets/video/home/bg-video-virtual-sports.webm
-      poster: /assets/video/home/poster-bg-video-virtual-sports.webp
-    opacityMobile: opacity-50 # options opacity-n, 5, 10, 15, 20, 25, 50, 75, 100 (default)
-    opacityDesktop: md:opacity-60 # Leave blank to inherit opacityMobile, use same options as opacityMobile
+      mp4: /assets/video/home/virtual-sports-hero-optim-crf28.mp4
+      webm: /assets/video/home/virtual-sports-hero-optim-crf42.webm
+      poster: /assets/video/home/virtual-sports-hero.webp
+    opacityMobile: opacity-60 # options opacity-n, 5, 10, 15, 20, 25, 50, 75, 100 (default)
+    opacityDesktop: md:opacity-50 # Leave blank to inherit opacityMobile, use same options as opacityMobile
     attachment:   # bg-fixed, bg-local, bg-scroll
   headingText: What are Virtual Sports?
   headingTextColor: # default = text-white (can use any TailwindCSS)
@@ -61,11 +61,11 @@ svgRelativePaths: #append the spritemap with memberlogo for homepage, relative t
   - /memberLogos 
 postsListStyle: postslistthumbs # postslistcards
 typedJsStrings:
-  - "gamified traditional sports."
-  - "new competition formats."
-  - "opportunities for participation."
-  - "physically challenging."
-  - "more than exergames."
+  - "new sporting disciplines."
+  - "not the same as esports"
+  - "closely mimmicking other sports' physicality."
+  - "digitally mediated sports."
+  - "not the same as exergames."
 typedJsBase: "Virtual Sports are "
 memberLogos: #add the filenames of the logo's of members to be included below
   - Nord_universitet_logo
@@ -97,7 +97,7 @@ homePageMembersSlugsSorted: #array of the slugs IN ORDER of members to be listed
 <section class="relative">
   <img class="absolute top-0 left-0 w-full opacity-30 -z-10" src="/assets/images/home/virtual-sports-dots-bg.svg" loading="lazy" alt="background connected dots"/>
   <div class="max-w-(--breakpoint-2xl) mx-4 lg:mx-8 2xl:mx-auto pb-10 lg:pb-14 mt-0 lg:mt-0 pt-20 lg:pt-40">
-    {% heading "Ready to learn more about Virtual Sports?"%}
+    {% heading "Virtual Sports, where traditional competitions become digitalised"%}
     <div class="flex flex-wrap">
       <div class="sm:w-7/12 p-2 sm:mb-8 text-gray-800 text-balance [&>p]:mb-4 [&>p]:text-lg md:[&>p]:text-xl">
         <h3 class="text-3xl {{ colors.headingsCustom or colors.headingsDefault }} font-bold mb-2">The emergence of sports alike exergames and physical active eSports</h3>
@@ -112,7 +112,7 @@ homePageMembersSlugsSorted: #array of the slugs IN ORDER of members to be listed
 
       </div>
       <div class="flex items-center w-full sm:w-5/12 p-2">
-        {% svg "virtual-sports-landing1", "w-full sm:max-h-64 mx-auto", "Virtual Sports explainer" %}
+        {% svg "virtualsports-esports-exergames-chart", "w-full h-96 mx-auto", "Virtual Sports explainer" %}
       </div>
     </div>
     <div class="flex flex-wrap flex-col-reverse sm:flex-row">
