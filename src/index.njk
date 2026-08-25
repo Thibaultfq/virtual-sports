@@ -95,43 +95,53 @@ homePageMembersSlugsSorted: #array of the slugs IN ORDER of members to be listed
 ---
 
 <section class="relative">
-  <img class="absolute top-0 left-0 w-full opacity-30 -z-10" src="/assets/images/home/virtual-sports-dots-bg.svg" loading="lazy" alt="background connected dots"/>
-  <div class="max-w-(--breakpoint-2xl) mx-4 lg:mx-8 2xl:mx-auto pb-10 lg:pb-14 mt-0 lg:mt-0 pt-20 lg:pt-40">
-    {% heading "Virtual Sports, where traditional competitions become digitalised"%}
-    <div class="flex flex-wrap">
-      <div class="sm:w-7/12 p-2 sm:mb-8 text-gray-800 text-balance [&>p]:mb-4 [&>p]:text-lg md:[&>p]:text-xl">
-        <h3 class="text-3xl {{ colors.headingsCustom or colors.headingsDefault }} font-bold mb-2">The emergence of sports alike exergames and physical active eSports</h3>
-        <p class="2xl:backdrop-blur-xs">
-          eSports are often contested upon in the sports sector due to its lack of sports-alike physicality. 
-          <b>A new type of exergames and eSports are emerging, however. These are increasingly physical and sports alike in nature.</b> Imagine how Zwift compares to road cycling, or Virtual rowing to outdoor rowing. 
-        </p>
-        <p>
-          <b>Virtual Sports are unique</b> in that <a href="/about">they are in between exergames and eSports</a>. 
-          Virtual Sports combine (1) the technological mediated nature of eSports, (2) the institutionalised and physical nature of sports, and (3) the gamified nature of Exergames.
-          </p>
-
-      </div>
-      <div class="flex items-center w-full sm:w-5/12 p-2">
-        {% svg "virtualsports-esports-exergames-chart", "w-full h-96 mx-auto", "Virtual Sports explainer" %}
-      </div>
+  <div class="relative overflow-hidden w-full sm:pb-20 lg:pb-40 pt-20 lg:pt-40">
+    <img class="absolute bottom-0 left-0 w-full h-auto opacity-30 -z-10" src="/assets/images/home/virtual-sports-dots-bg.svg" loading="lazy" alt="background connected dots"/>
+    <div class="max-w-(--breakpoint-2xl) mx-4 lg:mx-8 2xl:mx-auto">
+      {% heading "Virtual Sports, where traditional competitions become digitalised"%}
     </div>
-    <div class="flex flex-wrap flex-col-reverse sm:flex-row">
-      <div class="w-full flex items-center sm:w-5/12 p-2 sm:mt-6">
-        {% svg "virtual-sports-landing2", "sm:h-64 w-full mx-auto", "Virtual Sports explainer" %}
-      </div>
-      <div class="w-full sm:w-7/12 p-2 sm:mt-6">
-        <div class="align-middle [&>p]:mb-4 [&>p]:text-lg md:[&>p]:text-xl text-balance text-gray-800">
-          <h3 class="text-3xl {{ colors.headingsCustom or colors.headingsDefault }} font-bold leading-none mb-3">
+  </div>
+  <div class="max-w-(--breakpoint-2xl) mx-auto px-4 lg:px-8 pb-10 lg:pb-14">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+      <!-- Text Column (Scrolls) -->
+      <div class="lg:col-span-7 space-y-12 text-gray-800 [&>div>p]:mb-4 [&>div>p]:text-lg md:[&>div>p]:text-xl text-balance">
+        <div>
+          <h3 class="text-3xl {{ colors.headingsCustom or colors.headingsDefault }} font-bold mb-4">
+            The emergence of sports alike exergames and physical active eSports
+          </h3>
+          <p class="2xl:backdrop-blur-xs">
+            eSports are often contested upon in the sports sector due to its lack of sports-alike physicality. 
+            <b>A new type of exergames and eSports are emerging, however. These are increasingly physical and sports alike in nature.</b> Imagine how Zwift compares to road cycling, or Virtual rowing to outdoor rowing. 
+          </p>
+          <p>
+            <b>Virtual Sports are unique</b> in that <a href="/about">they are in between exergames and eSports</a>. 
+            Virtual Sports combine (1) the technological mediated nature of eSports, (2) the institutionalised and physical nature of sports, and (3) the gamified nature of Exergames.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="text-3xl {{ colors.headingsCustom or colors.headingsDefault }} font-bold leading-none mb-4">
             A growing interest in Virtual Sports
           </h3>
-          <p>Because of Virtual Sports' unique and innovative nature, there is a growing interest in Virtual Sports.
+          <p>
+            Because of Virtual Sports' unique and innovative nature, there is a growing interest in Virtual Sports.
             <b>The mission of this science communication blog and research network is to address this interest.</b>
           </p>
-          <p>Our aims are (1) to set a name for the Virtual Sports 'label' as a new type of physical and sports-alike (eSports) games, 
+          <p>
+            Our aims are (1) to set a name for the Virtual Sports 'label' as a new type of physical and sports-alike (eSports) games, 
             (2) to inform people on the perspectives and debates virtual sports brings to the sports sector and academia, 
-            and (3) to connect academics with expertise in virtual sports into a network that is reachable for everyone interested.</p>
+            and (3) to connect academics with expertise in virtual sports into a network that is reachable for everyone interested.
 
+          </p>
         </div>
+      </div>
+
+      <!-- Sticky Media Column -->
+      <div class="lg:col-span-5 lg:sticky lg:top-28 lg:my-4">
+          <video autoplay muted loop playsinline class="w-full h-auto object-cover" poster="/assets/video/home/posterframe-chart-esports-virtualsports-exergames.svg">
+            <source src="/assets/video/home/chart-esports-virtualsports-exergames.webm" type="video/webm">
+            <source src="/assets/video/home/chart-optim-crf24.mp4" type="video/mp4">
+          </video>
       </div>
     </div>
   </div>
@@ -139,7 +149,6 @@ homePageMembersSlugsSorted: #array of the slugs IN ORDER of members to be listed
     <a href="/about">
       {% ctaButton "More About Virtual Sports :bulb:" | renderInlineMarkdown %}
     </a>
-
   </div>
 </section>
 
