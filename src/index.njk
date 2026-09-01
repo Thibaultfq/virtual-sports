@@ -30,7 +30,7 @@ heroSettings:
       webm: /assets/video/home/virtual-sports-hero-optim-crf42.webm
       poster: /assets/video/home/virtual-sports-hero.webp
     opacityMobile: opacity-60 # options opacity-n, 5, 10, 15, 20, 25, 50, 75, 100 (default)
-    opacityDesktop: md:opacity-50 # Leave blank to inherit opacityMobile, use same options as opacityMobile
+    opacityDesktop: md:opacity-75 # Leave blank to inherit opacityMobile, use same options as opacityMobile
     attachment:   # bg-fixed, bg-local, bg-scroll
   headingText: What are Virtual Sports?
   headingTextColor: # default = text-white (can use any TailwindCSS)
@@ -107,16 +107,27 @@ homePageMembersSlugsSorted: #array of the slugs IN ORDER of members to be listed
       <div class="lg:col-span-7 space-y-12 text-gray-800 [&>div>p]:mb-4 [&>div>p]:text-lg md:[&>div>p]:text-xl text-balance">
         <div>
           <h3 class="text-3xl {{ colors.headingsCustom or colors.headingsDefault }} font-bold mb-4">
-            The emergence of sports alike exergames and physical active eSports
+            Virtual Sports Set Apart
           </h3>
-          <p class="2xl:backdrop-blur-xs">
-            eSports are often contested upon in the sports sector due to its lack of sports-alike physicality. 
-            <b>A new type of exergames and eSports are emerging, however. These are increasingly physical and sports alike in nature.</b> Imagine how Zwift compares to road cycling, or Virtual rowing to outdoor rowing. 
-          </p>
           <p>
-            <b>Virtual Sports are unique</b> in that <a href="/about">they are in between exergames and eSports</a>. 
-            Virtual Sports combine (1) the technological mediated nature of eSports, (2) the institutionalised and physical nature of sports, and (3) the gamified nature of Exergames.
+            Technology and digital transformation pushes the way we practice sports. One aspect of sports digitalisation is that it creates <b>new forms of sport</b> and new ways to practice. 
+            Labelling these as <i>virtual sports</i> helps to set them apart when the boundaries between traditional sports, <a href="/tags/esports/">esports</a>, and <a href="/tags/exergame/">exergames</a> start to blur.
+            Virtual sports differentiate themselves primarily through two fundamental dimensions: <b>physicality</b> and <b>reality</b>.
           </p>
+          <ul class="list-disc list-outside pl-5 space-y-4 mb-4 text-lg md:text-xl">
+            <li>
+              <b>Physical movements that mimic sports</b><br>
+              Recent advancements in technology allows to <b>digitally capture physical movements extremely accurately and sensitively</b>, for instance with milimeter precision in <a href="/2025/03/24/virtual-sports-an-overview-of-what-exists-and-what-is-possible/">virtual golf</a>. 
+              This makes virtual sports different from exergames, where accuracy and sensitivity is lower and the focus is more on playful entertainment or rehabilitation rather than athletic competitions.
+              Virtual sports also differ from esports, where  physical movement (e.g. fine-motor controls like manipulating a mouse, keyboard, or controller) is required but not aimed at mimicking an existing sport to fearture competitions.
+            </li>
+            <li>
+              <b>Physical-Digital Interreality</b><br>
+              Unlike pure <a href="/2025/03/24/virtual-sports-an-overview-of-what-exists-and-what-is-possible/">sports simulations</a> that leaves data unaltered and merely displays it on a screen, virtual sports take place within its own digital world. 
+              <b>Data from real-world performances (e.g. power) is altered based on events in the digital world (e.g. in-game drafting)</b>, which creates a hybrid physical-digital interreality. 
+              This means that the algorithms behind virual sports games transform sport competitons into a blend of physical performance and digital strategy.
+            </li>
+          </ul>
         </div>
 
         <div>
@@ -138,10 +149,12 @@ homePageMembersSlugsSorted: #array of the slugs IN ORDER of members to be listed
 
       <!-- Sticky Media Column -->
       <div class="lg:col-span-5 lg:sticky lg:top-28 lg:my-4">
-          <video autoplay muted loop playsinline class="w-full h-auto object-cover" poster="/assets/video/home/posterframe-chart-esports-virtualsports-exergames.svg">
+        <a href="/about" class="block cursor-pointer relative overflow-hidden bg-white" aria-label="About Virtual Sports">
+          <video autoplay muted loop playsinline class="w-full h-auto block bg-white" style="filter: opacity(0.999);" poster="/assets/video/home/posterframe-chart-esports-virtualsports-exergames.svg">
             <source src="/assets/video/home/chart-esports-virtualsports-exergames.webm" type="video/webm">
             <source src="/assets/video/home/chart-optim-crf24.mp4" type="video/mp4">
           </video>
+        </a>
       </div>
     </div>
   </div>
