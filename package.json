@@ -63,6 +63,7 @@
     "debug": "^4.4.3"
   },
   "allowScripts": {
-    "fsevents@2.3.3": true
+    "fsevents@2.3.3": true,
+    "@parcel/watcher@2.5.1": true
   }
 }
