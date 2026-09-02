@@ -96,6 +96,7 @@ homePageMembersSlugsSorted: #array of the slugs IN ORDER of members to be listed
 
 <section class="relative">
   <div class="relative overflow-hidden w-full sm:pb-20 lg:pb-40 pt-20 lg:pt-40">
+    <!-- TODO: change SVG img to sprite function, remove old SVGs -->
     <img class="absolute bottom-0 left-0 w-full h-auto opacity-30 -z-10" src="/assets/images/home/virtual-sports-dots-bg.svg" loading="lazy" alt="background connected dots"/>
     <div class="max-w-(--breakpoint-2xl) mx-4 lg:mx-8 2xl:mx-auto">
       {% heading "Virtual Sports, where traditional competitions become digitalised"%}
@@ -114,18 +115,25 @@ homePageMembersSlugsSorted: #array of the slugs IN ORDER of members to be listed
             Labelling these as <i>virtual sports</i> helps to set them apart when the boundaries between traditional sports, <a href="/tags/esports/">esports</a>, and <a href="/tags/exergame/">exergames</a> start to blur.
             Virtual sports differentiate themselves primarily through two fundamental dimensions: <b>physicality</b> and <b>reality</b>.
           </p>
-          <ul class="list-disc list-outside pl-5 space-y-4 mb-4 text-lg md:text-xl">
-            <li>
-              <b>Physical movements that mimic sports</b><br>
-              Recent advancements in technology allows to <b>digitally capture physical movements extremely accurately and sensitively</b>, for instance with milimeter precision in <a href="/2025/03/24/virtual-sports-an-overview-of-what-exists-and-what-is-possible/">virtual golf</a>. 
-              This makes virtual sports different from exergames, where accuracy and sensitivity is lower and the focus is more on playful entertainment or rehabilitation rather than athletic competitions.
-              Virtual sports also differ from esports, where  physical movement (e.g. fine-motor controls like manipulating a mouse, keyboard, or controller) is required but not aimed at mimicking an existing sport to fearture competitions.
+          <ul role="list" class="space-y-6 my-6 text-lg md:text-xl">
+            <li class="flex gap-x-3">
+              <!-- {% svg "virtual-sports-square-logo", "fill-current h-full", "Virtual Sports Mobile Logo" %} -->
+              {% svg "physicality", "size-12 flex-none text-vs-yellow-600", "Physical movements icon" %}
+              <span>
+                <strong class="font-bold italic">Physical movements that mimic sports.</strong> 
+                Recent advancements in technology allows to <b>digitally capture physical movements extremely accurately and sensitively</b>, for instance with milimeter precision in <a href="/2025/03/24/virtual-sports-an-overview-of-what-exists-and-what-is-possible/">virtual golf</a>. 
+                This makes virtual sports different from exergames, where accuracy and sensitivity is lower and the focus is more on playful entertainment or rehabilitation rather than athletic competitions.
+                Virtual sports also differ from esports, where  physical movement (e.g. fine-motor controls like manipulating a mouse, keyboard, or controller) is required but not aimed at mimicking an existing sport to fearture competitions.
+              </span>
             </li>
-            <li>
-              <b>Physical-Digital Interreality</b><br>
-              Unlike pure <a href="/2025/03/24/virtual-sports-an-overview-of-what-exists-and-what-is-possible/">sports simulations</a> that leaves data unaltered and merely displays it on a screen, virtual sports take place within its own digital world. 
-              <b>Data from real-world performances (e.g. power) is altered based on events in the digital world (e.g. in-game drafting)</b>, which creates a hybrid physical-digital interreality. 
-              This means that the algorithms behind virual sports games transform sport competitons into a blend of physical performance and digital strategy.
+            <li class="flex gap-x-3">
+              {% svg "interreality", "size-12 flex-none text-vs-yellow-600", "Physical-digital interreality icon" %}
+              <span>
+                <strong class="font-bold italic">Physical-Digital Interreality.</strong>
+                Unlike pure <a href="/2025/03/24/virtual-sports-an-overview-of-what-exists-and-what-is-possible/">sports simulations</a> that leave data unaltered and merely displays it on a screen, virtual sports take place within its own digital world. 
+                <b>Data from real-world performances (e.g. power) is altered based on events in the digital world (e.g. in-game drafting)</b>, which creates a hybrid physical-digital interreality. 
+                This means that the algorithms behind virual sports games influence sport competitons, transforming them into a blend of physical performance and digital strategy.
+              </span>
             </li>
           </ul>
         </div>
