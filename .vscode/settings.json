@@ -5,9 +5,26 @@
     "files.associations": {
         "*.njk": "html"
     },
+    "emojisense.languages": {
+        "html": true,
+        "nunjucks": true,
+        "markdown": true
+    },
     "[html]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode",
-        "editor.formatOnSave": true
+        "editor.formatOnSave": true,
+        "editor.quickSuggestions": {
+            "other": "on",
+            "comments": "on",
+            "strings": "on"
+        }
+    },
+    "[nunjucks]": {
+        "editor.quickSuggestions": {
+            "other": "on",
+            "comments": "on",
+            "strings": "on"
+        }
     },
     "cSpell.words": [
         "Botwina",
@@ -41,5 +58,7 @@
     "cSpell.enabledFileTypes": {
         "javascript": false
     },
-    "cSpell.ignorePaths": ["package.json"]
+    "cSpell.ignorePaths": [
+        "package.json"
+    ]
 }

@@ -78,7 +78,7 @@ export default function (eleventyConfig) {
     const slugifyFilter = eleventyConfig.getFilter('slugify')
 
     for (let item of allItems) {
-      ;(item.data.tags || []).forEach((tag) => {
+      ; (item.data.tags || []).forEach((tag) => {
         const slug = slugifyFilter(tag)
         // If we haven't seen this slug yet, map it to the first spelling/casing we find
         if (slug && !slugMap.has(slug)) {

@@ -58,6 +58,7 @@ eleventyComputed:
   dateModified: "{{collections.all | getMostRecentPage | getProp('page.date') | dateToFormat('yyyy-MM-dd')}}"
 # Homepage only front matter ---
 svgRelativePaths: #append the spritemap with memberlogo for homepage, relative to src/assets/svg
+  - /site
   - /memberLogos 
 postsListStyle: postslistthumbs # postslistcards
 typedJsStrings:
@@ -120,8 +121,7 @@ homePageMembersSlugsSorted: #array of the slugs IN ORDER of members to be listed
           </p>
           <ul role="list" class="space-y-6 my-6 text-lg md:text-xl">
             <li class="flex gap-x-3">
-              <!-- {% svg "virtual-sports-square-logo", "fill-current h-full", "Virtual Sports Mobile Logo" %} -->
-              {% svg "physicality", "size-12 flex-none text-vs-yellow-600", "Physical movements icon" %}
+              <span class="text-4xl">🤸</span>             
               <span>
                 <strong class="font-bold">Physical movements that mimic sports.</strong> 
                 Recent advancements in technology allows to <b>digitally capture physical movements extremely accurately and sensitively</b>, for instance with milimeter precision in <a href="/2025/03/24/virtual-sports-an-overview-of-what-exists-and-what-is-possible/">virtual golf</a>. 
@@ -130,7 +130,7 @@ homePageMembersSlugsSorted: #array of the slugs IN ORDER of members to be listed
               </span>
             </li>
             <li class="flex gap-x-3">
-              {% svg "interreality", "size-12 flex-none text-vs-yellow-600", "Physical-digital interreality icon" %}
+              <span class="text-4xl">🕹️</span>
               <span>
                 <strong class="font-bold">Physical-Digital Interreality.</strong>
                 Unlike pure <a href="/2025/03/24/virtual-sports-an-overview-of-what-exists-and-what-is-possible/">sports simulations</a> that leave data unaltered and merely displays it on a screen, virtual sports take place within its own digital world. 
@@ -153,23 +153,25 @@ homePageMembersSlugsSorted: #array of the slugs IN ORDER of members to be listed
             <b>(3)</b> to bridge the gap between academic research, policy, and practice by <b>connecting and featuring experts</b> in an active network.
           </p>
           <p>
-            <ul role="list" class="space-y-6 my-6 text-lg md:text-xl">
-            <li class="flex gap-x-3">
-              <span class="text-4xl">🔬</span>
-              <span class="align-middle leading-none">
+            <ul role="list" class="space-y-8 my-6 text-lg md:text-xl">
+            <li class="flex items-center gap-x-3">
+              <span class="text-4xl leading-none flex-none">🔬</span>
+              <span>
                 <strong class="font-bold">Explore the science</strong> and read insights and perspectives in our <a href="/blog" class="font-bold"> Research Blog</a>
-          </span>
+              </span>
+            </li>
+              <li class="flex items-center gap-x-3">
+                <span class="text-4xl leading-none flex-none">👥</span>
+                <span>
+                  <strong class="font-bold">Discover experts</strong> and connect with international researchers and experts in our <a href="/network" class="font-bold">Virtual Sports Research Network.</a>
+                </span>
               </li>
-               <li class="flex gap-x-3">
-              <span class="text-4xl">👥</span>
+              <li class="flex items-center gap-x-3">
+                <span class="text-4xl leading-none flex-none">🤝</span>
               <span>
-                <strong class="font-bold align-middle">Discover experts</strong> and connect with international researchers and experts in our <a href="/network" class="font-bold">Virtual Sports Research Network.</a>
-            </li>
-               <li class="flex gap-x-3">
-              <span class="text-4xl">🤝</span>
-              <span>
-                <strong class="font-bold align-middle">Collaborate</strong> if you are conducting research on virtual sports by <a href="mailto:[EMAIL_ADDRESS]?subject=Interested in joining the Virtual Sports Research Network">joining our network and contributing to our blogs.</a>
-            </li>
+                <strong class="font-bold align-middle">Collaborate</strong> if you are conducting research on virtual sports by <a class="font-bold" href="mailto:thibault.fouquaert@ugent.be?subject=Interested in joining the Virtual Sports Research Network">joining our network</a> and contributing to our blogs.
+                </span>
+              </li>
            
           </ul>
 
@@ -177,7 +179,7 @@ homePageMembersSlugsSorted: #array of the slugs IN ORDER of members to be listed
       </div>
 
       <!-- Sticky Media Column -->
-      <div class="lg:col-span-5 lg:sticky lg:top-28 lg:my-4">
+      <div class="lg:col-span-5 lg:sticky lg:top-28 lg:my-10">
         <a href="/about" class="block cursor-pointer relative overflow-hidden bg-white" aria-label="About Virtual Sports">
           <video autoplay muted loop playsinline class="w-full h-auto block bg-white" style="filter: opacity(0.999);" poster="/assets/video/home/posterframe-chart-esports-virtualsports-exergames.svg">
             <source src="/assets/video/home/chart-esports-virtualsports-exergames.webm" type="video/webm">
@@ -189,7 +191,7 @@ homePageMembersSlugsSorted: #array of the slugs IN ORDER of members to be listed
   </div>
   <div class="flex justify-center mx-6 md:mx-0">
     <a href="/about">
-      {% ctaButton "More About Virtual Sports :bulb:" | renderInlineMarkdown %}
+      {% ctaButton "More About Virtual Sports 💡" %}
     </a>
   </div>
 </section>

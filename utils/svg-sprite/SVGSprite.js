@@ -5,8 +5,6 @@ import { access, mkdir, writeFile as _writeFile } from 'fs/promises'
 import SVGSpriter from 'svg-sprite'
 import Vinyl from 'vinyl'
 
-let spriteCache = {}
-
 class SVGSprite {
   constructor(paths, config) {
     this.paths = paths.map((p) => _resolve(config.base + p))
@@ -16,6 +14,8 @@ class SVGSprite {
       this.outputFilepath = _resolve(config.outputFilepath)
     }
     this.spriteConfig = config.spriteConfig
+    this.spriteContent = null
+    this.cacheKey = null
   }
 
   async compile() {
@@ -26,11 +26,11 @@ class SVGSprite {
     //const files = await glob(`**/*.svg`, { cwd: this.cwd })
     const newCacheKey = files.map((file) => `${file.absolutePath}:${statSync(file.absolutePath).mtimeMs}`).join('|')
 
-    if (spriteCache.cacheKey === newCacheKey) {
+    if (this.cacheKey === newCacheKey && this.spriteContent) {
       // if the cacheKey is the same, don't need to rebuild sprite
-      return spriteCache.spriteContent
+      return this.spriteContent
     } else {
-      spriteCache.cacheKey = newCacheKey
+      this.cacheKey = newCacheKey
     }
 
     // Make a new SVGSpriter instance w/ configuration
@@ -67,14 +67,15 @@ class SVGSprite {
       await writeFile(this.outputFilepath, sprite.contents.toString('utf8'))
     }
 
-    // cache spriteContent into global spriteCache variable
-    spriteCache.spriteContent = `<div style="width: 0; height: 0; position: absolute; overflow: hidden;">${sprite.contents.toString(
+    // cache spriteContent into instance variable
+    this.spriteContent = `<div style="width: 0; height: 0; position: absolute; overflow: hidden;">${sprite.contents.toString(
       'utf8'
     )}</div>`
+    return this.spriteContent
   }
 
   getSvgSprite() {
-    return spriteCache.spriteContent
+    return this.spriteContent
   }
 }
 
