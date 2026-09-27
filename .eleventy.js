@@ -163,6 +163,26 @@ export default function (eleventyConfig) {
       level: [1, 2, 3, 4],
       slugify: eleventyConfig.getFilter('slugify'),
     })
+
+  const defaultLinkRender =
+    markdownLib.renderer.rules.link_open ||
+    function (tokens, idx, options, env, self) {
+      return self.renderToken(tokens, idx, options)
+    }
+
+  markdownLib.renderer.rules.link_open = function (tokens, idx, options, env, self) {
+    const hrefIndex = tokens[idx].attrIndex('href')
+    if (hrefIndex >= 0) {
+      const href = tokens[idx].attrs[hrefIndex][1]
+      // Open PDFs and external URLs in a new tab automatically
+      if (/\.pdf($|\?)/i.test(href) || /^https?:\/\//i.test(href)) {
+        tokens[idx].attrSet('target', '_blank')
+        tokens[idx].attrSet('rel', 'noopener noreferrer')
+      }
+    }
+    return defaultLinkRender(tokens, idx, options, env, self)
+  }
+
   eleventyConfig.setLibrary('md', markdownLib)
 
   const njkGlobals = njkGlobalsFactory(eleventyConfig)
