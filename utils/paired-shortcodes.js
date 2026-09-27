@@ -77,9 +77,8 @@ export function init(eleventyConfig, markdownLib) {
      * Same as gridRowExpandable but without the feature to expand into multiple rows.
      */
     gridRow: function (content, colSpan = '', collapse = false, classes = '') {
-      return `<div ${
-        collapse ? 'x-show="expanded" x-collapse' : ''
-      } class="grid grid-cols-subgrid **:my-0 *:px-2 *:pb-1 ${colSpan} ${classes}">${content}</div>`
+      return `<div ${collapse ? 'x-show="expanded" x-collapse' : ''
+        } class="grid grid-cols-subgrid **:my-0 *:px-2 *:pb-1 ${colSpan} ${classes}">${content}</div>`
     },
 
     /**
@@ -111,14 +110,14 @@ export function init(eleventyConfig, markdownLib) {
      *  {% endcolumns %}
      */
     columns: function (content, classes = '') {
-      return `<div class="flex flex-col md:flex-row ${classes}">${content}</div>`
+      return `<div class="flex flex-col md:flex-row md:gap-4 ${classes}">${content}</div>`
     },
 
     /** See usage example above.
      * You can add as many 'cols' as you want columns
      */
     cols: function (content, classes = '') {
-      return `<div class="flex-1 px-2 ${classes}">${markdownLib.render(content.trim())}</div>`
+      return `<div class="flex-1 ${classes}">${markdownLib.render(content.trim())}</div>`
     },
 
     /** ===== Description List Wrapper, Term, and Description
