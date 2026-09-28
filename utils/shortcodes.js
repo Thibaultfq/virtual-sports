@@ -47,17 +47,14 @@ export function init(eleventyConfig, markdownLib) {
 
       const a = anchorLink
         ? `<a class="${structure.g_markdownItAnchor_classes
-        } absolute inset-y-50	 left-100 ml-2" href="#${eleventyConfig.getFilter('slugify')(content)}"
+        } inline-block ml-2 group-hover:text-vs-blue-600 focus:text-vs-blue-600 align-baseline select-none" href="#${eleventyConfig.getFilter('slugify')(content)}"
             title="link to the subtitle: ${content.trim()}">#</a>`
         : ''
 
-      return `<h2 class="w-full mb-6 text-5xl font-bold text-center text-balance ${this.ctx.colors.headingsCustom || this.ctx.colors.headingsDefault
-        } ${anchorLink ? 'relative px-10' : ''} ${classes}"
+      return `<h2 class="group w-full mb-6 text-5xl font-bold text-center text-balance ${this.ctx.colors.headingsCustom || this.ctx.colors.headingsDefault
+        } ${classes}"
         ${anchorLink ? `tabindex="-1"` : ''} 
-        ${anchorLink ? `id="${eleventyConfig.getFilter('slugify')(content)}"` : ''}>
-        ${markdownLib.renderInline(content.trim())}
-        ${a}
-        </h2>
+        ${anchorLink ? `id="${eleventyConfig.getFilter('slugify')(content)}"` : ''}>${markdownLib.renderInline(content.trim())}${a}</h2>
         ${h3}
         <div class="w-full mb-8 md:mb-28"><div class="h-1 mx-auto bg-linear-to-r from-vs-yellow-400 to-vs-yellow-600 w-48 sm:w-64 md:w-96 my-0 py-0 rounded-t"></div></div>`
     },
