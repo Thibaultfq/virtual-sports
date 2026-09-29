@@ -7,7 +7,10 @@ import Vinyl from 'vinyl'
 
 class SVGSprite {
   constructor(paths, config) {
-    this.paths = paths.map((p) => _resolve(config.base + p))
+    this.paths = paths.map((p) => {
+      const cleanPath = p.replace(/^\/+/, '')
+      return _resolve(config.base, cleanPath)
+    })
     this.config = config
     //    this.cwd = path.resolve(config.path)
     if (config.outputFilepath) {
@@ -19,11 +22,31 @@ class SVGSprite {
   }
 
   async compile() {
-    //get all files in array of paths and flatten to single array
-    const files = (await Promise.all(this.paths.map(async (p) => await glob(`**/*.svg`, { cwd: p, absolute: true }))))
-      .map((globArray, index) => globArray.map((p) => ({ absolutePath: p, basePath: this.paths[index] })))
-      .flat(1)
-    //const files = await glob(`**/*.svg`, { cwd: this.cwd })
+    // get all files in array of paths (handles both directories and single svg files) and flatten to single array
+    const fileLists = await Promise.all(
+      this.paths.map(async (p) => {
+        try {
+          const stat = statSync(p)
+          if (stat.isDirectory()) {
+            const matches = await glob(`**/*.svg`, { cwd: p, absolute: true })
+            return matches.map((filePath) => ({ absolutePath: filePath, basePath: p }))
+          } else if (stat.isFile()) {
+            return [{ absolutePath: p, basePath: _dirname(p) }]
+          }
+        } catch (e) {
+          console.warn(`[svgsprite] Warning: Path not found or inaccessible: ${p}`)
+          return []
+        }
+        return []
+      })
+    )
+    const files = fileLists.flat(1)
+
+    if (files.length === 0) {
+      this.spriteContent = ''
+      return this.spriteContent
+    }
+
     const newCacheKey = files.map((file) => `${file.absolutePath}:${statSync(file.absolutePath).mtimeMs}`).join('|')
 
     if (this.cacheKey === newCacheKey && this.spriteContent) {

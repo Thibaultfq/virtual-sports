@@ -1,3 +1,4 @@
+import { basename } from 'path'
 import { SVGSprite } from './utils/svg-sprite/SVGSprite.js'
 import { config } from './utils/svg-sprite/options.js'
 
@@ -12,35 +13,49 @@ export function pluginSprite(eleventyConfig) {
   // })
 
   eleventyConfig.addFilter('svgsprite', async (paths) => {
-    //the sprites are made during build because the folders to generate the sprites from are provided in the frontmatter data. There is no beforeBuild in this case.
-    // the spritemap cache still gets used during build
-    //only create a new SVGSprite instance for every new unique path combination (pathkey)
+    if (!paths) return ''
 
-    if (!Array.isArray(paths) && new Set(paths).size !== paths.length) {
-      throw new Error('must provide array of unique paths')
+    let pathsArray = Array.isArray(paths) ? [...paths] : [paths]
+
+    // Normalize paths: strip whitespace, remove empty
+    pathsArray = pathsArray
+      .filter(Boolean)
+      .map((p) => p.trim())
+      .filter((p) => p.length > 0)
+
+    if (pathsArray.length === 0) return ''
+
+    // If more than 1 path is provided and one of them is '/site' or 'site',
+    // remove 'site' because site is already included globally via the base layout
+    if (pathsArray.length > 1) {
+      pathsArray = pathsArray.filter((p) => p.replace(/^\/+|\/+$/g, '') !== 'site')
     }
 
-    //check if provided paths are not subdirectories. All should be unqiue
+    // Deduplicate
+    pathsArray = Array.from(new Set(pathsArray))
 
-    if (paths.some((p) => p.replace(/^\/|\/$/g, '').split('/').length > 1)) {
-      for (let i = 0; i < paths.length - 1; i++) {
-        const path_i = paths[i]
-        for (let j = i + 1; j < paths.length; j++) {
-          const path_j = paths[j]
+    if (pathsArray.length === 0) return ''
+
+    // Check if provided paths are not subdirectories. All should be unique
+    if (pathsArray.some((p) => p.replace(/^\/|\/$/g, '').split('/').length > 1)) {
+      for (let i = 0; i < pathsArray.length - 1; i++) {
+        const path_i = pathsArray[i]
+        for (let j = i + 1; j < pathsArray.length; j++) {
+          const path_j = pathsArray[j]
           if (path_i.startsWith(path_j) || path_j.startsWith(path_i)) {
-            throw new Error(`subdirectories detected${path_i} & ${path_j}`)
+            throw new Error(`subdirectories detected: ${path_i} & ${path_j}`)
           }
         }
       }
     }
 
-    const pathsKey = paths.join('|') // create a unique key for every array of provided paths
+    const pathsKey = pathsArray.join('|') // create a unique key for every array of provided paths
 
     // if the pathsKey does not exist, add new svgSprite instance to cache set and build it once
     if (spriteSet.hasOwnProperty(pathsKey)) {
       return spriteSet[pathsKey].svgSpriteInstance.getSvgSprite()
     } else {
-      let spriteInstance = new SVGSprite(paths, config)
+      let spriteInstance = new SVGSprite(pathsArray, config)
       await spriteInstance.compile()
 
       spriteSet[pathsKey] = {
@@ -52,20 +67,19 @@ export function pluginSprite(eleventyConfig) {
     // if the pathsKey exists, return cached instance (that is already compiled) and no need to rebuild svgSprite instance
   })
 
-  //todo: change params to attributes object
   eleventyConfig.addShortcode('svg', (name, classes, desc, attrs) => {
     if (!name) {
       throw new Error('svgSprite Plugin: name of SVG must be specified')
     }
 
-    let attributes
-    if (attrs) {
+    let attributes = ''
+    if (attrs && typeof attrs === 'object') {
       attributes = Object.entries(attrs)
-        .map(([name, value]) => `${name}="${value}"`)
+        .map(([attrName, value]) => `${attrName}="${value}"`)
         .join(' ')
     }
 
-    const nameAttr = name
+    const nameAttr = basename(name, '.svg')
     const classesAttr = `${globalClasses} ${classes || defaultClasses}`
     // "desc" is required for accessibility and Lighthouse validations
     const descAttr = desc || `${nameAttr} icon`
@@ -76,7 +90,7 @@ export function pluginSprite(eleventyConfig) {
       attributes ? attributes : ''
     } aria-labelledby="symbol-${nameAttr}-desc-${uniqueID}" role="group">
     <desc id="symbol-${nameAttr}-desc-${uniqueID}">${descAttr}</desc>
-    <use xlink:href="#svg-${nameAttr}"></use>
+    <use href="#svg-${nameAttr}" xlink:href="#svg-${nameAttr}"></use>
     </svg>`
   })
 }
