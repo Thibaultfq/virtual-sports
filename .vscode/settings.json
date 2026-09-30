@@ -60,5 +60,6 @@
     },
     "cSpell.ignorePaths": [
         "package.json"
-    ]
+    ],
+    "harper.dialect": "British"
 }
