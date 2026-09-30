@@ -1,11 +1,54 @@
-import { glob } from 'glob'
+import { glob, globSync } from 'glob'
 import { statSync, readFileSync } from 'fs'
-import { resolve as _resolve, dirname as _dirname } from 'path'
+import { resolve as _resolve, dirname as _dirname, basename } from 'path'
 import { access, mkdir, writeFile as _writeFile } from 'fs/promises'
 import SVGSpriter from 'svg-sprite'
 import Vinyl from 'vinyl'
 
+export function extractViewBox(svgContent) {
+  if (!svgContent) return null
+  const svgTagMatch = svgContent.match(/<svg\b([^>]*)>/i)
+  if (!svgTagMatch) return null
+  const attrs = svgTagMatch[1]
+
+  const viewBoxMatch = attrs.match(/\bviewBox=["']\s*([^"']+)\s*["']/i)
+  if (viewBoxMatch) return viewBoxMatch[1].trim()
+
+  const widthMatch = attrs.match(/\bwidth=["']\s*([0-9.]+)(?:px)?\s*["']/i)
+  const heightMatch = attrs.match(/\bheight=["']\s*([0-9.]+)(?:px)?\s*["']/i)
+  if (widthMatch && heightMatch) {
+    return `0 0 ${widthMatch[1]} ${heightMatch[1]}`
+  }
+  return null
+}
+
 class SVGSprite {
+  static viewBoxMap = new Map()
+
+  static getViewBox(name, baseDir = './src/assets/svg') {
+    const cleanName = basename(name, '.svg')
+    if (SVGSprite.viewBoxMap.has(cleanName)) {
+      return SVGSprite.viewBoxMap.get(cleanName)
+    }
+
+    try {
+      const resolvedBase = _resolve(baseDir)
+      const matches = globSync(`**/${cleanName}.svg`, { cwd: resolvedBase, absolute: true })
+      if (matches.length > 0) {
+        const content = readFileSync(matches[0], 'utf8')
+        const vb = extractViewBox(content)
+        if (vb) {
+          SVGSprite.viewBoxMap.set(cleanName, vb)
+          return vb
+        }
+      }
+    } catch (e) {
+      // ignore
+    }
+
+    return null
+  }
+
   constructor(paths, config) {
     this.paths = paths.map((p) => {
       const cleanPath = p.replace(/^\/+/, '')
@@ -59,13 +102,20 @@ class SVGSprite {
     // Make a new SVGSpriter instance w/ configuration
     const spriter = new SVGSpriter(this.spriteConfig)
 
-    // Add them all to the spriter
+    // Add them all to the spriter and record their viewBoxes
     files.forEach((file) => {
+      const content = readFileSync(file.absolutePath, 'utf8')
+      const name = basename(file.absolutePath, '.svg')
+      const vb = extractViewBox(content)
+      if (vb) {
+        SVGSprite.viewBoxMap.set(name, vb)
+      }
+
       spriter.add(
         new Vinyl({
           path: file.absolutePath,
           base: file.basePath,
-          contents: readFileSync(file.absolutePath),
+          contents: Buffer.from(content, 'utf8'),
         })
       )
     })

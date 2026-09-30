@@ -51,20 +51,16 @@ export function pluginSprite(eleventyConfig) {
 
     const pathsKey = pathsArray.join('|') // create a unique key for every array of provided paths
 
-    // if the pathsKey does not exist, add new svgSprite instance to cache set and build it once
-    if (spriteSet.hasOwnProperty(pathsKey)) {
-      return spriteSet[pathsKey].svgSpriteInstance.getSvgSprite()
-    } else {
-      let spriteInstance = new SVGSprite(pathsArray, config)
-      await spriteInstance.compile()
-
+    // if the pathsKey does not exist, add new svgSprite instance to cache set
+    if (!spriteSet[pathsKey]) {
       spriteSet[pathsKey] = {
-        svgSpriteInstance: spriteInstance,
+        svgSpriteInstance: new SVGSprite(pathsArray, config),
       }
-      return spriteSet[pathsKey].svgSpriteInstance.getSvgSprite()
     }
 
-    // if the pathsKey exists, return cached instance (that is already compiled) and no need to rebuild svgSprite instance
+    // compile() checks internal file mtime cache and rebuilds only if an SVG file changed
+    await spriteSet[pathsKey].svgSpriteInstance.compile()
+    return spriteSet[pathsKey].svgSpriteInstance.getSvgSprite()
   })
 
   eleventyConfig.addShortcode('svg', (name, classes, desc, attrs) => {
@@ -72,14 +68,21 @@ export function pluginSprite(eleventyConfig) {
       throw new Error('svgSprite Plugin: name of SVG must be specified')
     }
 
-    let attributes = ''
-    if (attrs && typeof attrs === 'object') {
-      attributes = Object.entries(attrs)
-        .map(([attrName, value]) => `${attrName}="${value}"`)
-        .join(' ')
+    const nameAttr = basename(name, '.svg')
+    const customAttrs = attrs && typeof attrs === 'object' ? { ...attrs } : {}
+
+    // Auto-detect viewBox if not explicitly provided
+    if (!customAttrs.viewBox) {
+      const autoViewBox = SVGSprite.getViewBox(nameAttr, config.base)
+      if (autoViewBox) {
+        customAttrs.viewBox = autoViewBox
+      }
     }
 
-    const nameAttr = basename(name, '.svg')
+    const attributes = Object.entries(customAttrs)
+      .map(([attrName, value]) => `${attrName}="${value}"`)
+      .join(' ')
+
     const classesAttr = `${globalClasses} ${classes || defaultClasses}`
     // "desc" is required for accessibility and Lighthouse validations
     const descAttr = desc || `${nameAttr} icon`
