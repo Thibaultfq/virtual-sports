@@ -21,7 +21,7 @@ transparentNav: false #set default false transparentNav attribute for all pages
     {% endif %}
     {%- include "partials/head.njk" %}
   </head>
-  <body class="{{ colors.siteTextCustom or siteTextDefault }}">
+  <body class="{{ colors.siteTextCustom or colors.siteTextDefault }}">
     {# Site-wide SVG sprite included on every page #}
     {{ '/site' | svgsprite | safe }}
     {# Page-specific SVG sprite appended if svgRelativePaths is defined in page frontmatter #}
