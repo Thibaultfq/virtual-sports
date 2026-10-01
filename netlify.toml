@@ -8,7 +8,7 @@
 publish = "dist"
 command = "npm run build"
 ELEVENTY_PRODUCTION = "true"
-environment = { NODE_VERSION = "^24.0.0", NPM_VERSION = "12.0.0", NODE_ENV = "production" }
+environment = { NODE_VERSION = "^24.0.0", NPM_VERSION = "12.2.0", NODE_ENV = "production" }
 
 
 # Dev context: environment variables set here
@@ -19,7 +19,7 @@ environment = { NODE_VERSION = "^24.0.0", NPM_VERSION = "12.0.0", NODE_ENV = "pr
 [context.dev.environment]
 NODE_ENV = "development"
 NODE_VERSION = "^24.0.0"
-NPM_VERSION = "12.0.0"
+NPM_VERSION = "12.2.0"
 ELEVENTY_PRODUCTION = "false"
 
 # Specific branch context: all deploys from
@@ -27,5 +27,5 @@ ELEVENTY_PRODUCTION = "false"
 [context.staging.environment] # “staging” is a branch name
 NODE_ENV = "production"
 NODE_VERSION = "^24.0.0"
-NPM_VERSION = "12.0.0"
+NPM_VERSION = "12.2.0"
 ELEVENTY_PRODUCTION = "true"
