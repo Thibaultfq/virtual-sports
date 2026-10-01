@@ -163,20 +163,26 @@ svgRelativePaths:
         <p>
           While each dimension is more thoroughly discussed in the work of Fouquaert (<a target="_blank" rel="noopener noreferrer" class="hover:bg-vs-blue-100/30" href="https://biblio.ugent.be/publication/01KWESKD8T405VTFE3PADRE2JB">2026</a>, p. 74), applying these dimensions of traditional sports to other digitalised sports activities leads to the following conclusions:
         </p>
-        <ol class="space-y-3 pl-1 leading-relaxed" role="list">
-          <li class="flex items-start gap-3">
-            <span class="font-bold text-vs-blue-900 shrink-0">1)</span>
+        <ul class="space-y-4 leading-relaxed text-base md:text-lg" role="list">
+          <li class="flex items-start gap-4">
+            <span class="flex-none mt-2 flex items-center justify-center w-5 h-5 rounded-full bg-vs-blue-900 shadow-2xs" aria-hidden="true">
+              <span class="w-2 h-2 rounded-full bg-vs-yellow-400"></span>
+            </span>
             <span>Virtual sports <strong>can be considered sports</strong> as they can fulfill each dimension of sport.</span>
           </li>
-          <li class="flex items-start gap-3">
-            <span class="font-bold text-vs-blue-900 shrink-0">2)</span>
+          <li class="flex items-start gap-4">
+            <span class="flex-none mt-2 flex items-center justify-center w-5 h-5 rounded-full bg-vs-blue-900 shadow-2xs" aria-hidden="true">
+              <span class="w-2 h-2 rounded-full bg-vs-yellow-400"></span>
+            </span>
             <span>Because not all dimensions are fulfilled in the exact same manner, it is necessary to clearly <strong>distinguish virtual sports</strong> from sports, esports and exergames.</span>
           </li>
-          <li class="flex items-start gap-3">
-            <span class="font-bold text-vs-blue-900 shrink-0">3)</span>
-            <span>Virtual sports differentiate themselves from sports and esports in their <strong>physicality and reality</strong>, fulfilling these dimensions differently. More on that below 👇</span>
+          <li class="flex items-start gap-4">
+            <span class="flex-none mt-2 flex items-center justify-center w-5 h-5 rounded-full bg-vs-blue-900 shadow-2xs" aria-hidden="true">
+              <span class="w-2 h-2 rounded-full bg-vs-yellow-400"></span>
+            </span>
+            <span>Virtual sports differentiate themselves from sports and esports in their <strong>physicality and reality</strong>, fulfilling these dimensions differently. More on that below.</span>
           </li>
-        </ol>
+        </ul>
       </div>
     </div>
 
@@ -378,24 +384,24 @@ svgRelativePaths:
       <h3 class="text-2xl md:text-3xl font-bold {{ colors.headingsCustom or colors.headingsDefault }} tracking-tight leading-tight">
         Towards a Universal Definition of Virtual Sports
       </h3>
-      <div class="flow-root">
-        <!-- SVG Graphic (floated right on desktop, aligned with paragraph) -->
-        <figure class="my-4 lg:my-0 lg:float-right lg:w-2/5 lg:pl-6 flex flex-col items-center justify-center lg:py-2 pt-0 bg-white">
-          {% svg "virtuality-virtual-sports", 
-                 "w-full h-auto max-h-[225px] select-none", 
-                 "Diagram illustrating virtuality in sport and its operational dimensions including representational fidelity, remoteness, and synchrony" %}
-          <figcaption class="mt-2 text-sm text-slate-500 text-center">
-            Source: Adapted from Fouquaert (<a target="_blank" rel="noopener noreferrer" class="hover:bg-vs-blue-100/30" href="https://biblio.ugent.be/publication/01KWESKD8T405VTFE3PADRE2JB">2026</a>, p. 11).
-          </figcaption>
-        </figure>
-
-        <p>
+      <div class="grid grid-cols-1 lg:grid-cols-10 gap-6 lg:gap-8 items-center text-balance">
+        <p class="lg:col-span-6">
           Within a definition of virtual sports, it is also essential to acknowledge that sport becomes <strong>digitally measured (i.e. virtuality)</strong>, and how this allows to organise sport in different ways. 
           Most importantly is to recognise that virtual sports are not bound to a single setup. 
           For instance, virtual sports can visually translate (i.e. representational fidelity) to a text-based online ranking, a 3D virtual world (e.g. Zwift), or to physical infrastructure using LED-integration (e.g. Mixed-Reality Table Tennis). 
           They can take place co-located on a physical event location (e.g. UCI Cycling Esports World Championships) or distributed (e.g. from-home online events like MyWhoosh Sunday Raceclub). 
           Lastly, virtual sports can be asynchronous or decoupled from time (e.g. Virtual Golf), or real-time synchronous events (e.g. competing simultaneously online against others). 
         </p>
+
+        <!-- SVG Graphic (separate column on desktop, below paragraph on mobile) -->
+        <figure class="lg:col-span-4 flex flex-col items-center justify-center bg-white">
+          {% svg "virtuality-virtual-sports", 
+                 "w-full h-auto max-h-[250px] select-none", 
+                 "Diagram illustrating virtuality in sport and its operational dimensions including representational fidelity, remoteness, and synchrony" %}
+          <figcaption class="mt-2 text-sm text-slate-500 text-center">
+            Source: Adapted from Fouquaert (<a target="_blank" rel="noopener noreferrer" class="hover:bg-vs-blue-100/30" href="https://biblio.ugent.be/publication/01KWESKD8T405VTFE3PADRE2JB">2026</a>, p. 11).
+          </figcaption>
+        </figure>
       </div>
       <p>
         Based on the outline above, including the various dimensions and ways of organising virtual sports, an approach can be made to <strong>universally define virtual sports</strong>:
