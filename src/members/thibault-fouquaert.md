@@ -1,7 +1,8 @@
 ---
 slug: thibault-fouquaert
 name: Thibault Fouquaert
-date: 2026-09-27T00:00:00.000Z
+date: 2024-03-21T00:00:00.000Z
+dateModified: 2026-10-08T00:00:00.000Z
 image: "members/thibault-fouquaert.webp"
 seo:
   image: "members/thibault-fouquaert.webp"

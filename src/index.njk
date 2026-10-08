@@ -1,7 +1,8 @@
 ---
 # This is a full listing of available Frontmatter options, available for any content (.md) file.
 title: Virtual Sports - Research Network and scientific insights on virtual sports 
-date: 2026-10-01
+date: 2024-03-21
+dateModified: 2026-10-08T00:00:00.000Z
 layout: base #set the home page with a different layout as it is not a 'normal' page, we want some extra custimisation here
 tags: pages
 excerpt: The Virtual Sports Research Network bundles academic expertise around virtual sports, and provides scientific insights via accessible blogs based on research by its members and on the latest developments in the field.
@@ -55,7 +56,7 @@ heroSettings:
       textClass: "text-red-300"
 taglimit: 10
 eleventyComputed:
-  dateModified: "{{collections.all | getMostRecentPage | getProp('page.date') | dateToFormat('yyyy-MM-dd')}}"
+  dateModified: "{{ [dateModified, collections.post, collections.member] | getMostRecentDate | dateToFormat('yyyy-MM-dd') }}"
 # Homepage only front matter ---
 svgRelativePaths: #append the spritemap with memberlogo for homepage, relative to src/assets/svg
   - /memberLogos 
@@ -124,7 +125,7 @@ homePageMembersSlugsSorted: #array of the slugs IN ORDER of members to be listed
               <strong class="font-bold">Physical movements that mimic sports.</strong> 
               Recent advancements in technology allows to <b>digitally capture physical movements extremely accurately and sensitively</b>, for instance with milimeter precision in <a href="/2025/03/24/virtual-sports-an-overview-of-what-exists-and-what-is-possible/">virtual golf</a>. 
               This makes virtual sports different from exergames, where accuracy and sensitivity is lower and the focus is more on playful entertainment or rehabilitation rather than athletic competitions.
-              Virtual sports also differ from esports, where  physical movement (e.g. fine-motor controls like manipulating a mouse, keyboard, or controller) is required but not aimed at mimicking an existing sport to fearture competitions.
+              Virtual sports also differ from esports, where  physical movement (e.g. fine-motor controls like manipulating a mouse, keyboard, or controller) is required but not aimed at mimicking an existing sport to feature competitions.
             </span>
           </li>
           <li class="flex gap-x-3">

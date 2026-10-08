@@ -145,6 +145,54 @@ export function init(eleventyConfig, markdownLib) {
     },
 
     /**
+     * Get the most recent date from any combination of dates, strings, page objects,
+     * or arrays of pages/collections.
+     * Compares dateModified, date, and page.date.
+     */
+    getMostRecentDate: (...args) => {
+      let maxTime = 0
+
+      const extractTimestamp = (val) => {
+        if (!val) return
+        if (Array.isArray(val)) {
+          for (const item of val) {
+            extractTimestamp(item)
+          }
+          return
+        }
+        if (val instanceof Date) {
+          const t = val.getTime()
+          if (!isNaN(t) && t > maxTime) maxTime = t
+          return
+        }
+        if (typeof val === 'string' || typeof val === 'number') {
+          const d = new Date(val)
+          const t = d.getTime()
+          if (!isNaN(t) && t > maxTime) maxTime = t
+          return
+        }
+        if (typeof val === 'object') {
+          // Skip self if index.njk to avoid circular reference with computed data
+          if (val.inputPath && val.inputPath.endsWith('index.njk')) {
+            return
+          }
+          const raw = val.data?.dateModified || val.date || val.page?.date
+          if (raw) {
+            const d = raw instanceof Date ? raw : new Date(raw)
+            const t = d.getTime()
+            if (!isNaN(t) && t > maxTime) maxTime = t
+          }
+        }
+      }
+
+      for (const arg of args) {
+        extractTimestamp(arg)
+      }
+
+      return maxTime > 0 ? new Date(maxTime) : null
+    },
+
+    /**
      *
      * @param {*} number
      * @returns the number in words up to 'ten'. Usefull when using numbers in text (see apa guidelines).
